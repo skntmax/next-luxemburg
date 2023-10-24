@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import Link from "next/link"
 import { AiOutlineSearch } from 'react-icons/ai'
-
+import Image from "next/image"
 const Header = () => {
 
     const [link, setLink] = useState('')
@@ -28,7 +28,7 @@ const Header = () => {
                     <div className="d-flex justify-content-between align-self-center">
                         <div>
                             <Link href='/' className='logo'>
-                                <img src='https://luxorpen.com/images/logo/logo.png' />
+                                <Image layout='fill' alt="logo"  src='https://luxorpen.com/images/logo/logo.png' />
                             </Link>
                         </div>
                         <div className="d-flex">
@@ -105,7 +105,7 @@ const Header = () => {
                 <div className="container">
                     <div className="d-flex justify-content-between">
                         <Link href='/' className='logo'>
-                            <img className="img-fluid" src='https://luxorpen.com/images/logo/logo.png' />
+                            <Image layout='fill' alt="logo2" className="img-fluid" src='https://luxorpen.com/images/logo/logo.png' />
                         </Link>
                         <button className="btn border-0 shadow-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><i className="fa-solid fa-bars fs-24 fw-700"></i></button>
                     </div>
@@ -113,7 +113,7 @@ const Header = () => {
                     <div className="offcanvas offcanvas_toggle offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
                         <div className="offcanvas-header">
                             <Link href='/' className='logo'>
-                                <img className="img-fluid mt-0" src='https://luxorpen.com/images/logo/logo.png' />
+                                <Image layout='fill'  alt="logo2" className="img-fluid mt-0" src='https://luxorpen.com/images/logo/logo.png' />
                             </Link>
                             <button type="button" className="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                         </div>

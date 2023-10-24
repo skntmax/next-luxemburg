@@ -40,7 +40,7 @@ const ProductPage = () => {
                 {/* ---------------------------------------container 1st---------- */}
 
                 <div className=''>
-                    <Image  className='img-fluid' src={marker} alt='' style={{
+                    <Image  className='img-fluid' src={marker} alt="homepage" style={{
 
                     }} />
                 </div>
@@ -55,9 +55,9 @@ const ProductPage = () => {
 
                         <h2>BROADLINE MARKER</h2>
 
-                        <p>Kids love Luxor Broadline Markers because they are durable, sturdy, and delightful
+                        <p>{`Kids love Luxor Broadline Markers because they are durable, sturdy, and delightful
                             to color with. They come in 12 lovely colors, are washable, non-toxic and don't bleed
-                            through most paper. </p>
+                            through most paper. `}</p>
 
                     </div>
 
@@ -87,7 +87,7 @@ const ProductPage = () => {
                         <div className='col-md-4 mb-3'>
                             <div className="card h-100 border-0 shadow-sm bg-transaparent">
                                 <div className="card-body">
-                                    <Image  className='img-fluid' src={MarkerW} alt='' />
+                                    <Image  className='img-fluid' src={MarkerW} alt="homepage" />
                                 </div>
                             </div>
                         </div>
@@ -96,7 +96,7 @@ const ProductPage = () => {
                             <div className="card h-100 border-0 shadow-sm bg-transaparent">
                             <div className="card-body">
                                 
-                                <Image  className='img-fluid' src={MarkerT} alt='' />
+                                <Image  className='img-fluid' src={MarkerT} alt="homepage" />
                                 </div>
                             </div>
                         </div>
@@ -105,23 +105,23 @@ const ProductPage = () => {
                     {/* ----------------part 4----- */}
                     <div className='broadline-cont'>
                         <div className='broadline-card'>
-                            <Image  src={Marker4} alt='' />
+                            <Image  src={Marker4} alt="homepage" />
                             <p>Broadline
                                 Marker SRP</p>
                         </div>
                         <div className='broadline-card'>
-                            <Image  className='img-fluid' src={Marker5} alt='' />
+                            <Image  className='img-fluid' src={Marker5} alt="homepage" />
                             <p>Broadline
                                 Marker</p>
                         </div>
                         <div className='broadline-card'>
-                            <Image  className='img-fluid' src={Marker7} alt='' />
+                            <Image  className='img-fluid' src={Marker7} alt="homepage" />
                         </div>
                     </div>
                     {/* ----------------part 5-----  */}
                     <div className='dyn-cont'>
                         <div className='dyn-img'>
-                            <Image  src={Dyn} alt='' />
+                            <Image  src={Dyn} alt="homepage" />
                         </div>
                         <div className='dyn-para'>
                             <p>The colours of the rainbow always go in the same colour:
@@ -138,7 +138,7 @@ const ProductPage = () => {
             <section>
                 <div className='products'>
                     {/* <div className='bakground-image'>
-                        <Image  src={Background} alt='' />
+                        <Image  src={Background} alt="homepage" />
                     </div> */}
                     <div className='prodBackground'>
                         <div class="heading1">
@@ -149,20 +149,20 @@ const ProductPage = () => {
                         <div class="product-box">
 
                             <div className='product-img'>
-                                <Image  src={popular1} alt='' />
+                                <Image  src={popular1} alt="homepage" />
                             </div>
 
                         </div>
                         <div class="product-box">
 
                             <div className='product-img'>
-                                <Image  src={popular1} alt='' />
+                                <Image  src={popular1} alt="homepage" />
                             </div>
                         </div>
                         <div class="product-box">
 
                             <div className='product-img'>
-                                <Image  src={popular2} alt='' />
+                                <Image  src={popular2} alt="homepage" />
                             </div>
                         </div>
                     </div>

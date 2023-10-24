@@ -440,7 +440,7 @@ function App() {
                         onMouseEnter={(e) => drawPen(".posterBlock2", ".posterBlock2 img", '.marker_line2', "green")}
                         onMouseLeave={() => removeDrawPen(".posterBlock2", ".posterBlock2 img", '.marker_line2', "white")}
                     >
-                        <Image height={1000} width={1000} src="https://luxorpen.com/images/hl/textliter-hl/text-li-green-m.jpg" />
+                        <Image height={1000} width={1000} alt="homepage" src="https://luxorpen.com/images/hl/textliter-hl/text-li-green-m.jpg" />
                         <div className='textBlock'>
                             <div className='marker_line2'> </div>
                             <span className='title'>
@@ -451,7 +451,7 @@ function App() {
                         onMouseEnter={(e) => drawPen(".posterBlock3", ".posterBlock3 img", '.marker_line3', "blue")}
                         onMouseLeave={() => removeDrawPen(".posterBlock3", ".posterBlock3 img", '.marker_line3', "white")}
                     >
-                        <Image height={1000} width={1000} src="https://luxorpen.com/images/wb/wb-450/wb450-blue.jpg" />
+                        <Image height={1000} width={1000} alt="homepage" src="https://luxorpen.com/images/wb/wb-450/wb450-blue.jpg" />
                         <div className='textBlock'>
                             <div className='marker_line3'> </div>
                             <span className='title'>
@@ -462,7 +462,7 @@ function App() {
                         onMouseEnter={(e) => drawPen(".posterBlock4", ".posterBlock4 img", '.marker_line4', "black")}
                         onMouseLeave={() => removeDrawPen(".posterBlock4", ".posterBlock4 img", '.marker_line4', "white")}
                     >
-                        <Image height={1000} width={1000} src="	https://luxorpen.com/images/pm/pm-1222/pm1222-blue.jpg" />
+                        <Image height={1000} width={1000} alt="homepage" src="	https://luxorpen.com/images/pm/pm-1222/pm1222-blue.jpg" />
                         <div className='textBlock'>
                             <div className='marker_line4'> </div>
                             <span className='title'>
@@ -486,20 +486,20 @@ function App() {
                         <div class="product-box">
                             <h3>SCHOOL</h3>
                             <div className='product-img'>
-                                <Image  height={1000} width={1000}  src={Image1} alt='' />
+                                <Image  height={1000} width={1000}   src={Image1} alt='hm' />
                             </div>
 
                         </div>
                         <div class="product-box">
                             <h3>ART</h3>
                             <div className='product-img'>
-                                <Image height={1000} width={1000}  src={Image2} alt='' />
+                                <Image height={1000} width={1000}  src={Image2} alt='hm' />
                             </div>
                         </div>
                         <div class="product-box">
                             <h3>OFFICE</h3>
                             <div className='product-img'>
-                                <Image height={1000} width={1000}  src={Image3} alt='' />
+                                <Image height={1000} width={1000}  src={Image3} alt='hm' />
                             </div>
                         </div>
 
@@ -518,7 +518,7 @@ function App() {
                 <div className='home-container'>
                     <div className="homeImg ">
 
-                        <Image   src={Image4} alt="" />
+                        <Image   src={Image4} alt="hm" />
 
                     </div></div>
 
@@ -531,7 +531,7 @@ function App() {
                 <div className='home-container'>
                     <div className="homeImg-luxor ">
 
-                        <Image  src={Image5} alt="" />
+                        <Image  src={Image5} alt="hm" />
 
                     </div>
                 </div>
@@ -545,7 +545,7 @@ function App() {
                         color: "green",
                         fontSize: "4vw",
                         paddingTop: "5%"
-                    }}>Let's save the <br /> environment with Luxor</h2>
+                    }}> {"Let's save the"} <br /> environment with Luxor</h2>
                 </div>
                 <div className='home-container'>
                     <div className="homeImg-luxor ">
@@ -555,11 +555,11 @@ function App() {
                             color: "rgba(61, 57, 59, 0.69)"
                         }}>
 
-                            Evolution of humans has done nothing but harm to our planet, the number of non-biodegradable dumps we have
+                           {` Evolution of humans has done nothing but harm to our planet, the number of non-biodegradable dumps we have
                             made is turning our planet hostile and non-biodegradable & plastic products are the prime reasons behind our
                             planet's vulnerability. Acknowledging the harm we have caused to our planet has made everyone quite aware & active
                             about following ways to endure a life without causing loss to our surroundings and therefore the demand for
-                            eco-friendly products is on rise, especially in the international market.
+                            eco-friendly products is on rise, especially in the international market.`}
                             <br />  <br />
                             Luxor International takes a step ahead with an e‘ort & aim to help our planet breathe well, by adding stationeries that
                             are made of recycled materials to our range of drawing and writing instruments
@@ -572,7 +572,7 @@ function App() {
                         width: "100%",
                         height: "100%",
                         objectFit: "contain",
-                    }} alt='' />
+                    }} alt='hm' />
                 </div>
             </section>
 
@@ -584,7 +584,7 @@ function App() {
                     width: "100%",
                     height: "100%",
                     objectFit: "contain",
-                }} alt="" />
+                }} alt="hm" />
 
             </div>
 
@@ -647,15 +647,15 @@ function App() {
 
                 <div className='ugc-book-suggest'>
                     <div className='ugc-img-cont'>
-                        <Image height={1000} width={1000} src={Image11} alt='' />
+                        <Image height={1000} width={1000} src={Image11} alt="homepage" />
                     </div>
 
                     <div className='ugc-img-cont2'>
-                        <Image height={1000} width={1000} src={Image12} alt='' />
+                        <Image height={1000} width={1000} src={Image12} alt="homepage" />
                     </div>
 
                     <div className='ugc-img-cont2'>
-                        <Image height={1000} width={1000} src={Image13} alt='' />
+                        <Image height={1000} width={1000} src={Image13} alt="homepage" />
                     </div>
                 </div>
 
@@ -681,15 +681,15 @@ function App() {
                             </div>
                         </div>
                         <div className='org-img-card'>
-                            <Image height={1000} width={1000} src={Image14} alt='' />
+                            <Image height={1000} width={1000} src={Image14} alt="homepage" />
                         </div>
 
                         <div className='org-img-card'>
-                            <Image height={1000} width={1000} src={Image15} alt='' />
+                            <Image height={1000} width={1000} src={Image15} alt="homepage" />
                         </div>
 
                         <div className='org-img-card'>
-                            <Image height={1000} width={1000} src={Image16} alt='' />
+                            <Image height={1000} width={1000} src={Image16} alt="homepage" />
                         </div>
                     </div>
                 </div>
@@ -708,7 +708,7 @@ function App() {
                     <div className='client-detail'>
                         <div className='client-img'>
                             <div className='round-div'>
-                                <Image height={300} width={300} src={Client} alt='' />
+                                <Image height={300} width={300} src={Client} alt="homepage" />
                             </div>
                         </div>
                         <h3>John</h3>
@@ -716,7 +716,7 @@ function App() {
                     </div>
 
                     <div className='luxor-review'>
-                        <h3>Client's Review</h3>
+                        <h3>{`Client's Review`}</h3>
                         <p>Luxor has always been my ﬁrst choice when it comes to any stationery product.</p>
                         <p>Loved It. </p>
                         <i></i>
@@ -741,7 +741,7 @@ function App() {
 
                 <div className='dyk-banner'>
                     <div className='dyk-banner1'>
-                        <Image height={450} width={1000} src={Image17} alt='' />
+                        <Image height={450} width={1000} src={Image17} alt="homepage" />
                     </div>
                 </div>
                 {/* -------------------------- */}
@@ -767,7 +767,7 @@ function App() {
                 </div>
 
                 <div className='partner-cont'>
-                    <Image height={450} width={1000} src={Image18} alt='' />
+                    <Image height={450} width={1000} src={Image18} alt="homepage" />
                 </div>
 
                 <div className='footer-btn'>
@@ -787,23 +787,23 @@ function App() {
 
                 <div className='background'>
                     <div className='back-img'>
-                        <Image height={450} width={1000} src={Image26} alt='' />
+                        <Image height={450} width={1000} src={Image26} alt="homepage" />
                     </div>
                     <div className='certi-img-cont'>
                         <div className='certi-img-card'>
-                            <Image height={450} width={1000} src={Image19} alt='' />
+                            <Image height={450} width={1000} src={Image19} alt="homepage" />
                         </div>
 
                         <div className='certi-img-card'>
-                            <Image height={450} width={1000} src={Image20} alt='' />
+                            <Image height={450} width={1000} src={Image20} alt="homepage" />
                         </div>
 
                         <div className='certi-img-card'>
-                            <Image height={450} width={1000} src={Image21} alt='' />
+                            <Image height={450} width={1000} src={Image21} alt="homepage" />
                         </div>
 
                         <div className='certi-img-card'>
-                            <Image height={450} width={1000} src={Image22} alt='' />
+                            <Image height={450} width={1000} src={Image22} alt="homepage" />
                         </div>
                     </div>
 
@@ -816,19 +816,19 @@ function App() {
                     <div className='award-img-cont'>
 
                         <div className='pen-pointer'>
-                            <Image  src={Image27} alt='' />
+                            <Image  src={Image27} alt="homepage" />
                         </div>
 
                         <div className='award-img'>
-                            <Image  src={Image23} alt='' />
+                            <Image  src={Image23} alt="homepage" />
                         </div>
 
                         <div className='award-img'>
-                            <Image  src={Image24} alt='' />
+                            <Image  src={Image24} alt="homepage" />
                         </div>
 
                         <div className='award-img'>
-                            <Image  src={Image25} alt='' />
+                            <Image  src={Image25} alt="homepage" />
                         </div>
                     </div>
 

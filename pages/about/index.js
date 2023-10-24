@@ -30,9 +30,9 @@ const Aboutus = () => {
                         <div className="col-md-8">
                             <h1 className='fs-40 fw-700 text-center'>Luxor For Every Stage Of Life</h1>
                             <p className='text-center fs-16'>Luxor pioneered the Writing Instruments industry in India fifty nine years ago and
-                                today it is India's leading Premium fine Writing Brand, since its inception it has
+                                {`today it is India's leading Premium fine Writing Brand, since its inception it has
 
-                                added many laurels to its credit</p>
+                                added many laurels to its credit`}</p>
                         </div>
                         <div className="col-md-2"></div>
                     </div>
@@ -73,11 +73,11 @@ const Aboutus = () => {
             </section>
             <section className='py-5'>
                 <div className="container">
-                    <h3 className='fs-16 mb-1 text_justify lh_1  text_darkgrey'>pioneer in Writing Instruments manufacturing; the industry major has re-invented Brand Luxor and brought  world-famous brands like Parker, Pilot, and Waterman under the Group's umbrella to serve the Indian consumer  market.
+                    <h3 className='fs-16 mb-1 text_justify lh_1  text_darkgrey'>{`pioneer in Writing Instruments manufacturing; the industry major has re-invented Brand Luxor and brought  world-famous brands like Parker, Pilot, and Waterman under the Group's umbrella to serve the Indian consumer  market.`}
 
                     </h3>
-                    <h3 className='fs-16 mt-1 text_justify lh_1  text_darkgrey'> Luxor pioneered the Writing Instruments industry in India fifty Four years ago and today it is India's leading Premium  fine Writing Brand, since its inception it has added many laurels to its credit, "Best Exporter Award" for twelve  consecutive years, Selected Super brand India award, Parker trusted brand award are some of the awards bagged  by Luxor. Today we are one of the largest companies in South Asia in our category of writing instruments having a  large share of the industry in India.
-                        Our aim has been to drive customer satisfaction. We are a company that adapts and grows by upholding some  lasting principles.</h3>
+                    <h3 className='fs-16 mt-1 text_justify lh_1  text_darkgrey'>{` Luxor pioneered the Writing Instruments industry in India fifty Four years ago and today it is India's leading Premium  fine Writing Brand, since its inception it has added many laurels to its credit, "Best Exporter Award" for twelve  consecutive years, Selected Super brand India award, Parker trusted brand award are some of the awards bagged  by Luxor. Today we are one of the largest companies in South Asia in our category of writing instruments having a  large share of the industry in India.
+                        Our aim has been to drive customer satisfaction. We are a company that adapts and grows by upholding some  lasting principles.`}</h3>
                 </div>
             </section>
             <section className='py-5'>
