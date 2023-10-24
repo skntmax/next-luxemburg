@@ -14,6 +14,7 @@ import 'react-lazy-load-image-component/src/effects/blur.css';
 // import { TweenMax, Power3 } from 'gsap';
 import { gsap } from "gsap";
 // import Image from 'public/assets/homeBanner.jpg'
+ 
 import worldMap from 'public/assets/map.png'
 import Image1 from 'public/assets/Products School.png'
 import Image2 from 'public/assets/Products Art.png'
@@ -462,7 +463,7 @@ function App() {
                         onMouseEnter={(e) => drawPen(".posterBlock4", ".posterBlock4 img", '.marker_line4', "black")}
                         onMouseLeave={() => removeDrawPen(".posterBlock4", ".posterBlock4 img", '.marker_line4', "white")}
                     >
-                        <Image height={1000} width={1000} alt="homepage" src="	https://luxorpen.com/images/pm/pm-1222/pm1222-blue.jpg" />
+                        <Image height={1000} width={1000} alt="homepage" src="https://luxorpen.com/images/pm/pm-1222/pm1222-blue.jpg" />
                         <div className='textBlock'>
                             <div className='marker_line4'> </div>
                             <span className='title'>
