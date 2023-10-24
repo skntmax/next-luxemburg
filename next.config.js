@@ -17,6 +17,7 @@ const nextConfig = {
       "upload.wikimedia.org",
     ],
   },
+   
 }
 
 module.exports = nextConfig
