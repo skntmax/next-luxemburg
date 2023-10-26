@@ -13,7 +13,7 @@ import wim from 'public/assets/images/aboutpage/wim.jpg';
 import feo from 'public/assets/images/aboutpage/feo.jpg';
 import Image from 'next/image';
 
-const Aboutus = () => {
+const index = () => {
 
     return (
         <>
@@ -115,4 +115,4 @@ const Aboutus = () => {
         </>
     )
 }
-export default Aboutus
+export default index

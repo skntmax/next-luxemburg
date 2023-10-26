@@ -54,8 +54,7 @@ const Header = () => {
 
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
                 <div className="container">
-
-
+                
                     <div className="collapse navbar-collapse" id="navbarNav">
                         <ul className="navbar-nav align-self-center py-3 d-flex justify-content-between w-100 d-flex gap-3">
                             <li className="nav-item">
