@@ -47,6 +47,7 @@ import Image25 from 'public/assets/award3.png'
 import Image26 from 'public/assets/Lineart.png'
 import Image27 from 'public/assets/pennib.png'
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -55,8 +56,9 @@ gsap.registerPlugin(ScrollTrigger);
 function App(props) {
 
     const {all_prdcts} = props 
-
+     let router = useRouter()
     let prd_pen = useRef()
+
 
 
     useEffect(() => {
@@ -123,7 +125,6 @@ function App(props) {
         newLaumch()
 
     }, [])
-
 
 
 
@@ -494,12 +495,12 @@ function App(props) {
                     </div>
 
                   
-                    <div class="product-container ">
+                    <div class="product-container">
 
-                    <div className="container">
+                    <div className="prd_container">
                         {all_prdcts.length>0 && all_prdcts.map(ele =>{
                              return <React.Fragment>
-                             <div className="product-box card">
+                             <div className="product-box prd_card" onClick={()=> router.push("product/"+ele._id ) } >
                             <h3>{ele.name}</h3>
                             <div className='product-img' >
                                 <Image  src={Image1} alt={ele.name} />

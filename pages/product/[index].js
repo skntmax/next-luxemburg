@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 // import './../assets/'
 // import './.assets./css./hp.css'
+import Image1 from 'public/assets/Products School.png'
+import styles from 'styles/productbar.module.css'
 import { AiOutlineSearch } from 'react-icons/ai'
 import Image from 'next/image'
 import productimg1 from 'public/assets/product1.png'
@@ -17,10 +19,14 @@ import Marker6 from 'public/assets/6.png'
 import Marker7 from 'public/assets/0.png'
 import Background from 'public/assets/Lineart.png'
 import Dyn from 'public/assets/didYN.png'
+import { allProductsCategory, getCategoryWiseProducts } from '../Actions/action'
 
 // import Products from './Products'
 
-const ProductPage = () => {
+const ProductPage = (props) => {
+
+      const [cat_prdct , set_cat_prdcts] = useState(props.cat_prd)
+
     return (
         <>
            
@@ -28,8 +34,32 @@ const ProductPage = () => {
             <section className=''>
                 <div className='productItem-img'>
                     <Image  className='img-fluid' alt='img-fluid' src={productimg1} />
+
                 </div>
+
+
+              
+                
             </section>
+
+
+
+                <div className={`${styles["prd_container"]}`}>
+                        {cat_prdct.length>0 && cat_prdct.map(ele =>{
+                             return <React.Fragment>
+                             <div className="product-box prd_card" onClick={()=> router.push("product/"+ele._id ) } >
+                            <h3>{ele.name}</h3>
+                            <div className='product-img' >
+                                <Image  src={Image1} alt={ele.name} />
+                            </div>
+
+                        </div>
+
+                             </React.Fragment>
+                            })}
+                    </div>
+
+
             {/* <Products /> */}
 
 
@@ -41,9 +71,12 @@ const ProductPage = () => {
 
                 <div className=''>
                     <Image  className='img-fluid' src={marker} alt="homepage" style={{
-
                     }} />
+
+                    
                 </div>
+
+                
 
 
                 {/* -------------------------container 2nd------------------------ */}
@@ -189,5 +222,38 @@ const ProductPage = () => {
         </>
     )
 }
+
+
+
+export async function getServerSideProps(context) {
+    let {query , params:{index:_id} } = context
+
+    // except pen , heighligher and  marker 
+     
+    let {result , status } = await getCategoryWiseProducts(_id)
+    if(status && result.length>0){
+        return {
+            props: {
+                cat_prd:result
+            }
+          }
+    }else{
+        return {
+            redirect: {
+                destination: "/",
+                permanent: false,
+              },
+            };
+        
+    }
+  
+
+
+
+    
+    
+  }
+  
+
 
 export default ProductPage

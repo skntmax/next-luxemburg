@@ -24,3 +24,17 @@ export const allProductsCategory = (data) => {
         }
     })
 };
+
+
+
+
+export const getCategoryWiseProducts = (_id) => {
+    const url = `${process.env.NEXT_PUBLIC_BASE_URL}/get-cate-wise-products?_id=${_id}`;
+    return axios.get(url).then((res) => {
+        if (res.data.status) {
+            return res.data;
+        }else{
+             return res.data
+        }
+    })
+};
