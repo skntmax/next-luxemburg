@@ -384,6 +384,13 @@ carousel .slider-wrapper.axis-horizontal .slider .slide {
   margin-top: -185px;
   position: absolute;
   width: 100%;
+}
+
+.product-container:hover{
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+  transition-property: background-color, font-size, transform, color;
+  transition-timing-function: ease-in-out;
+  transition-duration: 1s;
 
 }
 
@@ -393,11 +400,12 @@ carousel .slider-wrapper.axis-horizontal .slider .slide {
   font-weight: 600;
   padding-top: 2rem;
 }
+ 
 
 .product-box {
   padding: 20px;
-  width: 325px;
-  height: 20rem;
+  width: 275px;
+  height: 15rem;
   display: flex;
   border-radius: 5px;
   flex-direction: column;
@@ -409,14 +417,14 @@ carousel .slider-wrapper.axis-horizontal .slider .slide {
 }
 
 .product-box:hover {
-  box-shadow:
-    4.6px 4.3px 7px -72px rgba(0, 0, 0, 0.153),
-    12.8px 11.8px 19.3px -72px rgba(0, 0, 0, 0.22),
-    30.8px 28.3px 46.4px -72px rgba(0, 0, 0, 0.287),
-    102px 94px 154px -72px rgba(0, 0, 0, 0.44);
+box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+transition-timing-function: ease-in-out;
+transition-duration: 1s;
+background-color: red;
+color: white;
   border-radius: 10px;
   cursor: pointer;
-  animation: 3s linear .1s colorIt;
+  animation: 1s linear .1s colorIt;
 }
 
 .product-img img {
@@ -433,7 +441,7 @@ carousel .slider-wrapper.axis-horizontal .slider .slide {
 
 .product-box h3 {
   font-size: 2rem;
-  font-weight: 600;
+  font-weight: 400;
   margin: 0.7rem 0 0.4rem;
 }
 
@@ -1569,6 +1577,7 @@ carousel .slider-wrapper.axis-horizontal .slider .slide {
   overflow-x: auto;
   overflow-y: hidden;
   height: 500px;
+  justify-items: center;
 }
 
 .btn-box {
@@ -1639,3 +1648,27 @@ carousel .slider-wrapper.axis-horizontal .slider .slide {
 .offcanvas_toggle{
   max-width: 90%;
 } 
+
+
+
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+.container {
+  display: flex;
+  gap:2;
+  overflow-x: scroll;
+  width: 100%;
+}
+
+.card {
+  flex-shrink: 0;
+  max-width: 300px;
+  height: 200px;
+  border-radius: 10px;
+  margin-left: 10px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}

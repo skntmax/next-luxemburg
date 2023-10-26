@@ -52,7 +52,9 @@ import Link from 'next/link';
 gsap.registerPlugin(ScrollTrigger);
 
 
-function App() {
+function App(props) {
+
+    const {all_prdcts} = props 
 
     let prd_pen = useRef()
 
@@ -129,16 +131,19 @@ function App() {
     function productBackGround() {
 
         let prd_bc = document.querySelectorAll(".product-box");
+
         let tl = gsap.timeline({
             paused: true,
+
             scrollTrigger: {
                 trigger: prd_bc,
                 toggleActions: "restart pause resume reset",
                 onToggle: self => console.log("toggled, isActive:", self.isActive),
                 start: "top 80%",
                 end: "bottom 20%",
-            },
-        })
+              },
+         })
+         
         tl.to(prd_bc, {
             duration: 1,
             opacity: 1,
@@ -487,28 +492,42 @@ function App() {
                             <h2>Products</h2>
                         </div>
                     </div>
-                    <div class="product-container">
-                        <div class="product-box">
-                            <h3>SCHOOL</h3>
+
+                  
+                    <div class="product-container ">
+
+                    <div className="container">
+                        {all_prdcts.length>0 && all_prdcts.map(ele =>{
+                             return <React.Fragment>
+                             <div className="product-box card">
+                            <h3>{ele.name}</h3>
                             <div className='product-img' >
-                                <Image  height={1000} width={1000}   src={Image1} alt='hm' />
+                                <Image  src={Image1} alt={ele.name} />
                             </div>
 
                         </div>
-                        <div class="product-box">
-                            <h3>ART</h3>
-                            <div className='product-img'>
-                                <Image height={1000} width={1000}  src={Image2} alt='hm' />
-                            </div>
-                        </div>
-                        <div class="product-box">
-                            <h3>OFFICE</h3>
-                            <div className='product-img'>
-                                <Image height={1000} width={1000}  src={Image3} alt='hm' />
-                            </div>
-                        </div>
 
+                             </React.Fragment>
+                            })}
                     </div>
+
+{/* 
+                    {all_prdcts.length>0 && all_prdcts.map(ele=>{
+                         
+                         return <React.Fragment>
+                          <div className="product-box">
+                            <h3>{ele.name}</h3>
+                            <div className='product-img' >
+                                <Image  src={Image1} alt={ele.name} />
+                            </div>
+
+                        </div>
+                         </React.Fragment>  
+                     })} */}
+                    </div>
+
+
+
                     <div className='product-btn'>
                         <a href="#" className="btn-box">All Products</a>
                     </div>
