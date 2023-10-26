@@ -1612,7 +1612,7 @@ carousel .slider-wrapper.axis-horizontal .slider .slide {
 }
 
 .footer_bg {
-  background-image: url(/public/assets/images/footer_wave_shape.jpg);
+  background-image: url('/assets/images/aboutpage/footer_bgimage.jpg');
   background-repeat: no-repeat;
   background-size: contain;
 }
