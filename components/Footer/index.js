@@ -4,7 +4,7 @@ import Link from 'next/link'
 function index() {
   return (
     <React.Fragment>
-<section className='footer_bg pt_8'>
+              <section className='footer_bg pt_8'>
                 <div className="container">
                     <div className='footer-links-column'>
                         <div>

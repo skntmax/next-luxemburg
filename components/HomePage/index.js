@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 // import styles from '../styles/Home.module.css'
 import React, { useEffect, useRef } from 'react';
+import { ShimmerSimpleGallery } from "react-shimmer-effects";
 
 import { AiOutlineSearch } from 'react-icons/ai'
 
@@ -11,7 +12,6 @@ import ScrollTrigger from 'gsap/dist/ScrollTrigger'
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 
-// import { TweenMax, Power3 } from 'gsap';
 import { gsap } from "gsap";
 // import Image from 'public/assets/homeBanner.jpg'
  
@@ -135,8 +135,8 @@ function App() {
                 trigger: prd_bc,
                 toggleActions: "restart pause resume reset",
                 onToggle: self => console.log("toggled, isActive:", self.isActive),
-                start: "top 50%",
-                end: "bottom 50%",
+                start: "top 80%",
+                end: "bottom 20%",
             },
         })
         tl.to(prd_bc, {
@@ -211,8 +211,9 @@ function App() {
                     trigger: marker_marks,
                     toggleActions: "restart pause resume reset",
                     onToggle: self => console.log("toggled, isActive:", self.isActive),
-                    start: "top 70%",
-                    end: "bottom 20%",
+                    start: "top 100%",
+                    end: "bottom 0%",
+                    markers:true
                 },
             });
 
@@ -235,7 +236,6 @@ function App() {
                 scrollTrigger: {
                     trigger: pen_marker_line,
                     toggleActions: "restart pause resume restart",
-
                     onToggle: self => console.log("toggled, isActive:", self.isActive),
                     start: "top 70%",
                     end: "bottom 50%",
@@ -275,8 +275,6 @@ function App() {
             scale: 1,
             dirat1ion: 2
         })
-
-
 
     }
 
@@ -350,6 +348,11 @@ function App() {
 
     }
 
+
+    const imageLoader = ({ src, width, quality }) => {
+        return `https://example.com/${src}?w=${width}&q=${quality || 75}`
+      }
+
     return (
         <>
     
@@ -379,8 +382,9 @@ function App() {
                             <div><a href="#" className="btn-bg">Explore</a></div>
                         </div>
                         <div className="col-md-6 mb-3 home1-img ">
-
-                            <Image src={worldMap} className='img-fluid ms-md-5' alt="Map" />
+                            <Image src={worldMap}
+                            
+                             className='img-fluid ms-md-5' alt="Map" />
 
                         </div>
                     </div>
@@ -486,7 +490,7 @@ function App() {
                     <div class="product-container">
                         <div class="product-box">
                             <h3>SCHOOL</h3>
-                            <div className='product-img'>
+                            <div className='product-img' >
                                 <Image  height={1000} width={1000}   src={Image1} alt='hm' />
                             </div>
 
