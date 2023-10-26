@@ -1,6 +1,5 @@
 import React from 'react'
 import Link from 'next/link'
-
 function index() {
   return (
     <React.Fragment>
@@ -31,7 +30,7 @@ function index() {
                             <h3 className='fs-20 text-white mb-4'>Explore</h3>
 
                             <ul className='text-white '>
-                                <li className='mb-2 d-block fs-14'>  <Link className='text-white' href='/aboutus'>Aboutus</Link></li>
+                                <li className='mb-2 d-block fs-14'>  <Link  href='/aboutus' className='text-white'>Aboutus</Link></li>
                                 <li className='mb-2 d-block fs-14'>Career</li>
                                 <li className='mb-2 d-block fs-14'>News & Media</li>
                                 <li className='mb-2 d-block fs-14'>Partners/Resellers</li>
