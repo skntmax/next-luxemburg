@@ -220,6 +220,17 @@
 .bg_red{
      background-color: #ed1b24;
 }
+.popular_picks{
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+     gap: 30px;
+}
+.popular_picks .card:hover {
+     box-shadow: 4.6px 4.3px 7px -72px rgba(0, 0, 0, 0.153), 12.8px 11.8px 19.3px -72px rgba(0, 0, 0, 0.22), 30.8px 28.3px 46.4px -72px rgba(0, 0, 0, 0.287), 102px 94px 154px -72px rgba(0, 0, 0, 0.44);
+     border-radius: 10px;
+     cursor: pointer;
+     animation: 3s linear .1s colorIt;
+ }
 
 
 /* -----------------------------------media query--------------------------*/
@@ -300,15 +311,43 @@
           margin-bottom: 20%;
      } */
 }
+@media(min-width: 480px)and (max-width: 767px) {
+     .color_red{
+          background-color: #ed1b24;
+     }
+}
+@media(min-width: 320px)and (max-width: 479px) {
+     .color_red{
+          background-color: #ed1b24;
+     }
+}
+
+@media(min-width: 768px)and (max-width: 1023px) {
+     .popular_picks{
+          margin-top: -32%;
+     }
+     
+}
+@media(min-width: 1024px)and (max-width: 1288px) {
+     .popular_picks{
+          margin-top: -15%;
+     }
+}
 
 @media(min-width: 1299px)and (max-width: 1499px) {
      .footer_bg {
           background-size: 100% 100%;
+     }
+     .popular_picks{
+          margin-top: -15%;
      }
 }
 
 @media(min-width: 1500px) {
      .footer_bg {
           background-size: 100% 100%;
+     }
+     .popular_picks{
+          margin-top: -15%;
      }
 }

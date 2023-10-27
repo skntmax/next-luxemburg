@@ -30,7 +30,7 @@ function index() {
                             <h3 className='fs-20 text-white mb-4'>Explore</h3>
 
                             <ul className='text-white '>
-                                <li className='mb-2 d-block fs-14'>  <Link  href='/aboutus' className='text-white'>Aboutus</Link></li>
+                                <li className='mb-2 d-block fs-14'>  <a  href='/aboutus' className='text-white'>Aboutus</a></li>
                                 <li className='mb-2 d-block fs-14'>Career</li>
                                 <li className='mb-2 d-block fs-14'>News & Media</li>
                                 <li className='mb-2 d-block fs-14'>Partners/Resellers</li>
@@ -51,7 +51,7 @@ function index() {
                         <div>
                             <ul className='text-white '>
                                 <li className='mb-3 d-block fs-14'><i class="fa-solid fa-envelope me-2"></i>
-                                    <Link className='text-white' href='mailto:export.enquiry@luxoroffice.com'>export.enquiry@luxoroffice.com</Link>
+                                    <a className='text-white' href='mailto:export.enquiry@luxoroffice.com'>export.enquiry@luxoroffice.com</a>
                                 </li>
                                 <li className='mb-3 d-block fs-14'><i class="fa-solid fa-phone me-2"></i>0120-4899000</li>
                                 <li className='mb-3 d-block fs-14'><i class="fa-solid fa-location-dot me-2"></i>A-40, Hosiery Complex,Phase-|| Extension Noida  -201305,Gautam budh Nagar (U.P)</li>

@@ -1,14 +1,12 @@
-import React, { useState } from "react"
-import Link from "next/link"
-import { AiOutlineSearch } from 'react-icons/ai'
-import Image from "next/image"
+import React, { useState } from "react";
+import Link from "next/link";
+import { AiOutlineSearch } from "react-icons/ai";
+import Image from "next/image";
 const Header = () => {
-
-    const [link, setLink] = useState('')
-    return (
-        <React.Fragment>
-
-            {/* <header className='header'>
+  const [link, setLink] = useState("");
+  return (
+    <React.Fragment>
+      {/* <header className='header'>
                 <Link href='/' className='logo'>
                     <img src='https://luxorpen.com/images/logo/logo.png' />
                 </Link>
@@ -23,140 +21,366 @@ const Header = () => {
                 </div>
 
             </header> */}
-            <nav className="navbar navbar-light bg_red">
-                <div className="container d-block">
-                    <div className="d-flex justify-content-between align-self-center">
-                        <div>
-                            <Link href='/' className='logo'>
-                                <Image layout='fill' alt="logo"  src='https://luxorpen.com/images/logo/logo.png' />
-                            </Link>
-                        </div>
-                        <div className="d-flex">
-                            <div className="">
-                                <form className="d-flex">
-                                    <input className="form-control me-2 input_field" type="search" placeholder="Search" aria-label="Search" />
-                                    <button className="btn me-2 shadow-none border bg-white" type="submit"><i className="fa-solid  fa-magnifying-glass"></i></button>
-                                </form>
-                            </div>
-                            <div>
-                                <select className="form-select selectData shadow-none input_field" onChange={(e) => { }}>
-                                    <option selected>Select Language</option>
-                                    <option value="1">English</option>
-                                    <option value="2">Hindi</option>
-
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </nav>
-
-            <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                <div className="container">
-
-
-                    <div className="collapse navbar-collapse" id="navbarNav">
-                        <ul className="navbar-nav align-self-center py-3 d-flex justify-content-between w-100 d-flex gap-3">
-                            <li className="nav-item">
-                                <Link className="fs-16 text_black" href="/">Home</Link>
-                            </li>
-                            <div className="dropdown">
-                                <Link className="btn dropdown-toggle p-0 border-0 shadow-none" href="about" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                                    About Us
-                                </Link>
-
-                                <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                    <li><Link className="dropdown-item fs-16 text_black" href="/about">About Us</Link></li>
-                                    <hr className="dropdown-divider ms-3 me-3"></hr>
-                                    <li><Link className="dropdown-item fs-16 text_black" href="#">Vision</Link></li>
-                                    <hr className="dropdown-divider ms-3 me-3"></hr>
-                                    <li><Link className="dropdown-item fs-16 text_black" href="#">Mission</Link></li>
-                                    <hr className="dropdown-divider ms-3 me-3"></hr>
-                                    <li><Link className="dropdown-item fs-16 text_black" href="#">Milestone</Link></li>
-
-                                </ul>
-                            </div>
-                            <li className="nav-item">
-                                <Link className="fs-16 text_black" href="/product">Product</Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link className="fs-16 text_black" href="#">E- Catalogue</Link></li>
-
-                            <li className="nav-item">
-                                <Link className="fs-16 text_black" href="#">Media</Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link className="fs-16 text_black" href="#">Art Gallery</Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link className="fs-16 text_black" href="#">Career</Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link className="fs-16 text_black" href="contact">Contact Us</Link>
-                            </li>
-
-
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-            <div className="d-lg-none py-3">
-                <div className="container">
-                    <div className="d-flex justify-content-between">
-                        <Link href='/' className='logo'>
-                            <Image layout='fill' alt="logo2" className="img-fluid" src='https://luxorpen.com/images/logo/logo.png' />
-                        </Link>
-                        <button className="btn border-0 shadow-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><i className="fa-solid fa-bars fs-24 fw-700"></i></button>
-                    </div>
-
-                    <div className="offcanvas offcanvas_toggle offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
-                        <div className="offcanvas-header">
-                            <Link href='/' className='logo'>
-                                <Image layout='fill'  alt="logo2" className="img-fluid mt-0" src='https://luxorpen.com/images/logo/logo.png' />
-                            </Link>
-                            <button type="button" className="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                        </div>
-                        <div className="offcanvas-body">
-                            <li className="nav-item">
-                                <Link className="fs-16 text_black p-2" href="/">Home</Link>
-                            </li>
-                            <div className="dropdown">
-                                <Link className="btn dropdown-toggle p-2 border-0 shadow-none" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                                    About Us
-                                </Link>
-
-                                <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                    <li className="d-block"><Link className="dropdown-item fs-16 text_black" href="/about">About Us</Link></li>
-
-                                    <li className="d-block"><Link className="dropdown-item fs-16 text_black" href="#">Vision</Link></li>
-
-                                    <li className="d-block"><Link className="dropdown-item fs-16 text_black" href="#">Mission</Link></li>
-
-                                    <li className="d-block"><Link className="dropdown-item fs-16 text_black" href="#">Milestone</Link></li>
-
-                                </ul>
-                            </div>
-                            <li className="nav-item">
-                                <Link className="fs-16 text_black p-2" href="/product">Product</Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link className="fs-16 text_black p-2" href="#">E- Catalogue</Link></li>
-
-                            <li className="nav-item">
-                                <Link className="fs-16 text_black p-2" href="#">Media</Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link className="fs-16 text_black p-2" href="#">Art Gallery</Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link className="fs-16 text_black p-2" href="#">Career</Link>
-                            </li>
-                        </div>
-                    </div>
-                </div>
+      <nav className="navbar navbar-light bg_red">
+        <div className="container d-block">
+          <div className="d-flex justify-content-between align-self-center">
+            <div>
+              <a href="/" className="logo">
+                <Image
+                  layout="fill"
+                  alt="logo"
+                  src="https://luxorpen.com/images/logo/logo.png"
+                />
+              </a>
             </div>
-            {/* <nav className='navbar'>
+            <div className="d-flex">
+              <div className="">
+                <form className="d-flex">
+                  <input
+                    className="form-control me-2 input_field"
+                    type="search"
+                    placeholder="Search"
+                    aria-label="Search"
+                  />
+                  <button
+                    className="btn me-2 shadow-none border bg-white"
+                    type="submit"
+                  >
+                    <i className="fa-solid  fa-magnifying-glass"></i>
+                  </button>
+                </form>
+              </div>
+              <div>
+                <select
+                  className="form-select selectData shadow-none input_field"
+                  onChange={(e) => {}}
+                >
+                  <option selected>Select Language</option>
+                  <option value="1">English</option>
+                  <option value="2">French</option>
+                  <option value="3">French</option>
+                  <option value="4">Spanish</option>
+                  <option value="5">English</option>
+                  <option value="6">Russian</option>
+                  <option value="7">Japanese</option>
+                  <option value="8">& more</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <div className="container">
+          <div className="collapse navbar-collapse" id="navbarNav">
+            <ul className="navbar-nav align-self-center py-3 d-flex justify-content-between w-100 d-flex gap-3">
+              <li className="nav-item ">
+                <a className="fs-16 text_black" href="/">
+                  Home
+                </a>
+              </li>
+              <div className="dropdown">
+                <button
+                  className="btn dropdown-toggle text_black fs-16 p-0 border-0 shadow-none"
+                  type="button"
+                  id="dropdownabout"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  About Us
+                </button>
+
+                <ul className="dropdown-menu" aria-labelledby="dropdownabout">
+                  <li>
+                    <a className="dropdown-item fs-16 text_black" href="/about">
+                      About Us
+                    </a>
+                  </li>
+                  <hr className="dropdown-divider ms-3 me-3"></hr>
+                  <li>
+                    <a className="dropdown-item fs-16 text_black" href="#">
+                      Vision
+                    </a>
+                  </li>
+                  <hr className="dropdown-divider ms-3 me-3"></hr>
+                  <li>
+                    <a className="dropdown-item fs-16 text_black" href="#">
+                      Mission
+                    </a>
+                  </li>
+                  <hr className="dropdown-divider ms-3 me-3"></hr>
+                  <li>
+                    <a className="dropdown-item fs-16 text_black" href="#">
+                      Milestone
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div className="dropdown">
+                <button
+                  className="btn dropdown-toggle text_black fs-16 p-0 border-0 shadow-none"
+                  type="button"
+                  id="dropdownProduct"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Product
+                </button>
+                <ul className="dropdown-menu" aria-labelledby="dropdownProduct">
+                  <li className="d-block">
+                    <a className="dropdown-item fs-16 text_black" href="/about">
+                      Pens
+                    </a>
+                    <ul className="dropdown-menu dropdown-submenu dropdown-submenu-left">
+                      <li>
+                        <a
+                          className="dropdown-item"
+                          href=""
+                        >
+                         Metal Pens
+                        </a>
+                      </li>
+                      <hr className="dropdown-divider ms-3 me-3" />
+                      <li>
+                        <a
+                          className="dropdown-item"
+                          href=""
+                        >
+                          Everyday Writing
+                        </a>
+                      </li>
+                      
+                    </ul>
+                  </li>
+                  <hr className="dropdown-divider ms-3 me-3"></hr>
+                  <li>
+                    <a className="dropdown-item fs-16 text_black" href="#">
+                      Highlighters
+                    </a>
+                  </li>
+                  <hr className="dropdown-divider ms-3 me-3"></hr>
+                  <li className="d-block">
+                    <a className="dropdown-item fs-16 text_black" href="#">
+                      Markers
+                    </a>
+                    <ul className="dropdown-menu dropdown-submenu dropdown-submenu-left">
+                      <li>
+                        <a
+                          className="dropdown-item"
+                          href=""
+                        >
+                         Permanent Marker
+                        </a>
+                      </li>
+                      <hr className="dropdown-divider ms-3 me-3" />
+                      <li>
+                        <a
+                          className="dropdown-item"
+                          href=""
+                        >
+                          White Board Marker
+                        </a>
+                      </li>
+                      
+                    </ul>
+                  </li>
+                  <hr className="dropdown-divider ms-3 me-3"></hr>
+                  <li>
+                    <a className="dropdown-item fs-16 text_black" href="#">
+                      Art & Hobby
+                    </a>
+                  </li>
+                  <hr className="dropdown-divider ms-3 me-3"></hr>
+                  <li>
+                    <a className="dropdown-item fs-16 text_black" href="#">
+                      Kids Colouring
+                    </a>
+                  </li>
+                  <hr className="dropdown-divider ms-3 me-3"></hr>
+
+                  <li>
+                    <a className="dropdown-item fs-16 text_black" href="#">
+                      Ecowrite
+                    </a>
+                  </li>
+                  <hr className="dropdown-divider ms-3 me-3"></hr>
+                  <li>
+                    <a className="dropdown-item fs-16 text_black" href="#">
+                      Value Packs
+                    </a>
+                  </li>
+                  <hr className="dropdown-divider ms-3 me-3"></hr>
+                  <li>
+                    <a className="dropdown-item fs-16 text_black" href="#">
+                      PCW
+                    </a>
+                  </li>
+                  <hr className="dropdown-divider ms-3 me-3"></hr>
+                  <li>
+                    <a className="dropdown-item fs-16 text_black" href="#">
+                      Notebook & Stationary
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <li className="nav-item">
+                <a className="fs-16 text_black" href="#">
+                  E- Catalogue
+                </a>
+              </li>
+
+              <li className="nav-item">
+                <a className="fs-16 text_black" href="#">
+                  Media
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="fs-16 text_black" href="#">
+                  Art Gallery
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="fs-16 text_black" href="#">
+                  Career
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="fs-16 text_black" href="contact">
+                  Contact Us
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div className="d-lg-none py-3">
+        <div className="container">
+          <div className="d-flex justify-content-between">
+            <Link href="/" className="logo">
+              <span className="position_static pointer_event">
+                <Image
+                  layout="fill"
+                  alt="logo2"
+                  className="img-fluid position_static"
+                  src="https://luxorpen.com/images/logo/logo.png"
+                />
+              </span>
+            </Link>
+            <button
+              className="btn border-0 shadow-none"
+              type="button"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#offcanvasWithBothOptions"
+              aria-controls="offcanvasWithBothOptions"
+            >
+              <i className="fa-solid fa-bars fs-24 fw-700"></i>
+            </button>
+          </div>
+
+          <div
+            className="offcanvas offcanvas_toggle offcanvas-start"
+            data-bs-scroll="true"
+            tabindex="-1"
+            id="offcanvasWithBothOptions"
+            aria-labelledby="offcanvasWithBothOptionsLabel"
+          >
+            <div className="offcanvas-header">
+              <a href="/" className="logo">
+                <span className="position_static pointer_event">
+                  <Image
+                    layout="fill"
+                    alt="logo2"
+                    className="img-fluid mt-0 position_static"
+                    src="https://luxorpen.com/images/logo/logo.png"
+                  />
+                </span>
+              </a>
+              <button
+                type="button"
+                className="btn-close text-reset"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div className="offcanvas-body">
+              <li className="nav-item">
+                <a className="fs-16 text_black p-2" href="/">
+                  Home
+                </a>
+              </li>
+              <div className="dropdown">
+                <a
+                  className="btn dropdown-toggle p-2 border-0 shadow-none"
+                  href="#"
+                  role="button"
+                  id="dropdownMenuLink"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  About Us
+                </a>
+
+                <ul
+                  className="dropdown-menu"
+                  aria-labelledby="dropdownMenuLink"
+                >
+                  <li className="d-block">
+                    <a className="dropdown-item fs-16 text_black" href="/about">
+                      About Us
+                    </a>
+                  </li>
+
+                  <li className="d-block">
+                    <a className="dropdown-item fs-16 text_black" href="#">
+                      Vision
+                    </a>
+                  </li>
+
+                  <li className="d-block">
+                    <a className="dropdown-item fs-16 text_black" href="#">
+                      Mission
+                    </a>
+                  </li>
+
+                  <li className="d-block">
+                    <a className="dropdown-item fs-16 text_black" href="#">
+                      Milestone
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <li className="nav-item">
+                <a className="fs-16 text_black p-2" href="/product">
+                  Product
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="fs-16 text_black p-2" href="#">
+                  E- Catalogue
+                </a>
+              </li>
+
+              <li className="nav-item">
+                <a className="fs-16 text_black p-2" href="#">
+                  Media
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="fs-16 text_black p-2" href="#">
+                  Art Gallery
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="fs-16 text_black p-2" href="#">
+                  Career
+                </a>
+              </li>
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* <nav className='navbar'>
                 <ul>
                     <li>
                         <a  >
@@ -180,11 +404,8 @@ const Header = () => {
                 </ul>
 
             </nav > */}
+    </React.Fragment>
+  );
+};
 
-
-        </React.Fragment>
-
-    )
-}
-
-export default Header
+export default Header;
