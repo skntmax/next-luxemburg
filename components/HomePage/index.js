@@ -47,97 +47,114 @@ import Image25 from "public/assets/award3.png";
 import Image26 from "public/assets/Lineart.png";
 import Image27 from "public/assets/pennib.png";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 gsap.registerPlugin(ScrollTrigger);
 
 function App(props ) {
-
+ 
+    let router = useRouter()
   let prd_pen = useRef();
   let all_prdcts = props.all_prdcts
    
   useEffect(() => {
-    document.getElementsByClassName("Art_gallery_button")[0].innerHTML =
-      "Art Gallery";
+    
+
+    
+    document.getElementsByClassName(
+        'Art_gallery_button'
+    )[0].innerHTML = "Art Gallery"
 
     let text_div = document.querySelectorAll(".home-text");
     let sections = document.querySelectorAll(".home1-img img");
     let new_launch = document.querySelectorAll("new_launch");
 
-    gsap.to(sections, {
-      duration: 2,
-      x: -150,
-      repeat: -1,
-      yoyo: true,
-      scrollTrigger: {
-        trigger: sections,
-        toggleActions: "restart pause resume reset",
+    gsap.to(sections,
+        {
+            duration: 2,
+            x: -150,
+            repeat: -1,
+            yoyo: true,
+            scrollTrigger: {
+                trigger: sections,
+                toggleActions: "restart pause resume reset",
 
-        onToggle: (self) => console.log("toggled, isActive:", self.isActive),
-        start: "top 70%",
-        end: "bottom 50%",
-      },
-    });
+                onToggle: self => console.log("toggled, isActive:", self.isActive),
+                start: "top 70%",
+                end: "bottom 50%",
+            },
+        });
+
 
     gsap.from(text_div, {
-      x: -150,
-      stagger: 0.2, // 0.1 seconds between when each ".box" element starts animating
-      duration: 2,
-      opacity: 0,
-      scrollTrigger: {
-        trigger: text_div,
-        onToggle: (self) => console.log("toggled, isActive:", self.isActive),
-        start: "top 70%",
-        end: "bottom 50%",
-      },
+        x: -150,
+        stagger: 0.2, // 0.1 seconds between when each ".box" element starts animating
+        duration: 2,
+        opacity: 0,
+        scrollTrigger: {
+            trigger: text_div,
+            onToggle: self => console.log("toggled, isActive:", self.isActive),
+            start: "top 70%",
+            end: "bottom 50%",
+        },
     });
 
     gsap.to(text_div, {
-      x: 70,
-      opacity: 1,
-      duration: 2,
-      repeat: -1,
-      yoyo: true,
-      scrollTrigger: {
-        trigger: text_div,
-        onToggle: (self) => console.log("toggled, isActive:", self.isActive),
-        start: "top 70%",
-        end: "bottom 50%",
-      },
-    });
+        x: 70,
+        opacity: 1,
+        duration: 2,
+        repeat: -1,
+        yoyo: true,
+        scrollTrigger: {
+            trigger: text_div,
+            onToggle: self => console.log("toggled, isActive:", self.isActive),
+            start: "top 70%",
+            end: "bottom 50%",
+        },
+
+    })
+
+
+
+
+
+
 
     productBackGround();
     newLaumch();
   }, []);
 
-  function productBackGround() {
-    let prd_bc = document.querySelectorAll(".product-box");
-    let tl = gsap.timeline({
-      paused: true,
-      scrollTrigger: {
-        trigger: prd_bc,
-        toggleActions: "restart pause resume reset",
-        onToggle: (self) => console.log("toggled, isActive:", self.isActive),
-        start: "top 50%",
-        end: "bottom 50%",
-      },
-    });
-    tl.to(prd_bc, {
-      duration: 1,
-      opacity: 1,
-      ease: "expo.inOut",
-    });
 
-    tl.from(
-      prd_bc,
-      {
+  
+  function productBackGround() {
+
+    let prd_bc = document.querySelectorAll(".product-box");
+
+    let tl = gsap.timeline({
+        paused: true,
+
+        scrollTrigger: {
+            trigger: prd_bc,
+            toggleActions: "restart pause resume reset",
+            onToggle: self => console.log("toggled, isActive:", self.isActive),
+            start: "top 80%",
+            end: "bottom 20%",
+          },
+     })
+     
+    tl.to(prd_bc, {
+        duration: 1,
+        opacity: 1,
+        ease: 'expo.inOut',
+    })
+
+    tl.from(prd_bc, {
         duration: 1,
         opacity: 0,
         stagger: 0.1,
-        ease: "expo.inOut",
-      },
-      "-=0.5"
-    );
-
+        ease: 'expo.inOut',
+    }, "-=0.5");
+     
     tl.reverse();
 
     // tl.from(links, {
@@ -154,7 +171,8 @@ function App(props ) {
     //   tl.reversed(!tl.reversed());
     // });
 
-    // gsap.to(prd_bc ,
+
+    // gsap.to(prd_bc , 
     //      {
     //                 x:-220 ,
     //             duration:2,
@@ -169,7 +187,7 @@ function App(props ) {
     //     duration:2,
     //     scrollTrigger: {
     //         trigger: prd_bc,
-    //         toggleActions:"restart pause resume reset",
+    //         toggleActions:"restart pause resume reset", 
     //         onToggle: self => console.log("toggled, isActive:", self.isActive),
     //         start: "top 70%",
     //         end: "top 30%",
@@ -177,7 +195,9 @@ function App(props ) {
     //       },
 
     //    })
-  }
+
+}
+
 
   function newLaumch() {
     let new_launch = document.querySelectorAll(".new_launch");
@@ -522,27 +542,25 @@ function App(props ) {
 
           <div class="product-container">
              
-            
-            <div class="product-box">
-              <h3>SCHOOL</h3>
-              <div className="product-img">
-                <Image height={1000} width={1000} src={Image1} alt="hm" />
-              </div>
+
+             <div className="prd_container"  >
+                {all_prdcts.length>0 && all_prdcts.map(ele =>{
+                    return <React.Fragment>
+                    <div className ="product-box  prd_card " onClick={()=> router.push("product/"+ele._id ) } >
+                    <h3>{ele.name}</h3>
+                    <div className="product-img" >
+                        <Image  src={Image1} alt={ele.name} />
+                    </div>
+
+                </div>
+
+                    </React.Fragment>
+                    })}
             </div>
 
 
-            <div class="product-box">
-              <h3>ART</h3>
-              <div className="product-img">
-                <Image height={1000} width={1000} src={Image2} alt="hm" />
-              </div>
-            </div>
-            <div class="product-box">
-              <h3>OFFICE</h3>
-              <div className="product-img">
-                <Image height={1000} width={1000} src={Image3} alt="hm" />
-              </div>
-            </div>
+              
+
           </div>
 
 
