@@ -50,9 +50,11 @@ import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger);
 
-function App() {
-  let prd_pen = useRef();
+function App(props ) {
 
+  let prd_pen = useRef();
+  let all_prdcts = props.all_prdcts
+   
   useEffect(() => {
     document.getElementsByClassName("Art_gallery_button")[0].innerHTML =
       "Art Gallery";
@@ -509,18 +511,26 @@ function App() {
 
       <section>
         <div className="products">
+
+
+
           <div className="prodBackground">
             <div class="heading1">
               <h2>Products</h2>
             </div>
           </div>
+
           <div class="product-container">
+             
+            
             <div class="product-box">
               <h3>SCHOOL</h3>
               <div className="product-img">
                 <Image height={1000} width={1000} src={Image1} alt="hm" />
               </div>
             </div>
+
+
             <div class="product-box">
               <h3>ART</h3>
               <div className="product-img">
@@ -534,12 +544,18 @@ function App() {
               </div>
             </div>
           </div>
+
+
+
           <div className="product-btn">
             <a href="#" className="btn-box">
               All Products
             </a>
           </div>
         </div>
+
+
+
       </section>
 
       <section className="exported">
