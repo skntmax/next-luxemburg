@@ -21,7 +21,7 @@ import Marker6 from "public/assets/6.png";
 import Marker7 from "public/assets/0.png";
 import Background from "public/assets/Lineart.png";
 import Didyouknow from "public/assets/did you know.webp";
-import { getCategoryWiseProducts } from "../Actions/action";
+import { getCategoryWiseProducts } from "../../Actions/action";
 
 // import Products from './Products'
 
@@ -244,6 +244,7 @@ export async function getServerSideProps(context) {
     // except pen , heighligher and  marker 
      
     let {result , status } = await getCategoryWiseProducts(_id)
+
     if(status && result.length>0){
         return {
             props: {

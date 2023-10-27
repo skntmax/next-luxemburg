@@ -1,10 +1,12 @@
 /** @type {import('next').NextConfig} */
+
 const nextConfig = {
-  // reactStrictMode: true,
+  reactStrictMode: true,
   output: "standalone",
   reactStrictMode: false,
   transpilePackages: ['gsap'],
   images: {
+    disableStaticImages: false,
     remotePatterns: [
       {
         protocol: "http",
@@ -19,6 +21,7 @@ const nextConfig = {
       "upload.wikimedia.org",
     ],
   },
+   
    
 }
 

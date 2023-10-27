@@ -27,6 +27,7 @@ const Header = () => {
             <div>
               <a href="/" className="logo">
                 <Image
+                
                   layout="fill"
                   alt="logo"
                   src="https://luxorpen.com/images/logo/logo.png"
