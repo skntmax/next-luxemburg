@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { AiOutlineSearch } from 'react-icons/ai'
 import mail_us from 'public/assets/images/aboutpage/mail_us.jpg';
 import Image from 'next/image';
-import Logo from 'public/assets/luxorlogo.png'
+// import Logo from 'public/assets/luxorlogo.png'
 const index = () => {
 
     return (
@@ -12,9 +12,9 @@ const index = () => {
                 <div className="container">
                     <div className="contact_form mt-5">
                         <div className=" mb-3">
-                        <span className="">
+                        {/* <span className="">
                         <Image src={Logo} alt="Logo" className='img-fluid w-100 ' />  
-                        </span> 
+                        </span>  */}
                             <h4 className="fs-18 fw-700"> Corporate Office:</h4>
                             <hr></hr>
                             <ul className="">
