@@ -1,10 +1,29 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { AiOutlineSearch } from "react-icons/ai";
 import Image from "next/image";
-const Header = () => {
+import { allProductsCategory } from "Actions/action";
+
+
+const Header = (props) => {
+    const [all_prd , srt_all_prd]  = useState([])
+  console.log("props" ,props)
+    
   const [link, setLink] = useState("");
-  return (
+  
+
+  useEffect(()=>{
+  
+    
+    (async function(){
+        let {result , status } = await allProductsCategory()
+        if(status)
+            srt_all_prd(result)
+
+    })()
+
+  } ,[])
+    return (
     <React.Fragment>
       {/* <header className='header'>
                 <Link href='/' className='logo'>
@@ -119,6 +138,8 @@ const Header = () => {
                 </ul>
               </div>
               <div className="dropdown">
+                
+           
                 <button
                   className="btn dropdown-toggle text_black fs-16 p-0 border-0 shadow-none"
                   type="button"
@@ -127,103 +148,64 @@ const Header = () => {
                   aria-expanded="false"
                 >
                   Product
-                </button>
+                </button> 
+                 
                 <ul className="dropdown-menu" aria-labelledby="dropdownProduct">
-                  <li className="d-block">
+                
+                {all_prd.length >0 && all_prd.map((item,ind)=>{
+                      
+                      if(item._doc) {
+                      return(
+                        <li className="d-block">
                     <a className="dropdown-item fs-16 text_black" href="/about">
-                      Pens
-                    </a>
+                      {item._doc.name}
+                    </a> 
                     <ul className="dropdown-menu dropdown-submenu dropdown-submenu-left">
-                      <li>
-                        <a
-                          className="dropdown-item"
-                          href=""
-                        >
-                         Metal Pens
-                        </a>
-                      </li>
-                      <hr className="dropdown-divider ms-3 me-3" />
-                      <li>
-                        <a
-                          className="dropdown-item"
-                          href=""
-                        >
-                          Everyday Writing
-                        </a>
-                      </li>
-                      
-                    </ul>
-                  </li>
-                  <hr className="dropdown-divider ms-3 me-3"></hr>
-                  <li>
-                    <a className="dropdown-item fs-16 text_black" href="#">
-                      Highlighters
-                    </a>
-                  </li>
-                  <hr className="dropdown-divider ms-3 me-3"></hr>
-                  <li className="d-block">
-                    <a className="dropdown-item fs-16 text_black" href="#">
-                      Markers
-                    </a>
-                    <ul className="dropdown-menu dropdown-submenu dropdown-submenu-left">
-                      <li>
-                        <a
-                          className="dropdown-item"
-                          href=""
-                        >
-                         Permanent Marker
-                        </a>
-                      </li>
-                      <hr className="dropdown-divider ms-3 me-3" />
-                      <li>
-                        <a
-                          className="dropdown-item"
-                          href=""
-                        >
-                          White Board Marker
-                        </a>
-                      </li>
-                      
-                    </ul>
-                  </li>
-                  <hr className="dropdown-divider ms-3 me-3"></hr>
-                  <li>
-                    <a className="dropdown-item fs-16 text_black" href="#">
-                      Art & Hobby
-                    </a>
-                  </li>
-                  <hr className="dropdown-divider ms-3 me-3"></hr>
-                  <li>
-                    <a className="dropdown-item fs-16 text_black" href="#">
-                      Kids Colouring
-                    </a>
-                  </li>
-                  <hr className="dropdown-divider ms-3 me-3"></hr>
+                    {item.sub_menu && item.sub_menu.length>0 && item.sub_menu.map(ele=>{
+                         return(
+                            <React.Fragment>
 
-                  <li>
-                    <a className="dropdown-item fs-16 text_black" href="#">
-                      Ecowrite
-                    </a>
+                            <li>
+                        <a
+                          className="dropdown-item"
+                          href=""
+                        >
+                            {ele.category?ele.category:
+                            ele.marker_category?ele.marker_category:""}
+                        </a>
+                      </li>
+                      <hr className="dropdown-divider ms-3 me-3" />
+                            </React.Fragment>
+                         )
+                    })}  
+                    </ul>
                   </li>
-                  <hr className="dropdown-divider ms-3 me-3"></hr>
-                  <li>
-                    <a className="dropdown-item fs-16 text_black" href="#">
-                      Value Packs
-                    </a>
-                  </li>
-                  <hr className="dropdown-divider ms-3 me-3"></hr>
-                  <li>
-                    <a className="dropdown-item fs-16 text_black" href="#">
-                      PCW
-                    </a>
-                  </li>
-                  <hr className="dropdown-divider ms-3 me-3"></hr>
-                  <li>
-                    <a className="dropdown-item fs-16 text_black" href="#">
-                      Notebook & Stationary
-                    </a>
-                  </li>
+                        )   
+                      }else{
+                         return(
+                            <li className="d-block">
+                                <a className="dropdown-item fs-16 text_black" href="/about">
+                                {item.name}
+                                </a> 
+                            </li>
+
+                         )
+                      }
+                   
+
+               })}
+
+
+
+
+                 
                 </ul>
+
+
+
+
+
+
               </div>
               <li className="nav-item">
                 <a className="fs-16 text_black" href="#">
@@ -408,5 +390,34 @@ const Header = () => {
     </React.Fragment>
   );
 };
+
+
+
+
+// export async function getServerSideProps({ req, res }) {
+
+//     let {result , status } = await allProductsCategory()
+//     console.log("statusstatus" ,result)
+    
+//     if(status && result.length>0){
+//         return {
+//             props: {
+//                 all_prd:result
+//             }
+//           }
+//     }else{
+         
+//     }
+//     return {
+//       props: {
+//         all_prd: [],
+//         // json: json.result
+//       }
+//     }
+
+    
+//   }
+  
+
 
 export default Header;

@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@next/eslint-plugin-next": "^14.0.0",
     "axios": "^1.5.1",
     "gsap": "^3.12.2",
     "next": "^12.3.4",
