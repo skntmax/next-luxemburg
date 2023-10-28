@@ -28,9 +28,7 @@ const Header = () => {
           <div className="d-flex justify-content-between align-self-center">
             <div>
               <a href="/" className="logo">
-              <Image layout="fill" src={Logo} alt="Logo" className='img-fluid' />
-                
-                
+              <Image layout="fill" src={Logo} alt="Logo" className='img-fluid' />                
               </a>
             </div>
             <div className="d-flex">

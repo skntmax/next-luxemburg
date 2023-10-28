@@ -1,16 +1,20 @@
 import React from 'react'
 import Link from 'next/link';
 
-import banner from 'public/assets/images/aboutpage/banner.jpg';
+
+
+import banner from 'public/assets/images/aboutpage/webp/banner.webp';
+import pcw from 'public/assets/images/aboutpage/webp/pcw.webp';
+import plexconsil from 'public/assets/images/aboutpage/webp/plexconsil.webp';
+import wim from 'public/assets/images/aboutpage/webp/wim.webp';
+import feo from 'public/assets/images/aboutpage/webp/feo.webp';
+
+
 import fortyyears from 'public/assets/images/aboutpage/fortyyears.jpg';
 import birth_of_luxor from 'public/assets/images/aboutpage/birth_of_luxor.jpg';
 import exporting from 'public/assets/images/aboutpage/exporting.jpg';
 import md_profile from 'public/assets/images/aboutpage/md_profile.jpg';
 import ecowrite from 'public/assets/images/aboutpage/ecowrite.jpg';
-import pcw from 'public/assets/images/aboutpage/pcw.jpg';
-import plexconsil from 'public/assets/images/aboutpage/plexconsil.jpg';
-import wim from 'public/assets/images/aboutpage/wim.jpg';
-import feo from 'public/assets/images/aboutpage/feo.jpg';
 import Image from 'next/image';
 
 const index = () => {
@@ -115,4 +119,5 @@ const index = () => {
         </>
     )
 }
+ 
 export default index
