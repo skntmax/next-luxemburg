@@ -3,7 +3,7 @@ import Link from "next/link";
 import { AiOutlineSearch } from "react-icons/ai";
 import Image from "next/image";
 import { allProductsCategory } from "Actions/action";
-
+import Logo from "public/assets/luxorlogo.png";
 
 const Header = (props) => {
 
@@ -30,12 +30,9 @@ const Header = (props) => {
           <div className="d-flex justify-content-between align-self-center">
             <div>
               <a href="/" className="logo">
-                <Image
-                
-                  layout="fill"
-                  alt="logo"
-                  src="https://luxorpen.com/images/logo/logo.png"
-                />
+                <span className="">
+                  <Image src={Logo} alt="Logo" className="img-fluid w-100 " />
+                </span>
               </a>
             </div>
             <div className="d-flex">
@@ -63,12 +60,11 @@ const Header = (props) => {
                   <option selected>Select Language</option>
                   <option value="1">English</option>
                   <option value="2">French</option>
-                  <option value="3">French</option>
-                  <option value="4">Spanish</option>
-                  <option value="5">English</option>
-                  <option value="6">Russian</option>
-                  <option value="7">Japanese</option>
-                  <option value="8">& more</option>
+                  <option value="3">Spanish</option>
+                  <option value="4">English</option>
+                  <option value="5">Russian</option>
+                  <option value="6">Japanese</option>
+                  <option value="7">& more</option>
                 </select>
               </div>
             </div>
@@ -225,16 +221,18 @@ const Header = (props) => {
       <div className="d-lg-none py-3">
         <div className="container">
           <div className="d-flex justify-content-between">
-            <Link href="/" className="logo">
+            <a href="/" className="logo">
               <span className="position_static pointer_event">
                 <Image
                   layout="fill"
+                  src={Logo}
                   alt="logo2"
                   className="img-fluid position_static"
-                  src="https://luxorpen.com/images/logo/logo.png"
+                  
+                  
                 />
               </span>
-            </Link>
+            </a>
             <button
               className="btn border-0 shadow-none"
               type="button"

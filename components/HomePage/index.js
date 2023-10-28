@@ -73,92 +73,84 @@ function App(props ) {
     let sections = document.querySelectorAll(".home1-img img");
     let new_launch = document.querySelectorAll("new_launch");
 
-    gsap.to(sections,
-        {
-            duration: 2,
-            x: -150,
-            repeat: -1,
-            yoyo: true,
-            scrollTrigger: {
-                trigger: sections,
-                toggleActions: "restart pause resume reset",
+    gsap.to(sections, {
+      duration: 2,
+      x: -150,
+      repeat: -1,
+      yoyo: true,
+      scrollTrigger: {
+        trigger: sections,
+        toggleActions: "restart pause resume reset",
 
-                onToggle: self => console.log("toggled, isActive:", self.isActive),
-                start: "top 70%",
-                end: "bottom 50%",
-            },
-        });
-
+        onToggle: (self) => console.log("toggled, isActive:", self.isActive),
+        start: "top 70%",
+        end: "bottom 50%",
+      },
+    });
 
     gsap.from(text_div, {
-        x: -150,
-        stagger: 0.2, // 0.1 seconds between when each ".box" element starts animating
-        duration: 2,
-        opacity: 0,
-        scrollTrigger: {
-            trigger: text_div,
-            onToggle: self => console.log("toggled, isActive:", self.isActive),
-            start: "top 70%",
-            end: "bottom 50%",
-        },
+      x: -150,
+      stagger: 0.2, // 0.1 seconds between when each ".box" element starts animating
+      duration: 2,
+      opacity: 0,
+      scrollTrigger: {
+        trigger: text_div,
+        onToggle: (self) => console.log("toggled, isActive:", self.isActive),
+        start: "top 70%",
+        end: "bottom 50%",
+      },
     });
 
     gsap.to(text_div, {
-        x: 70,
-        opacity: 1,
-        duration: 2,
-        repeat: -1,
-        yoyo: true,
-        scrollTrigger: {
-            trigger: text_div,
-            onToggle: self => console.log("toggled, isActive:", self.isActive),
-            start: "top 70%",
-            end: "bottom 50%",
-        },
-
-    })
-
-
-
-
-
-
+      x: 70,
+      opacity: 1,
+      duration: 2,
+      repeat: -1,
+      yoyo: true,
+      scrollTrigger: {
+        trigger: text_div,
+        onToggle: (self) => console.log("toggled, isActive:", self.isActive),
+        start: "top 70%",
+        end: "bottom 50%",
+      },
+    });
 
     productBackGround();
     newLaumch();
   }, []);
 
-
-  
   function productBackGround() {
-
     let prd_bc = document.querySelectorAll(".product-box");
 
     let tl = gsap.timeline({
-        paused: true,
+      paused: true,
 
-        scrollTrigger: {
-            trigger: prd_bc,
-            toggleActions: "restart pause resume reset",
-            onToggle: self => console.log("toggled, isActive:", self.isActive),
-            start: "top 80%",
-            end: "bottom 20%",
-          },
-     })
-     
+      scrollTrigger: {
+        trigger: prd_bc,
+        toggleActions: "restart pause resume reset",
+        onToggle: (self) => console.log("toggled, isActive:", self.isActive),
+        start: "top 80%",
+        end: "bottom 20%",
+      },
+    });
+
     tl.to(prd_bc, {
-        duration: 1,
-        opacity: 1,
-        ease: 'expo.inOut',
-    })
+      duration: 1,
+      opacity: 1,
+      ease: "expo.inOut",
+    });
 
-    tl.from(prd_bc, {
+    tl.from(
+      prd_bc,
+      {
         duration: 1,
         opacity: 0,
         stagger: 0.1,
-        ease: 'expo.inOut',
-    }, "-=0.5");
-     
+        ease: "expo.inOut",
+      },
+      "-=0.5"
+    );
+
     tl.reverse();
 
     // tl.from(links, {
@@ -175,8 +167,7 @@ function App(props ) {
     //   tl.reversed(!tl.reversed());
     // });
 
-
-    // gsap.to(prd_bc , 
+    // gsap.to(prd_bc ,
     //      {
     //                 x:-220 ,
     //             duration:2,
@@ -191,7 +182,7 @@ function App(props ) {
     //     duration:2,
     //     scrollTrigger: {
     //         trigger: prd_bc,
-    //         toggleActions:"restart pause resume reset", 
+    //         toggleActions:"restart pause resume reset",
     //         onToggle: self => console.log("toggled, isActive:", self.isActive),
     //         start: "top 70%",
     //         end: "top 30%",
@@ -199,9 +190,7 @@ function App(props ) {
     //       },
 
     //    })
-
-}
-
+  }
 
   function newLaumch() {
     let new_launch = document.querySelectorAll(".new_launch");
@@ -537,16 +526,13 @@ function App(props ) {
 
       <section>
         <div className="products">
-
-
-
           <div className="prodBackground">
-            <div class="heading1">
-              <h2>Products</h2>
+            <div class="">
+              <h2 className="fs-30 text-center mt-4 mt-md-5 text-white">Products</h2>
             </div>
           </div>
 
-          <div class="product-container">
+          {/* <div class="product-container">
              
 
              <div className="prd_container"  >
@@ -567,9 +553,34 @@ function App(props ) {
 
               
 
-          </div>
+          </div> */}
 
-
+          <section className="py-5">
+            <div className="products_list">
+              <div className="row flex-nowrap overflow-auto px-4 ">
+                {all_prdcts.length > 0 &&
+                  all_prdcts.map((ele) => {
+                    return (
+                      <React.Fragment>
+                        <div
+                          className="col-12 col-sm-6 mt-4 mt-md-0 col-md-4 col-lg-3  "
+                          onClick={() => router.push("product/" + ele._id)}
+                        >
+                          <div className="card h-100 shadow border-0 cards_hover">
+                            <div className="card-body">
+                              <h3 className="fs-24 text-center">{ele.name}</h3>
+                              <div className="">
+                                <Image src={Image1} alt={ele.name} />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </React.Fragment>
+                    );
+                  })}
+              </div>
+            </div>
+          </section>
 
           <div className="product-btn">
             <a href="#" className="btn-box">
@@ -577,9 +588,6 @@ function App(props ) {
             </a>
           </div>
         </div>
-
-
-
       </section>
 
       <section className="exported">
