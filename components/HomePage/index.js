@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 // import styles from '../styles/Home.module.css'
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import { AiOutlineSearch } from "react-icons/ai";
 
@@ -48,15 +48,20 @@ import Image26 from "public/assets/Lineart.png";
 import Image27 from "public/assets/pennib.png";
 import Link from "next/link";
 import { useRouter } from "next/router";
+
 import Header from "@components/header";
 
 gsap.registerPlugin(ScrollTrigger);
 
 function App(props ) {
  
+
+    const [all_prdcts, set_all_prdcts]  =useState(props.all_prdcts)
   let router = useRouter()
   let prd_pen = useRef();
-  let all_prdcts = props.all_prdcts
+
+  
+    
    
   useEffect(() => {
     
@@ -342,7 +347,7 @@ function App(props ) {
   return (
     <>
 
-    <Header />
+    <Header  all_prdcts={all_prdcts}/>
       <Carasol />
 
       <section className="py-5 overflow-hidden">
