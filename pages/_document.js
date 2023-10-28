@@ -1,4 +1,3 @@
-import Header from "@components/header";
 import { Html, Head, Main, NextScript } from "next/document";
 import Footer from 'components/Footer'
 import Script from "next/script";
@@ -93,7 +92,7 @@ export default function Document() {
         ></noscript> */}
         
 
-        <Header />
+      
         <Main />
         <Footer />
         <NextScript />

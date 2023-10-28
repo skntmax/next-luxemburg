@@ -48,17 +48,21 @@ import Image26 from "public/assets/Lineart.png";
 import Image27 from "public/assets/pennib.png";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import Header from "@components/header";
 
 gsap.registerPlugin(ScrollTrigger);
 
-function App(props) {
-  let router = useRouter();
+function App(props ) {
+ 
+  let router = useRouter()
   let prd_pen = useRef();
-  let all_prdcts = props.all_prdcts;
-
+  let all_prdcts = props.all_prdcts
+   
   useEffect(() => {
-    document.getElementsByClassName("Art_gallery_button")[0].innerHTML =
-      "Art Gallery";
+    
+    document.getElementsByClassName(
+        'Art_gallery_button'
+    )[0].innerHTML = "Art Gallery"
 
     let text_div = document.querySelectorAll(".home-text");
     let sections = document.querySelectorAll(".home1-img img");
@@ -326,6 +330,8 @@ function App(props) {
 
   return (
     <>
+
+    <Header />
       <Carasol />
 
       <section className="py-5 overflow-hidden">
@@ -527,8 +533,8 @@ function App(props) {
              <div className="prd_container"  >
                 {all_prdcts.length>0 && all_prdcts.map(ele =>{
                     return <React.Fragment>
-                    <div className ="product-box  prd_card px-3" onClick={()=> router.push("product/"+ele._id ) } >
-                    <h3>{ele.name}</h3>
+                    <div className ="product-box  prd_card " onClick={()=> router.push("product/"+ele._id ) } >
+                    <h3>{ ele._doc?ele._doc.name:ele.name }</h3>
                     <div className="product-img" >
                         <Image  src={Image1} alt={ele.name} />
                     </div>

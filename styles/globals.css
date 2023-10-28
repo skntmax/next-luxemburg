@@ -1700,3 +1700,6 @@ color: white;
   background-repeat: no-repeat;
   background-position: center center;
 }
+.border-bottom_black{
+  border-bottom: 1px solid black;
+}

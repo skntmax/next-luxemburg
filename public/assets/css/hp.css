@@ -209,6 +209,9 @@
 .text_black {
      color: black;
 }
+.text_lightgrey{
+     color: #7d7d7d;
+}
 
 .input_field {
      height: 44px;
