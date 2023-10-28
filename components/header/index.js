@@ -6,23 +6,8 @@ import { allProductsCategory } from "Actions/action";
 import Logo from "public/assets/luxorlogo.png";
 
 const Header = (props) => {
-    const [all_prd , srt_all_prd]  = useState([])
-  console.log("props" ,props)
-    
-  const [link, setLink] = useState("");
-  
 
-  useEffect(()=>{
-  
-    
-    (async function(){
-        let {result , status } = await allProductsCategory()
-        if(status)
-            srt_all_prd(result)
-
-    })()
-
-  } ,[])
+    let all_prd =props.all_prdcts 
     return (
     <React.Fragment>
       {/* <header className='header'>
