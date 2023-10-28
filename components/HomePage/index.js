@@ -336,7 +336,7 @@ function App(props ) {
   return (
     <>
 
-    <Header  all_prdcts={all_prdcts}/>
+  
       <Carasol />
 
       <section className="py-5 overflow-hidden">
@@ -568,7 +568,7 @@ function App(props ) {
                         >
                           <div className="card h-100 shadow border-0 cards_hover">
                             <div className="card-body">
-                              <h3 className="fs-24 text-center">{ele.name}</h3>
+                              <h3 className="fs-24 text-center">{ele._doc?ele._doc.name:ele.name}</h3>
                               <div className="">
                                 <Image src={Image1} alt={ele.name} />
                               </div>

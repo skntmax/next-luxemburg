@@ -21,7 +21,7 @@ export default class Carasol extends Component {
      
     render() {  
         return (  
-            <Carousel autoPlay={true} showThumbs={false} infiniteLoop={true} interval={2000}>  
+                   <Carousel autoPlay={true} showThumbs={false} infiniteLoop={true} interval={2000}>  
                     {/* <img className='img-fluid'  src={Home_Page_Banner} />   */}
                     <div className='carousel_banner' style={this.state.imageStyle}>
                     <Image    alt="banner1"    className='img-fluid'  src={Home_Page_Banner2} />

@@ -4,13 +4,47 @@ import { AiOutlineSearch } from "react-icons/ai";
 import Image from "next/image";
 import { allProductsCategory } from "Actions/action";
 import Logo from "public/assets/luxorlogo.png";
+import { useRouter } from "next/router";
 
 const Header = (props) => {
 
-    let all_prd =props.all_prdcts 
+    // let all_prd =props.all_prdcts 
+     let router = useRouter()
+    const [all_prd , set_all_prd]  =useState([]) 
+
+  useEffect(()=>{
+    
+    (async function(){
+      let {result , status } = await allProductsCategory()
+         if(status) 
+            set_all_prd(result)
+    })()
+  } ,[])
+
+  const goToProductPage =(item)=>{
+   
+    if(item._doc) {
+        // pen or marker  
+         
+
+    }else{
+        // except pen and marker 
+        const {_id ,name:category_name} = item 
+        let final_url  = '/listing/'+category_name+"/"+_id 
+        // console.log('/listing/'+category_name+"/"+_id)
+        router.push('/listing/'+category_name+"/"+_id)
+         
+    }
+    
+    
+  }
+
+   
     return (
     <React.Fragment>
-      {/* <header className='header'>
+ 
+  
+       {/* <header className='header'>
                 <Link href='/' className='logo'>
                     <img src='https://luxorpen.com/images/logo/logo.png' />
                 </Link>
@@ -23,9 +57,9 @@ const Header = (props) => {
                         <option value="Hin">Hindi</option>
                     </select>
                 </div>
-
             </header> */}
-      <nav className="navbar navbar-light bg_red">
+
+       <nav className="navbar navbar-light bg_red">
         <div className="container d-block">
           <div className="d-flex justify-content-between align-self-center">
             <div>
@@ -137,8 +171,8 @@ const Header = (props) => {
                       
                       if(item._doc) {
                       return(
-                        <li className="d-block">
-                    <a className="dropdown-item fs-16 text_black" href="/about">
+                        <li className="d-block" onClick={()=> goToProductPage(item) } >
+                    <a className="dropdown-item fs-16 text_black" >
                       {item._doc.name}
                     </a> 
                     <ul className="dropdown-menu dropdown-submenu dropdown-submenu-left">
@@ -146,10 +180,9 @@ const Header = (props) => {
                          return(
                             <React.Fragment>
 
-                            <li>
+                            <li onClick={()=> goToProductPage(item) }>
                         <a
                           className="dropdown-item"
-                          href=""
                         >
                             {ele.category?ele.category:
                             ele.marker_category?ele.marker_category:""}
@@ -164,8 +197,8 @@ const Header = (props) => {
                         )   
                       }else{
                          return(
-                            <li className="d-block">
-                                <a className="dropdown-item fs-16 text_black" href="/about">
+                            <li className="d-block" onClick={()=> goToProductPage(item) }>
+                                <a className="dropdown-item fs-16 text_black">
                                 {item.name}
                                 </a> 
                             </li>

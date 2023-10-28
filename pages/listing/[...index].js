@@ -1,16 +1,33 @@
-import React from "react";
+import React ,{useEffect, useState} from "react";
 import Link from "next/link";
 import { AiOutlineSearch } from "react-icons/ai";
 import Image from "next/image";
 import Header from "@components/header";
 import Parker from "public/assets/parker.jpg";
-const index = () => {
+import { allProductsCategory, getCategoryWiseProducts } from "Actions/action";
+
+const index = (props) => {
+
+
+  const [ data , setData ] =  useState( {
+     cat_name:props.cat_name ,
+     list:props.all_prd
+   })
+   
+
+  useEffect(()=>{
+     
+  },[ ])
+
+  const { cat_name: category_name}  = data
+  
+  
   return (
     <>
-      <Header />
+     
       <section className="py-5">
         <div className="container">
-          <h3 className="mt-2 pb-5 text_black text-center fs-30">PENS</h3>
+          <h3 className="mt-2 pb-5 text_black text-center fs-30">{props.cat_name}</h3>
           <div className="row mt-5">
             <div className="col-md-3 col-lg-2 mb-3">
               <h3 className="fs-18 border-bottom_black pb-2 mt-3">Shop By</h3>
@@ -112,7 +129,7 @@ const index = () => {
                 <p className="fs-14 mb-0 align-self-center text_lightgrey ms-2 ms-md-4">
                   {" "}
                   Items <span className="">1</span>-<span className="">24</span>{" "}
-                  of <span className="">235</span>{" "}
+                  of <span className="">{props.all_prd.length}</span>{" "}
                 </p>
               </ul>
               <div className="tab-content" id="pills-tabContent">
@@ -122,10 +139,19 @@ const index = () => {
                   role="tabpanel"
                   aria-labelledby="pills-grid-tab"
                 >
-                  <div className="row mt-4">
-                    <div className="col-lg-3 col-md-4 mb-3">
+                  <div className="row mt-4  ">
+
+                  <div className="d-flex flex-wrap m-2">
+                   
+                 
+                        {props.all_prd && props.all_prd.length>0 ? 
+                          props.all_prd.map((ele)=>{
+                            return<>
+                            <div className="col-lg-3 col-md-4 mb-3">
                       <div className="card shadow border-0 h-100 bg-transparent">
-                        <div className="card-body">
+
+                            <div className="card-body">
+                            <span> {ele.name }</span>
                           <Image
                             width={450}
                             height={350}
@@ -135,7 +161,7 @@ const index = () => {
                           />
 
                           <p className="fs-14 text_black text-center">
-                            Parker Jotter Standard Ball Pen Blue Body Color...
+                          {ele.description.slice(0,50)+"..."}
                           </p>
                           <p className="fs-14 text_black text-center fw-600">
                             ₹300.00
@@ -149,92 +175,26 @@ const index = () => {
                             </button>
                           </p>
                         </div>
-                      </div>
-                    </div>
-                    <div className="col-lg-3 col-md-4 mb-3">
-                      <div className="card shadow border-0 h-100 bg-transparent">
-                        <div className="card-body">
-                          <Image
-                            width={450}
-                            height={350}
-                            className="img-fluid"
-                            src={Parker}
-                            alt="Products"
-                          />
-
-                          <p className="fs-14 text_black text-center">
-                            Parker Jotter Standard Ball Pen Blue Body Color...
-                          </p>
-                          <p className="fs-14 text_black text-center fw-600">
-                            ₹300.00
-                          </p>
-                          <p className="d-flex my-4 justify-content-center gap-4">
-                            <button className="btn border-0">
-                              <i className=" fa-regular fa-bookmark fs-16 text_lightgrey"></i>
-                            </button>
-                            <button className="btn border-0">
-                              <i className=" fa-solid fa-cart-shopping fs-16 text_lightgrey"></i>
-                            </button>
-                          </p>
                         </div>
-                      </div>
-                    </div>
-                    <div className="col-lg-3 col-md-4 mb-3">
-                      <div className="card shadow border-0 h-100 bg-transparent">
-                        <div className="card-body">
-                          <Image
-                            width={450}
-                            height={350}
-                            className="img-fluid"
-                            src={Parker}
-                            alt="Products"
-                          />
-
-                          <p className="fs-14 text_black text-center">
-                            Parker Jotter Standard Ball Pen Blue Body Color...
-                          </p>
-                          <p className="fs-14 text_black text-center fw-600">
-                            ₹300.00
-                          </p>
-                          <p className="d-flex my-4 justify-content-center gap-4">
-                            <button className="btn border-0">
-                              <i className=" fa-regular fa-bookmark fs-16 text_lightgrey"></i>
-                            </button>
-                            <button className="btn border-0">
-                              <i className=" fa-solid fa-cart-shopping fs-16 text_lightgrey"></i>
-                            </button>
-                          </p>
                         </div>
-                      </div>
-                    </div>
-                    <div className="col-lg-3 col-md-4 mb-3">
-                      <div className="card shadow border-0 h-100 bg-transparent">
-                        <div className="card-body">
-                          <Image
-                            width={450}
-                            height={350}
-                            className="img-fluid"
-                            src={Parker}
-                            alt="Products"
-                          />
+                              
+                            </>
+                          }):" No record found "
+                        }
+                        
+                        
 
-                          <p className="fs-14 text_black text-center">
-                            Parker Jotter Standard Ball Pen Blue Body Color...
-                          </p>
-                          <p className="fs-14 text_black text-center fw-600">
-                            ₹300.00
-                          </p>
-                          <p className="d-flex my-4 justify-content-center gap-4">
-                            <button className="btn border-0">
-                              <i className=" fa-regular fa-bookmark fs-16 text_lightgrey"></i>
-                            </button>
-                            <button className="btn border-0">
-                              <i className=" fa-solid fa-cart-shopping fs-16 text_lightgrey"></i>
-                            </button>
-                          </p>
-                        </div>
-                      </div>
-                    </div>
+                 
+
+
+
+                </div>
+
+
+
+
+                   
+                    
                   </div>
                 </div>
                 <div
@@ -276,7 +236,13 @@ const index = () => {
                       </div>
                     </div>
                   </div>
+
+
+
+
                 </div>
+
+                
               </div>
             </div>
           </div>
@@ -285,5 +251,40 @@ const index = () => {
     </>
   );
 };
+
+
+
+
+export async function getServerSideProps(context) {
+
+  let {
+    query,
+    params: { index: [ cat_name , _id  ]  },
+  } = context ;
+
+
+   let {result , status } = await getCategoryWiseProducts(_id)
+     
+
+
+  if(status && result.length > 0 ){
+      return {
+          props: {
+              all_prd:result,
+              cat_name
+            }
+          }
+    }
+   
+  return {
+    props: {
+      all_prd: [],
+       cat_name
+      // json: json.result
+    }
+  }
+
+  
+}
 
 export default index;
