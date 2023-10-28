@@ -62,20 +62,20 @@ const ProductPage = (props) => {
 
       <section className="main-broad-container py-5">
         {/* ---------------------------------------container 1st---------- */}
-        
-       
-        <div className="">
+        <div className="container-fluid">
+       <div className="row">
+        <div className="col-md-3">
           <Image className="img-fluid" src={marker} alt="homepage" style={{}} />
         </div>
         
         {/* -------------------------container 2nd------------------------ */}
-        <div className="marker-container">
+        <div className="col-md-9 ">
           {/* ----------------part 1----- */}
-          <div className="border rounded shadow p-4">
+          <div className="border-2 rounded shadow p-4">
             <div className="">
               <h2 className="fs-30">BROADLINE MARKER</h2>
 
-              <p className="fs-18">{`Kids love Luxor Broadline Markers because they are durable, sturdy, and delightful
+              <p className="fs-18 text_justify">{`Kids love Luxor Broadline Markers because they are durable, sturdy, and delightful
                             to color with. They come in 12 lovely colors, are washable, non-toxic and don't bleed
                             through most paper. `}</p>
             </div>
@@ -146,7 +146,8 @@ const ProductPage = (props) => {
             </div>
           </div>
         </div>
-        
+        </div>
+        </div>
       </section>
 
       {/* ---------------------------------------------------------------------------- */}

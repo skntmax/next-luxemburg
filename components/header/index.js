@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { AiOutlineSearch } from "react-icons/ai";
 import Image from "next/image";
+import Logo from 'public/assets/luxorlogo.png'
+
 const Header = () => {
   const [link, setLink] = useState("");
   return (
@@ -26,11 +28,9 @@ const Header = () => {
           <div className="d-flex justify-content-between align-self-center">
             <div>
               <a href="/" className="logo">
-                <Image
-                  layout="fill"
-                  alt="logo"
-                  src="https://luxorpen.com/images/logo/logo.png"
-                />
+              <Image layout="fill" src={Logo} alt="Logo" className='img-fluid' />
+                
+                
               </a>
             </div>
             <div className="d-flex">
@@ -187,38 +187,38 @@ const Header = () => {
                   </li>
                   <hr className="dropdown-divider ms-3 me-3"></hr>
                   <li>
-                    <a className="dropdown-item fs-16 text_black" href="#">
+                    <a className="dropdown-item fs-16 text_black" href="product/653911ce6d8ae7473f9325a7">
                       Art & Hobby
                     </a>
                   </li>
                   <hr className="dropdown-divider ms-3 me-3"></hr>
                   <li>
-                    <a className="dropdown-item fs-16 text_black" href="#">
+                    <a className="dropdown-item fs-16 text_black" href="product/653912399a126cb9bb92f68c">
                       Kids Colouring
                     </a>
                   </li>
                   <hr className="dropdown-divider ms-3 me-3"></hr>
 
                   <li>
-                    <a className="dropdown-item fs-16 text_black" href="#">
+                    <a className="dropdown-item fs-16 text_black" href="product/653911eb04804c4985fe52bb">
                       Ecowrite
                     </a>
                   </li>
                   <hr className="dropdown-divider ms-3 me-3"></hr>
                   <li>
-                    <a className="dropdown-item fs-16 text_black" href="#">
+                    <a className="dropdown-item fs-16 text_black" href="product/6539120edb6bdba29040cb2c">
                       Value Packs
                     </a>
                   </li>
                   <hr className="dropdown-divider ms-3 me-3"></hr>
                   <li>
-                    <a className="dropdown-item fs-16 text_black" href="#">
+                    <a className="dropdown-item fs-16 text_black" href="product/653917908eef3ad8ecb0d295">
                       PCW
                     </a>
                   </li>
                   <hr className="dropdown-divider ms-3 me-3"></hr>
                   <li>
-                    <a className="dropdown-item fs-16 text_black" href="#">
+                    <a className="dropdown-item fs-16 text_black" href="product/653911fdeb3253e94826bcac">
                       Notebook & Stationary
                     </a>
                   </li>

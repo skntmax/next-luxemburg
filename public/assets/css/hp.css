@@ -231,6 +231,9 @@
      cursor: pointer;
      animation: 3s linear .1s colorIt;
  }
+ .border-2{
+     border: 2px solid grey;
+ }
 
 
 /* -----------------------------------media query--------------------------*/
