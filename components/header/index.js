@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { AiOutlineSearch } from "react-icons/ai";
 import Image from "next/image";
-import Logo from 'public/assets/luxorlogo.png'
+import Logo from "public/assets/luxorlogo.png";
 
 const Header = () => {
   const [link, setLink] = useState("");
@@ -28,7 +28,9 @@ const Header = () => {
           <div className="d-flex justify-content-between align-self-center">
             <div>
               <a href="/" className="logo">
-              <Image layout="fill" src={Logo} alt="Logo" className='img-fluid' />                
+                <span className="">
+                  <Image src={Logo} alt="Logo" className="img-fluid w-100 " />
+                </span>
               </a>
             </div>
             <div className="d-flex">
@@ -56,12 +58,11 @@ const Header = () => {
                   <option selected>Select Language</option>
                   <option value="1">English</option>
                   <option value="2">French</option>
-                  <option value="3">French</option>
-                  <option value="4">Spanish</option>
-                  <option value="5">English</option>
-                  <option value="6">Russian</option>
-                  <option value="7">Japanese</option>
-                  <option value="8">& more</option>
+                  <option value="3">Spanish</option>
+                  <option value="4">English</option>
+                  <option value="5">Russian</option>
+                  <option value="6">Japanese</option>
+                  <option value="7">& more</option>
                 </select>
               </div>
             </div>
@@ -127,28 +128,21 @@ const Header = () => {
                 </button>
                 <ul className="dropdown-menu" aria-labelledby="dropdownProduct">
                   <li className="d-block">
-                    <a className="dropdown-item fs-16 text_black" href="/about">
+                    <a className="dropdown-item fs-16 text_black" href="#">
                       Pens
                     </a>
                     <ul className="dropdown-menu dropdown-submenu dropdown-submenu-left">
                       <li>
-                        <a
-                          className="dropdown-item"
-                          href=""
-                        >
-                         Metal Pens
+                        <a className="dropdown-item" href="">
+                          Metal Pens
                         </a>
                       </li>
                       <hr className="dropdown-divider ms-3 me-3" />
                       <li>
-                        <a
-                          className="dropdown-item"
-                          href=""
-                        >
+                        <a className="dropdown-item" href="">
                           Everyday Writing
                         </a>
                       </li>
-                      
                     </ul>
                   </li>
                   <hr className="dropdown-divider ms-3 me-3"></hr>
@@ -164,59 +158,70 @@ const Header = () => {
                     </a>
                     <ul className="dropdown-menu dropdown-submenu dropdown-submenu-left">
                       <li>
-                        <a
-                          className="dropdown-item"
-                          href=""
-                        >
-                         Permanent Marker
+                        <a className="dropdown-item" href="">
+                          Permanent Marker
                         </a>
                       </li>
                       <hr className="dropdown-divider ms-3 me-3" />
                       <li>
-                        <a
-                          className="dropdown-item"
-                          href=""
-                        >
+                        <a className="dropdown-item" href="">
                           White Board Marker
                         </a>
                       </li>
-                      
                     </ul>
                   </li>
                   <hr className="dropdown-divider ms-3 me-3"></hr>
                   <li>
-                    <a className="dropdown-item fs-16 text_black" href="product/653911ce6d8ae7473f9325a7">
+                    <a
+                      className="dropdown-item fs-16 text_black"
+                      href="product/653911ce6d8ae7473f9325a7"
+                    >
                       Art & Hobby
                     </a>
                   </li>
                   <hr className="dropdown-divider ms-3 me-3"></hr>
                   <li>
-                    <a className="dropdown-item fs-16 text_black" href="product/653912399a126cb9bb92f68c">
+                    <a
+                      className="dropdown-item fs-16 text_black"
+                      href="product/653912399a126cb9bb92f68c"
+                    >
                       Kids Colouring
                     </a>
                   </li>
                   <hr className="dropdown-divider ms-3 me-3"></hr>
 
                   <li>
-                    <a className="dropdown-item fs-16 text_black" href="product/653911eb04804c4985fe52bb">
+                    <a
+                      className="dropdown-item fs-16 text_black"
+                      href="product/653911eb04804c4985fe52bb"
+                    >
                       Ecowrite
                     </a>
                   </li>
                   <hr className="dropdown-divider ms-3 me-3"></hr>
                   <li>
-                    <a className="dropdown-item fs-16 text_black" href="product/6539120edb6bdba29040cb2c">
+                    <a
+                      className="dropdown-item fs-16 text_black"
+                      href="product/6539120edb6bdba29040cb2c"
+                    >
                       Value Packs
                     </a>
                   </li>
                   <hr className="dropdown-divider ms-3 me-3"></hr>
                   <li>
-                    <a className="dropdown-item fs-16 text_black" href="product/653917908eef3ad8ecb0d295">
+                    <a
+                      className="dropdown-item fs-16 text_black"
+                      href="product/653917908eef3ad8ecb0d295"
+                    >
                       PCW
                     </a>
                   </li>
                   <hr className="dropdown-divider ms-3 me-3"></hr>
                   <li>
-                    <a className="dropdown-item fs-16 text_black" href="product/653911fdeb3253e94826bcac">
+                    <a
+                      className="dropdown-item fs-16 text_black"
+                      href="product/653911fdeb3253e94826bcac"
+                    >
                       Notebook & Stationary
                     </a>
                   </li>
@@ -255,16 +260,18 @@ const Header = () => {
       <div className="d-lg-none py-3">
         <div className="container">
           <div className="d-flex justify-content-between">
-            <Link href="/" className="logo">
+            <a href="/" className="logo">
               <span className="position_static pointer_event">
                 <Image
                   layout="fill"
+                  src={Logo}
                   alt="logo2"
                   className="img-fluid position_static"
-                  src="https://luxorpen.com/images/logo/logo.png"
+                  
+                  
                 />
               </span>
-            </Link>
+            </a>
             <button
               className="btn border-0 shadow-none"
               type="button"
