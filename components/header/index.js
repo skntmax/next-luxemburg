@@ -5,58 +5,40 @@ import Image from "next/image";
 import { allProductsCategory } from "Actions/action";
 import Logo from "public/assets/luxorlogo.png";
 import { useRouter } from "next/router";
-import styles from 'styles/productbar.module.css'
-
+import styles from "styles/productbar.module.css";
 
 const Header = (props) => {
+  // let all_prd =props.all_prdcts
+  let router = useRouter();
+  const [all_prd, set_all_prd] = useState([]);
 
-    // let all_prd =props.all_prdcts 
-     let router = useRouter()
-    const [all_prd , set_all_prd]  =useState([]) 
+  useEffect(() => {
+    (async function () {
+      let { result, status } = await allProductsCategory();
+      if (status) set_all_prd(result);
+    })();
+  }, [all_prd.length]);
 
-  useEffect(()=>{
-    
-    (async function(){
-      let {result , status } = await allProductsCategory()
-         if(status) 
-            set_all_prd(result)
-    })()
-  } ,[all_prd.length])
+  const goToProductPage = (item, current_id, sub_category) => {
+    debugger;
+    let final_url = "";
+    if (item._doc) {
+      // pen or marker
+      final_url = "/listing/" + sub_category + "/" + current_id;
+      if (final_url) router.push(final_url);
 
-
-
-
-
-  const goToProductPage =(item , current_id, sub_category)=>{
-   
-    debugger
-     let final_url = ""
-      if(item._doc) {
-        // pen or marker  
-        final_url  = '/listing/'+sub_category+"/"+current_id
-          if(final_url)
-          router.push(final_url)
-         
-         // console.log(final_url)
-
-    }else{
-      
-        // except pen and marker 
-        const {_id ,name:category_name} = item 
-         final_url  = '/listing/'+category_name+"/"+_id 
-        router.push(final_url)
-
+      // console.log(final_url)
+    } else {
+      // except pen and marker
+      const { _id, name: category_name } = item;
+      final_url = "/listing/" + category_name + "/" + _id;
+      router.push(final_url);
     }
-    
-    
-  }
+  };
 
-   
-    return (
+  return (
     <React.Fragment>
- 
-  
-       {/* <header className='header'>
+      {/* <header className='header'>
                 <Link href='/' className='logo'>
                     <img src='https://luxorpen.com/images/logo/logo.png' />
                 </Link>
@@ -71,7 +53,7 @@ const Header = (props) => {
                 </div>
             </header> */}
 
-       <nav className="navbar navbar-light bg_red">
+      <nav className="navbar navbar-light bg_red">
         <div className="container d-block">
           <div className="d-flex justify-content-between align-self-center">
             <div>
@@ -165,8 +147,6 @@ const Header = (props) => {
                 </ul>
               </div>
               <div className="dropdown">
-                
-           
                 <button
                   className="btn dropdown-toggle text_black fs-16 p-0 border-0 shadow-none"
                   type="button"
@@ -175,70 +155,71 @@ const Header = (props) => {
                   aria-expanded="false"
                 >
                   Product
-                </button> 
-                 
+                </button>
+
                 <ul className="dropdown-menu" aria-labelledby="dropdownProduct">
-                
-                {all_prd.length >0 && all_prd.map((item,ind)=>{
-                      
-                      if(item._doc) {
-                      return(
-                        <li className={`d-block ${styles['main_prd']}`} onClick={(e)=> {
-                          debugger
-                          goToProductPage(item)
-                          } } >
-                    <a className="dropdown-item fs-16 text_black" >
-                      {item._doc.name}
-                    </a> 
-                    <ul className="dropdown-menu dropdown-submenu dropdown-submenu-left">
-
-                    {item.sub_menu && item.sub_menu.length>0 && item.sub_menu.map(ele=>{
-                         return(
-                            <React.Fragment>
-                            <li onClick={(e)=> { 
-                              debugger
-                               e.stopPropagation()
-                               goToProductPage(item, ele._id , ele.category?ele.category:ele.marker_category)
-                                } }>
-                        <a
-                          className="dropdown-item"
-                        >
-                            {ele.category?ele.category:
-                            ele.marker_category?ele.marker_category:""}
-                        </a>
-                      </li>
-                      <hr className="dropdown-divider ms-3 me-3" />
-                            </React.Fragment>
-                         )
-                    })}  
-                    </ul>
-                  </li>
-                        )   
-                      }else{
-                         return(
-                            <li className="d-block" onClick={()=> goToProductPage(item) }>
-                                <a className="dropdown-item fs-16 text_black">
-                                {item.name}
-                                </a> 
-                            </li>
-
-                         )
+                  {all_prd.length > 0 &&
+                    all_prd.map((item, ind) => {
+                      if (item._doc) {
+                        return (
+                          <li
+                            className={`d-block ${styles["main_prd"]}`}
+                            onClick={(e) => {
+                              debugger;
+                              goToProductPage(item);
+                            }}
+                          >
+                            <a className="dropdown-item fs-16 text_black">
+                              {item._doc.name}
+                            </a>
+                            <ul className="dropdown-menu dropdown-submenu dropdown-submenu-left">
+                              {item.sub_menu &&
+                                item.sub_menu.length > 0 &&
+                                item.sub_menu.map((ele) => {
+                                  return (
+                                    <React.Fragment>
+                                      <li
+                                        onClick={(e) => {
+                                          debugger;
+                                          e.stopPropagation();
+                                          goToProductPage(
+                                            item,
+                                            ele._id,
+                                            ele.category
+                                              ? ele.category
+                                              : ele.marker_category
+                                          );
+                                        }}
+                                      >
+                                        <a className="dropdown-item">
+                                          {ele.category
+                                            ? ele.category
+                                            : ele.marker_category
+                                            ? ele.marker_category
+                                            : ""}
+                                        </a>
+                                      </li>
+                                      <hr className="dropdown-divider ms-3 me-3" />
+                                    </React.Fragment>
+                                  );
+                                })}
+                            </ul>
+                          </li>
+                        );
+                      } else {
+                        return (
+                          <li
+                            className="d-block"
+                            onClick={() => goToProductPage(item)}
+                          >
+                            <a className="dropdown-item fs-16 text_black">
+                              {item.name}
+                            </a>
+                          </li>
+                        );
                       }
-                   
-
-               })}
-
-
-
-
-                 
+                    })}
                 </ul>
-
-
-
-
-
-
               </div>
               <li className="nav-item">
                 <a className="fs-16 text_black" href="#">
@@ -270,29 +251,28 @@ const Header = (props) => {
           </div>
         </div>
       </nav>
-      <div className="d-lg-none py-3">
+      <div className="d-lg-none py-3 bg-white">
         <div className="container">
           <div className="d-flex justify-content-between">
-            <a href="/" className="logo">
-              <span className="position_static pointer_event">
+            <a href="/" className="">
+              <span className="">
                 <Image
-                  layout="fill"
+                  width="200"
+                  height="50"
                   src={Logo}
                   alt="logo2"
-                  className="img-fluid position_static"
-                  
-                  
+                  className="img-fluid"
                 />
               </span>
             </a>
             <button
-              className="btn border-0 shadow-none"
+              className="btn border-0 bg_black  px-3 shadow-none"
               type="button"
               data-bs-toggle="offcanvas"
               data-bs-target="#offcanvasWithBothOptions"
               aria-controls="offcanvasWithBothOptions"
             >
-              <i className="fa-solid fa-bars fs-24 fw-700"></i>
+              <i className="fa-solid text-white fa-bars fs-24 fw-700"></i>
             </button>
           </div>
 
@@ -304,15 +284,14 @@ const Header = (props) => {
             aria-labelledby="offcanvasWithBothOptionsLabel"
           >
             <div className="offcanvas-header">
-              <a href="/" className="logo">
-                <span className="position_static pointer_event">
-                  <Image
-                    layout="fill"
-                    alt="logo2"
-                    className="img-fluid mt-0 position_static"
-                    src="https://luxorpen.com/images/logo/logo.png"
-                  />
-                </span>
+              <a href="/">
+                <Image
+                  width="200"
+                  height="50"
+                  alt="logo2"
+                  className="img-fluid mt-0 "
+                  src={Logo}
+                />
               </a>
               <button
                 type="button"
@@ -368,10 +347,152 @@ const Header = (props) => {
                   </li>
                 </ul>
               </div>
-              <li className="nav-item">
-                <a className="fs-16 text_black p-2" href="/product">
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link text-start dropdown-toggle btn fs-16 text_black p-2"
+                  href="#"
+                  id="product-dropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
                   Product
                 </a>
+
+                <ul class="dropdown-menu" aria-labelledby="product-dropdown">
+                  <li>
+                    <a
+                      class="text_black  fs-16 dropdown-item"
+                      href=""
+                    >
+                     Highlighters
+                    </a>
+                  </li>
+                  <hr class="dropdown-divider ms-3 me-3" />
+                  <li>
+                    <a
+                      class="text_black  fs-16 dropdown-item"
+                      href="#"
+                    >
+                      Pens
+                    </a>
+                  </li>
+                  <ul class="list-unstyled">
+                    <li class="ps-3">
+                      <a
+                        class="dropdown-item"
+                        href=""
+                      >
+                        Metal Pens
+                      </a>
+                      <hr class="dropdown-divider ms-3 me-3" />
+                      <a
+                        class="dropdown-item"
+                        href=""
+                      >
+                        Everday Writing
+                      </a>
+                      
+
+                      
+                    </li>
+                  </ul>
+                  <hr class="dropdown-divider ms-3 me-3" />
+                  <li>
+                    <a
+                      class="text_black  fs-16 dropdown-item"
+                      href=""
+                    >
+                    Art & Hobby
+                    </a>
+                  </li>
+                  <hr class="dropdown-divider ms-3 me-3" />
+
+                  <li>
+                    <a
+                      class="text_black  fs-16 dropdown-item"
+                      href=""
+                    >
+                    Eco-Write
+                    </a>
+                  </li>
+                  <hr class="dropdown-divider ms-3 me-3" />
+
+                  <li>
+                    <a
+                      class="text_black  fs-16 dropdown-item"
+                      href=""
+                    >
+                   Notebook and Stationery
+                    </a>
+                  </li>
+                  <hr class="dropdown-divider ms-3 me-3" />
+
+                  <li>
+                    <a
+                      class="text_black  fs-16 dropdown-item"
+                      href=""
+                    >
+                    Value Packs
+                    </a>
+                  </li>
+                  <hr class="dropdown-divider ms-3 me-3" />
+
+                  <li>
+                    <a
+                      class="text_black  fs-16 dropdown-item"
+                      href=""
+                    >
+                   Kids Colouring
+                    </a>
+                  </li>
+                  <hr class="dropdown-divider ms-3 me-3" />
+
+                  <li>
+                    <a
+                      class="text_black  fs-16 dropdown-item"
+                      href=""
+                    >
+                   PCW
+                    </a>
+                  </li>
+                  <hr class="dropdown-divider ms-3 me-3" />
+
+                  <li>
+                    <a
+                      class="text_black  fs-16 dropdown-item"
+                      href="#"
+                    >
+                     Markers
+                    </a>
+                  </li>
+                  <ul class="list-unstyled">
+                    <li class="ps-3">
+                      <a
+                        class="dropdown-item"
+                        href=""
+                      >
+                        Permanent Markers
+                      </a>
+                      <hr class="dropdown-divider ms-3 me-3" />
+                      <a
+                        class="dropdown-item"
+                        href=""
+                      >
+                       Whiteboard Markers
+                      </a>
+                      <hr class="dropdown-divider ms-3 me-3" />
+                      <a
+                        class="dropdown-item"
+                        href=""
+                      >
+                       Whiteboard Car Kits
+                      </a>
+
+                      
+                    </li>
+                  </ul>
+                </ul>
               </li>
               <li className="nav-item">
                 <a className="fs-16 text_black p-2" href="#">
@@ -426,14 +547,11 @@ const Header = (props) => {
   );
 };
 
-
-
-
 // export async function getServerSideProps({ req, res }) {
 
 //     let {result , status } = await allProductsCategory()
 //     console.log("statusstatus" ,result)
-    
+
 //     if(status && result.length>0){
 //         return {
 //             props: {
@@ -441,7 +559,7 @@ const Header = (props) => {
 //             }
 //           }
 //     }else{
-         
+
 //     }
 //     return {
 //       props: {
@@ -450,9 +568,6 @@ const Header = (props) => {
 //       }
 //     }
 
-    
 //   }
-  
-
 
 export default Header;

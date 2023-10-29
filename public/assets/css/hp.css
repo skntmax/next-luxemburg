@@ -237,7 +237,9 @@
  .border-2{
      border: 2px solid grey;
  }
-
+.bg_black{
+     background-color: black;
+}
 
 /* -----------------------------------media query--------------------------*/
 
