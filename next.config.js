@@ -1,8 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
+  // reactStrictMode: true,
   output: "standalone",
-  reactStrictMode: false,
+  // reactStrictMode: false,
   transpilePackages: ['gsap'],
   images: {
     disableStaticImages: false,

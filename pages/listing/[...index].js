@@ -6,17 +6,22 @@ import Header from "@components/header";
 import Parker from "public/assets/parker.jpg";
 import { allProductsCategory, getCategoryWiseProducts, getProductByOnlyId } from "Actions/action";
 import styles from 'styles/productbar.module.css'
+import { useRouter } from "next/router";
 
 
 const index = (props) => {
 
 
+  let router = useRouter()
   const [ data , setData ] =  useState( {
      cat_name:props.cat_name ,
      list:props.all_prd
    })
    
+
   useEffect(()=>{
+
+  
      
   },[ ])
 
@@ -25,9 +30,26 @@ const index = (props) => {
   const getSelectedItem = async (model)=>{
      
      try{
-debugger
-      let dataModel = {selected_prd:model.cat_info , prd_id:model.prd_id   }  
-        let data = await getProductByOnlyId(dataModel)
+
+
+      
+
+//   {
+//     "selected_prd": {
+//         "_id": "653973a0018a5347a3867061",
+//         "category": "Permanent Markers"
+//     },
+//     "prd_id": "65397016d2ea5f856977cf94"
+// }
+
+      let final_redirect_uri = '/product/'+model.cat_info._id+"/"+model.prd_id
+      console.log( final_redirect_uri )
+      router.push(final_redirect_uri)
+
+// debugger
+      // let dataModel = {selected_prd:model.cat_info , prd_id:model.prd_id   }  
+        
+      // let data = await getProductByOnlyId(dataModel)
 
      }catch(err){
        
@@ -288,6 +310,17 @@ debugger
 
 
 export async function getServerSideProps(context) {
+
+
+//   {
+//     "selected_prd": {
+//         "_id": "653973a0018a5347a3867061",
+//         "category": "Permanent Markers"
+//     },
+//     "prd_id": "65397016d2ea5f856977cf94"
+// }
+
+
 
   let {
     query,

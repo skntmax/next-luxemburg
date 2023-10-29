@@ -23,12 +23,38 @@ import toxic from "public/assets/non-toxic.webp";
 import Marker7 from "public/assets/0.png";
 import Background from "public/assets/Lineart.png";
 import Didyouknow from "public/assets/did you know.webp";
-import { getCategoryWiseProducts } from "../../Actions/action";
+import { getCategoryWiseProducts, getProductByOnlyId } from "../../Actions/action";
+import { useRouter } from "next/router";
 
 // import Products from './Products'
 
 const ProductPage = (props) => {
+  
+  let router = useRouter()
+
   const [cat_prdcts, setPrd] = useState(props.cat_prd);
+  const [selected_prd, set_selected_prd] = useState(props.selected_prd_data);
+
+  const getSelectedItems =async  (...args)=>{
+
+     const [selected_prod_id , main_cat_id] = args
+
+      let dataModel = {selected_prd:{
+      "_id": selected_prod_id,
+  } , prd_id:main_cat_id   }  
+
+ 
+   getProductByOnlyId(dataModel).then(res=>{
+     if(res.status) {
+      set_selected_prd(res.result)
+     }
+   }).catch(err=>{
+     console.log("some error occured ")
+   })
+    
+   }
+
+
 
   return (
     <>
@@ -64,7 +90,7 @@ const ProductPage = (props) => {
                 <React.Fragment>
                   <div
                     className="col-12 col-sm-6 my-3 col-md-4 col-lg-3  "
-                    onClick={() => router.push("product/" + ele._id)}
+                    onClick={() => getSelectedItems(ele._id , ele.product_cat_type._id) }
                   >
                     <div className="card h-100 shadow border-0 cards_hover">
                       <div className="card-body">
@@ -97,11 +123,9 @@ const ProductPage = (props) => {
               {/* ----------------part 1----- */}
               <div className="border-2 rounded shadow p-4">
                 <div className="">
-                  <h2 className="fs-30">BROADLINE MARKER</h2>
+                  <h2 className="fs-30">{ selected_prd.name }</h2>
 
-                  <p className="fs-18 text_justify">{`Kids love Luxor Broadline Markers because they are durable, sturdy, and delightful
-                            to color with. They come in 12 lovely colors, are washable, non-toxic and don't bleed
-                            through most paper. `}</p>
+                  <p className="fs-18 text_justify">{selected_prd.description}</p>
                 </div>
 
                 {/* ----------------part 2----- */}
@@ -285,19 +309,30 @@ const ProductPage = (props) => {
 };
 
 export async function getServerSideProps(context) {
-  let {
-    query,
-    params: { index: _id },
-  } = context;
 
+   let {
+    query,
+    params: { index: [ selected_prod_id , main_cat_id ]  },
+  } = context ;
+
+
+      let dataModel = {selected_prd:{
+          "_id": selected_prod_id,
+      } , prd_id:main_cat_id   }  
+
+  console.log(dataModel )
   // except pen , heighligher and  marker
 
-  let { result, status } = await getCategoryWiseProducts(_id);
+      let {status , result} = await getProductByOnlyId(dataModel)
+    // console.log(selected_prd_data)
 
-  if (status && result.length > 0) {
+       let sub_cat_product= await getCategoryWiseProducts(main_cat_id);
+
+  if (status && Object.keys(result).length> 0) {
     return {
       props: {
-        cat_prd: result,
+        cat_prd: sub_cat_product.result,
+        selected_prd_data:result
       },
     };
   } else {
