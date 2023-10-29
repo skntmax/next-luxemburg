@@ -5,6 +5,8 @@ import Image from "next/image";
 import { allProductsCategory } from "Actions/action";
 import Logo from "public/assets/luxorlogo.png";
 import { useRouter } from "next/router";
+import styles from 'styles/productbar.module.css'
+
 
 const Header = (props) => {
 
@@ -19,21 +21,31 @@ const Header = (props) => {
          if(status) 
             set_all_prd(result)
     })()
-  } ,[])
+  } ,[all_prd.length])
 
-  const goToProductPage =(item)=>{
+
+
+
+
+  const goToProductPage =(item , current_id, sub_category)=>{
    
-    if(item._doc) {
+    debugger
+     let final_url = ""
+      if(item._doc) {
         // pen or marker  
+        final_url  = '/listing/'+sub_category+"/"+current_id
+          if(final_url)
+          router.push(final_url)
          
+         // console.log(final_url)
 
     }else{
+      
         // except pen and marker 
         const {_id ,name:category_name} = item 
-        let final_url  = '/listing/'+category_name+"/"+_id 
-        // console.log('/listing/'+category_name+"/"+_id)
-        router.push('/listing/'+category_name+"/"+_id)
-         
+         final_url  = '/listing/'+category_name+"/"+_id 
+        router.push(final_url)
+
     }
     
     
@@ -171,16 +183,23 @@ const Header = (props) => {
                       
                       if(item._doc) {
                       return(
-                        <li className="d-block" onClick={()=> goToProductPage(item) } >
+                        <li className={`d-block ${styles['main_prd']}`} onClick={(e)=> {
+                          debugger
+                          goToProductPage(item)
+                          } } >
                     <a className="dropdown-item fs-16 text_black" >
                       {item._doc.name}
                     </a> 
                     <ul className="dropdown-menu dropdown-submenu dropdown-submenu-left">
+
                     {item.sub_menu && item.sub_menu.length>0 && item.sub_menu.map(ele=>{
                          return(
                             <React.Fragment>
-
-                            <li onClick={()=> goToProductPage(item) }>
+                            <li onClick={(e)=> { 
+                              debugger
+                               e.stopPropagation()
+                               goToProductPage(item, ele._id , ele.category?ele.category:ele.marker_category)
+                                } }>
                         <a
                           className="dropdown-item"
                         >

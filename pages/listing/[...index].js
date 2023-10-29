@@ -4,7 +4,9 @@ import { AiOutlineSearch } from "react-icons/ai";
 import Image from "next/image";
 import Header from "@components/header";
 import Parker from "public/assets/parker.jpg";
-import { allProductsCategory, getCategoryWiseProducts } from "Actions/action";
+import { allProductsCategory, getCategoryWiseProducts, getProductByOnlyId } from "Actions/action";
+import styles from 'styles/productbar.module.css'
+
 
 const index = (props) => {
 
@@ -14,13 +16,25 @@ const index = (props) => {
      list:props.all_prd
    })
    
-
   useEffect(()=>{
      
   },[ ])
 
   const { cat_name: category_name}  = data
   
+  const getSelectedItem = async (model)=>{
+     
+     try{
+debugger
+      let dataModel = {selected_prd:model.cat_info , prd_id:model.prd_id   }  
+        let data = await getProductByOnlyId(dataModel)
+
+     }catch(err){
+       
+     }
+
+  }
+
   
   return (
     <>
@@ -147,7 +161,25 @@ const index = (props) => {
                         {props.all_prd && props.all_prd.length>0 ? 
                           props.all_prd.map((ele)=>{
                             return<>
-                            <div className="col-lg-3 col-md-4 mb-3">
+                            <div 
+                            className= {`  col-lg-3 col-md-4  mb-3 ${styles['main_prd']} `}
+                            onClick={()=>
+                            {
+                              // console.log(ele)
+                            getSelectedItem( { cat_info : 
+                            { _id:ele._id , category: ele.category_type?
+                             ele.category_type.category :
+                             ele.marker_category_type?
+                             ele.marker_category_type.marker_category:
+                             ele.product_cat_type
+      .name  } , prd_id: ele.category_type?ele.category_type._id:
+      ele.marker_category_type?ele.marker_category_type._id:
+      ele.product_cat_type
+      ._id  }   )
+                            
+                            }
+                            }
+                            >
                       <div className="card shadow border-0 h-100 bg-transparent">
 
                             <div className="card-body">
@@ -263,7 +295,7 @@ export async function getServerSideProps(context) {
   } = context ;
 
 
-   let {result , status } = await getCategoryWiseProducts(_id)
+   let {result , status } = await getCategoryWiseProducts(_id , cat_name)
      
 
 

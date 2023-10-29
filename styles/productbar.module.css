@@ -19,3 +19,8 @@
     background-repeat: no-repeat;
     background-position: center center;
   }
+
+
+  .main_prd{
+     cursor: pointer;
+  }
