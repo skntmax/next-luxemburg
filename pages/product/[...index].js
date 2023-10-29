@@ -327,11 +327,10 @@ export async function getServerSideProps(context) {
     // console.log(selected_prd_data)
 
        let sub_cat_product= await getCategoryWiseProducts(main_cat_id);
-
   if (status && Object.keys(result).length> 0) {
     return {
       props: {
-        cat_prd: sub_cat_product.result,
+        cat_prd:sub_cat_product.result?sub_cat_product.result: []  ,
         selected_prd_data:result
       },
     };
