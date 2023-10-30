@@ -1009,24 +1009,22 @@ color: white;
   align-items: center;
 }
 
-.footer-icon {}
 
 
 
 
 .Art_gallery_button {
   position: absolute;
-  border-radius: 10vw;
-  color: red;
-  background-color: red;
+ 
+  
+  background-color: red !important;
   text-align: center;
   align-items: center;
-  color: white;
-  width: 70vh;
-  height: 15vh;
+ border-radius: 19px;
+ padding: 10px 17px;
   z-index: 1;
   right: 20%;
-  font-size: 400%;
+ 
   font-weight: bolder;
 }
 
