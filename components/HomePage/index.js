@@ -560,6 +560,8 @@ function App(props ) {
               <div className="row flex-nowrap overflow-auto px-4 ">
                 {all_prdcts.length > 0 &&
                   all_prdcts.map((ele) => {
+                    let image_file = ele._doc? process.env.NEXT_PUBLIC_BASE_URL+"/"+ele._doc.master_folder_name+"/"+ele._doc.file_name:
+                    process.env.NEXT_PUBLIC_BASE_URL+"/"+ele.master_folder_name+"/"+ele.file_name 
                     return (
                       <React.Fragment>
                         <div
@@ -570,8 +572,10 @@ function App(props ) {
                             <div className="card-body">
                               <h3 className="fs-24 text-center">{ele._doc?ele._doc.name:ele.name}</h3>
                               <div className="">
-                                <Image src={Image1} alt={ele.name} />
-                              </div>
+                               
+                                <Image src={image_file} width={200} height={100}  alt={ele.name} />
+                             
+                               </div>
                             </div>
                           </div>
                         </div>
