@@ -53,22 +53,12 @@ import Header from "@components/header";
 
 gsap.registerPlugin(ScrollTrigger);
 
-function App(props ) {
- 
-
-    const [all_prdcts, set_all_prdcts]  =useState(props.all_prdcts)
-  let router = useRouter()
+function App(props) {
+  const [all_prdcts, set_all_prdcts] = useState(props.all_prdcts);
+  let router = useRouter();
   let prd_pen = useRef();
 
-  
-    
-   
   useEffect(() => {
-    
-    document.getElementsByClassName(
-        'Art_gallery_button'
-    )[0].innerHTML = "Art Gallery"
-
     let text_div = document.querySelectorAll(".home-text");
     let sections = document.querySelectorAll(".home1-img img");
     let new_launch = document.querySelectorAll("new_launch");
@@ -335,8 +325,6 @@ function App(props ) {
 
   return (
     <>
-
-  
       <Carasol />
 
       <section className="py-5 overflow-hidden">
@@ -528,7 +516,9 @@ function App(props ) {
         <div className="products">
           <div className="prodBackground">
             <div class="">
-              <h2 className="fs-30 text-center mt-4 mt-md-5 text-white">Products</h2>
+              <h2 className="fs-30 text-center mt-4 mt-md-5 text-white">
+                Products
+              </h2>
             </div>
           </div>
 
@@ -565,12 +555,14 @@ function App(props ) {
                     return (
                       <React.Fragment>
                         <div
-                          className="col-12 col-sm-6 mt-4 mt-md-0 col-md-4 col-lg-3  "
+                          className="col-12 col-sm-6 mt-4 mt-md-0 col-md-4 col-lg-3 mb-3 "
                           onClick={() => router.push("product/" + ele._id)}
                         >
                           <div className="card h-100 shadow border-0 cards_hover">
                             <div className="card-body">
-                              <h3 className="fs-24 text-center">{ele._doc?ele._doc.name:ele.name}</h3>
+                              <h3 className="fs-24 text-center">
+                                {ele._doc ? ele._doc.name : ele.name}
+                              </h3>
                               <div className="">
                                
                                 <Image src={image_file} width={200} height={100}  alt={ele.name} />
@@ -651,30 +643,36 @@ function App(props ) {
             </p>
           </div>
         </div>
-
-        <div className="enviro-img">
-          <Image
-            src={Image6}
-            style={{
-              width: "100%",
-              height: "100%",
-              objectFit: "contain",
-            }}
-            alt="hm"
-          />
+      </section>
+      <section className="py-5">
+        <div className="container-fluid p-0">
+          <div className="enviro-img">
+            <Image
+            className="img-fluid w-100"
+              src={Image6}
+              style={{
+                width: "100%",
+              
+                
+              }}
+              alt="hm"
+            />
+          </div>
         </div>
       </section>
-
       <div className="art-gallery" style={{ height: "100%", width: "100%" }}>
-        <div className="Art_gallery_button"></div>
+        <button className="btn Art_gallery_button text-white fs-16">
+          {" "}
+          Art Gallery
+        </button>
         <Image
+          className="img-fluid"
           src={ArtGallery}
           style={{
             width: "100%",
             height: "100%",
-            objectFit: "contain",
           }}
-          alt="hm"
+          alt="Art Gallery"
         />
       </div>
 
