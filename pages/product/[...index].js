@@ -320,7 +320,6 @@ export async function getServerSideProps(context) {
           "_id": selected_prod_id,
       } , prd_id:main_cat_id   }  
 
-  console.log(dataModel )
   // except pen , heighligher and  marker
 
       let {status , result} = await getProductByOnlyId(dataModel)
