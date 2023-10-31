@@ -563,9 +563,9 @@ function App(props) {
                               <h3 className="fs-24 text-center">
                                 {ele._doc ? ele._doc.name : ele.name}
                               </h3>
-                              <div className="">
+                              <div className="text-center">
                                
-                                <Image src={image_file} width={200} height={100}  alt={ele.name} />
+                                <Image  className="banner_img" src={image_file} width={300} height={200}  alt={ele.name} />
                              
                                </div>
                             </div>

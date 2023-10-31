@@ -359,140 +359,83 @@ const Header = (props) => {
                   Product
                 </a>
 
+
+
+
                 <ul class="dropdown-menu" aria-labelledby="product-dropdown">
-                  <li>
-                    <a
-                      class="text_black  fs-16 dropdown-item"
-                      href=""
-                    >
-                     Highlighters
-                    </a>
-                  </li>
-                  <hr class="dropdown-divider ms-3 me-3" />
-                  <li>
-                    <a
-                      class="text_black  fs-16 dropdown-item"
-                      href="#"
-                    >
-                      Pens
-                    </a>
-                  </li>
-                  <ul class="list-unstyled">
-                    <li class="ps-3">
-                      <a
-                        class="dropdown-item"
-                        href=""
-                      >
-                        Metal Pens
-                      </a>
-                      <hr class="dropdown-divider ms-3 me-3" />
-                      <a
-                        class="dropdown-item"
-                        href=""
-                      >
-                        Everday Writing
-                      </a>
-                      
 
-                      
-                    </li>
-                  </ul>
-                  <hr class="dropdown-divider ms-3 me-3" />
-                  <li>
-                    <a
-                      class="text_black  fs-16 dropdown-item"
-                      href=""
-                    >
-                    Art & Hobby
-                    </a>
-                  </li>
-                  <hr class="dropdown-divider ms-3 me-3" />
-
-                  <li>
-                    <a
-                      class="text_black  fs-16 dropdown-item"
-                      href=""
-                    >
-                    Eco-Write
-                    </a>
-                  </li>
-                  <hr class="dropdown-divider ms-3 me-3" />
-
-                  <li>
-                    <a
-                      class="text_black  fs-16 dropdown-item"
-                      href=""
-                    >
-                   Notebook and Stationery
-                    </a>
-                  </li>
-                  <hr class="dropdown-divider ms-3 me-3" />
-
-                  <li>
-                    <a
-                      class="text_black  fs-16 dropdown-item"
-                      href=""
-                    >
-                    Value Packs
-                    </a>
-                  </li>
-                  <hr class="dropdown-divider ms-3 me-3" />
-
-                  <li>
-                    <a
-                      class="text_black  fs-16 dropdown-item"
-                      href=""
-                    >
-                   Kids Colouring
-                    </a>
-                  </li>
-                  <hr class="dropdown-divider ms-3 me-3" />
-
-                  <li>
-                    <a
-                      class="text_black  fs-16 dropdown-item"
-                      href=""
-                    >
-                   PCW
-                    </a>
-                  </li>
-                  <hr class="dropdown-divider ms-3 me-3" />
-
-                  <li>
-                    <a
-                      class="text_black  fs-16 dropdown-item"
-                      href="#"
-                    >
-                     Markers
-                    </a>
-                  </li>
-                  <ul class="list-unstyled">
-                    <li class="ps-3">
-                      <a
-                        class="dropdown-item"
-                        href=""
-                      >
-                        Permanent Markers
-                      </a>
-                      <hr class="dropdown-divider ms-3 me-3" />
-                      <a
-                        class="dropdown-item"
-                        href=""
-                      >
-                       Whiteboard Markers
-                      </a>
-                      <hr class="dropdown-divider ms-3 me-3" />
-                      <a
-                        class="dropdown-item"
-                        href=""
-                      >
-                       Whiteboard Car Kits
-                      </a>
-
-                      
-                    </li>
-                  </ul>
+                  {all_prd.length > 0 &&
+                    all_prd.map((item, ind) => {
+                      if (item._doc) {
+                        return (
+                          <li
+                            className={`d-block ${styles["main_prd"]}`}
+                            onClick={(e) => {
+                              debugger;
+                              goToProductPage(item);
+                            }}
+                          >
+                            <a className="text_black  fs-16 dropdown-item">
+                              {item._doc.name}
+                            </a>
+                            <ul className="list-unstyled">
+                              {item.sub_menu &&
+                                item.sub_menu.length > 0 &&
+                                item.sub_menu.map((ele) => {
+                                  return (
+                                    <React.Fragment>
+                                      <li
+                                        onClick={(e) => {
+                                          debugger;
+                                          e.stopPropagation();
+                                          goToProductPage(
+                                            item,
+                                            ele._id,
+                                            ele.category
+                                              ? ele.category
+                                              : ele.marker_category
+                                          );
+                                        }}
+                                      >
+                                        <a className="dropdown-item">
+                                          {ele.category
+                                            ? ele.category
+                                            : ele.marker_category
+                                            ? ele.marker_category
+                                            : ""}
+                                        </a>
+                                      </li>
+                                      <hr className="dropdown-divider ms-3 me-3" />
+                                    </React.Fragment>
+                                  );
+                                })}
+                            </ul>
+                          </li>
+                        );
+                      } else {
+                        return (
+                          <li
+                            className="d-block"
+                            onClick={() => goToProductPage(item)}
+                          >
+                            <a className="text_black  fs-16 dropdown-item">
+                              {item.name}
+                            </a>
+                          </li>
+                        );
+                      }
+                    })}
                 </ul>
+
+
+
+                
+
+
+
+
+
+              
               </li>
               <li className="nav-item">
                 <a className="fs-16 text_black p-2" href="#">
