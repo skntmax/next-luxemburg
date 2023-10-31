@@ -1,9 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   // reactStrictMode: true,
-  output: "standalone",
-  // reactStrictMode: false,
-  transpilePackages: ['gsap'],
+
+  reactStrictMode: true,
+  optimizeFonts: true,
   images: {
     disableStaticImages: false,
     remotePatterns: [
@@ -20,6 +20,9 @@ const nextConfig = {
       "upload.wikimedia.org",
     ],
   },
+  eslint: {
+    ignoreDuringBuilds: true,
+}
    
    
 }
