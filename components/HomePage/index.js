@@ -560,7 +560,7 @@ function App(props) {
                         >
                           <div className="card h-100 shadow border-0 cards_hover">
                             <div className="card-body">
-                              <h3 className="fs-24 text-center">
+                              <h3 className="fs-20 text-center">
                                 {ele._doc ? ele._doc.name : ele.name}
                               </h3>
                               <div className="text-center">
