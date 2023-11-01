@@ -29,9 +29,9 @@ import I1 from "public/assets/images/Look Book 1.jpg";
 import I2 from "public/assets/images/Look Book 2.jpg";
 import I3 from "public/assets/images/Look Book 3.jpg";
 import Client from "public/assets/client.png";
-import Image11 from "public/assets/ugc image.png";
-import Image12 from "public/assets/ugc heart.png";
-import Image13 from "public/assets/ugc pen.png";
+import Imag11 from "public/assets/ugc-img.png";
+import Imag12 from "public/assets/ugc-heart.webp";
+import Imag13 from "public/assets/ugc-pen.jpg";
 import Image14 from "public/assets/org11.png";
 import Image15 from "public/assets/org12.png";
 import Image16 from "public/assets/org3.png";
@@ -550,8 +550,17 @@ function App(props) {
               <div className="row flex-nowrap overflow-auto px-4 ">
                 {all_prdcts.length > 0 &&
                   all_prdcts.map((ele) => {
-                    let image_file = ele._doc? process.env.NEXT_PUBLIC_BASE_URL+"/"+ele._doc.master_folder_name+"/"+ele._doc.file_name:
-                    process.env.NEXT_PUBLIC_BASE_URL+"/"+ele.master_folder_name+"/"+ele.file_name 
+                    let image_file = ele._doc
+                      ? process.env.NEXT_PUBLIC_BASE_URL +
+                        "/" +
+                        ele._doc.master_folder_name +
+                        "/" +
+                        ele._doc.file_name
+                      : process.env.NEXT_PUBLIC_BASE_URL +
+                        "/" +
+                        ele.master_folder_name +
+                        "/" +
+                        ele.file_name;
                     return (
                       <React.Fragment>
                         <div
@@ -564,10 +573,14 @@ function App(props) {
                                 {ele._doc ? ele._doc.name : ele.name}
                               </h3>
                               <div className="text-center">
-                               
-                                <Image  className="banner_img" src={image_file} width={300} height={200}  alt={ele.name} />
-                             
-                               </div>
+                                <Image
+                                  className="banner_img"
+                                  src={image_file}
+                                  width={300}
+                                  height={200}
+                                  alt={ele.name}
+                                />
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -578,158 +591,126 @@ function App(props) {
             </div>
           </section>
 
-          <div className="product-btn">
+          {/* <div className="product-btn">
             <a href="#" className="btn-box">
               All Products
             </a>
-          </div>
+          </div> */}
         </div>
       </section>
 
-      <section className="exported">
-        <div class="heading">
-          <h2>Exported To Over 106+ Countries</h2>
-        </div>
-        <div className="home-container">
-          <div className="homeImg ">
-            <Image src={Image4} alt="hm" />
-          </div>
-        </div>
-      </section>
-
-      <section className="luxor-container">
-        <div class="heading">
-          <h2>Luxor’s Journey</h2>
-        </div>
-        <div className="home-container">
-          <div className="homeImg-luxor ">
-            <Image src={Image5} alt="hm" />
-          </div>
-        </div>
-      </section>
-
-      <section className="luxor-container">
-        <div class="heading">
-          <h2
-            style={{
-              lineHeight: "80%",
-              color: "green",
-              fontSize: "4vw",
-              paddingTop: "5%",
-            }}
-          >
-            {" "}
-            {"Let's save the"} <br /> environment with Luxor
-          </h2>
-        </div>
-        <div className="home-container">
-          <div className="homeImg-luxor ">
-            <p
-              style={{
-                padding: "5%",
-                fontSize: "1.5vw",
-                color: "rgba(61, 57, 59, 0.69)",
-              }}
-            >
-              {` Evolution of humans has done nothing but harm to our planet, the number of non-biodegradable dumps we have
-                            made is turning our planet hostile and non-biodegradable & plastic products are the prime reasons behind our
-                            planet's vulnerability. Acknowledging the harm we have caused to our planet has made everyone quite aware & active
-                            about following ways to endure a life without causing loss to our surroundings and therefore the demand for
-                            eco-friendly products is on rise, especially in the international market.`}
-              <br /> <br />
-              Luxor International takes a step ahead with an e‘ort & aim to help
-              our planet breathe well, by adding stationeries that are made of
-              recycled materials to our range of drawing and writing instruments
-            </p>
-          </div>
-        </div>
-      </section>
       <section className="py-5">
-        <div className="container-fluid p-0">
-          <div className="enviro-img">
+        <div className="container">
+          <h2 className="mt-4 text-center fs-34">
+            Exported To Over 106+ Countries
+          </h2>
+          <div className=" mt-5 mb-4">
             <Image
-            className="img-fluid w-100"
-              src={Image6}
-              style={{
-                width: "100%",
-              
-                
-              }}
-              alt="hm"
+              style={{ width: "100", height: "100" }}
+              className=" img-fluid h-100"
+              src={Image4}
+              alt="Map"
             />
           </div>
         </div>
       </section>
-      <div className="art-gallery" style={{ height: "100%", width: "100%" }}>
-        <button className="btn Art_gallery_button text-white fs-16">
-          {" "}
-          Art Gallery
-        </button>
-        <Image
-          className="img-fluid"
-          src={ArtGallery}
-          style={{
-            width: "100%",
-            height: "100%",
-          }}
-          alt="Art Gallery"
-        />
-      </div>
 
-      <section className="luxor-container">
-        <div class="heading">
-          <h2
-            style={{
-              lineHeight: "80%",
-              color: "red",
-              fontSize: "5vw",
-              margin: "5% 0px",
-            }}
-          >
-            Look Book{" "}
-          </h2>
-        </div>
-
-        <div className="home-container">
-          <div className="homeImg-luxor ">
-            <p
-              style={{
-                padding: "70px",
-                fontSize: "25px",
-                color: "rgba(61, 57, 59, 0.69)",
-                width: "100vw",
-              }}
-            >
-              <div className="look-img-cont">
-                <ImageContainer src={I1} t1="up your presentation " t2="Game" />
-                <ImageContainer
-                  src={I2}
-                  t1="Spark your creativity with"
-                  t2="Luxor pens"
-                />
-                <ImageContainer
-                  src={I3}
-                  t1="How to choose the  "
-                  t2="Best highlighter pen "
-                />
-              </div>
-            </p>
+      <section className="py-5">
+        <div class="container-fluid p-0">
+          <h2 className="mt-4 text-center fs-34">Luxor’s Journey</h2>
+          <div className="mt-5">
+            <Image
+              className="img-fluid w-100"
+              src={Image5}
+              alt="Luxor Journey"
+            />
           </div>
         </div>
       </section>
 
-      <section>
-        <div className="ugc-book-suggest">
-          <div className="ugc-img-cont">
-            <Image height={1000} width={1000} src={Image11} alt="homepage" />
-          </div>
+      <section className="py-5">
+        <div class="container">
+          <h2 className="fs-34 text-center my-5 text_green">
+            Let's save the <br /> environment with Luxor
+          </h2>
 
-          <div className="ugc-img-cont2">
-            <Image height={1000} width={1000} src={Image12} alt="homepage" />
+          <p className="text_grey  fs-20 text_justify">
+            Evolution of humans has done nothing but harm to our planet, the
+            number of non-biodegradable dumps we have made is turning our planet
+            hostile and non-biodegradable & plastic products are the prime
+            reasons behind our planet's vulnerability. Acknowledging the harm we
+            have caused to our planet has made everyone quite aware & active
+            about following ways to endure a life without causing loss to our
+            surroundings and therefore the demand for eco-friendly products is
+            on rise, especially in the international market.
+            <br />
+            Luxor International takes a step ahead with an e‘ort & aim to help
+            our planet breathe well, by adding stationeries that are made of
+            recycled materials to our range of drawing and writing instruments
+          </p>
+          <div className="">
+            <Image className="img-fluid w-100" src={Image6} alt="Re Use" />
           </div>
+        </div>
+      </section>
+      <section className="py-5 position-relative">
+        <div className="container-fluid p-0">
+          <Image className="img-fluid" src={ArtGallery} alt="Art Gallery" />
+          <button className="btn Art_gallery_button text-white fs-14">
+            Art Gallery
+          </button>
+        </div>
+      </section>
 
-          <div className="ugc-img-cont2">
-            <Image height={1000} width={1000} src={Image13} alt="homepage" />
+      <section className="py-5">
+        <div className="container">
+          <h2 className="fs-34 text_lightred fw-600 text-center">Look Book</h2>
+
+          {/* <div className=""> */}
+
+          <div className="row mt-4">
+            <div className="col-md-4 mb-3 col-lg-4 position-relative">
+              <Image className="img-fluid rounded" src={I1} alt="look Book" />
+              <div className="text_lookbook">
+                <p className="fs-20 text-white fw-600">
+                  Up Your Presentation Game
+                </p>
+              </div>
+            </div>
+            <div className="col-md-4 mb-3 col-lg-4 position-relative">
+              <Image src={I2} className="img-fluid rounded" alt="look Book" />
+              <div className="text_lookbook">
+                <p className="fs-20 text-white fw-600 ">
+                  Spark your creativity with Luxor pens
+                </p>
+              </div>
+            </div>
+            <div className="col-md-4 mb-3 col-lg-4 position-relative">
+              <Image className="img-fluid rounded" alt="look Book" src={I3} />
+              <div className="text_lookbook">
+                <p className="fs-20 text-white fw-600 ">
+                  How to choose the best highlighter pen
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-5">
+        <div className="container">
+          <div className="row flex-nowrap overflow-auto my-4">
+            <div className="col-sm-6 col-md-4 mb-3 ">
+              <Image className="img-fluid rounded p-4" src={Imag11} alt="homepage" />
+            </div>
+
+            <div className="col-sm-6  col-md-4 mb-3 ">
+              <Image className="img-fluid rounded p-4"  src={Imag12} alt="homepage" />
+            </div>
+
+            <div className="col-sm-6 col-md-4 mb-3 ">
+              <Image className="img-fluid rounded p-4" src={Imag13} alt="homepage" />
+            </div>
           </div>
         </div>
       </section>
@@ -808,13 +789,13 @@ function App(props) {
 
       {/* ------------------------------------did you know section-------------------------------------- */}
 
-      <section className="dyk-container">
+      {/* <section className="dyk-container">
         <div className="dyk-banner">
           <div className="dyk-banner1">
             <Image height={450} width={1000} src={Image17} alt="homepage" />
           </div>
         </div>
-        {/* -------------------------- */}
+        
         <div className="dyk-scroll">
           <h4>
             Luxor products have a presence across more than 106 countries.
@@ -828,7 +809,7 @@ function App(props) {
             <button></button>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* ----------------------------------------footer section------------------------------------------- */}
 
@@ -903,7 +884,7 @@ function App(props) {
           </div>
         </div>
 
-        {/* ------------------------------------- */}
+        
       </section>
     </>
   );
