@@ -170,6 +170,10 @@
      font-size: 30px;
 }
 
+.fs-34 {
+     font-size: 34px;
+}
+
 .fs-40 {
      font-size: 40px;
 }
@@ -239,6 +243,12 @@
  }
 .bg_black{
      background-color: black;
+}
+.text_green{
+     color: green;
+}
+.text_lightred{
+     color: #fe3134;
 }
 
 /* -----------------------------------media query--------------------------*/
