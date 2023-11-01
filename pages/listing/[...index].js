@@ -182,6 +182,7 @@ const index = (props) => {
                  
                         {props.all_prd && props.all_prd.length>0 ? 
                           props.all_prd.map((ele)=>{
+                            let image_file = (ele.root_folder_name && ele.file_name) ? process.env.NEXT_PUBLIC_BASE_URL+"/"+ele.root_folder_name+ele.file_name :""
                             return<>
                             <div 
                             className= {`  col-lg-3 col-md-4  mb-3 ${styles['main_prd']} `}
@@ -194,11 +195,11 @@ const index = (props) => {
                              ele.marker_category_type?
                              ele.marker_category_type.marker_category:
                              ele.product_cat_type
-      .name  } , prd_id: ele.category_type?ele.category_type._id:
-      ele.marker_category_type?ele.marker_category_type._id:
-      ele.product_cat_type
-      ._id  }   )
-                            
+                            .name  } , prd_id: ele.category_type?ele.category_type._id:
+                            ele.marker_category_type?ele.marker_category_type._id:
+                            ele.product_cat_type
+                            ._id  }   )
+                                                  
                             }
                             }
                             >
@@ -210,7 +211,7 @@ const index = (props) => {
                             width={450}
                             height={350}
                             className="img-fluid"
-                            src={Parker}
+                            src={image_file!=""?image_file:Parker}
                             alt="Products"
                           />
 
