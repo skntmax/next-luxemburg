@@ -989,10 +989,10 @@ carousel .slider-wrapper.axis-horizontal .slider .slide {
 .Art_gallery_button {
   position: absolute;
   background-color: red !important;
-  border-radius:25px;
-  padding: 10px 17px;
+  border-radius: 45px;
+  padding: 24px 47px;
   right: 20%;
-top: 30%;
+  top: 30%;
   font-weight: bolder;
 }
 
@@ -1641,12 +1641,30 @@ top: 30%;
   transition: all 1s ease;
   -webkit-transition: all 1s ease;
 }
-.text_lookbook{
+.text_lookbook {
   position: absolute;
   top: 75%;
   width: 87%;
   left: 8%;
 }
+.btn_secondary{
+  background-color: #da0428 !important;
+  padding: 13px 28px;
+  border-radius: 0px;
+}
+.btn_secondary-outline {
+border: 1px solid #da0428 !important;
+padding: 13px 28px;
+border-radius: 0px;
+}
+/* .writing_mode{
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+} */
+.bg_lightred{
+  background-color: #da0428;
 
+}
+    
 /* box-shadow: 0px 10px 20px 2px rgba(0, 0, 0, 0.25);
 transition: all 1s ease; */
