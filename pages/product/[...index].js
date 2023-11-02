@@ -86,6 +86,9 @@ const ProductPage = (props) => {
         <div className="row flex-nowrap overflow-auto px-4 ">
           {cat_prdcts.length > 0 &&
             cat_prdcts.map((ele) => {
+              let image_file = (ele.root_folder_name && ele.file_name) ? process.env.NEXT_PUBLIC_BASE_URL+"/"+ele.root_folder_name+ele.file_name :""
+               
+
               return (
                 <React.Fragment>
                   <div
@@ -96,7 +99,10 @@ const ProductPage = (props) => {
                       <div className="card-body">
                         <h3 className="fs-24 text-center">{ele.name}</h3>
                         <div className="">
-                          <Image src={Image1} alt={ele.name} />
+                          <Image src={image_file!=""?image_file:Image1}
+                           width={450}
+                            height={350}
+                           alt={ele.name} />
                         </div>
                       </div>
                     </div>
@@ -115,7 +121,14 @@ const ProductPage = (props) => {
         <div className="container-fluid">
           <div className="row">
             <div className="col-md-3 mb-3 text-center">
-              <Image className="img-fluid" src={broadmarker} alt="Marker" />
+              <Image className="img-fluid"
+               width={450}
+              height={500}
+               src={  
+                 
+                 (selected_prd.root_folder_name && selected_prd.file_name)?   
+                 process.env.NEXT_PUBLIC_BASE_URL+"/"+selected_prd.root_folder_name+selected_prd.file_name : broadmarker   
+                 } alt="Marker" />
             </div>
 
             {/* -------------------------container 2nd------------------------ */}
