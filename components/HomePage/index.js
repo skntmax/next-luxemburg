@@ -382,7 +382,7 @@ function App(props) {
               <div className="pen_marker_line"></div>
             </span>
 
-            <h3 className="new_launch ">New Launches</h3>
+            <h3 className="fs-40 fw-700 text_black  ">New Launches</h3>
           </div>
         </div>
 
@@ -516,7 +516,7 @@ function App(props) {
         <div className="products">
           <div className="prodBackground">
             <div class="">
-              <h2 className="fs-30 text-center mt-4 mt-md-5 text-white">
+              <h2 className="fs-40 fw-600 text-center mt-4 mt-md-5 text-white">
                 Products
               </h2>
             </div>
@@ -601,7 +601,7 @@ function App(props) {
 
       <section className="py-5">
         <div className="container">
-          <h2 className="mt-4 text-center fs-34">
+          <h2 className="mt-4 text-center fs-40 fw-700">
             Exported To Over 106+ Countries
           </h2>
           <div className=" mt-5 mb-4">
@@ -617,7 +617,7 @@ function App(props) {
 
       <section className="py-5">
         <div class="container-fluid p-0">
-          <h2 className="mt-4 text-center fs-34">Luxor’s Journey</h2>
+          <h2 className="mt-4 text-center fs-40 fw-700">Luxor’s Journey</h2>
           <div className="mt-5">
             <Image
               className="img-fluid w-100"
@@ -630,7 +630,7 @@ function App(props) {
 
       <section className="py-5">
         <div class="container">
-          <h2 className="fs-34 text-center my-5 text_green">
+          <h2 className="fs-40 fw-600 text-center my-5 text_green">
             Let's save the <br /> environment with Luxor
           </h2>
 
@@ -656,7 +656,7 @@ function App(props) {
       <section className="py-5 position-relative">
         <div className="container-fluid p-0">
           <Image className="img-fluid" src={ArtGallery} alt="Art Gallery" />
-          <button className="btn Art_gallery_button text-white fs-14">
+          <button className="btn Art_gallery_button text-white fs-16">
             Art Gallery
           </button>
         </div>
@@ -664,7 +664,7 @@ function App(props) {
 
       <section className="py-5">
         <div className="container">
-          <h2 className="fs-34 text_lightred fw-600 text-center">Look Book</h2>
+          <h2 className="fs-40 text_lightred fw-600 text-center">Look Book</h2>
 
           {/* <div className=""> */}
 
@@ -701,15 +701,27 @@ function App(props) {
         <div className="container">
           <div className="row flex-nowrap overflow-auto my-4">
             <div className="col-sm-6 col-md-4 mb-3 ">
-              <Image className="img-fluid rounded p-4" src={Imag11} alt="homepage" />
+              <Image
+                className="img-fluid rounded p-4"
+                src={Imag11}
+                alt="homepage"
+              />
             </div>
 
             <div className="col-sm-6  col-md-4 mb-3 ">
-              <Image className="img-fluid rounded p-4"  src={Imag12} alt="homepage" />
+              <Image
+                className="img-fluid rounded p-4"
+                src={Imag12}
+                alt="homepage"
+              />
             </div>
 
             <div className="col-sm-6 col-md-4 mb-3 ">
-              <Image className="img-fluid rounded p-4" src={Imag13} alt="homepage" />
+              <Image
+                className="img-fluid rounded p-4"
+                src={Imag13}
+                alt="homepage"
+              />
             </div>
           </div>
         </div>
@@ -717,31 +729,30 @@ function App(props) {
 
       {/* ---------------------------------------------organisation container---------------------------------------------- */}
 
-      <section className="organisation-container">
-        <div className="org-heading">
-          <h2>A Woman-Led Organization</h2>
-        </div>
-
-        <div className="org-main">
-          <div className="org-img-cont">
-            <div className="org-btn-cont">
-              <div className="org-btn-1">
-                <button>Photos</button>
-              </div>
-              <div className="org-btn-2">
-                <button>Videos</button>
-              </div>
-            </div>
-            <div className="org-img-card">
-              <Image height={1000} width={1000} src={Image14} alt="homepage" />
-            </div>
-
-            <div className="org-img-card">
-              <Image height={1000} width={1000} src={Image15} alt="homepage" />
+      <section className="py-5">
+        <div className="container">
+          <h2 className="fs-40 text-center mb-4 fw-600 text_lightred">
+            A Woman-Led Organization
+          </h2>
+          <div className="d-flex justify-content-center mb-2">
+            <button className="btn btn_secondary me-3 mb-2 fs-16 fw-600 text-white">
+              Photos
+            </button>
+            <button className="btn btn_secondary-outline me-3 mb-2 fs-16 fw-600 tetx_lightred ">
+              Videos
+            </button>
+          </div>
+          <div className="row mt-5">
+            <div className="col-md-4 mb-2">
+              <Image className="img-fluid" src={Image14} alt="homepage" />
             </div>
 
-            <div className="org-img-card">
-              <Image height={1000} width={1000} src={Image16} alt="homepage" />
+            <div className="col-md-4 mb-2">
+              <Image className="img-fluid" src={Image15} alt="homepage" />
+            </div>
+
+            <div className="col-md-4 mb-2">
+              <Image className="img-fluid" src={Image16} alt="homepage" />
             </div>
           </div>
         </div>
@@ -749,40 +760,43 @@ function App(props) {
 
       {/* ----------------------------------------------about luxor-------------------------------------- */}
 
-      <section className="about-luxor-container">
-        <div className="luxor-heading">
-          <h2>What People Say About Luxor</h2>
-        </div>
-
-        <div className="client">
-          <div className="client-detail">
-            <div className="client-img">
-              <div className="round-div">
-                <Image height={300} width={300} src={Client} alt="homepage" />
+      <section className="py-5 mb-4 bg_lightred">
+        <div className="container">
+          <h2 className="fs-40 text-white text-center mb-4 fw-600">
+            What People Say About Luxor
+          </h2>
+          <div className="row mt-5">
+          <div className="col-md-2 col-lg-3"></div>
+            <div className="col-md-8 col-lg-6 mb-3">
+              <div className="card  border-0 shadow-light">
+                <div className="card-body p-4">
+                  <p className="fs-20 mb-4 text_justify">
+                    With 20 fit and dexterous pens ready and raring to work in
+                    your favor impelling you into writing magical albeit gelled
+                    ink-less lines on page after treasured page in an
+                    increasingly digital-writing driven world, what more can you
+                    ask for?
+                  </p>
+                  <div className="d-flex justify-content-between">
+                    <div>
+                      <Image
+                        className="img-fluid rounded-pill"
+                        src={Client}
+                        alt="homepage"
+                      />
+                    </div>
+                    <div className="align-self-center">
+                      <p className="fs-20 mt-4  mb-2 text-end fw-600">John</p>
+                      <p className="fs-16 mt-2 text-end fw-600">
+                        -Director, GH Coms
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-            <h3>John</h3>
-            <p>Director, GH Coms</p>
-          </div>
-
-          <div className="luxor-review">
-            <h3>{`Client's Review`}</h3>
-            <p>
-              Luxor has always been my ﬁrst choice when it comes to any
-              stationery product.
-            </p>
-            <p>Loved It. </p>
-            <i></i>
-          </div>
-        </div>
-
-        <div className="arrow-btn">
-          <div className="arrow-btn-left">
-            <button>+</button>
-          </div>
-
-          <div className="arrow-btn-left">
-            <button>+</button>
+            <div className="col-md-2 col-lg-3"></div>
+           
           </div>
         </div>
       </section>
@@ -883,8 +897,6 @@ function App(props) {
             </div>
           </div>
         </div>
-
-        
       </section>
     </>
   );
