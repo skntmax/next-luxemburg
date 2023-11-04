@@ -95,13 +95,15 @@ const ProductPage = (props) => {
                     className="col-12 col-sm-6 my-3 col-md-4 col-lg-3  "
                     onClick={() => getSelectedItems(ele._id , ele.product_cat_type._id) }
                   >
-                    <div className="card h-100 shadow border-0 cards_hover">
-                      <div className="card-body">
+                    <div className="card  shadow h-100 border-0 cards_hover">
+                      <div className="card-body ">
                         <h3 className="fs-24 text-center">{ele.name}</h3>
-                        <div className="">
+                        <div className="align-self-center">
                           <Image src={image_file!=""?image_file:Image1}
-                           width={450}
-                            height={350}
+                           width={300}
+                           
+                           height={70}
+                           className="img-fluid  position_static min_height h-100"
                            alt={ele.name} />
                         </div>
                       </div>
@@ -121,9 +123,9 @@ const ProductPage = (props) => {
         <div className="container-fluid">
           <div className="row">
             <div className="col-md-3 mb-3 text-center">
-              <Image className="img-fluid"
-               width={450}
-              height={500}
+              <Image className="img-fluid  position_static mt-lg-5 h-100"
+               width={300}
+              height={70}
                src={  
                  
                  (selected_prd.root_folder_name && selected_prd.file_name)?   
