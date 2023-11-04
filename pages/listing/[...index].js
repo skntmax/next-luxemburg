@@ -271,16 +271,19 @@ console.log(p_n)
                                   }}
                                 >
                                   <div className="card shadow border-0 h-100 bg-transparent">
-                                    <div className="card-body  d-flex flex-column justify-content-between">
-                                      <h3 className="fs-20 text_black fw-500">
+                                    <div className=" card-header border-0 bg-transparent p-3">
+                                  <h3 className="fs-20 text_black fw-500">
                                         {" "}
                                         {ele.name}
                                       </h3>
-                                      <div>
+                                      </div>
+                                    <div className="card-body  d-flex flex-column justify-content-evenly">
+                                      
+                                      <div className="">
                                         <Image
                                           width={300}
                                           height={70}
-                                          className="img-fluid min_height mb-4 h-100 position_static"
+                                          className="img-fluid min_height  h-100 position_static"
                                           src={
                                             image_file != ""
                                               ? image_file
@@ -288,20 +291,20 @@ console.log(p_n)
                                           }
                                           alt="Products"
                                         />
-                                      
-
+                                      </div>
+                                    </div>
+                                    <div className="card-footer bg-transparent border-0">
                                       <p className="fs-14 text_black text-center">
                                         {ele.description.slice(0, 50) + "..."}
                                       </p>
                                 
-                                      <p className="d-flex my-4 justify-content-center gap-4">
+                                      <div className="d-flex my-4 justify-content-center gap-4">
                                         <button className="btn border-0">
                                           <i className=" fa-regular fa-bookmark fs-16 text_lightgrey"></i>
                                         </button>
                                         <button className="btn border-0">
                                           <i className=" fa-solid fa-cart-shopping fs-16 text_lightgrey"></i>
                                         </button>
-                                      </p>
                                       </div>
                                     </div>
                                   </div>
