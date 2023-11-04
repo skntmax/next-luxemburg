@@ -96,8 +96,11 @@ const ProductPage = (props) => {
                     onClick={() => getSelectedItems(ele._id , ele.product_cat_type._id) }
                   >
                     <div className="card  shadow h-100 border-0 cards_hover">
-                      <div className="card-body ">
-                        <h3 className="fs-24 text-center">{ele.name}</h3>
+                      <div className="card-header bg-transparent border-0 p-3">
+                      <h3 className="fs-24 text-center">{ele.name}</h3>
+
+                      </div>
+                      <div className="card-body d-flex justify-content-center">
                         <div className="align-self-center">
                           <Image src={image_file!=""?image_file:Image1}
                            width={300}
