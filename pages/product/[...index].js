@@ -87,7 +87,6 @@ const ProductPage = (props) => {
           {cat_prdcts.length > 0 &&
             cat_prdcts.map((ele) => {
               let image_file = (ele.root_folder_name && ele.file_name) ? process.env.NEXT_PUBLIC_BASE_URL+"/"+ele.root_folder_name+ele.file_name :""
-               
 
               return (
                 <React.Fragment>
@@ -99,9 +98,11 @@ const ProductPage = (props) => {
                       <div className="card-body">
                         <h3 className="fs-24 text-center">{ele.name}</h3>
                         <div className="">
-                          <Image src={image_file!=""?image_file:Image1}
-                           width={450}
-                            height={350}
+                          <Image 
+                          
+                          src={image_file!=""?image_file:Image1}
+                            layout='fill'
+                            objectFit='contain'
                            alt={ele.name} />
                         </div>
                       </div>

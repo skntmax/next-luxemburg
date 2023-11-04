@@ -24,3 +24,13 @@
   .main_prd{
      cursor: pointer;
   }
+
+  .product-list:hover {
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    transition-timing-function: ease-in-out;
+    transition-duration: 1s;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    animation: 1s linear 0.1s colorIt;
+  }

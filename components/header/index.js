@@ -209,7 +209,7 @@ const Header = (props) => {
                       } else {
                         return (
                           <li
-                            className="d-block"
+                            className={`d-block ${styles["main_prd"]} `}
                             onClick={() => goToProductPage(item)}
                           >
                             <a className="dropdown-item fs-16 text_black">
@@ -415,7 +415,7 @@ const Header = (props) => {
                       } else {
                         return (
                           <li
-                            className="d-block"
+                            className= {` d-block ${styles["main_prd"]} `}
                             onClick={() => goToProductPage(item)}
                           >
                             <a className="text_black  fs-16 dropdown-item">

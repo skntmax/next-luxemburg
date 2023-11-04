@@ -30,26 +30,14 @@ const index = (props) => {
   const getSelectedItem = async (model)=>{
      
      try{
-
-
-      
-
-//   {
-//     "selected_prd": {
-//         "_id": "653973a0018a5347a3867061",
-//         "category": "Permanent Markers"
-//     },
-//     "prd_id": "65397016d2ea5f856977cf94"
-// }
+       
+      // var ldld = new ldLoader({ root: "#my-loader" }); 
+      // /* 4. active this loader */
+      // ldld.on();
 
       let final_redirect_uri = '/product/'+model.cat_info._id+"/"+model.prd_id
       console.log( final_redirect_uri )
       router.push(final_redirect_uri)
-
-// debugger
-      // let dataModel = {selected_prd:model.cat_info , prd_id:model.prd_id   }  
-        
-      // let data = await getProductByOnlyId(dataModel)
 
      }catch(err){
        
@@ -61,6 +49,8 @@ const index = (props) => {
   return (
     <>
      
+     <div id="my-loader" className="text-danger ldld bare"></div>
+
       <section className="py-5">
         <div className="container">
           <h3 className="mt-2 pb-5 text_black text-center fs-30">{props.cat_name}</h3>
@@ -185,7 +175,7 @@ const index = (props) => {
                             let image_file = (ele.root_folder_name && ele.file_name) ? process.env.NEXT_PUBLIC_BASE_URL+"/"+ele.root_folder_name+ele.file_name :""
                             return<>
                             <div 
-                            className= {`  col-lg-3 col-md-4  mb-3 ${styles['main_prd']} `}
+                            className= {`  col-lg-3 col-md-4  mb-3 ${styles['main_prd']} ${styles['product-list']} `}
                             onClick={()=>
                             {
                               // console.log(ele)
