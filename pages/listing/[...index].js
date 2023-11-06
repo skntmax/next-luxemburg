@@ -76,35 +76,11 @@ console.log(p_n)
           <h3 className="mt-2 pb-5 text_black text-center fs-30">
             {props.cat_name}
           </h3>
+
           <div className="row mt-5">
+          
             <div className="col-md-3 col-lg-2 mb-3">
-              <h3 className="fs-18 border-bottom_black pb-2 mt-3">Shop By</h3>
-              <p className="fs-18 mt-4">Now Shopping by</p>
-              <p className="fs-16 mt-4">Price:</p>
-              <p className="fs-16 mt-2">₹60.00 - ₹23,500.00</p>
-              <div className="d-flex align-items-center">
-                <input
-                  type="number"
-                  className="form-control  fs-14 shadow-none rounded-0"
-                  min="60"
-                  max="3000"
-                  placeholder="from"
-                />
-                <span className="d-inline-block mx-2">—</span>
-                <input
-                  type="number"
-                  className="form-control fs-14 shadow-none rounded-0"
-                  min="60"
-                  max="3000"
-                  placeholder="to"
-                />
-                <button
-                  className="btn fs-14 text_black ms-1 border"
-                  data-element="submit"
-                >
-                  OK
-                </button>
-              </div>
+{/* 
               <h3 className="fs-20 mt-4 text_black mb-4">Brand</h3>
               <div className="form-check mb-2">
                 <input
@@ -138,8 +114,12 @@ console.log(p_n)
                 <label className="form-check-label fs-14" for="luxor">
                   Luxor Schneider <span className="text_lightgrey ">(20)</span>
                 </label>
-              </div>
+              </div> */}
             </div>
+
+
+
+            
             <div className="col-md-8 col-lg-9 mb-3 px-md-4 px-lg-5">
               <ul
                 className="nav nav-pills mb-3 border-bottom_black pb-1"
@@ -174,9 +154,7 @@ console.log(p_n)
                     <i className="fa-solid fa-list-ol text_lightgrey"></i>
                   </button>
                 </li>
-               
-
-                       
+                   
                 {/* navigation  */}
 
               {p_n && p_n>1 ?
@@ -189,11 +167,12 @@ console.log(p_n)
              
 
                  {   props.total ?  new Array( Math.ceil(props.total/20) ).fill(undefined).map((item, i)=>{
-                   return <React.Fragment>
-                   
-                   <ul className="pagination justify-content-center mx-1" style={{cursor:"pointer"}}>
+                       
+                       
+                    return <React.Fragment>
+                   <ul className="pagination justify-content-center mx-1 " style={{cursor:"pointer"}}>
                     <li className="page-item" onClick={(e)=> paginate(i+1)  }>
-                    <a className="page-link"  >
+                     <a className={` page-link ${(p_n==(i+1) || (p_n==undefined&& i==0) )?"page-item active":""} `}   >
                     {i+1}</a>
                     
                     </li> 

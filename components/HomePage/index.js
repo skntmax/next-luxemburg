@@ -2,8 +2,10 @@ import Head from "next/head";
 import Image from "next/image";
 // import styles from '../styles/Home.module.css'
 import React, { useEffect, useRef, useState } from "react";
-
-import { AiOutlineSearch } from "react-icons/ai";
+import nl_black from 'public/assets/new_launches/black-m.jpg'
+import nl_green from 'public/assets/new_launches/li_green.jpg'
+import marker_blue from 'public/assets/new_launches/marker_blue.jpg'
+import pm_blue_last from 'public/assets/new_launches/pm_blue_last.jpg'
 
 import marker_pen from "public/assets/marker.png";
 import { Tween } from "react-gsap";
@@ -60,23 +62,24 @@ function App(props) {
 
   useEffect(() => {
     let text_div = document.querySelectorAll(".home-text");
-    let sections = document.querySelectorAll(".home1-img img");
+    let sections = document.querySelectorAll(".home1-img ");
     let new_launch = document.querySelectorAll("new_launch");
-
+    
     gsap.to(sections, {
       duration: 2,
-      x: -150,
+      x: -80,
       repeat: -1,
       yoyo: true,
       scrollTrigger: {
         trigger: sections,
         toggleActions: "restart pause resume reset",
-
         onToggle: (self) => console.log("toggled, isActive:", self.isActive),
         start: "top 70%",
         end: "bottom 50%",
       },
     });
+
+     
 
     gsap.from(text_div, {
       x: -150,
@@ -90,6 +93,8 @@ function App(props) {
         end: "bottom 50%",
       },
     });
+
+  
 
     gsap.to(text_div, {
       x: 70,
@@ -105,16 +110,21 @@ function App(props) {
       },
     });
 
-    productBackGround();
+    
+    
+    // productBackGround();
     newLaumch();
+    
+    
+     
   }, []);
 
+   
   function productBackGround() {
-    let prd_bc = document.querySelectorAll(".product-box");
-
+     
+    let prd_bc = document.querySelectorAll(".prd_box");
     let tl = gsap.timeline({
       paused: true,
-
       scrollTrigger: {
         trigger: prd_bc,
         toggleActions: "restart pause resume reset",
@@ -130,6 +140,8 @@ function App(props) {
       ease: "expo.inOut",
     });
 
+
+    
     tl.from(
       prd_bc,
       {
@@ -241,6 +253,7 @@ function App(props) {
       dirat1ion: 2,
     });
 
+     
     gsap.to(Image, {
       //  backgroundColor:"red",
       x: 100,
@@ -258,6 +271,8 @@ function App(props) {
       dirat1ion: 2,
     });
   }
+
+
 
   function removeDrawPen(pen_div, pen_image_div, pen_draw_div, pen_colour) {
     let penDiv = document.querySelectorAll(pen_div);
@@ -327,7 +342,7 @@ function App(props) {
     <>
       <Carasol />
 
-      <section className="py-5 overflow-hidden">
+      <section className="py-5 overflow-hidden main_homepage">
         <div className="container">
           <div className="row mt-4">
             <div className="col-md-6 mb-3 home-text">
@@ -354,7 +369,7 @@ function App(props) {
                 </a>
               </div>
             </div>
-            <div className="col-md-6 mb-3 home1-img ">
+            <div className="col-md-6 home1-img " >
               <Image src={worldMap} className="img-fluid ms-md-5" alt="Map" />
             </div>
           </div>
@@ -389,7 +404,7 @@ function App(props) {
         <div className="carouselItem">
           <div
             className="posterBlock1"
-            ref={prd_pen}
+
             onMouseEnter={(e) =>
               drawPen(
                 ".posterBlock1",
@@ -408,9 +423,12 @@ function App(props) {
             }
           >
             <LazyLoadImage
-              src={"https://luxorpen.com/images/bp/xonox-bp/black-m.jpg"}
+              src={nl_black.src}
               id="img1"
               alt="Image Alt"
+              width={245}
+              height={"80%"}
+              
             />
             {/* <Image height={1000} width={1000} src="https://luxorpen.com/images/bp/xonox-bp/black-m.jpg" /> */}
             <div className="textBlock">
@@ -438,12 +456,14 @@ function App(props) {
               )
             }
           >
-            <Image
-              height={1000}
-              width={1000}
-              alt="homepage"
-              src="https://luxorpen.com/images/hl/textliter-hl/text-li-green-m.jpg"
+            <LazyLoadImage
+              width={245}
+              height={"80%"}
+              id="img2"
+              alt="Image Alt"
+              src={nl_green.src}
             />
+             
             <div className="textBlock">
               <div className="marker_line2"> </div>
               <span className="title">Highliter</span>
@@ -468,11 +488,11 @@ function App(props) {
               )
             }
           >
-            <Image
-              height={1000}
-              width={1000}
+            <LazyLoadImage
+             width={245}
+              height={"80%"}
               alt="homepage"
-              src="https://luxorpen.com/images/wb/wb-450/wb450-blue.jpg"
+              src={marker_blue.src}
             />
             <div className="textBlock">
               <div className="marker_line3"> </div>
@@ -498,11 +518,11 @@ function App(props) {
               )
             }
           >
-            <Image
-              height={1000}
-              width={1000}
+            <LazyLoadImage
+              width={245}
+              height={"80%"}
               alt="homepage"
-              src="https://luxorpen.com/images/pm/pm-1222/pm1222-blue.jpg"
+              src={pm_blue_last.src}
             />
             <div className="textBlock">
               <div className="marker_line4"> </div>
@@ -521,6 +541,8 @@ function App(props) {
               </h2>
             </div>
           </div>
+
+
 
           {/* <div class="product-container">
              
@@ -564,7 +586,7 @@ function App(props) {
                     return (
                       <React.Fragment>
                         <div
-                          className="col-12 col-sm-6 mt-4 mt-md-0 col-md-4 col-lg-3 mb-3 "
+                          className="col-12 col-sm-6 mt-4 mt-md-0 col-md-4 col-lg-3 mb-3 prd_box"
                           onClick={() => router.push("product/" + ele._id)}
                         >
                           <div className="card h-100 shadow border-0 cards_hover">

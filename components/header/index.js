@@ -33,6 +33,7 @@ const Header = (props) => {
       const { _id, name: category_name } = item;
       final_url = "/listing/" + category_name + "/" + _id;
       router.push(final_url);
+      
     }
   };
 

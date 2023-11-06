@@ -325,6 +325,7 @@ const ProductPage = (props) => {
   );
 };
 
+
 export async function getServerSideProps(context) {
 
    let {
@@ -346,7 +347,7 @@ export async function getServerSideProps(context) {
   if (status && Object.keys(result).length> 0) {
     return {
       props: {
-        cat_prd:sub_cat_product.result?sub_cat_product.result: []  ,
+        cat_prd:sub_cat_product.result? sub_cat_product.result.cat_wise_products: []  ,
         selected_prd_data:result
       },
     };

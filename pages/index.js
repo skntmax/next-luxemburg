@@ -10,7 +10,6 @@ function App(props) {
     const [ all_prdcts, set_all_prd ]  = useState(props.all_prd)
       
    return  <HomePage all_prdcts={all_prdcts} />    
-
 }
 
 

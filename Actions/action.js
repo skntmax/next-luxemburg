@@ -26,8 +26,7 @@ export const allProductsCategory = (data) => {
 };
 
 
-
-
+ 
 export const getCategoryWiseProducts = (_id , cat_type , page_no ) => {
     const url = `${process.env.NEXT_PUBLIC_BASE_URL}/get-cate-wise-products?_id=${_id}&cat_type=${cat_type}&page_no=${page_no}`;
     return axios.get(url).then((res) => {
