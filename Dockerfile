@@ -2,7 +2,7 @@
 FROM node:14.20.1
 
 # Set the working directory inside the container
-WORKDIR /var/www/rozgar-v2new
+WORKDIR /var/www/lux-next
 
 # Copy the package.json and package-lock.json files to the container
 COPY package*.json ./
@@ -14,7 +14,7 @@ RUN npm install
 COPY . .
 
 # Expose the port that the Next.js app will run on
-EXPOSE 5027
+EXPOSE 8000
 
 # Start the development server with hot-reloading
-CMD ["npm", "start"]
+CMD ["npm", "run" ,"dev" ]

@@ -61,10 +61,12 @@ function App(props) {
   let prd_pen = useRef();
 
   useEffect(() => {
+     
     let text_div = document.querySelectorAll(".home-text");
-    let sections = document.querySelectorAll(".home1-img ");
+    let sections = document.querySelectorAll(".home1-img");
     let new_launch = document.querySelectorAll("new_launch");
     
+     
     gsap.to(sections, {
       duration: 2,
       x: -80,
@@ -88,8 +90,9 @@ function App(props) {
       opacity: 0,
       scrollTrigger: {
         trigger: text_div,
+        toggleActions: "restart pause resume reset",
         onToggle: (self) => console.log("toggled, isActive:", self.isActive),
-        start: "top 70%",
+        start: "top 50%",
         end: "bottom 50%",
       },
     });
@@ -104,8 +107,10 @@ function App(props) {
       yoyo: true,
       scrollTrigger: {
         trigger: text_div,
+        toggleActions: "restart pause resume reset",
+
         onToggle: (self) => console.log("toggled, isActive:", self.isActive),
-        start: "top 70%",
+        start: "top 50%",
         end: "bottom 50%",
       },
     });
@@ -370,7 +375,9 @@ function App(props) {
               </div>
             </div>
             <div className="col-md-6 home1-img " >
-              <Image src={worldMap} className="img-fluid ms-md-5" alt="Map" />
+              <Image src={worldMap}
+              
+               className="img-fluid ms-md-5" alt="Map" />
             </div>
           </div>
         </div>

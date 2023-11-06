@@ -172,7 +172,7 @@ console.log(p_n)
                     return <React.Fragment>
                    <ul className="pagination justify-content-center mx-1 " style={{cursor:"pointer"}}>
                     <li className="page-item" onClick={(e)=> paginate(i+1)  }>
-                     <a className={` page-link ${(p_n==(i+1) || (p_n==undefined&& i==0) )?"page-item active":""} `}   >
+                     <a className={` page-link ${(p_n==(i+1) || (p_n==undefined&& i==0) )?"active":""} `}   >
                     {i+1}</a>
                     
                     </li> 
