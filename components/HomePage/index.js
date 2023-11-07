@@ -21,7 +21,7 @@ import worldMap from "public/assets/map.png";
 import Image1 from "public/assets/Products School.png";
 import Image2 from "public/assets/Products Art.png";
 import Image3 from "public/assets/Products Offc.png";
-import Image4 from "public/assets/World Map.png";
+import Image4 from "public/assets/World_Map.png";
 import Image5 from "public/assets/Luxor Journey.jpg";
 import Image6 from "public/assets/enviro-rrr.png";
 import Carasol from "components/carasoul";
@@ -229,7 +229,7 @@ function App(props) {
         width: 400,
         height: "100%",
         opacity: 0,
-        borderRadius: "  0 0 50% 50% ",
+        borderRadius: "0 0 50% 50% ",
         height: "fit-content",
         backgroundColor: "rgba(99, 97, 7, 0.8)",
         zIndex: -2,
@@ -310,6 +310,8 @@ function App(props) {
     });
   }
 
+
+
   function visibleProduct(cl_name, prd_image, current_div_class) {
     let prd_img_hover = document.querySelectorAll(cl_name);
 
@@ -329,7 +331,10 @@ function App(props) {
       width: "100%",
     });
   }
+   
 
+  
+   
   function HiddenVisibleProduct(cl_name, prd_image, current_div_class) {
     let prd_img_hover = document.querySelectorAll(cl_name);
 
@@ -342,6 +347,8 @@ function App(props) {
     });
   }
 
+   
+  
   return (
     <>
       <Carasol />
