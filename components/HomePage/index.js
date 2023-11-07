@@ -650,14 +650,14 @@ function App(props) {
           <h2 className="mt-4 text-center fs-40 fw-700">Luxor’s Journey</h2>
           <div className="mt-5">
       
-           <ImageMap />
-
-            <Image
-              className="img-fluid w-100"
-              src={Image5}
-              alt="Luxor Journey"
-            />
-
+          
+          {  /*          <Image
+            className="img-fluid w-100"
+            src={Image5}
+            alt="Luxor Journey"
+            /> */
+          }
+          <ImageMap />
           </div>
         </div>
       </section>
