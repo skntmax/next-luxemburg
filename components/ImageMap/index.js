@@ -5,7 +5,7 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import Flip from "gsap/Flip";
 import Draggable from "gsap/Draggable";
-
+import jr_one from 'public/assets/journey_images/jr_one.png'
 // or all tools are exported from the "all" file (excluding members-only plugins):
 import { MotionPathPlugin } from "gsap/all";
 import Image from 'next/image';
@@ -20,24 +20,37 @@ function index() {
 
     const Visible =(boxid , bannerImage)=>{
          
+         
         let img1 = document.getElementById(boxid) 
-         img1.style.cursor="pointer"
+         
+        img1.style.cursor="pointer"
         let image_visible = document.getElementById(bannerImage)
-        image_visible.innerHTML="Setting a line-height the same value ."
+        console.log("bannerImagebannerImage" , bannerImage)
+        if(bannerImage=="jr_circle"){
+            let dynamicImage = document.createElement('img');
+             dynamicImage.src = jr_one.src
+             dynamicImage.width =180
+             dynamicImage.height =180
+             dynamicImage.alt ="intorduced fiber tip"
+             dynamicImage.style.display ="block"
+             image_visible.innerHTML=""
+             image_visible.append(dynamicImage)
+            //  image_visible.append(p)
+        }
+     
+
         gsap.to(image_visible , {
          cursor:"pointer",
-         duration: 1,
-         width: bannerImage=='jr_circle3'?80:
+         duration: 2,
+         width: bannerImage=='jr_circle3'?70:
          bannerImage=='jr_circle4'?60 :
          bannerImage=='jr_circle5'?90:
-         160 ,
-
-          
-         height: bannerImage=='jr_circle3'?80:bannerImage=='jr_circle4'?60:
+         150 ,
+         height: bannerImage=='jr_circle3'?70:bannerImage=='jr_circle4'?60:
          bannerImage=='jr_circle5'?90:
-         160,          
+         150,          
          top: 20,
-         
+         borderColor:"hsla(14, 100%, 53%, 0.6)", 
          scale:2,
         opacity:1,
         textAlign: "center",
@@ -45,6 +58,7 @@ function index() {
         verticalSlign: "middle",
         display: "flex",
         alignItems:"center",
+        flexDirection:"column",
         justifyContent: "center"
          }) 
          
@@ -53,6 +67,15 @@ function index() {
  
         const Unhide = (boxid , bannerImage)=>{
          let image_visible = document.getElementById(bannerImage)
+
+          if(bannerImage=="jr_circle"){
+             image_visible.innerHTML=""
+  
+        }
+     
+
+
+         
          gsap.to(image_visible , {
           duration: 1,
           width: 0,
