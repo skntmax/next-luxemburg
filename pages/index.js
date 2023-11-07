@@ -7,10 +7,12 @@ const HomePage  =  dynamic(()=> import('components/HomePage') ,{ssr:false })
 function App(props) {
 
     const [ markers_cat, set_marker_cat ]  = useState(props.marker_cat)
-    const [ all_prdcts, set_all_prd ]  = useState(props.all_prd)
-      
-   return  <HomePage all_prdcts={all_prdcts} />    
-}
+    const [ all_prdcts, set_all_prd ]  = useState(props.all_prd)     
+ 
+     return  <HomePage all_prdcts={all_prdcts} />    
+
+   }
+ 
 
 
 export async function getServerSideProps({ req, res }) {

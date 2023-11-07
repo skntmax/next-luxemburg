@@ -108,7 +108,6 @@ function App(props) {
       scrollTrigger: {
         trigger: text_div,
         toggleActions: "restart pause resume reset",
-
         onToggle: (self) => console.log("toggled, isActive:", self.isActive),
         start: "top 50%",
         end: "bottom 50%",
