@@ -56,7 +56,7 @@ function index() {
 
         gsap.to(image_visible , {
          cursor:"pointer",
-         duration: 2,
+         duration: 0.5,
          width: bannerImage=='jr_circle3'?70:
          bannerImage=='jr_circle4'?60 :
          bannerImage=='jr_circle5'?90:
@@ -65,7 +65,7 @@ function index() {
          bannerImage=='jr_circle5'?90:
          150,          
          top: 20,
-         borderColor:"hsla(14, 100%, 53%, 0.6)", 
+         border:"5px solid hsla(14, 100%, 53%, 0.2)", 
          scale:2,
         opacity:1,
         textAlign: "center",
@@ -99,7 +99,7 @@ function index() {
 
          
          gsap.to(image_visible , {
-          duration: 1,
+          duration: 0.5,
           width: 0,
           height: 0,
           top: 150,
