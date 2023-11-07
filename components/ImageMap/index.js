@@ -5,7 +5,8 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import Flip from "gsap/Flip";
 import Draggable from "gsap/Draggable";
-import jr_one from 'public/assets/journey_images/jr_one.png'
+import jr_one from 'public/assets/journey_images/jr_one_old.png'
+import jr_two from 'public/assets/journey_images/jr_two.png'
 // or all tools are exported from the "all" file (excluding members-only plugins):
 import { MotionPathPlugin } from "gsap/all";
 import Image from 'next/image';
@@ -26,7 +27,8 @@ function index() {
         img1.style.cursor="pointer"
         let image_visible = document.getElementById(bannerImage)
         console.log("bannerImagebannerImage" , bannerImage)
-        if(bannerImage=="jr_circle"){
+        
+         if(bannerImage=="jr_circle"){
             let dynamicImage = document.createElement('img');
              dynamicImage.src = jr_one.src
              dynamicImage.width =180
@@ -37,6 +39,19 @@ function index() {
              image_visible.append(dynamicImage)
             //  image_visible.append(p)
         }
+
+        if(bannerImage=="jr_circle2"){
+            let dynamicImage = document.createElement('img');
+             dynamicImage.src = jr_two.src
+             dynamicImage.width =180
+             dynamicImage.height =180
+             dynamicImage.alt ="intorduced fiber tip"
+             dynamicImage.style.display ="block"
+             image_visible.innerHTML=""
+             image_visible.append(dynamicImage)
+            //  image_visible.append(p)
+        }
+
      
 
         gsap.to(image_visible , {
@@ -72,6 +87,13 @@ function index() {
              image_visible.innerHTML=""
   
         }
+
+        
+        if(bannerImage=="jr_circle2"){
+            image_visible.innerHTML=""
+ 
+       }
+
      
 
 
