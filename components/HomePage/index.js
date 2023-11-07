@@ -6,7 +6,7 @@ import nl_black from 'public/assets/new_launches/black-m.jpg'
 import nl_green from 'public/assets/new_launches/li_green.jpg'
 import marker_blue from 'public/assets/new_launches/marker_blue.jpg'
 import pm_blue_last from 'public/assets/new_launches/pm_blue_last.jpg'
-
+import ImageMap from 'components/ImageMap'
 import marker_pen from "public/assets/marker.png";
 import { Tween } from "react-gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
@@ -643,15 +643,20 @@ function App(props) {
         </div>
       </section>
 
+       
       <section className="py-5">
         <div class="container-fluid p-0">
           <h2 className="mt-4 text-center fs-40 fw-700">Luxor’s Journey</h2>
           <div className="mt-5">
-            <Image
-              className="img-fluid w-100"
-              src={Image5}
-              alt="Luxor Journey"
-            />
+      
+          
+          {  /*          <Image
+            className="img-fluid w-100"
+            src={Image5}
+            alt="Luxor Journey"
+            /> */
+          }
+          <ImageMap />
           </div>
         </div>
       </section>
