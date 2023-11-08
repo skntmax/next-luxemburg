@@ -1671,6 +1671,61 @@ transition: all 1s ease; */
 .min_height{
   max-height: 240px !important;
 }
+/* .yt_video {
+  animation-duration: 10s;
+  animation-name: slidein;
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
+
+  75% {
+    font-size: 300%;
+    margin-left: 25%;
+    width: 150%;
+  }
+
+  to {
+    margin-right: 0%;
+    width: 100%;
+  }
+} */
+.yt_video {
+  animation-duration: 10s;
+  animation-name: slidein;
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 0%; 
+    width: 100%;
+  }
+
+  75% {
+    font-size: 300%;
+    margin-left: 75%; 
+    width: 150%;
+  }
+
+  to {
+    margin-left: 100%; 
+    width: 300%; 
+  }
+}
+
+
+.parallax{
+ 
+  
+  background: url('http://103.25.130.33:8001/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FArt%20Gallery.1d13b636.jpg&w=3840&q=75') repeat fixed;
+  background-size: cover;
+ min-height: 600px;
+ 
+}
+
 
 
 
