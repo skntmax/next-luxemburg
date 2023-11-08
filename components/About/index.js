@@ -10,9 +10,9 @@ import wim from 'public/assets/images/aboutpage/webp/wim.webp';
 import feo from 'public/assets/images/aboutpage/webp/feo.webp';
 
 
-import fortyyears from 'public/assets/images/aboutpage/fortyyears.jpg';
-import birth_of_luxor from 'public/assets/images/aboutpage/birth_of_luxor.jpg';
-import exporting from 'public/assets/images/aboutpage/exporting.jpg';
+import fortyyearsImg from 'public/assets/images/aboutpage/fortyyears-img.jpg';
+import birthofluxor from 'public/assets/images/aboutpage/birth-of-luxor.jpg';
+import exportingImg from 'public/assets/images/aboutpage/exporting-over-countries.jpg';
 import md_profile from 'public/assets/images/aboutpage/md_profile.jpg';
 import ecowrite from 'public/assets/images/aboutpage/ecowrite.jpg';
 import Image from 'next/image';
@@ -41,14 +41,14 @@ const index = () => {
                         <div className="col-md-2"></div>
                     </div>
                     <div className="row mt-5">
-                        <div className="col-md-4 mb-4 pe-md-0 ">
-                            <Image src={birth_of_luxor} alt="birth of luxor" className='img-fluid' />
+                        <div className="col-md-4 mb-4 px-md-1">
+                            <Image src={birthofluxor} alt="birth of luxor" className='img-fluid w-100' />
                         </div>
-                        <div className="col-md-4 mb-4 px-md-0">
-                            <Image src={fortyyears} alt="40 Years" style={{ height: '363px' }} className='img-fluid w-100' />
+                        <div className="col-md-4 mb-4 px-md-1">
+                            <Image src={fortyyearsImg} alt="40 Years"  className='img-fluid mw-100' />
                         </div>
-                        <div className="col-md-4 mb-4 ps-md-0">
-                            <Image src={exporting} alt="Exporting" className='img-fluid' />
+                        <div className="col-md-4 mb-4 px-md-1">
+                            <Image src={exportingImg} alt="Exporting" className='img-fluid w-100' />
                         </div>
                     </div>
                 </div>

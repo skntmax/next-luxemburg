@@ -52,7 +52,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 
 import Header from "@components/header";
-import Slider from "@mui/material/Slider";
+// import Slider from "@mui/material/Slider";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -886,9 +886,9 @@ function App(props) {
       {/* ----------------------------------------footer section------------------------------------------- */}
 
       <section className="footer">
-        <div className="footer-heading1">
-          <h2>Be Our Partner/Reseller</h2>
-        </div>
+        
+          <h2 class="fs-40 text_lightred text-center mb-5 fw-600">Be Our Partner/Reseller</h2>
+       
 
         <div className="partner-cont">
           <Image height={450} width={1000} src={Image18} alt="homepage" />
@@ -905,9 +905,8 @@ function App(props) {
 
         {/* --------------------------------- */}
 
-        <div className="certi-heading">
-          <h2>Certificates</h2>
-        </div>
+       
+        <h2 class="fs-40 text_lightred text-center my-5 fw-600">Certificates</h2>
 
         <div className="background">
           <div className="back-img">
@@ -933,9 +932,8 @@ function App(props) {
 
           {/* ----------------------------------- */}
 
-          <div className="award-heading">
-            <h2>Awards & Recognitions</h2>
-          </div>
+         
+          <h2 class="fs-40 text_lightred text-center my-5 fw-600">Awards & Recognitions</h2>
 
           <div className="award-img-cont">
             <div className="pen-pointer">
