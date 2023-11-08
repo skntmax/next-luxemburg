@@ -192,7 +192,7 @@ function index() {
   
   
        </div>
-    //  <Image src={Image5}
+     <Image className='img-fluid' src={Image5}
      style={{
          position:"absolute"
      }}
