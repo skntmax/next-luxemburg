@@ -138,7 +138,7 @@ const ProductPage = (props) => {
             {/* -------------------------container 2nd------------------------ */}
             <div className="col-md-9 mb-3">
               {/* ----------------part 1----- */}
-              <div className="border-2 rounded shadow p-4">
+              <div className="border-2 rounded-0 p-4">
                 <div className="">
                   <h2 className="fs-30">{ selected_prd.name }</h2>
 
@@ -181,7 +181,7 @@ const ProductPage = (props) => {
                 </div>
               </div>
               {/* ----------------part 4----- */}
-              <div className="border-2 rounded shadow p-4">
+              <div className="border-bottom-0 border-2 rounded-0  p-4">
               <div className="row ">
                
                   <div className="col-md-3 text-center mb-4 ">
@@ -219,15 +219,15 @@ const ProductPage = (props) => {
                 </div>
               </div>
               {/* ----------------part 5-----  */}
-              <div className="dyn-cont flex-column flex-sm-row gap-3">
-                <div className="">
+              <div className="dyn-cont  border_topgrey flex-column flex-sm-row gap-3">
+                <div className="mt-3">
                   <Image
                     className="img-fluid"
                     src={Didyouknow}
                     alt="homepage"
                   />
                 </div>
-                <div className="">
+                <div className="mt-3">
                   <p className="fs-16 text_justify">
                     The colours of the rainbow always go in the same colour:
                     red, orange, yellow, green, blue, indigo and violet.
