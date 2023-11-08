@@ -229,8 +229,7 @@ const ProductPage = (props) => {
                 </div>
                 <div className="mt-3">
                   <p className="fs-16 text_justify">
-                    The colours of the rainbow always go in the same colour:
-                    red, orange, yellow, green, blue, indigo and violet.
+                   {selected_prd.icon}
                   </p>
                 </div>
               </div>

@@ -278,12 +278,12 @@ console.log(p_n)
                                       </p>
                                 
                                       <div className="d-flex my-4 justify-content-center gap-4">
-                                        <button className="btn border-0">
+                                        {/* <button className="btn border-0">
                                           <i className=" fa-regular fa-bookmark fs-16 text_lightgrey"></i>
                                         </button>
                                         <button className="btn border-0">
                                           <i className=" fa-solid fa-cart-shopping fs-16 text_lightgrey"></i>
-                                        </button>
+                                        </button> */}
                                       </div>
                                     </div>
                                   </div>
