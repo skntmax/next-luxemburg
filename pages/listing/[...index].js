@@ -158,9 +158,9 @@ console.log(p_n)
                 {/* navigation  */}
 
               {p_n && p_n>1 ?
-                <ul className="pagination justify-content-center mx-1">
-                  <li class="page-item disabled" style={{cursor:"pointer"}}>
-                  <a class="page-link" href="#" tabindex="-1">Previous</a>
+                <ul className="pagination justify-content-center mx-2">
+                  <li class="page-item disabled " style={{cursor:"pointer"}}>
+                  <a class="page-link " href="#" tabindex="-1">Previous</a>
                   </li>
               </ul> :""
                }
@@ -170,9 +170,9 @@ console.log(p_n)
                        
                        
                     return <React.Fragment>
-                   <ul className="pagination justify-content-center mx-1 " style={{cursor:"pointer"}}>
+                   <ul className="pagination justify-content-center mx-2 " style={{cursor:"pointer"}}>
                     <li className="page-item" onClick={(e)=> paginate(i+1)  }>
-                     <a className={` page-link ${(p_n==(i+1) || (p_n==undefined&& i==0) )?"active":""} `}   >
+                     <a className={` page-link text-center fs-18 fw-600 rounded-0 button_pagination ${(p_n==(i+1) || (p_n==undefined&& i==0) )?"active":""} `}   >
                     {i+1}</a>
                     
                     </li> 

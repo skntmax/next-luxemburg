@@ -1730,9 +1730,26 @@ transition: all 1s ease; */
  
 }
 
+.page-item .button_pagination.active{
+  background-color: #da0428;
+  color: white;
+  border: 0px;
+ 
+ 
+ 
+}
 
+.page-item .button_pagination{
+  z-index: 0;
+  color: #da0428;
+  border: 1px solid #da0428;
+  width: 42px;
+  height: 42px;
+}
 
-
+.border_topgrey{
+  border-top: 2px solid grey;
+}
 
 
 
