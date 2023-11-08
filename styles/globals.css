@@ -1757,8 +1757,6 @@ transition: all 1s ease; */
 
 
 
-
-
 #jr_img4 {
   position: absolute;
   width: 100px;
@@ -1768,6 +1766,8 @@ transition: all 1s ease; */
   /* border: 1px solid red; */
 }
  
+
+
 #jr_circle4 {
   position: absolute;
   background: white;
