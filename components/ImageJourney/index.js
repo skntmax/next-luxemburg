@@ -30,27 +30,39 @@ function TimeLine(){
    
    return (
         <>
-        <div className='position-relative'>
-        <div className='l1'>
+        <div className='position-relative' >
+        <div className='l1' style={{
+            cursor:"pointer"
+        }}>
              
        
            <img className='' src={jr_one_old.src} style={{width:"100%" , height:'100%' , }} />
 
             
         </div>
-        <div className='l2'>
+        <div className='l2' style={{
+            cursor:"pointer"
+        }} >
           <img className='' src={jr_one.src} style={{width:"100%" , height:'100%'}} />
         </div>
-        <div className='l3'>
+        <div className='l3' style={{
+            cursor:"pointer"
+        }} >
          <img className='' src={jr__three.src} style={{width:"100%" , height:'100%'}} />
         </div>
-        <div className='l4'>
+        <div className='l4' style={{
+            cursor:"pointer"
+        }} >
           <img className='' src={jr__five.src} style={{width:"100%" , height:'100%'}} />
         </div>
-        <div className='l5'>
+        <div className='l5'  style={{
+            cursor:"pointer"
+        }}>
           <img className='' src={jr__four.src} style={{width:"100%" , height:'100%'}} />
         </div>
-        <div className=''>
+        <div className='' style={{
+            cursor:"pointer"
+        }} >
           <img src={frame.src} style={{width:"100vw" , height:'100vh'}}/>
         </div>
         </div>
