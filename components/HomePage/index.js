@@ -52,7 +52,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 
 import Header from "@components/header";
-// import Slider from "@mui/material/Slider";
+import Slider from "@mui/material/Slider";
 
 gsap.registerPlugin(ScrollTrigger);
 
