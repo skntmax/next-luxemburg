@@ -111,6 +111,7 @@ function App(props) {
 
     // productBackGround();
     newLaumch();
+     
   }, []);
 
   function productBackGround() {
