@@ -7,6 +7,9 @@ import Flip from "gsap/Flip";
 import Draggable from "gsap/Draggable";
 import jr_one from 'public/assets/journey_images/jr_one_old.png'
 import jr_two from 'public/assets/journey_images/jr_two.png'
+import jr_three from 'public/assets/journey_images/jr__three.png'
+import jr_four from 'public/assets/journey_images/jr_four.jpg'
+import jr_five from 'public/assets/journey_images/jr_five.jpg'
 // or all tools are exported from the "all" file (excluding members-only plugins):
 import { MotionPathPlugin } from "gsap/all";
 import Image from 'next/image';
@@ -23,11 +26,12 @@ function index() {
          
          
         let img1 = document.getElementById(boxid) 
-         
         img1.style.cursor="pointer"
         let image_visible = document.getElementById(bannerImage)
         console.log("bannerImagebannerImage" , bannerImage)
         
+         
+
          if(bannerImage=="jr_circle"){
             let dynamicImage = document.createElement('img');
              dynamicImage.src = jr_one.src
@@ -37,8 +41,8 @@ function index() {
              dynamicImage.style.display ="block"
              image_visible.innerHTML=""
              image_visible.append(dynamicImage)
-            //  image_visible.append(p)
-        }
+             //  image_visible.append(p)
+         }
 
         if(bannerImage=="jr_circle2"){
             let dynamicImage = document.createElement('img');
@@ -52,6 +56,50 @@ function index() {
             //  image_visible.append(p)
         }
 
+
+        if(bannerImage=="jr_circle3"){
+            let dynamicImage = document.createElement('img');
+             dynamicImage.src = jr_three.src
+             dynamicImage.width =80
+             dynamicImage.height =80
+             dynamicImage.style.display ="block"
+
+             dynamicImage.alt ="intorduced fiber tip"
+             image_visible.innerHTML=""
+             image_visible.append(dynamicImage)
+            //  image_visible.append(p)
+        }
+
+        
+        if(bannerImage=="jr_circle4"){
+            let dynamicImage = document.createElement('img');
+             dynamicImage.src = jr_four.src
+             dynamicImage.width =30
+             dynamicImage.height =30
+             dynamicImage.style.display ="block"
+             dynamicImage.alt ="intorduced fiber tip"
+             image_visible.innerHTML=""
+             image_visible.append(dynamicImage)
+            //  image_visible.append(p)
+        }
+
+
+
+        if(bannerImage=="jr_circle5"){
+            let dynamicImage = document.createElement('img');
+             dynamicImage.src = jr_five.src
+             dynamicImage.width =50 
+             dynamicImage.height =50
+             dynamicImage.style.display ="block"
+             dynamicImage.alt ="intorduced fiber tip"
+             image_visible.innerHTML=""
+             image_visible.append(dynamicImage)
+            //  image_visible.append(p)
+        }
+
+
+
+
      
 
         gsap.to(image_visible , {
@@ -64,7 +112,8 @@ function index() {
          height: bannerImage=='jr_circle3'?70:bannerImage=='jr_circle4'?60:
          bannerImage=='jr_circle5'?90:
          150,          
-         top: 20,
+         top: bannerImage=='jr_circle4'? -6 :20 ,
+         right:bannerImage=='jr_circle4' ? -6 :20,
          border:"5px solid hsla(14, 100%, 53%, 0.2)", 
          scale:2,
         opacity:1,
@@ -83,21 +132,16 @@ function index() {
         const Unhide = (boxid , bannerImage)=>{
          let image_visible = document.getElementById(bannerImage)
 
-          if(bannerImage=="jr_circle"){
-             image_visible.innerHTML=""
-  
-        }
-
+     
         
-        if(bannerImage=="jr_circle2"){
+        if(bannerImage=="jr_circle" || bannerImage=="jr_circle2" || bannerImage=="jr_circle3" ||bannerImage=="jr_circle4"  ){
             image_visible.innerHTML=""
  
        }
 
-     
 
 
-         
+    
          gsap.to(image_visible , {
           duration: 0.5,
           width: 0,

@@ -1746,7 +1746,6 @@ transition: all 1s ease; */
 
 
 
-
 /* journey */
 
 #jr_img1 {
@@ -1815,10 +1814,10 @@ transition: all 1s ease; */
 
 #jr_img4 {
   position: absolute;
-  width: 80px;
-  height: 80px;
-  top: 134px;
-  left: 1131px;
+  width: 50px;
+  height: 50px;
+  top: 144px;
+  left: 1146px;
   /* border: 1px solid red; */
 }
  
