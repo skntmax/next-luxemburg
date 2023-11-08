@@ -12,7 +12,7 @@ import { Tween } from "react-gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
-
+import JourneyMap from 'components/ImageJourney'
 // import { TweenMax, Power3 } from 'gsap';
 import { gsap } from "gsap";
 // import Image from 'public/assets/homeBanner.jpg'
@@ -629,7 +629,12 @@ function App(props) {
             src={Image5}
             alt="Luxor Journey"
             /> */}
-            <ImageMap />
+
+
+
+         <JourneyMap />
+            {/* <ImageMap /> */}
+          
           </div>
         </div>
       </section>
