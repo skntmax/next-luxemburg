@@ -50,10 +50,9 @@ import Image26 from "public/assets/Lineart.png";
 import Image27 from "public/assets/pennib.png";
 import Link from "next/link";
 import { useRouter } from "next/router";
-
 import Header from "@components/header";
 // import Slider from "@mui/material/Slider";
-
+import ImageMap2 from 'components/WorldMap'
 gsap.registerPlugin(ScrollTrigger);
 
 function App(props) {
@@ -606,19 +605,19 @@ function App(props) {
       </section>
 
       <section className="py-5">
-        <div className="container">
           <h2 className="mt-4 text-center fs-40 fw-700">
             Exported To Over 106+ Countries
           </h2>
-          <div className=" mt-5 mb-4">
-            <Image
+          <div className="">
+{/*            <Image
               style={{ width: "100", height: "100" }}
               className=" img-fluid h-100"
               src={Image4}
               alt="Map"
-            />
+        /> */}
+
+            <ImageMap2 />
           </div>
-        </div>
       </section>
 
       <section className="py-5">

@@ -5,6 +5,6 @@ services:
       context: .
       dockerfile: Dockerfile
     volumes:
-      - /var/www/www.rozgar.com/rozgar-v2new:/var/www/rozgar-v2new
+      - /var/www/next-luxemburg:/var/www/next-luxemburg
     ports:
-      - 5027:3000
+      - 8001:3000
