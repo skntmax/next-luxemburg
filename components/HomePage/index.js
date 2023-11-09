@@ -2,11 +2,11 @@ import Head from "next/head";
 import Image from "next/image";
 // import styles from '../styles/Home.module.css'
 import React, { useEffect, useRef, useState } from "react";
-import nl_black from 'public/assets/new_launches/black-m.jpg'
-import nl_green from 'public/assets/new_launches/li_green.jpg'
-import marker_blue from 'public/assets/new_launches/marker_blue.jpg'
-import pm_blue_last from 'public/assets/new_launches/pm_blue_last.jpg'
-import ImageMap from 'components/ImageMap'
+import nl_black from "public/assets/new_launches/black-m.jpg";
+import nl_green from "public/assets/new_launches/li_green.jpg";
+import marker_blue from "public/assets/new_launches/marker_blue.jpg";
+import pm_blue_last from "public/assets/new_launches/pm_blue_last.jpg";
+import ImageMap from "components/ImageMap";
 import marker_pen from "public/assets/marker.png";
 import { Tween } from "react-gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
@@ -21,7 +21,7 @@ import worldMap from "public/assets/map.png";
 import Image1 from "public/assets/Products School.png";
 import Image2 from "public/assets/Products Art.png";
 import Image3 from "public/assets/Products Offc.png";
-import Image4 from "public/assets/World Map.png";
+import Image4 from "public/assets/World_Map.png";
 import Image5 from "public/assets/Luxor Journey.jpg";
 import Image6 from "public/assets/enviro-rrr.png";
 import Carasol from "components/carasoul";
@@ -52,6 +52,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 
 import Header from "@components/header";
+import Slider from "@mui/material/Slider";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -61,12 +62,10 @@ function App(props) {
   let prd_pen = useRef();
 
   useEffect(() => {
-     
     let text_div = document.querySelectorAll(".home-text");
     let sections = document.querySelectorAll(".home1-img");
     let new_launch = document.querySelectorAll("new_launch");
-    
-     
+
     gsap.to(sections, {
       duration: 2,
       x: -80,
@@ -80,8 +79,6 @@ function App(props) {
         end: "bottom 50%",
       },
     });
-
-     
 
     gsap.from(text_div, {
       x: -150,
@@ -97,8 +94,6 @@ function App(props) {
       },
     });
 
-  
-
     gsap.to(text_div, {
       x: 70,
       opacity: 1,
@@ -108,25 +103,17 @@ function App(props) {
       scrollTrigger: {
         trigger: text_div,
         toggleActions: "restart pause resume reset",
-
         onToggle: (self) => console.log("toggled, isActive:", self.isActive),
         start: "top 50%",
         end: "bottom 50%",
       },
     });
 
-    
-    
     // productBackGround();
     newLaumch();
-    
-    
-     
   }, []);
 
-   
   function productBackGround() {
-     
     let prd_bc = document.querySelectorAll(".prd_box");
     let tl = gsap.timeline({
       paused: true,
@@ -145,8 +132,6 @@ function App(props) {
       ease: "expo.inOut",
     });
 
-
-    
     tl.from(
       prd_bc,
       {
@@ -230,7 +215,7 @@ function App(props) {
         width: 400,
         height: "100%",
         opacity: 0,
-        borderRadius: "  0 0 50% 50% ",
+        borderRadius: "0 0 50% 50% ",
         height: "fit-content",
         backgroundColor: "rgba(99, 97, 7, 0.8)",
         zIndex: -2,
@@ -258,7 +243,6 @@ function App(props) {
       dirat1ion: 2,
     });
 
-     
     gsap.to(Image, {
       //  backgroundColor:"red",
       x: 100,
@@ -276,8 +260,6 @@ function App(props) {
       dirat1ion: 2,
     });
   }
-
-
 
   function removeDrawPen(pen_div, pen_image_div, pen_draw_div, pen_colour) {
     let penDiv = document.querySelectorAll(pen_div);
@@ -374,17 +356,15 @@ function App(props) {
                 </a>
               </div>
             </div>
-            <div className="col-md-6 home1-img " >
-              <Image src={worldMap}
-              
-               className="img-fluid ms-md-5" alt="Map" />
+            <div className="col-md-6 home1-img ">
+              <Image src={worldMap} className="img-fluid ms-md-5" alt="Map" />
             </div>
           </div>
         </div>
       </section>
 
       <section className="launch">
-        <div class="heading">
+        <div className="heading">
           <div
             style={{
               display: "flex",
@@ -411,7 +391,6 @@ function App(props) {
         <div className="carouselItem">
           <div
             className="posterBlock1"
-
             onMouseEnter={(e) =>
               drawPen(
                 ".posterBlock1",
@@ -435,7 +414,6 @@ function App(props) {
               alt="Image Alt"
               width={245}
               height={"80%"}
-              
             />
             {/* <Image height={1000} width={1000} src="https://luxorpen.com/images/bp/xonox-bp/black-m.jpg" /> */}
             <div className="textBlock">
@@ -470,7 +448,7 @@ function App(props) {
               alt="Image Alt"
               src={nl_green.src}
             />
-             
+
             <div className="textBlock">
               <div className="marker_line2"> </div>
               <span className="title">Highliter</span>
@@ -496,7 +474,7 @@ function App(props) {
             }
           >
             <LazyLoadImage
-             width={245}
+              width={245}
               height={"80%"}
               alt="homepage"
               src={marker_blue.src}
@@ -542,16 +520,14 @@ function App(props) {
       <section>
         <div className="products">
           <div className="prodBackground">
-            <div class="">
+            <div className="">
               <h2 className="fs-40 fw-600 text-center mt-4 mt-md-5 text-white">
                 Products
               </h2>
             </div>
           </div>
 
-
-
-          {/* <div class="product-container">
+          {/* <div className="product-container">
              
 
              <div className="prd_container"  >
@@ -644,26 +620,22 @@ function App(props) {
         </div>
       </section>
 
-       
       <section className="py-5">
-        <div class="container-fluid p-0">
+        <div className="container-fluid p-0">
           <h2 className="mt-4 text-center fs-40 fw-700">Luxor’s Journey</h2>
           <div className="mt-5">
-      
-          
-          {  /*          <Image
+            {/*          <Image
             className="img-fluid w-100"
             src={Image5}
             alt="Luxor Journey"
-            /> */
-          }
-          <ImageMap />
+            /> */}
+            <ImageMap />
           </div>
         </div>
       </section>
 
       <section className="py-5">
-        <div class="container">
+        <div className="container">
           <h2 className="fs-40 fw-600 text-center my-5 text_green">
             Let's save the <br /> environment with Luxor
           </h2>
@@ -687,20 +659,73 @@ function App(props) {
           </div>
         </div>
       </section>
-      <section className="py-5 position-relative">
+      {/* <section className="py-5 position-relative">
         <div className="container-fluid p-0">
           <Image className="img-fluid" src={ArtGallery} alt="Art Gallery" />
           <button className="btn Art_gallery_button text-white fs-16">
             Art Gallery
           </button>
         </div>
+      </section> */}
+      
+      {/* ======== */}
+      <section className="py-5 position-relative">
+        <div className="parallax">
+          <div className="parallax-inner">
+            <button className="btn Art_gallery_button text-white fs-16">
+              Art Gallery
+            </button>
+            
+          </div>
+        </div>
+      </section>
+      <section className="py-5 yt_video">
+        <div className="container">
+          <div className="row yt_content">
+            
+            <div className="col-md-4">
+              <iframe
+                width="100%"
+                className="rounded"
+                height="300px"
+                src="https://www.youtube.com/embed/P2PmCXQGKxU?si=uGDWl30nggey6v9M"
+                title="YouTube video player"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              ></iframe>
+            </div>
+            <div className="col-md-4">
+              <iframe
+                width="100%"
+                className="rounded"
+                height="300px"
+                src="https://www.youtube.com/embed/P2PmCXQGKxU?si=uGDWl30nggey6v9M"
+                title="YouTube video player"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              ></iframe>
+            </div>
+            <div className="col-md-4">
+              <iframe
+                width="100%"
+                className="rounded"
+                height="300px"
+                src="https://www.youtube.com/embed/P2PmCXQGKxU?si=uGDWl30nggey6v9M"
+                title="YouTube video player"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              ></iframe>
+            </div>
+          </div>
+        </div>
       </section>
 
+    
       <section className="py-5">
         <div className="container">
           <h2 className="fs-40 text_lightred fw-600 text-center">Look Book</h2>
 
-          {/* <div className=""> */}
+          
 
           <div className="row mt-4">
             <div className="col-md-4 mb-3 col-lg-4 position-relative">
@@ -800,7 +825,7 @@ function App(props) {
             What People Say About Luxor
           </h2>
           <div className="row mt-5">
-          <div className="col-md-2 col-lg-3"></div>
+            <div className="col-md-2 col-lg-3"></div>
             <div className="col-md-8 col-lg-6 mb-3">
               <div className="card  border-0 shadow-light">
                 <div className="card-body p-4">
@@ -830,7 +855,6 @@ function App(props) {
               </div>
             </div>
             <div className="col-md-2 col-lg-3"></div>
-           
           </div>
         </div>
       </section>

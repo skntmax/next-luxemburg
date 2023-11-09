@@ -357,8 +357,8 @@ export async function getServerSideProps(context) {
     },
   } = context;
 
-  let { result, status } = await getCategoryWiseProducts(_id, cat_name,page_no?page_no:1);
-
+  let { result, status } = await getCategoryWiseProducts(_id, cat_name,page_no?page_no:1 );
+   
   if (status && result.cat_wise_products.length > 0) {
     return {
       props: {

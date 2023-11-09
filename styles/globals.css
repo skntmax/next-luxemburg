@@ -1671,6 +1671,60 @@ transition: all 1s ease; */
 .min_height{
   max-height: 240px !important;
 }
+/* .yt_video {
+  animation-duration: 10s;
+  animation-name: slidein;
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
+
+  75% {
+    font-size: 300%;
+    margin-left: 25%;
+    width: 150%;
+  }
+
+  to {
+    margin-right: 0%;
+    width: 100%;
+  }
+} */
+.yt_video {
+  animation-duration: 10s;
+  animation-name: slidein;
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 0%; 
+    width: 100%;
+  }
+
+  75% {
+    font-size: 300%;
+    margin-left: 75%; 
+    width: 150%;
+  }
+
+  to {
+    margin-left: 100%; 
+    width: 300%; 
+  }
+}
+
+
+.parallax{
+ 
+  
+  background: url('http://103.25.130.33:8001/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FArt%20Gallery.1d13b636.jpg&w=3840&q=75') repeat fixed;
+  background-size: cover;
+ min-height: 600px;
+ 
+}
 
 
 
@@ -1698,8 +1752,8 @@ transition: all 1s ease; */
   position: absolute;
   width: 200px;
   height: 200px;
-  top: 426px;
-  left: 450px;
+  top: 335px;
+  left: 357px;
   /* border:1px solid red */
 }
 
@@ -1717,8 +1771,8 @@ transition: all 1s ease; */
   position: absolute;
   width: 200px;
   height: 200px;
-  top: 584px;
-  left: 1000px;
+  top: 465px;
+  left: 793px;
   /* border:1px solid red */
 
 }
@@ -1736,11 +1790,10 @@ transition: all 1s ease; */
 
 #jr_img3 {
   position: absolute;
-  width: 150px;
-  height: 150px;
-  top: 320px;
-  left: 1124px;
-
+  width: 120px;
+  height: 120px;
+  top: 261px;
+  left: 938px;
   /* border: 1px solid red; */
 }
 
@@ -1759,10 +1812,10 @@ transition: all 1s ease; */
 
 #jr_img4 {
   position: absolute;
-  width: 100px;
-  height: 100px;
-  top: 153px;
-  left: 1359px;
+  width: 50px;
+  height: 50px;
+  top: 144px;
+  left: 1146px;
   /* border: 1px solid red; */
 }
  
@@ -1781,17 +1834,12 @@ transition: all 1s ease; */
 
 
 
-
-
-
-
-
 #jr_img5 {
   position: absolute;
-  width: 150px;
-  height: 150px;
-  top: 233px;
-  left: 1674px;
+  width: 120px;
+  height: 120px;
+  top: 196px;
+  left: 1397px;
   /* border: 1px solid red; */
 
 }
