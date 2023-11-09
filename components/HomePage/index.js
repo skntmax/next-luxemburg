@@ -23,7 +23,14 @@ import Image2 from "public/assets/Products Art.png";
 import Image3 from "public/assets/Products Offc.png";
 import Image4 from "public/assets/World_Map.png";
 import Image5 from "public/assets/Luxor Journey.jpg";
-import Image6 from "public/assets/enviro-rrr.png";
+import ReuseImage from "public/assets/env_1.gif";
+import ReuseImage1 from "public/assets/env_2.png";
+import ReuseImage2 from "public/assets/env_3.png";
+import ReuseImage3 from "public/assets/env_4.png";
+import ReuseImage4 from "public/assets/env_5.png";
+import ReuseImage5 from "public/assets/env_6.png";
+import ReuseImage6 from "public/assets/env_7.png";
+
 import Carasol from "components/carasoul";
 import ArtGallery from "public/assets/images/Art Gallery.jpg";
 import ImageContainer from "components/ImageContainer";
@@ -60,12 +67,14 @@ function App(props) {
   let router = useRouter();
   let prd_pen = useRef();
 
+  const [gallery,setGallery] = useState(false);
+
   useEffect(() => {
     let text_div = document.querySelectorAll(".home-text");
     let sections = document.querySelectorAll(".home1-img");
     let new_launch = document.querySelectorAll("new_launch");
 
-    gsap.to(sections, {
+   /*  gsap.to(sections, {
       duration: 2,
       x: -80,
       repeat: -1,
@@ -77,9 +86,9 @@ function App(props) {
         start: "top 70%",
         end: "bottom 50%",
       },
-    });
+    }); */
 
-    gsap.from(text_div, {
+  /*   gsap.from(text_div, {
       x: -150,
       stagger: 0.2, // 0.1 seconds between when each ".box" element starts animating
       duration: 2,
@@ -91,9 +100,9 @@ function App(props) {
         start: "top 50%",
         end: "bottom 50%",
       },
-    });
+    }); */
 
-    gsap.to(text_div, {
+ /*    gsap.to(text_div, {
       x: 70,
       opacity: 1,
       duration: 2,
@@ -106,7 +115,7 @@ function App(props) {
         start: "top 50%",
         end: "bottom 50%",
       },
-    });
+    }); */
 
     // productBackGround();
     newLaumch();
@@ -328,11 +337,11 @@ function App(props) {
   return (
     <>
       <Carasol />
-
+    
       <section className="py-5 overflow-hidden main_homepage">
         <div className="container">
           <div className="row mt-4">
-            <div className="col-md-6 mb-3 home-text">
+            <div className="col-md-6 mb-3 wow animate__fadeInLeft animate__animated home-text">
               <div className="home-text-head">
                 <h1>Luxor All</h1>
                 <h1>Around The World</h1>
@@ -356,13 +365,12 @@ function App(props) {
                 </a>
               </div>
             </div>
-            <div className="col-md-6 home1-img ">
+            <div className="col-md-6 home1-img wow animate__fadeInRight animate__animated  ">
               <Image src={worldMap} className="img-fluid ms-md-5" alt="Map" />
             </div>
           </div>
         </div>
       </section>
-
       <section className="launch">
         <div className="heading">
           <div
@@ -659,8 +667,16 @@ function App(props) {
             our planet breathe well, by adding stationeries that are made of
             recycled materials to our range of drawing and writing instruments
           </p>
-          <div className="">
-            <Image className="img-fluid w-100" src={Image6} alt="Re Use" />
+          <div className="imageContainer">
+            
+            <span data-wow-delay="0.2s" className="wow animate__fadeInLeft animate__animated"><Image className=" img-fluid reuse-image w-80"   src={ReuseImage1} alt="Re Use" /></span>
+           <span data-wow-delay="0.5s" className=" wow animate__fadeInBottomLeft animate__animated"><Image className=" img-fluid reuse-image w-80"     src={ReuseImage2} alt="Re Use" /></span>
+           <span data-wow-delay="0.7s"  className=" wow animate__fadeInUp animate__animated"><Image className="  img-fluid reuse-image w-80"  src={ReuseImage3} alt="Re Use" /></span>
+           <span  className=" wow animate__zoomIn animate__animated"><Image className=" img-fluid reuse-image w-80"   src={ReuseImage} alt="Re Use" /></span>
+           <span  data-wow-delay="0.9s" className=" wow animate__fadeInUp animate__animated"><Image className=" img-fluid reuse-image w-80"  src={ReuseImage4} alt="Re Use" /></span>
+           <span data-wow-delay="1s" className=" wow animate__fadeInBottomRight animate__animated"><Image className="  img-fluid reuse-image w-80"   src={ReuseImage5} alt="Re Use" /></span>
+           <span data-wow-delay="1.2s" className=" wow animate__fadeInRight animate__animated"><Image className=" img-fluid reuse-image w-80"   src={ReuseImage6} alt="Re Use" /></span>
+            
           </div>
         </div>
       </section>
@@ -676,15 +692,70 @@ function App(props) {
       {/* ======== */}
       <section className="py-5 position-relative">
         <div className="parallax">
+          <div className={`side-gallery ${gallery ? 'full' : ''}`}>
+
+          <div onClick={()=>{
+            setGallery(false)
+          }} className={`side-curve-left`}>
+
+</div>
+          <div className="container">
+          <div className="row ">
+            
+            <div className="col-md-4  ">
+              <iframe
+                width="100%"
+                className="rounded"
+                height="300px"
+                src="https://www.youtube.com/embed/P2PmCXQGKxU?si=uGDWl30nggey6v9M"
+                title="YouTube video player"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              ></iframe>
+            </div>
+            <div className="col-md-4  ">
+              <iframe
+                width="100%"
+                className="rounded"
+                height="300px"
+                src="https://www.youtube.com/embed/P2PmCXQGKxU?si=uGDWl30nggey6v9M"
+                title="YouTube video player"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              ></iframe>
+            </div>
+            <div className="col-md-4  ">
+              <iframe
+                width="100%"
+                className="rounded"
+                height="300px"
+                src="https://www.youtube.com/embed/P2PmCXQGKxU?si=uGDWl30nggey6v9M"
+                title="YouTube video player"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              ></iframe>
+            </div>
+          </div>
+        </div>
+
+
+
+              <div className={`side-curve ${gallery ? 'full' : ''}`}>
+
+              </div>
+
+          </div>
           <div className="parallax-inner">
-            <button className="btn Art_gallery_button text-white fs-16">
+            <button onClick={()=>{
+              setGallery(true)
+            }} className="btn Art_gallery_button text-white fs-16">
               Art Gallery
             </button>
             
           </div>
         </div>
       </section>
-      <section className="py-5 yt_video">
+   {/*    <section className="py-5 yt_video">
         <div className="container">
           <div className="row ">
             
@@ -723,7 +794,7 @@ function App(props) {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
     
       <section className="py-5">
@@ -736,7 +807,7 @@ function App(props) {
             <div className="col-md-4 mb-3 col-lg-4 position-relative">
               <Image className="img-fluid rounded" src={I1} alt="look Book" />
               <div className="text_lookbook">
-                <p className="fs-20 text-white fw-600">
+                <p className="fs-20 text-white fw-600 blog-text">
                   Up Your Presentation Game
                 </p>
               </div>
@@ -744,7 +815,7 @@ function App(props) {
             <div className="col-md-4 mb-3 col-lg-4 position-relative">
               <Image src={I2} className="img-fluid rounded" alt="look Book" />
               <div className="text_lookbook">
-                <p className="fs-20 text-white fw-600 ">
+                <p className="fs-20 text-white fw-600 blog-text">
                   Spark your creativity with Luxor pens
                 </p>
               </div>
@@ -752,7 +823,7 @@ function App(props) {
             <div className="col-md-4 mb-3 col-lg-4 position-relative">
               <Image className="img-fluid rounded" alt="look Book" src={I3} />
               <div className="text_lookbook">
-                <p className="fs-20 text-white fw-600 ">
+                <p className="fs-20 text-white fw-600 blog-text">
                   How to choose the best highlighter pen
                 </p>
               </div>

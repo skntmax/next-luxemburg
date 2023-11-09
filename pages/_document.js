@@ -27,6 +27,12 @@ export default function Document() {
 
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/loadingio/ldLoader@v1.0.0/dist/ldld.min.js"/>
 
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"  />
   <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
@@ -108,7 +114,11 @@ export default function Document() {
     crossorigin="anonymous" referrerpolicy="no-referrer" defer ></script>
 
 <script src="https://cdn.jsdelivr.net/gh/loadingio/ldLoader@v1.0.0/dist/ldld.min.css"></script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js" integrity="sha512-Eak/29OTpb36LLo2r47IpVzPBLXnAMPAVypbSZiZ4Qkf8p/7S/XRG5xp7OKWPPYfJT6metI+IORkR5G8F900+g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="js/wow.min.js"></script>
+              <script>
+              new WOW().init();
+              </script>
    {/* <script>
     $(".awards.owl-carousel").owlCarousel({
       // stagePadding: 50,
