@@ -1571,10 +1571,20 @@ carousel .slider-wrapper.axis-horizontal .slider .slide {
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
 
-.contact_form {
+.mail-post { grid-area: mail-post}
+.contact-form { grid-area: contact-form }
+
+.contact-section {
   display: grid;
-  gap: 30px;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-areas: 'mail-post contact-form';
+  grid-column-gap: 30px;
+}
+
+@media (max-width: 1000px) {
+  .contact-section {
+    grid-template-areas: 'mail-post'
+                        'contact-form';
+  }
 }
 
 .btn_submit {

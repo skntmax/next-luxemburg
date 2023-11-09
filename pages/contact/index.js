@@ -3,90 +3,74 @@ import Link from 'next/link';
 import { AiOutlineSearch } from 'react-icons/ai'
 import mail_us from 'public/assets/images/aboutpage/mail_us.jpg';
 import Image from 'next/image';
-// import Logo from 'public/assets/luxorlogo.png'
+import ContactUsBanner from 'public/assets/images/contact-us-banner.jpg';
+
 const index = () => {
 
     return (
         <>
+            <section>
+                <div>
+                    <Image  src={ContactUsBanner} alt="banner" className='w-100 img-fluid' />
+                </div>
+            </section>
             <section className="py-4 py-md-5">
                 <div className="container">
-                    <div className="contact_form mt-5">
-                        <div className=" mb-3">
-                        {/* <span className="">
-                        <Image src={Logo} alt="Logo" className='img-fluid w-100 ' />  
-                        </span>  */}
-                            <h4 className="fs-18 fw-700"> Corporate Office:</h4>
-                            <hr></hr>
-                            <ul className="">
-
-                                <li className='fs-16 text_black mb-2  text_justify d-flex'><p><i class="fa-solid fa-location-dot me-2"></i></p>   <p>A-40,Hosiery Complex, Phase-|| Extention, Noida-201305, District Gautam Budh Nagar (U.P.)</p>
-                                </li>
-                                <li className='fs-16 text_black mb-2 text_justify d-flex'><p><i class="fa-solid fa-envelope me-2"></i></p> <p><a className='fs-16 text_black' href="mailto:export.enquiry@luxoroffice.com" >export.enquiry@luxoroffice.com</a></p></li>
-                                <li className='fs-16 text_black mb-2 text_justify d-flex'><p><i class="fa-solid fa-phone me-2"></i></p> <p><a className='fs-16 text_black' href="tel:01204899000" >0120-4899000, 4899100</a></p></li>
-
-                            </ul>
-
-
-                            <h4 className="fs-18 fw-700 mt-4"> International Business:</h4>
-                            <hr></hr>
-                            <ul className="">
-                                <li className='fs-16 text_black text_justify d-flex'><p><i class="fa-solid fa-location-dot me-2"></i></p>   <p>C-42,Phase-||, Noida, Noida, Distt. (Near Delhi) Gautam Budh Nagar, (U.P.), 201305</p>
-                                </li>
-
-                                <li className='fs-16 text_black text_justify d-flex'><p><i class="fa-solid fa-envelope me-2"></i></p> <p><a className='fs-16 text_black' href="mailto:export.enquiry@luxoroffice.com" >export.enquiry@luxoroffice.com</a></p></li>
-                                <li className='fs-16 text_black text_justify d-flex'><p><i class="fa-solid fa-phone me-2"></i></p> <p><a className='fs-16 text_black' href="tel:01204899000" >0120-4899000, 4899100</a></p></li>
-                                <li className='fs-16 text_black text_justify d-flex'><p><i class="fa-solid fa-phone me-2"></i></p> <p><a className='fs-16 text_black' href="tel:+91120419700003" >+91-120-4197000-03</a></p></li>
+                    <div className="contact-section">
+                        <div className="mail-post">
+                            <div className="address-lines">
+                                <h4 className="fs-20 fw-700"> Luxor Euro GmbH</h4>
+                                <hr></hr>
+                                <ul className="">
 
 
 
-                            </ul>
+                                    <li className='fs-16 text_black text_justify d-flex'><p><i class="fa-solid fa-location-dot me-2"></i></p>   <p>Almestraße 4-8, 33649 Bielefeld Germany</p>
+                                    </li>
 
+                                    <li className='fs-16 text_black text_justify d-flex'><p><i class="fa-solid fa-envelope me-2"></i></p> <p><a className='fs-16 text_black' href="mailto:export.enquiry@luxoroffice.com" >export.enquiry@luxoroffice.com</a></p></li>
+                                    <li className='fs-16 text_black text_justify d-flex'><p><i class="fa-solid fa-phone me-2"></i></p> <p><a className='fs-16 text_black' href="tel:+495219485497" >+49 521 9485497</a></p></li>
+                                    <li className='fs-16 text_black text_justify d-flex'><p><i class="fa-solid fa-phone me-2"></i></p> <p><a className='fs-16 text_black' href="tel:+495219485496" >+49 521 9485496</a></p></li>
+
+
+
+                                </ul>
+                            </div>
                         </div>
-                        <div className=" mb-3">
-                            <Image src={mail_us} alt="mail" className=' img-fluid' />
-                            <h4 className="fs-18 fw-700 mt-4"> Luxor Euro GmbH</h4>
-                            <hr></hr>
-                            <ul className="">
-
-
-
-                                <li className='fs-16 text_black text_justify d-flex'><p><i class="fa-solid fa-location-dot me-2"></i></p>   <p>Almestraße 4-8, 33649 Bielefeld Germany</p>
-                                </li>
-
-                                <li className='fs-16 text_black text_justify d-flex'><p><i class="fa-solid fa-envelope me-2"></i></p> <p><a className='fs-16 text_black' href="mailto:export.enquiry@luxoroffice.com" >export.enquiry@luxoroffice.com</a></p></li>
-                                <li className='fs-16 text_black text_justify d-flex'><p><i class="fa-solid fa-phone me-2"></i></p> <p><a className='fs-16 text_black' href="tel:+495219485497" >+49 521 9485497</a></p></li>
-                                <li className='fs-16 text_black text_justify d-flex'><p><i class="fa-solid fa-phone me-2"></i></p> <p><a className='fs-16 text_black' href="tel:+495219485496" >+49 521 9485496</a></p></li>
-
-
-
-                            </ul>
-                        </div>
-                        <div>
+                        <div className="contact-form">
                             <h3 className='fs-20 fw-700'>Contact Us</h3>
                             <hr></hr>
                             <form action="">
                                 <div className="mb-3 d-flex justify-content-between gap-4">
-                                    <span for="" className="form-label fs-16 text_width fw-700">Name*</span>
-                                    <input type="text" className="form-control rounded-0 shadow-none fs-14 input_field" id="" placeholder="Your Name" />
+                                    <span htmlFor="" className="form-label fs-16 text_width fw-700">Name*</span>
+                                    <input type="text" className="form-control rounded-0 shadow-none fs-14 input_field"
+                                           id="" placeholder="Your Name"/>
                                 </div>
                                 <div className="mb-3 d-flex justify-content-between gap-4">
-                                    <span for="" className="form-label fs-16 text_width fw-700">Email*</span>
-                                    <input type="email" className="form-control rounded-0 shadow-none fs-14 input_field" id="" placeholder="Your Email Id" />
+                                    <span htmlFor="" className="form-label fs-16 text_width fw-700">Email*</span>
+                                    <input type="email" className="form-control rounded-0 shadow-none fs-14 input_field"
+                                           id="" placeholder="Your Email Id"/>
                                 </div>
                                 <div className="mb-3 d-flex justify-content-between gap-4">
-                                    <span for="" className="form-label fs-16 text_width fw-700">Mobile No*</span>
-                                    <input type="number" className="form-control rounded-0 shadow-none fs-14 input_field" id="" placeholder="Your Contact No" />
+                                    <span htmlFor="" className="form-label fs-16 text_width fw-700">Mobile No*</span>
+                                    <input type="number"
+                                           className="form-control rounded-0 shadow-none fs-14 input_field" id=""
+                                           placeholder="Your Contact No"/>
                                 </div>
                                 <div className="mb-3 d-flex justify-content-between gap-4">
-                                    <span for="" className="form-label fs-16 text_width fw-700">Company Name*</span>
-                                    <input type="text" className="form-control rounded-0 shadow-none fs-14 input_field" id="" placeholder="Your Company Name" />
+                                    <span htmlFor="" className="form-label fs-16 text_width fw-700">Company Name*</span>
+                                    <input type="text" className="form-control rounded-0 shadow-none fs-14 input_field"
+                                           id="" placeholder="Your Company Name"/>
                                 </div>
                                 <div className="mb-3 ">
-                                    <span for="" className="form-label fs-16 fw-700">Describe your Requirements *</span>
-                                    <textarea className="form-control mt-2 rounded-0" id="" placeholder="Say something!" rows="3"></textarea>
+                                    <span htmlFor=""
+                                          className="form-label fs-16 fw-700">Describe your Requirements *</span>
+                                    <textarea className="form-control mt-2 rounded-0" id="" placeholder="Say something!"
+                                              rows="3"></textarea>
                                 </div>
                                 <div className='text-end mt-3'>
-                                    <button className='btn text-white  btn_submit rounded-0 fs-16 fw-500'>Submit</button>
+                                    <button className='btn text-white  btn_submit rounded-0 fs-16 fw-500'>Submit
+                                    </button>
 
                                 </div>
                             </form>
@@ -110,8 +94,6 @@ const index = () => {
                     </div>
                 </div>
             </section>
-            
-
         </>
     )
 }
