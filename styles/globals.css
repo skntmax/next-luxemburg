@@ -1697,7 +1697,7 @@ transition: all 1s ease; */
     width: 100%;
   }
 } */
-.yt_video {
+/* .yt_video {
   animation-duration: 10s;
   animation-name: slidein;
 }
@@ -1718,7 +1718,25 @@ transition: all 1s ease; */
     margin-left: 100%; 
     width: 300%; 
   }
+} */
+
+.yt_video {
+  overflow: hidden; 
+  animation: slidein 7s ease forwards; 
 }
+
+
+@keyframes slidein {
+  from {
+      transform: translateX(-100%); 
+  }
+  to {
+      transform: translateX(0); 
+  }
+}
+
+
+
 
 
 .parallax{

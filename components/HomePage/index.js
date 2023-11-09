@@ -573,20 +573,20 @@ function App(props) {
                           className="col-12 col-sm-6 mt-4 mt-md-0 col-md-4 col-lg-3 mb-3 prd_box"
                           onClick={() => router.push("product/" + ele._id)}
                         >
-                          <div className="card h-100 shadow border-0 cards_hover">
-                            <div className="card-body">
+                          <div className="card h-100 rounded-0 shadow-sm border-0 cards_hover">
+                            <div className="card-body px-0 pb-0">
                               <h3 className="fs-20 text-center">
                                 {ele._doc ? ele._doc.name : ele.name}
                               </h3>
-                              <div className="text-center">
+                              {/* <div className=""> */}
                                 <Image
-                                  className="banner_img"
+                                  className="mb-0"
                                   src={image_file}
-                                  width={300}
-                                  height={200}
+                                  width={500}
+                                  height={330}
                                   alt={ele.name}
                                 />
-                              </div>
+                              {/* </div> */}
                             </div>
                           </div>
                         </div>
@@ -687,9 +687,9 @@ function App(props) {
       </section>
       <section className="py-5 yt_video">
         <div className="container">
-          <div className="row yt_content">
+          <div className="row ">
             
-            <div className="col-md-4">
+            <div className="col-md-4 yt_content">
               <iframe
                 width="100%"
                 className="rounded"
@@ -700,7 +700,7 @@ function App(props) {
                 allowFullScreen
               ></iframe>
             </div>
-            <div className="col-md-4">
+            <div className="col-md-4 yt_content">
               <iframe
                 width="100%"
                 className="rounded"
@@ -711,7 +711,7 @@ function App(props) {
                 allowFullScreen
               ></iframe>
             </div>
-            <div className="col-md-4">
+            <div className="col-md-4 yt_content">
               <iframe
                 width="100%"
                 className="rounded"
