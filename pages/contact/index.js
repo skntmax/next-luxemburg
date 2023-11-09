@@ -17,28 +17,8 @@ const index = () => {
             <section className="py-4 py-md-5">
                 <div className="container">
                     <div className="contact-section">
-                        <div className="mail-post">
-                            <div className="address-lines">
-                                <h4 className="fs-20 fw-700"> Luxor Euro GmbH</h4>
-                                <hr></hr>
-                                <ul className="">
-
-
-
-                                    <li className='fs-16 text_black text_justify d-flex'><p><i class="fa-solid fa-location-dot me-2"></i></p>   <p>Almestraße 4-8, 33649 Bielefeld Germany</p>
-                                    </li>
-
-                                    <li className='fs-16 text_black text_justify d-flex'><p><i class="fa-solid fa-envelope me-2"></i></p> <p><a className='fs-16 text_black' href="mailto:export.enquiry@luxoroffice.com" >export.enquiry@luxoroffice.com</a></p></li>
-                                    <li className='fs-16 text_black text_justify d-flex'><p><i class="fa-solid fa-phone me-2"></i></p> <p><a className='fs-16 text_black' href="tel:+495219485497" >+49 521 9485497</a></p></li>
-                                    <li className='fs-16 text_black text_justify d-flex'><p><i class="fa-solid fa-phone me-2"></i></p> <p><a className='fs-16 text_black' href="tel:+495219485496" >+49 521 9485496</a></p></li>
-
-
-
-                                </ul>
-                            </div>
-                        </div>
                         <div className="contact-form">
-                            <h3 className='fs-20 fw-700'>Contact Us</h3>
+                            <h1 className='fs-30 fw-700'>CONTACT US</h1>
                             <hr></hr>
                             <form action="">
                                 <div className="mb-3 d-flex justify-content-between gap-4">

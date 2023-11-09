@@ -1571,19 +1571,13 @@ carousel .slider-wrapper.axis-horizontal .slider .slide {
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
 
-.mail-post { grid-area: mail-post}
-.contact-form { grid-area: contact-form }
-
-.contact-section {
-  display: grid;
-  grid-template-areas: 'mail-post contact-form';
-  grid-column-gap: 30px;
+.contact-form {
+  padding: 0 100px;
 }
 
 @media (max-width: 1000px) {
-  .contact-section {
-    grid-template-areas: 'mail-post'
-                        'contact-form';
+  .contact-form {
+    padding: 0 10px;
   }
 }
 
