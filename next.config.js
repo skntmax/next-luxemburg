@@ -10,7 +10,7 @@ const nextConfig = {
       {
         protocol: "http",
         hostname: "103.25.130.33",
-        port: "8001", 
+        port: "8000", 
       },
     ],
     domains: [
