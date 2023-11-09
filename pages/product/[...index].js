@@ -227,6 +227,7 @@ const ProductPage = (props) => {
                     alt="homepage"
                   />
                 </div>
+                 
                 <div className="mt-3">
                   <p className="fs-16 text_justify">
                    {selected_prd.icon}

@@ -83,8 +83,6 @@ function index() {
             //  image_visible.append(p)
         }
 
-
-
         if(bannerImage=="jr_circle5"){
             let dynamicImage = document.createElement('img');
              dynamicImage.src = jr_five.src
@@ -99,8 +97,6 @@ function index() {
 
 
 
-
-     
 
         gsap.to(image_visible , {
          cursor:"pointer",
@@ -192,7 +188,7 @@ function index() {
   
   
        </div>
-     <Image className='img-fluid' src={Image5}
+    //  <Image src={Image5}
      style={{
          position:"absolute"
      }}
