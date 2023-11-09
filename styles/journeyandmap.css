@@ -1,4 +1,11 @@
 
+
+
+
+
+
+
+
 .l1 {
     left: 21%;
     z-index: 1;
@@ -112,12 +119,9 @@
   
   
   
-  
-  
-  
-  
   .f1>div {
     display: none;
+    border:2px solid red;
   }
   .f1 {
     position: absolute;
@@ -130,6 +134,7 @@
     left: 13%;
     opacity: 0;
     line-height: 0px;
+    border:2px solid red;
   
   }
   .f1:hover {
@@ -141,6 +146,7 @@
     height: 7%;
     top: 26%;
     left: 10%;
+    border:2px solid red;
   }
   .f1:hover>div{
     display: block;
@@ -150,6 +156,7 @@
   
   .f2>div {
     display: none;
+    border:2px solid red;
   }
   .f2 {
     position: absolute;
@@ -574,6 +581,7 @@
   .f16>div {
     display: none;
   }
+  
   .f16 {
     position: absolute;
     width: 3%;
@@ -632,7 +640,7 @@
     display: none;
   }
   .f18 {
-    
+  
     position: absolute;
     width: 3%;
     cursor: pointer;

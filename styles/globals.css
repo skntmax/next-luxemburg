@@ -250,7 +250,7 @@ input {
 
 .launch {
   width: 100%;
-  height: 40rem;
+  height: 27rem;
 }
 
 .heading h2 {
@@ -1581,6 +1581,10 @@ carousel .slider-wrapper.axis-horizontal .slider .slide {
   background-color: #ed1b24;
   padding: 10px 22px;
 }
+.btn_submit:hover {
+  background-color: #ed1b24 !important;
+ 
+}
 .offcanvas_toggle {
   max-width: 90%;
 }
@@ -1693,7 +1697,7 @@ transition: all 1s ease; */
     width: 100%;
   }
 } */
-.yt_video {
+/* .yt_video {
   animation-duration: 10s;
   animation-name: slidein;
 }
@@ -1714,7 +1718,25 @@ transition: all 1s ease; */
     margin-left: 100%; 
     width: 300%; 
   }
+} */
+
+.yt_video {
+  overflow: hidden; 
+  animation: slidein 7s ease forwards; 
 }
+
+
+@keyframes slidein {
+  from {
+      transform: translateX(-100%); 
+  }
+  to {
+      transform: translateX(0); 
+  }
+}
+
+
+
 
 
 .parallax{
@@ -1726,135 +1748,51 @@ transition: all 1s ease; */
  
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* journey */
-
-#jr_img1 {
-  position: absolute;
-  width: 200px;
-  height: 200px;
-  top: 335px;
-  left: 357px;
-  /* border:1px solid red */
-}
-
-#jr_circle {
-  position: absolute;
-  background: white;
-  border-radius: 50%;
-  width: 60px;
-  height: 60px;
-  top: 150px;
-  opacity: 0;
-}
-
-#jr_img2 {
-  position: absolute;
-  width: 200px;
-  height: 200px;
-  top: 465px;
-  left: 793px;
-  /* border:1px solid red */
-
-}
-
-#jr_circle2 {
-  position: absolute;
-  background: white;
-  border-radius: 50%;
-  width: 0;
-  height: 0;
-  top: 150px;
-  right: 40px;
-  opacity: 1;
-}
-
-#jr_img3 {
-  position: absolute;
-  width: 120px;
-  height: 120px;
-  top: 261px;
-  left: 938px;
-  /* border: 1px solid red; */
-}
-
-#jr_circle3 {
-  position: absolute;
-  background: white;
-  border-radius: 50%;
-  width: 0;
-  height: 0;
-  top: 200px;
-  right: 30px;
-  opacity: 1;
-}
-
-
-
-#jr_img4 {
-  position: absolute;
-  width: 50px;
-  height: 50px;
-  top: 144px;
-  left: 1146px;
-  /* border: 1px solid red; */
-}
+.page-item .button_pagination.active{
+  background-color: #da0428;
+  color: white;
+  border: 0px;
  
-
-
-#jr_circle4 {
-  position: absolute;
-  background: white;
-  border-radius: 50%;
-  width: 0;
-  height: 0;
-  top: 150px;
-  right: 20px;
-  opacity: 1;
-}
-
-
-
-#jr_img5 {
-  position: absolute;
-  width: 120px;
-  height: 120px;
-  top: 196px;
-  left: 1397px;
-  /* border: 1px solid red; */
-
-}
  
-#jr_circle5 {
-   
-  position: absolute;
-  background: white;
-  border-radius: 50%;
-  width: 0;
-  height: 0;
-  top: 150px;
-  right: 35px;
-  opacity: 1;
+ 
 }
+
+.page-item .button_pagination{
+  z-index: 0;
+  color: #da0428;
+  border: 1px solid #da0428;
+  width: 42px;
+  height: 42px;
+}
+
+.border_topgrey{
+  border-top: 2px solid grey;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

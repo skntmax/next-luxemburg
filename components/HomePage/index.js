@@ -12,7 +12,7 @@ import { Tween } from "react-gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
-
+import JourneyMap from 'components/ImageJourney'
 // import { TweenMax, Power3 } from 'gsap';
 import { gsap } from "gsap";
 // import Image from 'public/assets/homeBanner.jpg'
@@ -50,10 +50,9 @@ import Image26 from "public/assets/Lineart.png";
 import Image27 from "public/assets/pennib.png";
 import Link from "next/link";
 import { useRouter } from "next/router";
-
 import Header from "@components/header";
-import Slider from "@mui/material/Slider";
-
+// import Slider from "@mui/material/Slider";
+import ImageMap2 from 'components/WorldMap'
 gsap.registerPlugin(ScrollTrigger);
 
 function App(props) {
@@ -111,6 +110,7 @@ function App(props) {
 
     // productBackGround();
     newLaumch();
+     
   }, []);
 
   function productBackGround() {
@@ -572,20 +572,20 @@ function App(props) {
                           className="col-12 col-sm-6 mt-4 mt-md-0 col-md-4 col-lg-3 mb-3 prd_box"
                           onClick={() => router.push("product/" + ele._id)}
                         >
-                          <div className="card h-100 shadow border-0 cards_hover">
-                            <div className="card-body">
+                          <div className="card h-100 rounded-0 shadow-sm border-0 cards_hover">
+                            <div className="card-body px-0 pb-0">
                               <h3 className="fs-20 text-center">
                                 {ele._doc ? ele._doc.name : ele.name}
                               </h3>
-                              <div className="text-center">
+                              {/* <div className=""> */}
                                 <Image
-                                  className="banner_img"
+                                  className="mb-0"
                                   src={image_file}
-                                  width={300}
-                                  height={200}
+                                  width={500}
+                                  height={330}
                                   alt={ele.name}
                                 />
-                              </div>
+                              {/* </div> */}
                             </div>
                           </div>
                         </div>
@@ -605,19 +605,19 @@ function App(props) {
       </section>
 
       <section className="py-5">
-        <div className="container">
           <h2 className="mt-4 text-center fs-40 fw-700">
             Exported To Over 106+ Countries
           </h2>
-          <div className=" mt-5 mb-4">
-            <Image
+          <div className="">
+{/*            <Image
               style={{ width: "100", height: "100" }}
               className=" img-fluid h-100"
               src={Image4}
               alt="Map"
-            />
+        /> */}
+
+            <ImageMap2 />
           </div>
-        </div>
       </section>
 
       <section className="py-5">
@@ -629,7 +629,12 @@ function App(props) {
             src={Image5}
             alt="Luxor Journey"
             /> */}
-            <ImageMap />
+
+
+
+         <JourneyMap />
+            {/* <ImageMap /> */}
+          
           </div>
         </div>
       </section>
@@ -681,9 +686,9 @@ function App(props) {
       </section>
       <section className="py-5 yt_video">
         <div className="container">
-          <div className="row yt_content">
+          <div className="row ">
             
-            <div className="col-md-4">
+            <div className="col-md-4 yt_content">
               <iframe
                 width="100%"
                 className="rounded"
@@ -694,7 +699,7 @@ function App(props) {
                 allowFullScreen
               ></iframe>
             </div>
-            <div className="col-md-4">
+            <div className="col-md-4 yt_content">
               <iframe
                 width="100%"
                 className="rounded"
@@ -705,7 +710,7 @@ function App(props) {
                 allowFullScreen
               ></iframe>
             </div>
-            <div className="col-md-4">
+            <div className="col-md-4 yt_content">
               <iframe
                 width="100%"
                 className="rounded"
@@ -886,9 +891,9 @@ function App(props) {
       {/* ----------------------------------------footer section------------------------------------------- */}
 
       <section className="footer">
-        <div className="footer-heading1">
-          <h2>Be Our Partner/Reseller</h2>
-        </div>
+        
+          <h2 class="fs-40 text_lightred text-center mb-5 fw-600">Be Our Partner/Reseller</h2>
+       
 
         <div className="partner-cont">
           <Image height={450} width={1000} src={Image18} alt="homepage" />
@@ -905,9 +910,8 @@ function App(props) {
 
         {/* --------------------------------- */}
 
-        <div className="certi-heading">
-          <h2>Certificates</h2>
-        </div>
+       
+        <h2 class="fs-40 text_lightred text-center my-5 fw-600">Certificates</h2>
 
         <div className="background">
           <div className="back-img">
@@ -933,9 +937,8 @@ function App(props) {
 
           {/* ----------------------------------- */}
 
-          <div className="award-heading">
-            <h2>Awards & Recognitions</h2>
-          </div>
+         
+          <h2 class="fs-40 text_lightred text-center my-5 fw-600">Awards & Recognitions</h2>
 
           <div className="award-img-cont">
             <div className="pen-pointer">

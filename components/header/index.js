@@ -54,7 +54,7 @@ const Header = (props) => {
                 </div>
             </header> */}
 
-      <nav className="navbar navbar-light bg_red">
+      <nav className="navbar navbar-light d-none d-lg-block bg_red">
         <div className="container d-block">
           <div className="d-flex justify-content-between align-self-center">
             <div>

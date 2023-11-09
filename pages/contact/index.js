@@ -8,7 +8,7 @@ const index = () => {
 
     return (
         <>
-            <section className="py-5">
+            <section className="py-4 py-md-5">
                 <div className="container">
                     <div className="contact_form mt-5">
                         <div className=" mb-3">
@@ -86,7 +86,7 @@ const index = () => {
                                     <textarea className="form-control mt-2 rounded-0" id="" placeholder="Say something!" rows="3"></textarea>
                                 </div>
                                 <div className='text-end mt-3'>
-                                    <button className='btn text-white btn_submit rounded-0 fs-14'>Submit</button>
+                                    <button className='btn text-white  btn_submit rounded-0 fs-16 fw-500'>Submit</button>
 
                                 </div>
                             </form>
@@ -98,7 +98,7 @@ const index = () => {
             <section className='py-5'>
                 <div className="container">
                     <div>
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14020.220201174292!2d77.4146083!3d28.538065!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce8c9aaaaaaab%3A0xf5d2ee4d223e6ebd!2sLuxor%20International%20Private%20Limited!5e0!3m2!1sen!2sin!4v1697965682496!5m2!1sen!2sin" style={{
+                        <iframe className='rounded' src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14020.220201174292!2d77.4146083!3d28.538065!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce8c9aaaaaaab%3A0xf5d2ee4d223e6ebd!2sLuxor%20International%20Private%20Limited!5e0!3m2!1sen!2sin!4v1697965682496!5m2!1sen!2sin" style={{
                             width: '100%',
                             height: '450px',
                             border: '0',

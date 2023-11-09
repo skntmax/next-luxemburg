@@ -328,7 +328,7 @@
     background-color: #ed1b24;
   }
   .products_list {
-    margin-top: -65%;
+    margin-top: -58%;
   }
   .Art_gallery_button {
     border-radius: 20px;
@@ -355,19 +355,23 @@
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
-  .popular_picks,
-  .products_list {
+  .popular_picks {
     margin-top: -32%;
   }
   .Art_gallery_button {
     border-radius: 20px;
     padding: 13px 23px;
   }
+  .products_list {
+    margin-top: -28%;
+  }
 }
 @media (min-width: 1024px) and (max-width: 1288px) {
-  .popular_picks,
-  .products_list {
+  .popular_picks{
     margin-top: -25%;
+  }
+  .products_list {
+    margin-top: -22%;
   }
 }
 
