@@ -1,13 +1,13 @@
 import dynamic from 'next/dynamic';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { allProductsCategory, getMarkerCategory } from '../Actions/action';
-
 const HomePage  =  dynamic(()=> import('components/HomePage') ,{ssr:false })
 
 function App(props) {
 
     const [ markers_cat, set_marker_cat ]  = useState(props.marker_cat)
     const [ all_prdcts, set_all_prd ]  = useState(props.all_prd)     
+
  
      return  <HomePage all_prdcts={all_prdcts} />    
 

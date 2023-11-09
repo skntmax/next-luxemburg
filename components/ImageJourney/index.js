@@ -1,3 +1,4 @@
+import React from 'react'
 import frame from 'public/assets/journey_imgs/jr-frame.jpg'
 import jr_one_old from 'public/assets/journey_imgs/jr_one_old.png'
 import jr_one from 'public/assets/journey_imgs/jr_one.png'
@@ -29,44 +30,30 @@ gsap.registerPlugin(ScrollTrigger, Draggable, Flip, MotionPathPlugin);
 function TimeLine(){
    
    return (
-        <>
-        <div className='position-relative' >
-        <div className='l1' style={{
-            cursor:"pointer"
-        }}>
-             
+        <React.Fragment>
+        <div className='position-relative'>
+        <div className='l1'>
        
            <img className='' src={jr_one_old.src} style={{width:"100%" , height:'100%' , }} />
 
-            
         </div>
-        <div className='l2' style={{
-            cursor:"pointer"
-        }} >
+        <div className='l2'>
           <img className='' src={jr_one.src} style={{width:"100%" , height:'100%'}} />
         </div>
-        <div className='l3' style={{
-            cursor:"pointer"
-        }} >
+        <div className='l3'>
          <img className='' src={jr__three.src} style={{width:"100%" , height:'100%'}} />
         </div>
-        <div className='l4' style={{
-            cursor:"pointer"
-        }} >
+        <div className='l4'>
           <img className='' src={jr__five.src} style={{width:"100%" , height:'100%'}} />
         </div>
-        <div className='l5'  style={{
-            cursor:"pointer"
-        }}>
+        <div className='l5'>
           <img className='' src={jr__four.src} style={{width:"100%" , height:'100%'}} />
         </div>
-        <div className='' style={{
-            cursor:"pointer"
-        }} >
+        <div className=''>
           <img src={frame.src} style={{width:"100vw" , height:'100vh'}}/>
         </div>
         </div>
-        </>
+        </React.Fragment>
       )
 }
 export default TimeLine;
