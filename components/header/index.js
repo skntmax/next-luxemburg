@@ -223,7 +223,7 @@ const Header = (props) => {
                 </ul>
               </div>
               <li className="nav-item">
-                <a className="fs-16 text_black" href="#">
+                <a className="fs-16 text_black" href="/assets/00 Luxor Catalogue 2022 LowRes.pdf">
                   E- Catalogue
                 </a>
               </li>

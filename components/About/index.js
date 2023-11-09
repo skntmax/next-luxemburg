@@ -21,10 +21,9 @@ const index = () => {
 
     return (
         <>
-           <section className='py-5'>
-                <div className="container">
+           <section>
+                <div>
                     <Image  src={banner} alt="banner" className='w-100 img-fluid' />
-
                 </div>
             </section>
             <section className='pt-3 pb-5'>

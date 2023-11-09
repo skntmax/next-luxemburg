@@ -1686,10 +1686,14 @@ carousel .slider-wrapper.axis-horizontal .slider .slide {
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
 
-.contact_form {
-  display: grid;
-  gap: 30px;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+.contact-form {
+  padding: 0 100px;
+}
+
+@media (max-width: 1000px) {
+  .contact-form {
+    padding: 0 10px;
+  }
 }
 
 .btn_submit {
