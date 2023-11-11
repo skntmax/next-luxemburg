@@ -151,7 +151,7 @@ const Header = (props) => {
               </div>
               <div className="dropdown">
                 <button
-                  className="btn dropdown-toggle"
+                  className="btn dropdown-toggle pt-0"
                   type="button"
                   id="dropdownProduct"
                   data-bs-toggle="dropdown"
