@@ -13,6 +13,8 @@ import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import JourneyMap from 'components/ImageJourney'
+import Ugcslider from 'components/Ugcslider'
+
 // import { TweenMax, Power3 } from 'gsap';
 import { gsap } from "gsap";
 // import Image from 'public/assets/homeBanner.jpg'
@@ -30,7 +32,7 @@ import ReuseImage3 from "public/assets/env_4.png";
 import ReuseImage4 from "public/assets/env_5.png";
 import ReuseImage5 from "public/assets/env_6.png";
 import ReuseImage6 from "public/assets/env_7.png";
-
+import style from './style.module.css'
 import Carasol from "components/carasoul";
 import ArtGallery from "public/assets/images/Art Gallery.jpg";
 import ImageContainer from "components/ImageContainer";
@@ -832,26 +834,25 @@ function App(props) {
         </div>
       </section>
 
-      <section className="py-5">
-        <div className="container">
+      <section className="py-5 overflow-hidden">
+        <div className={`container-fluid ${style.ugcb}`} >
+          {/* <div className="container">
           <div className="row flex-nowrap overflow-auto my-4">
-            <div className="col-sm-6 col-md-4 mb-3 ">
+            <div className="col-sm-6 col-md-4 mb-3 effect">
               <Image
                 className="img-fluid rounded p-4"
                 src={Imag11}
                 alt="homepage"
               />
             </div>
-
-            <div className="col-sm-6  col-md-4 mb-3 ">
+            <div className="col-sm-6  col-md-4 mb-3 effect">
               <Image
                 className="img-fluid rounded p-4"
                 src={Imag12}
                 alt="homepage"
               />
             </div>
-
-            <div className="col-sm-6 col-md-4 mb-3 ">
+            <div className="col-sm-6 col-md-4 mb-3 effect">
               <Image
                 className="img-fluid rounded p-4"
                 src={Imag13}
@@ -859,7 +860,18 @@ function App(props) {
               />
             </div>
           </div>
+
+          </div>*/}
         </div>
+<Ugcslider/>
+
+
+
+
+
+
+
+
       </section>
 
       {/* ---------------------------------------------organisation container---------------------------------------------- */}

@@ -29,7 +29,7 @@ export default class Carasol extends Component {
                     <div className='carousel_banner' style={this.state.imageStyle}>  
                     <Image   alt="banner2" className='img-fluid'  src={Home_Page_Banner3} />  
                     </div>
-            </Carousel>  
+                  </Carousel>  
         );  
     }  
   }
