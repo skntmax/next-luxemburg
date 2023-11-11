@@ -11,8 +11,13 @@ const nextConfig = {
         protocol: "http",
         hostname: "localhost",
         port: "8000", 
-      },
+      },{
+      protocol: "http",
+      hostname: "103.25.130.33:8000",
+      port: "8000", 
+    }
     ],
+
     domains: [
       "luxorpen.com",
       "assets.vogue.com",
