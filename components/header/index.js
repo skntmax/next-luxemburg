@@ -366,7 +366,6 @@ const Header = (props) => {
 
 
                 <ul class="dropdown-menu" aria-labelledby="product-dropdown">
-
                   {all_prd.length > 0 &&
                     all_prd.map((item, ind) => {
                       if (item._doc) {
@@ -378,7 +377,7 @@ const Header = (props) => {
                               goToProductPage(item);
                             }}
                           >
-                            <a className="text_black  fs-16 dropdown-item">
+                            <a className=" text_black  fs-16 dropdown-item">
                               {item._doc.name}
                             </a>
                             <ul className="list-unstyled">
@@ -400,7 +399,7 @@ const Header = (props) => {
                                           );
                                         }}
                                       >
-                                        <a className="dropdown-item">
+                                        <a className=" dropdown-item">
                                           {ele.category
                                             ? ele.category
                                             : ele.marker_category
@@ -422,7 +421,7 @@ const Header = (props) => {
                             onClick={() => goToProductPage(item)}
                           >
                             <a className="text_black  fs-16 dropdown-item">
-                              {item.name}
+                              {item.name} 
                             </a>
                           </li>
                         );
