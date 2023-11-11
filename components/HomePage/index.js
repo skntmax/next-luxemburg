@@ -834,7 +834,7 @@ function App(props) {
         </div>
       </section>
 
-      <section className="py-5">
+      <section className="py-5 overflow-hidden">
         <div className={`container-fluid ${style.ugcb}`} >
           {/* <div className="container">
           <div className="row flex-nowrap overflow-auto my-4">
