@@ -886,12 +886,10 @@ function App(props) {
           </div>
 
           </div>*/}
-        </div>
+
+ 
+         </div>
         <Ugcslider />
-
-
-
-
 
 
 
