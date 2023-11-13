@@ -336,8 +336,9 @@ function App(props) {
 
   return (
     <>
-      <Carasol />
     
+      <Carasol />
+
       <section className="py-5 overflow-hidden main_homepage">
         <div className="container">
           <div className="row mt-4">
