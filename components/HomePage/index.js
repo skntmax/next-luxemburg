@@ -62,6 +62,7 @@ import { useRouter } from "next/router";
 import Header from "@components/header";
 // import Slider from "@mui/material/Slider";
 import ImageMap2 from 'components/WorldMap'
+import WomanLed from "@components/WomanLed";
 gsap.registerPlugin(ScrollTrigger);
 
 function App(props) {
@@ -835,7 +836,7 @@ function App(props) {
       </section>
 
       <section className="py-5 overflow-hidden">
-        <div className={`container-fluid ${style.ugcb}`} >
+        <div className={`container-fluid`} >
           {/* <div className="container">
           <div className="row flex-nowrap overflow-auto my-4">
             <div className="col-sm-6 col-md-4 mb-3 effect">
@@ -876,34 +877,7 @@ function App(props) {
 
       {/* ---------------------------------------------organisation container---------------------------------------------- */}
 
-      <section className="py-5">
-        <div className="container">
-          <h2 className="fs-40 text-center mb-4 fw-600 text_lightred">
-            A Woman-Led Organization
-          </h2>
-          <div className="d-flex justify-content-center mb-2">
-            <button className="btn btn_secondary me-3 mb-2 fs-16 fw-600 text-white">
-              Photos
-            </button>
-            <button className="btn btn_secondary-outline me-3 mb-2 fs-16 fw-600 tetx_lightred ">
-              Videos
-            </button>
-          </div>
-          <div className="row mt-5">
-            <div className="col-md-4 mb-2">
-              <Image className="img-fluid" src={Image14} alt="homepage" />
-            </div>
-
-            <div className="col-md-4 mb-2">
-              <Image className="img-fluid" src={Image15} alt="homepage" />
-            </div>
-
-            <div className="col-md-4 mb-2">
-              <Image className="img-fluid" src={Image16} alt="homepage" />
-            </div>
-          </div>
-        </div>
-      </section>
+      <WomanLed/>
 
       {/* ----------------------------------------------about luxor-------------------------------------- */}
 
