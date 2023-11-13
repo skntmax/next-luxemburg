@@ -246,7 +246,7 @@ const Header = (props) => {
                 </a>
               </li>
               <li className="nav-item">
-                <a className="fs-16 text_black" onClick={()=>{router.push('/contact')}}  href="">
+                <a className="fs-16 text_black" onClick={(e)=>{ e.preventDefault(), router.push('/contact')}}  href="">
                   Contact Us
                 </a>
               </li>
@@ -361,10 +361,6 @@ const Header = (props) => {
                 >
                   Product
                 </a>
-
-
-
-
                 <ul class="dropdown-menu" aria-labelledby="product-dropdown">
                   {all_prd.length > 0 &&
                     all_prd.map((item, ind) => {
