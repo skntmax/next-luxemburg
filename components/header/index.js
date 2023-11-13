@@ -361,10 +361,6 @@ const Header = (props) => {
                 >
                   Product
                 </a>
-
-
-
-
                 <ul class="dropdown-menu" aria-labelledby="product-dropdown">
                   {all_prd.length > 0 &&
                     all_prd.map((item, ind) => {
