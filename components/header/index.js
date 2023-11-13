@@ -1,3 +1,5 @@
+// import { redirect } from 'next/navigation'
+// import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { AiOutlineSearch } from "react-icons/ai";
@@ -149,7 +151,7 @@ const Header = (props) => {
               </div>
               <div className="dropdown">
                 <button
-                  className="btn dropdown-toggle text_black fs-16 p-0 border-0 shadow-none"
+                  className="btn dropdown-toggle pt-0"
                   type="button"
                   id="dropdownProduct"
                   data-bs-toggle="dropdown"
@@ -158,7 +160,7 @@ const Header = (props) => {
                   Product
                 </button>
 
-                <ul className="dropdown-menu" aria-labelledby="dropdownProduct">
+                <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton">
                   {all_prd.length > 0 &&
                     all_prd.map((item, ind) => {
                       if (item._doc) {
@@ -244,7 +246,7 @@ const Header = (props) => {
                 </a>
               </li>
               <li className="nav-item">
-                <a className="fs-16 text_black" href="contact">
+                <a className="fs-16 text_black" onClick={()=>{router.push('/contact')}}  href="">
                   Contact Us
                 </a>
               </li>
@@ -364,7 +366,6 @@ const Header = (props) => {
 
 
                 <ul class="dropdown-menu" aria-labelledby="product-dropdown">
-
                   {all_prd.length > 0 &&
                     all_prd.map((item, ind) => {
                       if (item._doc) {
@@ -376,7 +377,7 @@ const Header = (props) => {
                               goToProductPage(item);
                             }}
                           >
-                            <a className="text_black  fs-16 dropdown-item">
+                            <a className=" text_black  fs-16 dropdown-item">
                               {item._doc.name}
                             </a>
                             <ul className="list-unstyled">
@@ -398,7 +399,7 @@ const Header = (props) => {
                                           );
                                         }}
                                       >
-                                        <a className="dropdown-item">
+                                        <a className=" dropdown-item">
                                           {ele.category
                                             ? ele.category
                                             : ele.marker_category
@@ -420,7 +421,7 @@ const Header = (props) => {
                             onClick={() => goToProductPage(item)}
                           >
                             <a className="text_black  fs-16 dropdown-item">
-                              {item.name}
+                              {item.name} 
                             </a>
                           </li>
                         );
