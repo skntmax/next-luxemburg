@@ -529,7 +529,7 @@ function App(props) {
         </div>
       </section>
 
-      <section>
+     
       <div className="container-fluid p-0">
         <div className="products">
           <div className="prodBackground">
@@ -616,7 +616,7 @@ function App(props) {
           </div> */}
         </div>
         </div>
-      </section>
+      
 
       <section className="py-5">
         <h2 className="mt-4 text-center fs-40 fw-700">
@@ -657,7 +657,7 @@ function App(props) {
         <div className="container">
           <div className="row">
 
-            <div className="col-md-7">
+            <div className="col-md-12">
               <h2 className="fs-40 fw-600  my-4 text_green">
                 Let's save the  environment with Luxor
               </h2>
@@ -677,13 +677,25 @@ function App(props) {
                 recycled materials to our range of drawing and writing instruments
               </p>
             </div>
-            <div className="col-md-5 align-self-center">
+          {/*   <div className="col-md-5 align-self-center">
               <span className=" wow animate__zoomIn animate__animated"><Image className=" img-fluid reuse-image w-80" src={ReuseImage} alt="Re Use" /></span>
-
-            </div>
+            </div> */}
 
           </div>
-          <div className="reusesave-env">
+          <div className="">
+          <div className="imageContainer">
+
+            <span data-wow-delay="0.2s" className="wow animate__fadeInLeft animate__animated"><Image className=" img-fluid reuse-image w-80"   src={ReuseImage1} alt="Re Use" /></span>
+           <span data-wow-delay="0.5s" className=" wow animate__fadeInBottomLeft animate__animated"><Image className=" img-fluid reuse-image w-80"     src={ReuseImage2} alt="Re Use" /></span>
+           <span data-wow-delay="0.7s"  className=" wow animate__fadeInUp animate__animated"><Image className="  img-fluid reuse-image w-80"  src={ReuseImage3} alt="Re Use" /></span>
+           <span  className=" wow animate__zoomIn animate__animated"><Image className=" img-fluid reuse-image w-80"   src={ReuseImage} alt="Re Use" /></span>
+           <span  data-wow-delay="0.9s" className=" wow animate__fadeInUp animate__animated"><Image className=" img-fluid reuse-image w-80"  src={ReuseImage4} alt="Re Use" /></span>
+           <span data-wow-delay="1s" className=" wow animate__fadeInBottomRight animate__animated"><Image className="  img-fluid reuse-image w-80"   src={ReuseImage5} alt="Re Use" /></span>
+           <span data-wow-delay="1.2s" className=" wow animate__fadeInRight animate__animated"><Image className=" img-fluid reuse-image w-80"   src={ReuseImage6} alt="Re Use" /></span>
+
+          </div>
+          </div>
+         {/*  <div className="reusesave-env">
             <div className="mb-3">
               <span data-wow-delay="0.2s" className="wow animate__fadeInLeft animate__animated"><Image className=" img-fluid reuse-image w-80" src={ReuseImage1} alt="Re Use" /></span>
             </div>
@@ -702,7 +714,7 @@ function App(props) {
             <div className="mb-3">
               <span data-wow-delay="1s" className=" wow animate__fadeInBottomRight animate__animated"><Image className="  img-fluid reuse-image w-80" src={ReuseImage5} alt="Re Use" /></span>
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
       {/* <section className="py-5 position-relative">
@@ -716,71 +728,68 @@ function App(props) {
 
       {/* ======== */}
       <section className="py-5 position-relative">
-        <div className="artgallery-btn">
-          <Image src={ArtGallery} alt="Art gallery" className="img-fluid"/>
+      <div className="artgallery-btn">
+        {/* Art Gallery Button */}
+        {(!gallery && (
+          <button onClick={() => setGallery(true)} className="btn Art_gallery_button text-white fs-16">
+            Art Gallery
+          </button>
+        ))}
+
+        {/* Image */}
+        {!gallery && <Image src={ArtGallery} alt="Art gallery" className="img-fluid" />}
+
+        {/* Toggle Gallery Content */}
+        {gallery && (
           <div className={`side-gallery ${gallery ? 'full' : ''}`}>
-          
-            <div  onClick={() => {
-              setGallery(false)
-            }} className={`side-curve-left`}>
+            {/* Close Button */}
+            <div onClick={() => setGallery(false)} className={`side-curve-left`}></div>
 
-            </div>
+            {/* Gallery Content */}
             <div className="container">
-              <div className="row my-4 flex-nowrap overflow-auto">
-
-                <div className="col-md-6 col-lg-4  ">
-                  <iframe
-                    width="100%"
-                    className="rounded"
-                    height="300px"
-                    src="https://www.youtube.com/embed/P2PmCXQGKxU?si=uGDWl30nggey6v9M"
-                    title="YouTube video player"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowFullScreen
-                  ></iframe>
-                </div>
-                <div className="col-md-6 col-lg-4  ">
-                  <iframe
-                    width="100%"
-                    className="rounded"
-                    height="300px"
-                    src="https://www.youtube.com/embed/P2PmCXQGKxU?si=uGDWl30nggey6v9M"
-                    title="YouTube video player"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowFullScreen
-                  ></iframe>
-                </div>
-                <div className="col-md-6 col-lg-4  ">
-                  <iframe
-                    width="100%"
-                    className="rounded"
-                    height="300px"
-                    src="https://www.youtube.com/embed/P2PmCXQGKxU?si=uGDWl30nggey6v9M"
-                    title="YouTube video player"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowFullScreen
-                  ></iframe>
-                </div>
+              <div className="row py-5 flex-nowrap overflow-auto">
+                {/* Display iframes when gallery is open */}
+                <>
+                  <div className="col-md-6 col-lg-4">
+                    <iframe
+                      width="100%"
+                      className="rounded"
+                      height="300px"
+                      src="https://www.youtube.com/embed/P2PmCXQGKxU?si=uGDWl30nggey6v9M"
+                      title="YouTube video player"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen
+                    ></iframe>
+                  </div>
+                  <div className="col-md-6 col-lg-4">
+                    <iframe
+                      width="100%"
+                      className="rounded"
+                      height="300px"
+                      src="https://www.youtube.com/embed/P2PmCXQGKxU?si=uGDWl30nggey6v9M"
+                      title="YouTube video player"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen
+                    ></iframe>
+                  </div>
+                  <div className="col-md-6 col-lg-4">
+                    <iframe
+                      width="100%"
+                      className="rounded"
+                      height="300px"
+                      src="https://www.youtube.com/embed/P2PmCXQGKxU?si=uGDWl30nggey6v9M"
+                      title="YouTube video player"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen
+                    ></iframe>
+                  </div>
+                </>
               </div>
             </div>
-
-
-
-            {/* <div className={`side-curve ${gallery ? 'full' : ''}`}>
-
-            </div> */}
-
           </div>
-          <div className="artgallery-btn">
-            <button onClick={() => {
-              setGallery(true)
-            }} className="btn Art_gallery_button text-white fs-16">
-              Art Gallery
-            </button>
-
-          </div>
-        </div>
-      </section>
+        )}
+      </div>
+    </section>
       {/*    <section className="py-5 yt_video">
         <div className="container">
           <div className="row ">
@@ -1036,6 +1045,7 @@ function App(props) {
             <div className="award-img">
               <Image src={Image25} alt="homepage" />
             </div>
+            
           </div>
         </div>
       </section>

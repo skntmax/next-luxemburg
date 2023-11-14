@@ -394,17 +394,11 @@ carousel .slider-wrapper.axis-horizontal .slider .slide {
     
   }
 
-  .side-gallery{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* position: absolute; */
+  .side-gallery{ 
     width: 0;
     background: antiquewhite;
-    position: absolute;
     /* right: 207px; */
-   
-    transition: all 0.4s ease-in-out;
+    transition: all 1.4s ease-in-out;
     z-index: 999;
   }
   
@@ -415,15 +409,14 @@ carousel .slider-wrapper.axis-horizontal .slider .slide {
     /* position: absolute; */
     width: 100vw;
     background: antiquewhite;
-    position: absolute;
-    /* right: 207px; */
+    
 
     
     z-index: 999;
   }
   .side-curve{
     width: 110px;
-    position: absolute;
+    /* position: absolute; */
     right: -150px;
   
     display: block;
@@ -433,9 +426,9 @@ carousel .slider-wrapper.axis-horizontal .slider .slide {
   }
   .side-curve-left{
     width: 35px;
-    position: absolute;
+    /* position: absolute; */
     left: 0px;
-    height: 140px;
+    height: 330px;
     display: block;
     background: #ffc1c1;
     border-radius: 0 100% 100% 0 / 0 50% 50% 0;
@@ -1111,6 +1104,7 @@ carousel .slider-wrapper.axis-horizontal .slider .slide {
   right: 20%;
   top: 30%;
   font-weight: bolder;
+  z-index: 999;
 }
 
 .art-gallery {
@@ -1861,13 +1855,13 @@ transition: all 1s ease; */
 
 
 
-/* 
+ 
 .parallax{
   background: url("http://103.25.130.33:8001/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FArt%20Gallery.1d13b636.jpg&w=3840&q=75");
   background-size: cover;
  min-height: 600px;
  
-} */
+} 
 
 .page-item .button_pagination.active{
   background-color: #da0428;

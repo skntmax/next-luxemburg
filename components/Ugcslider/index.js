@@ -29,6 +29,24 @@ export default class Carasol extends Component {
             <div className={style.slideImage}>
               <img className={style.img} src={Imag13.src} />
             </div>
+            <div className={style.slideImage}>
+              <img className={style.img} src={Imag11.src} />
+            </div>
+            <div className={style.slideImage}>
+              <img className={style.img} src={Imag12.src} />
+            </div>
+            <div className={style.slideImage}>
+              <img className={style.img} src={Imag13.src} />
+            </div>
+            <div className={style.slideImage}>
+              <img className={style.img} src={Imag11.src} />
+            </div>
+            <div className={style.slideImage}>
+              <img className={style.img} src={Imag12.src} />
+            </div>
+            <div className={style.slideImage}>
+              <img className={style.img} src={Imag13.src} />
+            </div>
           </div>
         </div>
       </div>

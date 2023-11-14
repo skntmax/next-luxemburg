@@ -118,6 +118,9 @@
   
   
   
+
+
+
   
   .f1>div {
     display: none;
@@ -431,9 +434,11 @@
     display: block;
   }
   
+
   .f11>div {
     display: none;
   }
+
   .f11{
     
     position: absolute;
@@ -445,8 +450,9 @@
     left: 49.5%;
     opacity: 0;
     line-height: 0px;
-  
   }
+   
+
   .f11:hover {
     display: block;
     /* margin-top: -29px; */
@@ -464,8 +470,8 @@
   .f12>div {
     display: none;
   }
-  .f12 {
-    
+   
+  .f12 { 
     position: absolute;
     width: 3%;
     cursor: pointer;
@@ -487,6 +493,8 @@
     top: 24%;
     left: 45%;
   }
+   
+   
   .f12:hover>div{
     display: block;
   }
@@ -496,8 +504,8 @@
   .f13>div {
     display: none;
   }
+   
   .f13 {
-    
     position: absolute;
     width: 3%;
     cursor: pointer;
@@ -516,15 +524,18 @@
     opacity: 1;
     width: 8%;
     height: 7%;
-    top: 18%;
+    top: 21%;
     left: 54%;
   }
+
   .f13:hover>div{
     display: block;
   }
+
   .f14>div {
     display: none;
   }
+   
   .f14 {
     
     position: absolute;
