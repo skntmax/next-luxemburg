@@ -2,7 +2,7 @@ import dynamic from 'next/dynamic';
 import React, { useState } from 'react';
 import { allProductsCategory, getMarkerCategory } from '../Actions/action';
 
-const HomePage  =  dynamic(()=> import('components/HomePage') ,{ssr:false })
+const HomePage  =  dynamic(()=> import('components/HomePage') ,{ssr:false  ,})
 
 function App(props) {
 
