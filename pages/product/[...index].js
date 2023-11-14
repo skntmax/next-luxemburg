@@ -56,6 +56,10 @@ const ProductPage = (props) => {
 
 
 
+   
+   let product_image_files = (props.selected_prd_data.product_root_folder_name &&  Array.isArray(props.selected_prd_data.product_file_names)) ? props.selected_prd_data.product_file_names.map(i=>  process.env.NEXT_PUBLIC_BASE_URL+"/"+props.selected_prd_data.product_root_folder_name+"/"+i  ) :""
+           
+   
   return (
     <>
       <section className="">
@@ -82,6 +86,8 @@ const ProductPage = (props) => {
             );
           })}
       </div> */}
+
+{/* 
       <section className="py-5">
         <div className="row flex-nowrap overflow-auto px-4 ">
           {cat_prdcts.length > 0 &&
@@ -116,6 +122,9 @@ const ProductPage = (props) => {
             })}
         </div>
       </section>
+
+
+       */}
       {/* <Products /> */}
 
       {/* -----------------------------------broadline marker--------------------------------------- */}
@@ -130,8 +139,8 @@ const ProductPage = (props) => {
               height={70}
                src={  
                  
-                 (selected_prd.root_folder_name && selected_prd.file_name)?   
-                 process.env.NEXT_PUBLIC_BASE_URL+"/"+selected_prd.root_folder_name+selected_prd.file_name : broadmarker   
+                Array.isArray(product_image_files)  ?   
+                product_image_files[0] : broadmarker   
                  } alt="Marker" />
             </div>
 

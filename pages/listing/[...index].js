@@ -65,8 +65,6 @@ const index = (props) => {
   }
 
   const [cat_name, _id , p_n ] = router.query.index
-   
-console.log(p_n)
 
   return (
     <>      
@@ -80,41 +78,8 @@ console.log(p_n)
           <div className="row mt-5">
           
             <div className="col-md-3 col-lg-2 mb-3">
-{/* 
-              <h3 className="fs-20 mt-4 text_black mb-4">Brand</h3>
-              <div className="form-check mb-2">
-                <input
-                  className="form-check-input "
-                  type="checkbox"
-                  value=""
-                  id="parker"
-                />
-                <label className="form-check-label fs-14" for="parker">
-                  Parker <span className="text_lightgrey ">(20)</span>
-                </label>
-              </div>
-              <div className="form-check mb-2 ">
-                <input
-                  className="form-check-input"
-                  type="checkbox"
-                  value=""
-                  id="waterman"
-                />
-                <label className="form-check-label fs-14" for="waterman">
-                  Waterman <span className="text_lightgrey ">(20)</span>
-                </label>
-              </div>
-              <div className="form-check mb-2 ">
-                <input
-                  className="form-check-input"
-                  type="checkbox"
-                  value=""
-                  id="luxor"
-                />
-                <label className="form-check-label fs-14" for="luxor">
-                  Luxor Schneider <span className="text_lightgrey ">(20)</span>
-                </label>
-              </div> */}
+
+            
             </div>
 
 
@@ -339,11 +304,6 @@ console.log(p_n)
         </div>
       </section>
 
-      
-        
-     
-
-    
     </>
   );
 };
@@ -356,7 +316,7 @@ export async function getServerSideProps(context) {
       index: [cat_name, _id , page_no ],
     },
   } = context;
-
+   
   let { result, status } = await getCategoryWiseProducts(_id, cat_name,page_no?page_no:1 );
    
   if (status && result.cat_wise_products.length > 0) {
@@ -368,7 +328,9 @@ export async function getServerSideProps(context) {
         cat_name,
       },
     };
+
   }
+
 
   return {
     props: {
