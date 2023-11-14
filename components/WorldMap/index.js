@@ -27,6 +27,8 @@ export default function WorldMap() {
                                         <div>
                                                 <h3 className='text-light c1'></h3>
                                                 <p className='text-light c1'>USA</p>
+                                                <h1 className='text-light c1'></h1>
+  
                                         </div>
                                 </div>
                                 <div className='f2'>
@@ -34,6 +36,8 @@ export default function WorldMap() {
                                         <div>
                                                 <h3 className='text-light c1'></h3>
                                                 <p className='text-light c1'>USA</p>
+                                                <h1 className='text-light c1'></h1>
+  
                                         </div>
                                 </div>
                                 <div className='f3'>
@@ -41,6 +45,8 @@ export default function WorldMap() {
                                         <div>
                                                 <h3 className='text-light c1'></h3>
                                                 <p className='text-light c1'>USA</p>
+                                                <h1 className='text-light c1'></h1>
+  
                                         </div>
                                 </div>
                                 <div className='f4'>
@@ -48,6 +54,8 @@ export default function WorldMap() {
                                         <div>
                                                 <h3 className='text-light c1'></h3>
                                                 <p className='text-light c1'>BRAZIL</p>
+                                                <h1 className='text-light c1'></h1>
+  
                                         </div>
                                 </div>
                                 <div className='f5'>
@@ -55,6 +63,8 @@ export default function WorldMap() {
                                         <div>
                                                 <h3 className='text-light c1'></h3>
                                                 <p className='text-light c1'>BRAZIL</p>
+                                                <h1 className='text-light c1'></h1>
+  
                                         </div>
                                 </div>
                                 <div className='f6'>
@@ -62,6 +72,8 @@ export default function WorldMap() {
                                         <div>
                                                 <h3 className='text-light c1'></h3>
                                                 <p className='text-light c1'>EGYPT</p>
+                                                <h1 className='text-light c1'></h1>
+  
                                         </div>
                                 </div>
                                 <div className='f7'>
@@ -69,6 +81,8 @@ export default function WorldMap() {
                                         <div>
                                                 <h3 className='text-light c1'></h3>
                                                 <p className='text-light c1'>EGYPT</p>
+                                                <h1 className='text-light c1'></h1>
+  
                                         </div>
                                 </div>
                                 <div className='f8'>
@@ -83,6 +97,8 @@ export default function WorldMap() {
                                         <div>
                                                 <h3 className='text-light c1'></h3>
                                                 <p className='text-light c1'>EGYPT</p>
+                                                <h1 className='text-light c1'></h1>
+  
                                         </div>
                                 </div>
                                 <div className='f10'>
@@ -90,6 +106,8 @@ export default function WorldMap() {
                                         <div>
                                                 <h3 className='text-light c1'></h3>
                                                 <p className='text-light c1'>EGYPT</p>
+                                                <h1 className='text-light c1'></h1>
+  
                                         </div>
                                 </div>
                                 <div className='f11'>
@@ -97,6 +115,8 @@ export default function WorldMap() {
                                         <div>
                                                 <h3 className='text-light c1'></h3>
                                                 <p className='text-light c1'>UAE</p>
+                                                <h1 className='text-light c1'></h1>
+  
                                         </div>
                                 </div>
                                 <div className='f12'>
@@ -104,6 +124,8 @@ export default function WorldMap() {
                                         <div>
                                                 <h3 className='text-light c1'></h3>
                                                 <p className='text-light c1'>UAE</p>
+                                                <h1 className='text-light c1'></h1>
+  
                                         </div>
                                 </div>
                                 <div className='f13'>
@@ -111,6 +133,8 @@ export default function WorldMap() {
                                         <div>
                                                 <h3 className='text-light c1'></h3>
                                                 <p className='text-light c1'>UAE</p>
+                                                <h1 className='text-light c1'></h1>
+  
                                         </div>
                                 </div>
                                 <div className='f14'>
@@ -118,6 +142,8 @@ export default function WorldMap() {
                                         <div>
                                                 <h3 className='text-light c1'></h3>
                                                 <p className='text-light c1'>UAE</p>
+                                                <h1 className='text-light c1'></h1>
+  
                                         </div>
                                 </div>
                                 <div className='f15'>
@@ -125,6 +151,8 @@ export default function WorldMap() {
                                         <div>
                                                 <h3 className='text-light c1'></h3>
                                                 <p className='text-light c1'>UAE</p>
+                                                <h1 className='text-light c1'></h1>
+  
                                         </div>
                                 </div>
                                 <div className='f16'>
@@ -132,6 +160,8 @@ export default function WorldMap() {
                                         <div>
                                                 <h3 className='text-light c1'></h3>
                                                 <p className='text-light c1'>RUSSIA</p>
+                                                <h1 className='text-light c1'></h1>
+  
                                         </div>
                                 </div>
                                 <div className='f17'>
@@ -139,6 +169,8 @@ export default function WorldMap() {
                                         <div>
                                                 <h3 className='text-light c1'></h3>
                                                 <p className='text-light c1'>RUSSIA</p>
+                                                <h1 className='text-light c1'></h1>
+  
                                         </div>
                                 </div>
                                 <div className='f18'>
@@ -146,6 +178,8 @@ export default function WorldMap() {
                                         <div>
                                                 <h3 className='text-light c1'></h3>
                                                 <p className='text-light c1'>RUSSIA</p>
+                                                <h1 className='text-light c1'></h1>
+  
                                         </div>
                                 </div>
                                 <div className='f19'>
@@ -160,6 +194,8 @@ export default function WorldMap() {
                                         <div>
                                                 <h3 className='text-light c1'></h3>
                                                 <p className='text-light c1'>CHINA</p>
+                                                <h1 className='text-light c1'></h1>
+  
                                         </div>
                                 </div>
 
@@ -176,6 +212,8 @@ export default function WorldMap() {
                                         <div>
                                                 <h3 className='text-light c1'></h3>
                                                 <p className='text-light c1'>INDIA</p>
+                                                <h1 className='text-light c1'></h1>
+  
                                         </div>
                                 </div>
                                 <div className='f23'>
@@ -183,6 +221,8 @@ export default function WorldMap() {
                                         <div>
                                                 <h3 className='text-light c1'></h3>
                                                 <p className='text-light c1'>INDIA</p>
+                                                <h1 className='text-light c1'></h1>
+  
                                         </div>
                                 </div>
                                 <div className='f24'>
@@ -190,6 +230,8 @@ export default function WorldMap() {
                                         <div>
                                                 <h3 className='text-light c1'></h3>
                                                 <p className='text-light c1'>USA</p>
+                                                <h1 className='text-light c1'></h1>
+  
                                         </div>
                                 </div>
                                 <div className='f25'>
@@ -197,6 +239,8 @@ export default function WorldMap() {
                                         <div>
                                                 <h3 className='text-light c1'></h3>
                                                 <p className='text-light c1'>USA</p>
+                                                <h1 className='text-light c1'></h1>
+  
                                         </div>
                                 </div>
                                 <div className='f26'>
@@ -204,6 +248,8 @@ export default function WorldMap() {
                                         <div>
                                                 <h3 className='text-light c1'></h3>
                                                 <p className='text-light c1'>USA</p>
+                                                <h1 className='text-light c1'></h1>
+  
                                         </div>
                                 </div>
                                 <div className='f27'>
@@ -211,6 +257,8 @@ export default function WorldMap() {
                                         <div>
                                                 <h3 className='text-light c1'></h3>
                                                 <p className='text-light c1'>USA</p>
+                                                <h1 className='text-light c1'></h1>
+
                                         </div>
                                 </div>
                                 <div className=''>
