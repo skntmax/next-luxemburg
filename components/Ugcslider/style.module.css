@@ -22,7 +22,9 @@ background-image: url("../../public/assets/images//lookbook.png");
     /* position: /relative; */
     /* z-index: -11; */
     /* width: calc(250px*9); */
-    animation: scroll 30s linear  infinite;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: marquee 30s linear infinite;
 }
 @keyframes scroll {
      
@@ -34,6 +36,15 @@ background-image: url("../../public/assets/images//lookbook.png");
     }
        100%{
         transform: translateX(calc(0%));
+    }
+}
+
+@keyframes marquee {
+    0% {
+        margin-left: 100%;
+    }
+    100% {
+        margin-left: -100%;
     }
 }
 .slideImage{

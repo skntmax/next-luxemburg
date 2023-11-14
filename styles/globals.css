@@ -398,7 +398,7 @@ carousel .slider-wrapper.axis-horizontal .slider .slide {
     width: 0;
     background: antiquewhite;
     /* right: 207px; */
-    transition: all 0.4s ease-in-out;
+    transition: all 1.4s ease-in-out;
     z-index: 999;
   }
   
@@ -1855,13 +1855,13 @@ transition: all 1s ease; */
 
 
 
-/* 
+ 
 .parallax{
   background: url("http://103.25.130.33:8001/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FArt%20Gallery.1d13b636.jpg&w=3840&q=75");
   background-size: cover;
  min-height: 600px;
  
-} */
+} 
 
 .page-item .button_pagination.active{
   background-color: #da0428;

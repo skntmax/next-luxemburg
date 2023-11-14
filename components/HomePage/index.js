@@ -657,7 +657,7 @@ function App(props) {
         <div className="container">
           <div className="row">
 
-            <div className="col-md-7">
+            <div className="col-md-12">
               <h2 className="fs-40 fw-600  my-4 text_green">
                 Let's save the  environment with Luxor
               </h2>
@@ -677,13 +677,25 @@ function App(props) {
                 recycled materials to our range of drawing and writing instruments
               </p>
             </div>
-            <div className="col-md-5 align-self-center">
+          {/*   <div className="col-md-5 align-self-center">
               <span className=" wow animate__zoomIn animate__animated"><Image className=" img-fluid reuse-image w-80" src={ReuseImage} alt="Re Use" /></span>
-
-            </div>
+            </div> */}
 
           </div>
-          <div className="reusesave-env">
+          <div className="">
+          <div className="imageContainer">
+
+            <span data-wow-delay="0.2s" className="wow animate__fadeInLeft animate__animated"><Image className=" img-fluid reuse-image w-80"   src={ReuseImage1} alt="Re Use" /></span>
+           <span data-wow-delay="0.5s" className=" wow animate__fadeInBottomLeft animate__animated"><Image className=" img-fluid reuse-image w-80"     src={ReuseImage2} alt="Re Use" /></span>
+           <span data-wow-delay="0.7s"  className=" wow animate__fadeInUp animate__animated"><Image className="  img-fluid reuse-image w-80"  src={ReuseImage3} alt="Re Use" /></span>
+           <span  className=" wow animate__zoomIn animate__animated"><Image className=" img-fluid reuse-image w-80"   src={ReuseImage} alt="Re Use" /></span>
+           <span  data-wow-delay="0.9s" className=" wow animate__fadeInUp animate__animated"><Image className=" img-fluid reuse-image w-80"  src={ReuseImage4} alt="Re Use" /></span>
+           <span data-wow-delay="1s" className=" wow animate__fadeInBottomRight animate__animated"><Image className="  img-fluid reuse-image w-80"   src={ReuseImage5} alt="Re Use" /></span>
+           <span data-wow-delay="1.2s" className=" wow animate__fadeInRight animate__animated"><Image className=" img-fluid reuse-image w-80"   src={ReuseImage6} alt="Re Use" /></span>
+
+          </div>
+          </div>
+         {/*  <div className="reusesave-env">
             <div className="mb-3">
               <span data-wow-delay="0.2s" className="wow animate__fadeInLeft animate__animated"><Image className=" img-fluid reuse-image w-80" src={ReuseImage1} alt="Re Use" /></span>
             </div>
@@ -702,7 +714,7 @@ function App(props) {
             <div className="mb-3">
               <span data-wow-delay="1s" className=" wow animate__fadeInBottomRight animate__animated"><Image className="  img-fluid reuse-image w-80" src={ReuseImage5} alt="Re Use" /></span>
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
       {/* <section className="py-5 position-relative">
@@ -1033,6 +1045,7 @@ function App(props) {
             <div className="award-img">
               <Image src={Image25} alt="homepage" />
             </div>
+            
           </div>
         </div>
       </section>
