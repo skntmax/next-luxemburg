@@ -396,7 +396,7 @@ carousel .slider-wrapper.axis-horizontal .slider .slide {
 
   .side-gallery{ 
     width: 0;
-    background: antiquewhite;
+    /* background: antiquewhite; */
     /* right: 207px; */
     transition: all 0.4s ease-in-out;
     z-index: 999;
@@ -408,7 +408,7 @@ carousel .slider-wrapper.axis-horizontal .slider .slide {
     align-items: center;
     /* position: absolute; */
     width: 100vw;
-    background: antiquewhite;
+    /* background: antiquewhite; */
     
 
     
@@ -425,12 +425,12 @@ carousel .slider-wrapper.axis-horizontal .slider .slide {
     transition: all 0.3s ease-in-out;
   }
   .side-curve-left{
-    width: 35px;
+    width: 95px;
     /* position: absolute; */
     left: 0px;
     height: 330px;
     display: block;
-    background: #ffc1c1;
+    /* background: #ffc1c1; */
     border-radius: 0 100% 100% 0 / 0 50% 50% 0;
     transition: all 0.3s ease-in-out;
     cursor: pointer;
@@ -1104,7 +1104,6 @@ carousel .slider-wrapper.axis-horizontal .slider .slide {
   right: 20%;
   top: 30%;
   font-weight: bolder;
-  z-index: 999;
 }
 
 .art-gallery {
@@ -1855,13 +1854,14 @@ transition: all 1s ease; */
 
 
 
-/* 
-.parallax{
+
+.artGallery-img{
   background: url("http://103.25.130.33:8001/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FArt%20Gallery.1d13b636.jpg&w=3840&q=75");
-  background-size: cover;
- min-height: 600px;
+  /* background-size: cover; */
+background-repeat: no-repeat;
+background-size: contain;
  
-} */
+}
 
 .page-item .button_pagination.active{
   background-color: #da0428;

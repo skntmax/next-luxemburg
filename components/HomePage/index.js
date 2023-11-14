@@ -34,7 +34,7 @@ import ReuseImage5 from "public/assets/env_6.png";
 import ReuseImage6 from "public/assets/env_7.png";
 import style from './style.module.css'
 import Carasol from "components/carasoul";
-import ArtGallery from "public/assets/images/Art-gallery.jpg";
+// import ArtGallery from "public/assets/images/Art Gallery.jpg";
 import ImageContainer from "components/ImageContainer";
 import I1 from "public/assets/images/Look Book 1.jpg";
 import I2 from "public/assets/images/Look Book 2.jpg";
@@ -529,8 +529,7 @@ function App(props) {
         </div>
       </section>
 
-     
-      <div className="container-fluid p-0">
+      <section>
         <div className="products">
           <div className="prodBackground">
             <div className="">
@@ -615,8 +614,7 @@ function App(props) {
             </a>
           </div> */}
         </div>
-        </div>
-      
+      </section>
 
       <section className="py-5">
         <h2 className="mt-4 text-center fs-40 fw-700">
@@ -655,52 +653,61 @@ function App(props) {
 
       <section className="py-5">
         <div className="container">
-          <div className="row">
+          <h2 className="fs-40 fw-600 text-center my-5 text_green">
+            Let's save the <br /> environment with Luxor
+          </h2>
 
-            <div className="col-md-7">
-              <h2 className="fs-40 fw-600  my-4 text_green">
-                Let's save the  environment with Luxor
-              </h2>
+          <p className="text_grey  fs-20 text_justify">
+            Evolution of humans has done nothing but harm to our planet, the
+            number of non-biodegradable dumps we have made is turning our planet
+            hostile and non-biodegradable & plastic products are the prime
+            reasons behind our planet's vulnerability. Acknowledging the harm we
+            have caused to our planet has made everyone quite aware & active
+            about following ways to endure a life without causing loss to our
+            surroundings and therefore the demand for eco-friendly products is
+            on rise, especially in the international market.
+            <br />
+            Luxor International takes a step ahead with an e‘ort & aim to help
+            our planet breathe well, by adding stationeries that are made of
+            recycled materials to our range of drawing and writing instruments
+          </p>
+          {/* <div className="imageContainer">
 
-              <p className="text_grey  fs-20 text_justify">
-                Evolution of humans has done nothing but harm to our planet, the
-                number of non-biodegradable dumps we have made is turning our planet
-                hostile and non-biodegradable & plastic products are the prime
-                reasons behind our planet's vulnerability. Acknowledging the harm we
-                have caused to our planet has made everyone quite aware & active
-                about following ways to endure a life without causing loss to our
-                surroundings and therefore the demand for eco-friendly products is
-                on rise, especially in the international market.
-                <br />
-                Luxor International takes a step ahead with an e‘ort & aim to help
-                our planet breathe well, by adding stationeries that are made of
-                recycled materials to our range of drawing and writing instruments
-              </p>
+            <span data-wow-delay="0.2s" className="wow animate__fadeInLeft animate__animated"><Image className=" img-fluid reuse-image" src={ReuseImage1} alt="Re Use" /></span>
+            <span data-wow-delay="0.5s" className=" wow animate__fadeInBottomLeft animate__animated"><Image className=" img-fluid reuse-image w-80" src={ReuseImage2} alt="Re Use" /></span>
+            <span data-wow-delay="0.7s" className=" wow animate__fadeInUp animate__animated"><Image className="  img-fluid reuse-image w-80" src={ReuseImage3} alt="Re Use" /></span>
+            <span className=" wow animate__zoomIn animate__animated"><Image className=" img-fluid reuse-image w-80" src={ReuseImage} alt="Re Use" /></span>
+            <span data-wow-delay="0.9s" className=" wow animate__fadeInUp animate__animated"><Image className=" img-fluid reuse-image w-80" src={ReuseImage4} alt="Re Use" /></span>
+            <span data-wow-delay="1s" className=" wow animate__fadeInBottomRight animate__animated"><Image className="  img-fluid reuse-image w-80" src={ReuseImage5} alt="Re Use" /></span>
+            <span data-wow-delay="1.2s" className=" wow animate__fadeInRight animate__animated"><Image className=" img-fluid reuse-image w-80" src={ReuseImage6} alt="Re Use" /></span>
+
+          </div> */}
+          <div className="d-flex mt-4 justify-content-between">
+            <div className="align-self-end w_28">
+              <span data-wow-delay="0.2s" className="wow  animate__fadeInLeft  animate__animated"><Image className=" img-fluid" src={ReuseImage1} alt="Re Use" /></span>
             </div>
-            <div className="col-md-5 align-self-center">
-              <span className=" wow animate__zoomIn animate__animated"><Image className=" img-fluid reuse-image w-80" src={ReuseImage} alt="Re Use" /></span>
+            <span className="w_40 wow animate__zoomIn animate__animated"><Image className=" img-fluid   reuse-image " src={ReuseImage} alt="Re Use" /></span>
+            <div className="align-self-end w_28">
 
+              <span data-wow-delay="1.2s" className=" wow animate__fadeInRight animate__animated"><Image className=" img-fluid " src={ReuseImage6} alt="Re Use" /></span>
             </div>
-
           </div>
-          <div className="reusesave-env">
-            <div className="mb-3">
-              <span data-wow-delay="0.2s" className="wow animate__fadeInLeft animate__animated"><Image className=" img-fluid reuse-image w-80" src={ReuseImage1} alt="Re Use" /></span>
+          <div className="d-flex mt-0 gap-5 justify-content-evenly">
+            <div className="w_28">
+            <span data-wow-delay="0.5s" className=" wow animate__fadeInBottomLeft animate__animated"><Image className=" img-fluid reuse-image" src={ReuseImage2} alt="Re Use" /></span>
             </div>
-            <div className="mb-3">
-              <span data-wow-delay="0.5s" className=" wow animate__fadeInBottomLeft animate__animated"><Image className=" img-fluid reuse-image w-80" src={ReuseImage2} alt="Re Use" /></span>
+            <div className="w_28">
+            <span data-wow-delay="1s" className=" wow animate__fadeInBottomRight animate__animated"><Image className="  img-fluid reuse-image" src={ReuseImage5} alt="Re Use" /></span>
             </div>
-            <div className="mb-3">
-              <span data-wow-delay="0.7s" className=" wow animate__fadeInUp animate__animated"><Image className="  img-fluid reuse-image w-80" src={ReuseImage3} alt="Re Use" /></span>
+          </div>
+          <div className="d-flex mt-0 gap-5 justify-content-center">
+            <div className="w_28">
+            <span data-wow-delay="0.7s" className=" wow animate__fadeInUp animate__animated"><Image className="  img-fluid reuse-image" src={ReuseImage3} alt="Re Use" /></span>
+            
             </div>
-            <div className="mb-3">
-              <span data-wow-delay="0.9s" className=" wow animate__fadeInUp animate__animated"><Image className=" img-fluid reuse-image w-80" src={ReuseImage4} alt="Re Use" /></span>
-            </div>
-            <div className="mb-3">
-              <span data-wow-delay="1.2s" className=" wow animate__fadeInRight animate__animated"><Image className=" img-fluid reuse-image w-80" src={ReuseImage6} alt="Re Use" /></span>
-            </div>
-            <div className="mb-3">
-              <span data-wow-delay="1s" className=" wow animate__fadeInBottomRight animate__animated"><Image className="  img-fluid reuse-image w-80" src={ReuseImage5} alt="Re Use" /></span>
+            <div className="w_28">
+            <span data-wow-delay="0.9s" className=" wow animate__fadeInUp animate__animated"><Image className=" img-fluid reuse-image" src={ReuseImage4} alt="Re Use" /></span>
+            
             </div>
           </div>
         </div>
@@ -716,68 +723,73 @@ function App(props) {
 
       {/* ======== */}
       <section className="py-5 position-relative">
-      <div className="artgallery-btn">
-        {/* Art Gallery Button */}
-        {(!gallery && (
-          <button onClick={() => setGallery(true)} className="btn Art_gallery_button text-white fs-16">
-            Art Gallery
-          </button>
-        ))}
-
-        {/* Image */}
-        {!gallery && <Image src={ArtGallery} alt="Art gallery" className="img-fluid" />}
-
-        {/* Toggle Gallery Content */}
-        {gallery && (
+        <div className="artGallery-img">
           <div className={`side-gallery ${gallery ? 'full' : ''}`}>
-            {/* Close Button */}
-            <div onClick={() => setGallery(false)} className={`side-curve-left`}></div>
 
-            {/* Gallery Content */}
-            <div className="container">
-              <div className="row py-5 flex-nowrap overflow-auto">
-                {/* Display iframes when gallery is open */}
-                <>
-                  <div className="col-md-6 col-lg-4">
-                    <iframe
-                      width="100%"
-                      className="rounded"
-                      height="300px"
-                      src="https://www.youtube.com/embed/P2PmCXQGKxU?si=uGDWl30nggey6v9M"
-                      title="YouTube video player"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      allowFullScreen
-                    ></iframe>
-                  </div>
-                  <div className="col-md-6 col-lg-4">
-                    <iframe
-                      width="100%"
-                      className="rounded"
-                      height="300px"
-                      src="https://www.youtube.com/embed/P2PmCXQGKxU?si=uGDWl30nggey6v9M"
-                      title="YouTube video player"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      allowFullScreen
-                    ></iframe>
-                  </div>
-                  <div className="col-md-6 col-lg-4">
-                    <iframe
-                      width="100%"
-                      className="rounded"
-                      height="300px"
-                      src="https://www.youtube.com/embed/P2PmCXQGKxU?si=uGDWl30nggey6v9M"
-                      title="YouTube video player"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      allowFullScreen
-                    ></iframe>
-                  </div>
-                </>
-              </div>
+            <div onClick={() => {
+              setGallery(false)
+            }} className={`side-curve-left`}>
+
             </div>
+            <div className="container-fluid p-0">
+              {gallery && (
+                <div className="row flex-nowrap overflow-auto">
+
+                  <div className="col-md-4  ">
+                    <iframe
+                      width="100%"
+                      className="rounded"
+                      height="300px"
+                      src="https://www.youtube.com/embed/P2PmCXQGKxU?si=uGDWl30nggey6v9M"
+                      title="YouTube video player"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen
+                    ></iframe>
+                  </div>
+                  <div className="col-md-4  ">
+                    <iframe
+                      width="100%"
+                      className="rounded"
+                      height="300px"
+                      src="https://www.youtube.com/embed/P2PmCXQGKxU?si=uGDWl30nggey6v9M"
+                      title="YouTube video player"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen
+                    ></iframe>
+                  </div>
+                  <div className="col-md-4  ">
+                    <iframe
+                      width="100%"
+                      className="rounded"
+                      height="300px"
+                      src="https://www.youtube.com/embed/P2PmCXQGKxU?si=uGDWl30nggey6v9M"
+                      title="YouTube video player"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen
+                    ></iframe>
+                  </div>
+                </div>
+              )}
+            </div>
+
+
+
+            <div className={`side-curve ${gallery ? 'full' : ''}`}>
+
+            </div>
+
           </div>
-        )}
-      </div>
-    </section>
+          <div className="parallax-inner">
+            {!gallery && (
+              <button onClick={() => {
+                setGallery(true)
+              }} className="btn Art_gallery_button text-white fs-16">
+                Art Gallery
+              </button>
+            )}
+          </div>
+        </div>
+      </section>
       {/*    <section className="py-5 yt_video">
         <div className="container">
           <div className="row ">
@@ -897,7 +909,7 @@ function App(props) {
 
       {/* ---------------------------------------------organisation container---------------------------------------------- */}
 
-      <WomanLed/>
+      <WomanLed />
 
       {/* ----------------------------------------------about luxor-------------------------------------- */}
 
