@@ -22,7 +22,10 @@ const Header = (props) => {
   }, [all_prd.length]);
 
   const goToProductPage = (item, current_id, sub_category) => {
-    debugger;
+    
+    let closeButton = document.getElementById('close_button')
+    closeButton.addEventListener('click' , ()=> console.log(" clicked "))
+
     let final_url = "";
     if (item._doc) {
       // pen or marker
@@ -269,6 +272,7 @@ const Header = (props) => {
               </span>
             </a>
             <button
+               id="close_button"
               className="btn border-0 bg_black  px-3 shadow-none"
               type="button"
               data-bs-toggle="offcanvas"
@@ -361,6 +365,7 @@ const Header = (props) => {
                 >
                   Product
                 </a>
+                 
                 <ul class="dropdown-menu" aria-labelledby="product-dropdown">
                   {all_prd.length > 0 &&
                     all_prd.map((item, ind) => {
@@ -373,7 +378,7 @@ const Header = (props) => {
                               goToProductPage(item);
                             }}
                           >
-                            <a className=" text_black  fs-16 dropdown-item">
+                            <a className=" text_black  fs-16 dropdown-item text-capitalize ">
                               {item._doc.name}
                             </a>
                             <ul className="list-unstyled">
@@ -395,7 +400,7 @@ const Header = (props) => {
                                           );
                                         }}
                                       >
-                                        <a className=" dropdown-item">
+                                        <a className=" dropdown-item text-capitalize">
                                           {ele.category
                                             ? ele.category
                                             : ele.marker_category

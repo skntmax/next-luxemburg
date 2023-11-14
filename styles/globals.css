@@ -398,7 +398,7 @@ carousel .slider-wrapper.axis-horizontal .slider .slide {
     width: 0;
     /* background: antiquewhite; */
     /* right: 207px; */
-    transition: all 0.4s ease-in-out;
+    transition: all 1.4s ease-in-out;
     z-index: 999;
   }
   
@@ -864,8 +864,7 @@ carousel .slider-wrapper.axis-horizontal .slider .slide {
   /* margin-top: 50px; */
 }
 
-.client-img {
-}
+
 
 .luxor-review {
   width: 60vw;
@@ -907,8 +906,7 @@ carousel .slider-wrapper.axis-horizontal .slider .slide {
   height: 100%;
 }
 
-.dyk-banner2 {
-}
+
 
 .dyk-scroll {
   width: 55vw;
@@ -920,11 +918,7 @@ carousel .slider-wrapper.axis-horizontal .slider .slide {
   padding-right: 25%;
 }
 
-.arrow-btn-left {
-}
 
-.arrow-btn-left {
-}
 
 /* ------------------------------------------------foooter section------------------------------------------- */
 
@@ -1169,9 +1163,7 @@ carousel .slider-wrapper.axis-horizontal .slider .slide {
   margin-bottom: 4vw;
 }
 
-.broad-section h2 {
-  /* background-color: red; */
-}
+
 
 .broad-section p {
   font-size: 2vw;
@@ -1585,9 +1577,7 @@ carousel .slider-wrapper.axis-horizontal .slider .slide {
     height: 100%;
   }
 
-  .ImageContainer {
-    /* margin-left: 20%; */
-  }
+  
 }
 
 /* ------------------------------extra code------------------------ */
@@ -1862,6 +1852,7 @@ background-repeat: no-repeat;
 background-size: contain;
  
 }
+
 
 .page-item .button_pagination.active{
   background-color: #da0428;
