@@ -394,17 +394,11 @@ carousel .slider-wrapper.axis-horizontal .slider .slide {
     
   }
 
-  .side-gallery{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* position: absolute; */
+  .side-gallery{ 
     width: 0;
     background: antiquewhite;
-    position: absolute;
     /* right: 207px; */
-    height: 600px;
-    transition: all 0.4s ease-in-out;
+    transition: all 1.4s ease-in-out;
     z-index: 999;
   }
   
@@ -415,39 +409,40 @@ carousel .slider-wrapper.axis-horizontal .slider .slide {
     /* position: absolute; */
     width: 100vw;
     background: antiquewhite;
-    position: absolute;
-    /* right: 207px; */
-    height: 600px;
+    
+
     
     z-index: 999;
   }
   .side-curve{
-    width: 150px;
-    position: absolute;
+    width: 110px;
+    /* position: absolute; */
     right: -150px;
-    height: 600px;
+  
     display: block;
     background: #f80103;
     border-radius: 0 100% 100% 0;
     transition: all 0.3s ease-in-out;
   }
   .side-curve-left{
-    width: 150px;
-    position: absolute;
+    width: 35px;
+    /* position: absolute; */
     left: 0px;
-    height: 600px;
+    height: 330px;
     display: block;
     background: #ffc1c1;
-    border-radius: 0 100% 100% 0;
+    border-radius: 0 100% 100% 0 / 0 50% 50% 0;
     transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    opacity: 0.4;
   }
-  .side-curve.full{
+  /* .side-curve.full{
     
     height: 600px;
     display: block;
     background: #f80103;
     border-radius: 0 100% 100% 0;
-  }
+  } */
 .prodBackground::before {
   content: "";
   background-image: url(/public/assets/Lineart.png);
@@ -1109,6 +1104,7 @@ carousel .slider-wrapper.axis-horizontal .slider .slide {
   right: 20%;
   top: 30%;
   font-weight: bolder;
+  z-index: 999;
 }
 
 .art-gallery {
@@ -1859,13 +1855,13 @@ transition: all 1s ease; */
 
 
 
-
+ 
 .parallax{
   background: url("http://103.25.130.33:8001/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FArt%20Gallery.1d13b636.jpg&w=3840&q=75");
   background-size: cover;
  min-height: 600px;
  
-}
+} 
 
 .page-item .button_pagination.active{
   background-color: #da0428;
@@ -1914,4 +1910,9 @@ transition: all 1s ease; */
 .effect:hover{
   cursor: pointer;
   transform:translateZ(20px);
+}
+.reusesave-env {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, auto));
+  gap: 22px;
 }

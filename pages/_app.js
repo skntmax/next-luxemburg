@@ -11,7 +11,7 @@ function MyApp({ Component, pageProps , all_prd }) {
   
   
   return  <React.Fragment>
-        <Header />
+         <Header />
          
             <Component {...pageProps} /> 
   

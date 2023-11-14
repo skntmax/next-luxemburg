@@ -147,7 +147,7 @@ export default function WorldMap() {
                                         </div>
                                 </div>
                                 <div className='f15'>
-                                        <Image className='' src={uae}  />
+                                          <Image className='' src={uae}  />
                                         <div>
                                                 <h3 className='text-light c1'></h3>
                                                 <p className='text-light c1'>UAE</p>
