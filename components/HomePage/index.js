@@ -252,7 +252,7 @@ function App(props) {
       //  backgroundColor:"red",
       width: 300,
       scale: 1,
-      dirat1ion: 2,
+      duration: 2,
     });
 
     gsap.to(Image, {
@@ -261,7 +261,7 @@ function App(props) {
       width: 300,
       height: "86%",
       scale: 1,
-      dirat1ion: 2,
+      duration: 2,
     });
 
     gsap.to(marker_line, {
@@ -269,7 +269,7 @@ function App(props) {
       borderTop: `8px solid ${pen_colour}`,
       width: 100,
       scale: 1,
-      dirat1ion: 2,
+      duration: 2,
     });
   }
 
@@ -281,7 +281,7 @@ function App(props) {
     gsap.to(penDiv, {
       backgroundColor: "white",
       scale: 1,
-      diration: 0,
+      duration: 0,
       width: 245,
     });
 
@@ -291,7 +291,7 @@ function App(props) {
       width: 245,
       height: "86%",
       scale: 1,
-      dirat1ion: 2,
+      duration: 2,
       yoyo: true,
     });
 
@@ -301,7 +301,7 @@ function App(props) {
       x: 0,
       width: 0,
       scale: 1,
-      dirat1ion: 2,
+      duration: 2,
     });
   }
 
