@@ -25,6 +25,7 @@ background-image: url("../../public/assets/images//lookbook.png");
     animation: scroll 30s linear  infinite;
 }
 @keyframes scroll {
+     
     0%{
         transform: translateX(0);
     }
@@ -52,10 +53,16 @@ background-image: url("../../public/assets/images//lookbook.png");
  /* z-index: 11; */
     transition: transform 1s;
 }
+ 
 .img:hover{
     cursor: pointer;
     position: relative;
-    transform:scale(1.1);
+    /* transition: opacity 2s ease-in-out; */
+    transform:scale(1.3);
+    -webkit-box-shadow: 9px -9px 175px 5px rgba(0,0,0,0.49);
+    -moz-box-shadow: 9px -9px 175px 5px rgba(0,0,0,0.49);
+    box-shadow: 9px -9px 175px 5px rgba(0,0,0,0.49);
+ 
 }
 .htext{
     text-align: center;
