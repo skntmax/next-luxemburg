@@ -1,59 +1,109 @@
-import React from 'react'
-import frame from 'public/assets/journey_imgs/jr-frame.jpg'
-import jr_one_old from 'public/assets/journey_imgs/jr_one_old.png'
-import jr_one from 'public/assets/journey_imgs/jr_one.png'
-import jr__three from 'public/assets/journey_imgs/jr__three.png'
-import jr__five from 'public/assets/journey_imgs/jr_five.png'
-import jr__four from 'public/assets/journey_imgs/jr_four.png'
+import B1 from 'public/assets/journey_imgs/B1.jpg'
+import B2 from 'public/assets/journey_imgs/B2.jpg'
+import B3 from 'public/assets/journey_imgs/B3.jpg'
+import b1l1 from 'public/assets/journey_imgs/b1l1.png'
+import b1l2 from 'public/assets/journey_imgs/b1l2.png'
+import b1l3 from 'public/assets/journey_imgs/b1l3.png'
+import b1l4 from 'public/assets/journey_imgs/b1l4.png'
+import b1l5 from 'public/assets/journey_imgs/b1l5.png'
+import b3l1 from 'public/assets/journey_imgs/b3l1.png'
+import b3l2 from 'public/assets/journey_imgs/b3l2.png'
+import b3l3 from 'public/assets/journey_imgs/b3l3.png'
+import b3l4 from 'public/assets/journey_imgs/b3l4.png'
+import b3l5 from 'public/assets/journey_imgs/b3l5.png'
+import b2l1 from 'public/assets/journey_imgs/b2l1.png'
+import b2l2 from 'public/assets/journey_imgs/b2l2.png'
+import b2l3 from 'public/assets/journey_imgs/b2l3.png'
+import b2l4 from 'public/assets/journey_imgs/b2l4.png'
+import style from './style.module.css'
 
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader  
+import { Carousel } from 'react-responsive-carousel';
 
-// import jr_one from 'public/assets/journey_images/jr_one_old.png'
-// import jr_two from 'public/assets/journey_images/jr_two.png'
-// import jr_three from 'public/assets/journey_images/jr__three.png'
-// import jr_four from 'public/assets/journey_images/jr_four.jpg'
-// import jr_five from 'public/assets/journey_images/jr_five.jpg'
+export default class Carasol extends Component {
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      imageStyle: {
+        width: '100%',
+      }
+    };
 
-import gsap from "gsap";
+  }
 
-// get other plugins:
-import ScrollTrigger from "gsap/ScrollTrigger";
-import Flip from "gsap/Flip";
-import Draggable from "gsap/Draggable";
-
-// or all tools are exported from the "all" file (excluding members-only plugins):
-import {MotionPathPlugin } from "gsap/all";
-
-// don't forget to register plugins
-gsap.registerPlugin(ScrollTrigger, Draggable, Flip, MotionPathPlugin); 
-
-function TimeLine(){
-   
-   return (
-        <React.Fragment>
-        <div className='position-relative'>
-        <div className='l1'>
-       
-           <img className='' src={jr_one_old.src} style={{width:"100%" , height:'100%' , }} />
-
+  render() {
+    return (
+      <Carousel autoPlay={true} showThumbs={false} infiniteLoop={true} interval={2000}>
+        <div className='carousel_banner' style={this.state.imageStyle}>
+          <div className=''>
+            <div className={style.l1}>
+              <img  src={b1l2.src} style={{ width: "100%", height: '100%', border: "5px solid #CC454C", borderRadius: "50%"}} />
+            </div>
+            <div className={style.l2}>
+              <img className='' src={b1l1.src} style={{ width: "100%", height: '100%', border: "5px solid #CC454C", borderRadius: "50%" }} />
+            </div>
+            <div className={style.l3}>
+              <img className='' src={b1l4.src} style={{ width: "100%", height: '100%',border: "5px solid #CC454C", borderRadius: "50%" }} />
+            </div>
+            <div className={style.l4}>
+              <img className='' src={b1l3.src} style={{ width: "100%", height: '100%',border: "5px solid #CC454C", borderRadius: "50%" }} />
+            </div>,
+            <div className={style.l5}>
+              <img className='' src={b1l5.src} style={{ width: "100%", height: '100%',border: "5px solid #CC454C", borderRadius: "50%" }} />
+            </div>
+            <div className=''>
+              <img src={B1.src} style={{ width: "100vw", height: '100vh', }} />
+            </div>
+          </div>
         </div>
-        <div className='l2'>
-          <img className='' src={jr_one.src} style={{width:"100%" , height:'100%'}} />
+        <div className='carousel_banner' style={this.state.imageStyle}>
+          <div className=''>
+            <div className={style.l1}>
+              <img  src={b3l2.src} style={{ width: "100%", height: '100%', border: "5px solid #CC454C", borderRadius: "50%"}} />
+            </div>
+            <div className={style.l2}>
+              <img className='' src={b3l1.src} style={{ width: "100%", height: '100%', border: "5px solid #CC454C", borderRadius: "50%" }} />
+            </div>
+            <div className={style.l3}>
+              <img className='' src={b3l4.src} style={{ width: "100%", height: '100%',border: "5px solid #CC454C", borderRadius: "50%" }} />
+            </div>
+            <div className={style.l4}>
+              <img className='' src={b3l3.src} style={{ width: "100%", height: '100%',border: "5px solid #CC454C", borderRadius: "50%" }} />
+            </div>,
+            <div className={style.l5}>
+              <img className='' src={b3l5.src} style={{ width: "100%", height: '100%',border: "5px solid #CC454C", borderRadius: "50%" }} />
+            </div>
+            <div className=''>
+              <img src={B2.src} style={{ width: "100vw", height: '100vh', }} />
+            </div>
+          </div>
         </div>
-        <div className='l3'>
-         <img className='' src={jr__three.src} style={{width:"100%" , height:'100%'}} />
+        <div className='carousel_banner' style={this.state.imageStyle}>
+          <div className=''>
+            <div className={style.l1}>
+              <img  src={b2l2.src} style={{ width: "100%", height: '100%', border: "5px solid #CC454C", borderRadius: "50%"}} />
+            </div>
+            <div className={style.l2}>
+              <img className='' src={b2l1.src} style={{ width: "100%", height: '100%', border: "5px solid #CC454C", borderRadius: "50%" }} />
+            </div>
+            <div className={style.l3}>
+              <img className='' src={b2l4.src} style={{ width: "100%", height: '100%',border: "5px solid #CC454C", borderRadius: "50%" }} />
+            </div>
+            <div className={style.l4}>
+              <img className='' src={b2l3.src} style={{ width: "100%", height: '100%',border: "5px solid #CC454C", borderRadius: "50%" }} />
+            </div>,
+            <div className={style.l5}>
+              <img className='' src={b2l4.src} style={{ width: "100%", height: '100%',border: "5px solid #CC454C", borderRadius: "50%" }} />
+            </div>
+            <div className=''>
+              <img src={B3.src} style={{ width: "100vw", height: '100vh', }} />
+            </div>
+          </div>
         </div>
-        <div className='l4'>
-          <img className='' src={jr__five.src} style={{width:"100%" , height:'100%'}} />
-        </div>
-        <div className='l5'>
-          <img className='' src={jr__four.src} style={{width:"100%" , height:'100%'}} />
-        </div>
-        <div className=''>
-          <img src={frame.src} style={{width:"100vw" , height:'100vh'}}/>
-        </div>
-        </div>
-        </React.Fragment>
-      )
+      </Carousel>
+    );
+  }
 }
-export default TimeLine;

@@ -13,6 +13,8 @@ import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import JourneyMap from 'components/ImageJourney'
+import Ugcslider from 'components/Ugcslider'
+
 // import { TweenMax, Power3 } from 'gsap';
 import { gsap } from "gsap";
 // import Image from 'public/assets/homeBanner.jpg'
@@ -23,9 +25,16 @@ import Image2 from "public/assets/Products Art.png";
 import Image3 from "public/assets/Products Offc.png";
 import Image4 from "public/assets/World_Map.png";
 import Image5 from "public/assets/Luxor Journey.jpg";
-import Image6 from "public/assets/enviro-rrr.png";
+import ReuseImage from "public/assets/env_1.gif";
+import ReuseImage1 from "public/assets/env_2.png";
+import ReuseImage2 from "public/assets/env_3.png";
+import ReuseImage3 from "public/assets/env_4.png";
+import ReuseImage4 from "public/assets/env_5.png";
+import ReuseImage5 from "public/assets/env_6.png";
+import ReuseImage6 from "public/assets/env_7.png";
+import style from './style.module.css'
 import Carasol from "components/carasoul";
-import ArtGallery from "public/assets/images/Art Gallery.jpg";
+import ArtGallery from "public/assets/images/Art-gallery.jpg";
 import ImageContainer from "components/ImageContainer";
 import I1 from "public/assets/images/Look Book 1.jpg";
 import I2 from "public/assets/images/Look Book 2.jpg";
@@ -53,6 +62,7 @@ import { useRouter } from "next/router";
 import Header from "@components/header";
 // import Slider from "@mui/material/Slider";
 import ImageMap2 from 'components/WorldMap'
+import WomanLed from "@components/WomanLed";
 gsap.registerPlugin(ScrollTrigger);
 
 function App(props) {
@@ -60,57 +70,59 @@ function App(props) {
   let router = useRouter();
   let prd_pen = useRef();
 
+  const [gallery, setGallery] = useState(false);
+
   useEffect(() => {
     let text_div = document.querySelectorAll(".home-text");
     let sections = document.querySelectorAll(".home1-img");
     let new_launch = document.querySelectorAll("new_launch");
 
-    gsap.to(sections, {
-      duration: 2,
-      x: -80,
-      repeat: -1,
-      yoyo: true,
-      scrollTrigger: {
-        trigger: sections,
-        toggleActions: "restart pause resume reset",
-        onToggle: (self) => console.log("toggled, isActive:", self.isActive),
-        start: "top 70%",
-        end: "bottom 50%",
-      },
-    });
+    /*  gsap.to(sections, {
+       duration: 2,
+       x: -80,
+       repeat: -1,
+       yoyo: true,
+       scrollTrigger: {
+         trigger: sections,
+         toggleActions: "restart pause resume reset",
+         onToggle: (self) => console.log("toggled, isActive:", self.isActive),
+         start: "top 70%",
+         end: "bottom 50%",
+       },
+     }); */
 
-    gsap.from(text_div, {
-      x: -150,
-      stagger: 0.2, // 0.1 seconds between when each ".box" element starts animating
-      duration: 2,
-      opacity: 0,
-      scrollTrigger: {
-        trigger: text_div,
-        toggleActions: "restart pause resume reset",
-        onToggle: (self) => console.log("toggled, isActive:", self.isActive),
-        start: "top 50%",
-        end: "bottom 50%",
-      },
-    });
+    /*   gsap.from(text_div, {
+        x: -150,
+        stagger: 0.2, // 0.1 seconds between when each ".box" element starts animating
+        duration: 2,
+        opacity: 0,
+        scrollTrigger: {
+          trigger: text_div,
+          toggleActions: "restart pause resume reset",
+          onToggle: (self) => console.log("toggled, isActive:", self.isActive),
+          start: "top 50%",
+          end: "bottom 50%",
+        },
+      }); */
 
-    gsap.to(text_div, {
-      x: 70,
-      opacity: 1,
-      duration: 2,
-      repeat: -1,
-      yoyo: true,
-      scrollTrigger: {
-        trigger: text_div,
-        toggleActions: "restart pause resume reset",
-        onToggle: (self) => console.log("toggled, isActive:", self.isActive),
-        start: "top 50%",
-        end: "bottom 50%",
-      },
-    });
+    /*    gsap.to(text_div, {
+         x: 70,
+         opacity: 1,
+         duration: 2,
+         repeat: -1,
+         yoyo: true,
+         scrollTrigger: {
+           trigger: text_div,
+           toggleActions: "restart pause resume reset",
+           onToggle: (self) => console.log("toggled, isActive:", self.isActive),
+           start: "top 50%",
+           end: "bottom 50%",
+         },
+       }); */
 
     // productBackGround();
     newLaumch();
-     
+
   }, []);
 
   function productBackGround() {
@@ -327,12 +339,13 @@ function App(props) {
 
   return (
     <>
+
       <Carasol />
 
       <section className="py-5 overflow-hidden main_homepage">
         <div className="container">
           <div className="row mt-4">
-            <div className="col-md-6 mb-3 home-text">
+            <div className="col-md-6 mb-3 wow animate__fadeInLeft animate__animated home-text">
               <div className="home-text-head">
                 <h1>Luxor All</h1>
                 <h1>Around The World</h1>
@@ -356,13 +369,12 @@ function App(props) {
                 </a>
               </div>
             </div>
-            <div className="col-md-6 home1-img ">
+            <div className="col-md-6 home1-img wow animate__fadeInRight animate__animated  ">
               <Image src={worldMap} className="img-fluid ms-md-5" alt="Map" />
             </div>
           </div>
         </div>
       </section>
-
       <section className="launch">
         <div className="heading">
           <div
@@ -517,7 +529,8 @@ function App(props) {
         </div>
       </section>
 
-      <section>
+     
+      <div className="container-fluid p-0">
         <div className="products">
           <div className="prodBackground">
             <div className="">
@@ -557,15 +570,15 @@ function App(props) {
                   all_prdcts.map((ele) => {
                     let image_file = ele._doc
                       ? process.env.NEXT_PUBLIC_BASE_URL +
-                        "/" +
-                        ele._doc.master_folder_name +
-                        "/" +
-                        ele._doc.file_name
+                      "/" +
+                      ele._doc.master_folder_name +
+                      "/" +
+                      ele._doc.file_name
                       : process.env.NEXT_PUBLIC_BASE_URL +
-                        "/" +
-                        ele.master_folder_name +
-                        "/" +
-                        ele.file_name;
+                      "/" +
+                      ele.master_folder_name +
+                      "/" +
+                      ele.file_name;
                     return (
                       <React.Fragment>
                         <div
@@ -578,13 +591,13 @@ function App(props) {
                                 {ele._doc ? ele._doc.name : ele.name}
                               </h3>
                               {/* <div className=""> */}
-                                <Image
-                                  className="mb-0"
-                                  src={image_file}
-                                  width={500}
-                                  height={330}
-                                  alt={ele.name}
-                                />
+                              <Image
+                                className="mb-0"
+                                src={image_file}
+                                width={500}
+                                height={330}
+                                alt={ele.name}
+                              />
                               {/* </div> */}
                             </div>
                           </div>
@@ -602,22 +615,23 @@ function App(props) {
             </a>
           </div> */}
         </div>
-      </section>
+        </div>
+      
 
       <section className="py-5">
-          <h2 className="mt-4 text-center fs-40 fw-700">
-            Exported To Over 106+ Countries
-          </h2>
-          <div className="">
-{/*            <Image
+        <h2 className="mt-4 text-center fs-40 fw-700">
+          Exported To Over 106+ Countries
+        </h2>
+        <div className="">
+          {/*            <Image
               style={{ width: "100", height: "100" }}
               className=" img-fluid h-100"
               src={Image4}
               alt="Map"
         /> */}
 
-            <ImageMap2 />
-          </div>
+          <ImageMap2 />
+        </div>
       </section>
 
       <section className="py-5">
@@ -632,35 +646,62 @@ function App(props) {
 
 
 
-         <JourneyMap />
+            <JourneyMap />
             {/* <ImageMap /> */}
-          
+
           </div>
         </div>
       </section>
 
       <section className="py-5">
         <div className="container">
-          <h2 className="fs-40 fw-600 text-center my-5 text_green">
-            Let's save the <br /> environment with Luxor
-          </h2>
+          <div className="row">
 
-          <p className="text_grey  fs-20 text_justify">
-            Evolution of humans has done nothing but harm to our planet, the
-            number of non-biodegradable dumps we have made is turning our planet
-            hostile and non-biodegradable & plastic products are the prime
-            reasons behind our planet's vulnerability. Acknowledging the harm we
-            have caused to our planet has made everyone quite aware & active
-            about following ways to endure a life without causing loss to our
-            surroundings and therefore the demand for eco-friendly products is
-            on rise, especially in the international market.
-            <br />
-            Luxor International takes a step ahead with an e‘ort & aim to help
-            our planet breathe well, by adding stationeries that are made of
-            recycled materials to our range of drawing and writing instruments
-          </p>
-          <div className="">
-            <Image className="img-fluid w-100" src={Image6} alt="Re Use" />
+            <div className="col-md-7">
+              <h2 className="fs-40 fw-600  my-4 text_green">
+                Let's save the  environment with Luxor
+              </h2>
+
+              <p className="text_grey  fs-20 text_justify">
+                Evolution of humans has done nothing but harm to our planet, the
+                number of non-biodegradable dumps we have made is turning our planet
+                hostile and non-biodegradable & plastic products are the prime
+                reasons behind our planet's vulnerability. Acknowledging the harm we
+                have caused to our planet has made everyone quite aware & active
+                about following ways to endure a life without causing loss to our
+                surroundings and therefore the demand for eco-friendly products is
+                on rise, especially in the international market.
+                <br />
+                Luxor International takes a step ahead with an e‘ort & aim to help
+                our planet breathe well, by adding stationeries that are made of
+                recycled materials to our range of drawing and writing instruments
+              </p>
+            </div>
+            <div className="col-md-5 align-self-center">
+              <span className=" wow animate__zoomIn animate__animated"><Image className=" img-fluid reuse-image w-80" src={ReuseImage} alt="Re Use" /></span>
+
+            </div>
+
+          </div>
+          <div className="reusesave-env">
+            <div className="mb-3">
+              <span data-wow-delay="0.2s" className="wow animate__fadeInLeft animate__animated"><Image className=" img-fluid reuse-image w-80" src={ReuseImage1} alt="Re Use" /></span>
+            </div>
+            <div className="mb-3">
+              <span data-wow-delay="0.5s" className=" wow animate__fadeInBottomLeft animate__animated"><Image className=" img-fluid reuse-image w-80" src={ReuseImage2} alt="Re Use" /></span>
+            </div>
+            <div className="mb-3">
+              <span data-wow-delay="0.7s" className=" wow animate__fadeInUp animate__animated"><Image className="  img-fluid reuse-image w-80" src={ReuseImage3} alt="Re Use" /></span>
+            </div>
+            <div className="mb-3">
+              <span data-wow-delay="0.9s" className=" wow animate__fadeInUp animate__animated"><Image className=" img-fluid reuse-image w-80" src={ReuseImage4} alt="Re Use" /></span>
+            </div>
+            <div className="mb-3">
+              <span data-wow-delay="1.2s" className=" wow animate__fadeInRight animate__animated"><Image className=" img-fluid reuse-image w-80" src={ReuseImage6} alt="Re Use" /></span>
+            </div>
+            <div className="mb-3">
+              <span data-wow-delay="1s" className=" wow animate__fadeInBottomRight animate__animated"><Image className="  img-fluid reuse-image w-80" src={ReuseImage5} alt="Re Use" /></span>
+            </div>
           </div>
         </div>
       </section>
@@ -672,19 +713,72 @@ function App(props) {
           </button>
         </div>
       </section> */}
-      
+
       {/* ======== */}
       <section className="py-5 position-relative">
-        <div className="parallax">
-          <div className="parallax-inner">
-            <button className="btn Art_gallery_button text-white fs-16">
-              Art Gallery
-            </button>
-            
+      <div className="artgallery-btn">
+        {/* Art Gallery Button */}
+        {(!gallery && (
+          <button onClick={() => setGallery(true)} className="btn Art_gallery_button text-white fs-16">
+            Art Gallery
+          </button>
+        ))}
+
+        {/* Image */}
+        {!gallery && <Image src={ArtGallery} alt="Art gallery" className="img-fluid" />}
+
+        {/* Toggle Gallery Content */}
+        {gallery && (
+          <div className={`side-gallery ${gallery ? 'full' : ''}`}>
+            {/* Close Button */}
+            <div onClick={() => setGallery(false)} className={`side-curve-left`}></div>
+
+            {/* Gallery Content */}
+            <div className="container">
+              <div className="row py-5 flex-nowrap overflow-auto">
+                {/* Display iframes when gallery is open */}
+                <>
+                  <div className="col-md-6 col-lg-4">
+                    <iframe
+                      width="100%"
+                      className="rounded"
+                      height="300px"
+                      src="https://www.youtube.com/embed/P2PmCXQGKxU?si=uGDWl30nggey6v9M"
+                      title="YouTube video player"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen
+                    ></iframe>
+                  </div>
+                  <div className="col-md-6 col-lg-4">
+                    <iframe
+                      width="100%"
+                      className="rounded"
+                      height="300px"
+                      src="https://www.youtube.com/embed/P2PmCXQGKxU?si=uGDWl30nggey6v9M"
+                      title="YouTube video player"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen
+                    ></iframe>
+                  </div>
+                  <div className="col-md-6 col-lg-4">
+                    <iframe
+                      width="100%"
+                      className="rounded"
+                      height="300px"
+                      src="https://www.youtube.com/embed/P2PmCXQGKxU?si=uGDWl30nggey6v9M"
+                      title="YouTube video player"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen
+                    ></iframe>
+                  </div>
+                </>
+              </div>
+            </div>
           </div>
-        </div>
-      </section>
-      <section className="py-5 yt_video">
+        )}
+      </div>
+    </section>
+      {/*    <section className="py-5 yt_video">
         <div className="container">
           <div className="row ">
             
@@ -723,20 +817,20 @@ function App(props) {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
-    
+
       <section className="py-5">
         <div className="container">
           <h2 className="fs-40 text_lightred fw-600 text-center">Look Book</h2>
 
-          
+
 
           <div className="row mt-4">
             <div className="col-md-4 mb-3 col-lg-4 position-relative">
               <Image className="img-fluid rounded" src={I1} alt="look Book" />
               <div className="text_lookbook">
-                <p className="fs-20 text-white fw-600">
+                <p className="fs-20 text-white fw-600 blog-text">
                   Up Your Presentation Game
                 </p>
               </div>
@@ -744,7 +838,7 @@ function App(props) {
             <div className="col-md-4 mb-3 col-lg-4 position-relative">
               <Image src={I2} className="img-fluid rounded" alt="look Book" />
               <div className="text_lookbook">
-                <p className="fs-20 text-white fw-600 ">
+                <p className="fs-20 text-white fw-600 blog-text">
                   Spark your creativity with Luxor pens
                 </p>
               </div>
@@ -752,7 +846,7 @@ function App(props) {
             <div className="col-md-4 mb-3 col-lg-4 position-relative">
               <Image className="img-fluid rounded" alt="look Book" src={I3} />
               <div className="text_lookbook">
-                <p className="fs-20 text-white fw-600 ">
+                <p className="fs-20 text-white fw-600 blog-text">
                   How to choose the best highlighter pen
                 </p>
               </div>
@@ -761,26 +855,25 @@ function App(props) {
         </div>
       </section>
 
-      <section className="py-5">
-        <div className="container">
+      <section className="py-5 overflow-hidden">
+        <div className={`container-fluid`} >
+          {/* <div className="container">
           <div className="row flex-nowrap overflow-auto my-4">
-            <div className="col-sm-6 col-md-4 mb-3 ">
+            <div className="col-sm-6 col-md-4 mb-3 effect">
               <Image
                 className="img-fluid rounded p-4"
                 src={Imag11}
                 alt="homepage"
               />
             </div>
-
-            <div className="col-sm-6  col-md-4 mb-3 ">
+            <div className="col-sm-6  col-md-4 mb-3 effect">
               <Image
                 className="img-fluid rounded p-4"
                 src={Imag12}
                 alt="homepage"
               />
             </div>
-
-            <div className="col-sm-6 col-md-4 mb-3 ">
+            <div className="col-sm-6 col-md-4 mb-3 effect">
               <Image
                 className="img-fluid rounded p-4"
                 src={Imag13}
@@ -788,39 +881,23 @@ function App(props) {
               />
             </div>
           </div>
+
+          </div>*/}
         </div>
+        <Ugcslider />
+
+
+
+
+
+
+
+
       </section>
 
       {/* ---------------------------------------------organisation container---------------------------------------------- */}
 
-      <section className="py-5">
-        <div className="container">
-          <h2 className="fs-40 text-center mb-4 fw-600 text_lightred">
-            A Woman-Led Organization
-          </h2>
-          <div className="d-flex justify-content-center mb-2">
-            <button className="btn btn_secondary me-3 mb-2 fs-16 fw-600 text-white">
-              Photos
-            </button>
-            <button className="btn btn_secondary-outline me-3 mb-2 fs-16 fw-600 tetx_lightred ">
-              Videos
-            </button>
-          </div>
-          <div className="row mt-5">
-            <div className="col-md-4 mb-2">
-              <Image className="img-fluid" src={Image14} alt="homepage" />
-            </div>
-
-            <div className="col-md-4 mb-2">
-              <Image className="img-fluid" src={Image15} alt="homepage" />
-            </div>
-
-            <div className="col-md-4 mb-2">
-              <Image className="img-fluid" src={Image16} alt="homepage" />
-            </div>
-          </div>
-        </div>
-      </section>
+      <WomanLed/>
 
       {/* ----------------------------------------------about luxor-------------------------------------- */}
 
@@ -891,9 +968,9 @@ function App(props) {
       {/* ----------------------------------------footer section------------------------------------------- */}
 
       <section className="footer">
-        
-          <h2 class="fs-40 text_lightred text-center mb-5 fw-600">Be Our Partner/Reseller</h2>
-       
+
+        <h2 class="fs-40 text_lightred text-center mb-5 fw-600">Be Our Partner/Reseller</h2>
+
 
         <div className="partner-cont">
           <Image height={450} width={1000} src={Image18} alt="homepage" />
@@ -910,7 +987,7 @@ function App(props) {
 
         {/* --------------------------------- */}
 
-       
+
         <h2 class="fs-40 text_lightred text-center my-5 fw-600">Certificates</h2>
 
         <div className="background">
@@ -937,7 +1014,7 @@ function App(props) {
 
           {/* ----------------------------------- */}
 
-         
+
           <h2 class="fs-40 text_lightred text-center my-5 fw-600">Awards & Recognitions</h2>
 
           <div className="award-img-cont">

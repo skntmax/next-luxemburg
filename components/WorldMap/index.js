@@ -1,5 +1,13 @@
 import React from 'react'
 import usa from 'public/assets/images/usa.webp'
+import egypt from 'public/assets/egypt.png'
+import india from 'public/assets/india.png'
+import china from 'public/assets/china.png'
+import russia from 'public/assets/russia.png'
+import brazil from 'public/assets/brazil.png'
+import uae from 'public/assets/uae.png'
+
+
 import Worldmap from 'public/assets/World_Map.png'
 import Image from 'next/image'
 
@@ -17,192 +25,192 @@ export default function WorldMap() {
                                 <div className='f1'>
                                         <Image className='' src={usa} style={imageStyle}  />
                                         <div>
-                                                <h3 className='text-light c1'>1</h3>
-                                                <p className='text-light c1'>this is paragraph</p>
+                                                <h3 className='text-light c1'></h3>
+                                                <p className='text-light c1'>USA</p>
                                         </div>
                                 </div>
                                 <div className='f2'>
                                         <Image className='' src={usa}  />
                                         <div>
-                                                <h3 className='text-light c1'>2</h3>
-                                                <p className='text-light c1'>this is paragraph</p>
+                                                <h3 className='text-light c1'></h3>
+                                                <p className='text-light c1'>USA</p>
                                         </div>
                                 </div>
                                 <div className='f3'>
                                         <Image className='' src={usa}  />
                                         <div>
-                                                <h3 className='text-light c1'>3</h3>
-                                                <p className='text-light c1'>this is paragraph</p>
+                                                <h3 className='text-light c1'></h3>
+                                                <p className='text-light c1'>USA</p>
                                         </div>
                                 </div>
                                 <div className='f4'>
-                                        <Image className='' src={usa}  />
+                                        <Image className='' src={brazil}  />
                                         <div>
-                                                <h3 className='text-light c1'>4</h3>
-                                                <p className='text-light c1'>this is paragraph</p>
+                                                <h3 className='text-light c1'></h3>
+                                                <p className='text-light c1'>BRAZIL</p>
                                         </div>
                                 </div>
                                 <div className='f5'>
-                                        <Image className='' src={usa}  />
+                                        <Image className='' src={brazil}  />
                                         <div>
-                                                <h3 className='text-light c1'>5</h3>
-                                                <p className='text-light c1'>this is paragraph</p>
+                                                <h3 className='text-light c1'></h3>
+                                                <p className='text-light c1'>BRAZIL</p>
                                         </div>
                                 </div>
                                 <div className='f6'>
-                                        <Image className='' src={usa}  />
+                                        <Image className='' src={egypt}  />
                                         <div>
-                                                <h3 className='text-light c1'>6</h3>
-                                                <p className='text-light c1'>this is paragraph</p>
+                                                <h3 className='text-light c1'></h3>
+                                                <p className='text-light c1'>EGYPT</p>
                                         </div>
                                 </div>
                                 <div className='f7'>
-                                        <Image className='' src={usa}  />
+                                        <Image className='' src={egypt}  />
                                         <div>
-                                                <h3 className='text-light c1'>7</h3>
-                                                <p className='text-light c1'>this is paragraph</p>
+                                                <h3 className='text-light c1'></h3>
+                                                <p className='text-light c1'>EGYPT</p>
                                         </div>
                                 </div>
                                 <div className='f8'>
-                                        <Image className='' src={usa}  />
+                                        <Image className='' src={egypt}  />
                                         <div>
-                                                <h3 className='text-light c1'>8</h3>
-                                                <p className='text-light c1'>this is paragraph</p>
+                                                <h3 className='text-light c1'></h3>
+                                                <p className='text-light c1'>EGYPT</p>
                                         </div>
                                 </div>
                                 <div className='f9'>
-                                        <Image className='' src={usa}  />
+                                        <Image className='' src={egypt}  />
                                         <div>
-                                                <h3 className='text-light c1'>9</h3>
-                                                <p className='text-light c1'>this is paragraph</p>
+                                                <h3 className='text-light c1'></h3>
+                                                <p className='text-light c1'>EGYPT</p>
                                         </div>
                                 </div>
                                 <div className='f10'>
-                                        <Image className='' src={usa}  />
+                                        <Image className='' src={egypt}  />
                                         <div>
-                                                <h3 className='text-light c1'>10</h3>
-                                                <p className='text-light c1'>this is paragraph</p>
+                                                <h3 className='text-light c1'></h3>
+                                                <p className='text-light c1'>EGYPT</p>
                                         </div>
                                 </div>
                                 <div className='f11'>
-                                        <Image className='' src={usa}  />
+                                        <Image className='' src={uae}  />
                                         <div>
-                                                <h3 className='text-light c1'>11</h3>
-                                                <p className='text-light c1'>this is paragraph</p>
+                                                <h3 className='text-light c1'> </h3>
+                                                <p className='text-light c1'> UAE</p>
                                         </div>
                                 </div>
                                 <div className='f12'>
-                                        <Image className='' src={usa}  />
+                                        <Image className='' src={uae}  />
                                         <div>
-                                                <h3 className='text-light c1'>12</h3>
-                                                <p className='text-light c1'>this is paragraph</p>
+                                                <h3 className='text-light c1'></h3>
+                                                <p className='text-light c1'>UAE</p>
                                         </div>
                                 </div>
                                 <div className='f13'>
-                                        <Image className='' src={usa}  />
+                                        <Image className='' src={uae}  />
                                         <div>
-                                                <h3 className='text-light c1'>13</h3>
-                                                <p className='text-light c1'>this is paragraph</p>
+                                                <h3 className='text-light c1'></h3>
+                                                <p className='text-light c1'>UAE</p>
                                         </div>
                                 </div>
                                 <div className='f14'>
-                                        <Image className='' src={usa}  />
+                                        <Image className='' src={uae}  />
                                         <div>
-                                                <h3 className='text-light c1'>14</h3>
-                                                <p className='text-light c1'>this is paragraph</p>
+                                                <h3 className='text-light c1'></h3>
+                                                <p className='text-light c1'>UAE</p>
                                         </div>
                                 </div>
                                 <div className='f15'>
-                                        <Image className='' src={usa}  />
+                                          <Image className='' src={uae}  />
                                         <div>
-                                                <h3 className='text-light c1'>15</h3>
-                                                <p className='text-light c1'>this is paragraph</p>
+                                                <h3 className='text-light c1'></h3>
+                                                <p className='text-light c1'>UAE</p>
                                         </div>
                                 </div>
                                 <div className='f16'>
-                                        <Image className='' src={usa}  />
+                                        <Image className='' src={russia}  />
                                         <div>
-                                                <h3 className='text-light c1'>16</h3>
-                                                <p className='text-light c1'>this is paragraph</p>
+                                                <h3 className='text-light c1'></h3>
+                                                <p className='text-light c1'>RUSSIA</p>
                                         </div>
                                 </div>
                                 <div className='f17'>
-                                        <Image className='' src={usa}  />
+                                        <Image className='' src={russia}  />
                                         <div>
-                                                <h3 className='text-light c1'>17</h3>
-                                                <p className='text-light c1'>this is paragraph</p>
+                                                <h3 className='text-light c1'></h3>
+                                                <p className='text-light c1'>RUSSIA</p>
                                         </div>
                                 </div>
                                 <div className='f18'>
-                                        <Image className='' src={usa}  />
+                                        <Image className='' src={russia}  />
                                         <div>
-                                                <h3 className='text-light c1'>18</h3>
-                                                <p className='text-light c1'>this is paragraph</p>
+                                                <h3 className='text-light c1'></h3>
+                                                <p className='text-light c1'>RUSSIA</p>
                                         </div>
                                 </div>
                                 <div className='f19'>
-                                        <Image className='' src={usa}  />
+                                        <Image className='' src={china}  />
                                         <div>
-                                                <h3 className='text-light c1'>19</h3>
-                                                <p className='text-light c1'>this is paragraph</p>
+                                                <h3 className='text-light c1'></h3>
+                                                <p className='text-light c1'>CHINA</p>
                                         </div>
                                 </div>
                                 <div className='f20'>
-                                        <Image className='' src={usa}  />
+                                        <Image className='' src={china}  />
                                         <div>
-                                                <h3 className='text-light c1'>20</h3>
-                                                <p className='text-light c1'>this is paragraph</p>
+                                                <h3 className='text-light c1'></h3>
+                                                <p className='text-light c1'>CHINA</p>
                                         </div>
                                 </div>
 
 
                                 <div className='f21'>
-                                        <Image className='' src={usa}  />
+                                        <Image className='' src={china}  />
                                         <div>
-                                                <h3 className='text-light c1'>21</h3>
-                                                <p className='text-light c1'>this is paragraph</p>
+                                                <h3 className='text-light c1'></h3>
+                                                <p className='text-light c1'>CHINA</p>
                                         </div>
                                 </div>
                                 <div className='f22'>
-                                        <Image className='' src={usa}  />
+                                        <Image className='' src={india}  />
                                         <div>
-                                                <h3 className='text-light c1'>22</h3>
-                                                <p className='text-light c1'>this is paragraph</p>
+                                                <h3 className='text-light c1'></h3>
+                                                <p className='text-light c1'>INDIA</p>
                                         </div>
                                 </div>
                                 <div className='f23'>
-                                        <Image className='' src={usa}  />
+                                        <Image className='' src={india}  />
                                         <div>
-                                                <h3 className='text-light c1'>23</h3>
-                                                <p className='text-light c1'>this is paragraph</p>
+                                                <h3 className='text-light c1'></h3>
+                                                <p className='text-light c1'>INDIA</p>
                                         </div>
                                 </div>
                                 <div className='f24'>
                                         <Image className='' src={usa}  />
                                         <div>
-                                                <h3 className='text-light c1'>24</h3>
-                                                <p className='text-light c1'>this is paragraph</p>
+                                                <h3 className='text-light c1'></h3>
+                                                <p className='text-light c1'>USA</p>
                                         </div>
                                 </div>
                                 <div className='f25'>
                                         <Image className='' src={usa}  />
                                         <div>
-                                                <h3 className='text-light c1'>25</h3>
-                                                <p className='text-light c1'>this is paragraph</p>
+                                                <h3 className='text-light c1'></h3>
+                                                <p className='text-light c1'>USA</p>
                                         </div>
                                 </div>
                                 <div className='f26'>
                                         <Image className='' src={usa}  />
                                         <div>
-                                                <h3 className='text-light c1'>26</h3>
-                                                <p className='text-light c1'>this is paragraph</p>
+                                                <h3 className='text-light c1'></h3>
+                                                <p className='text-light c1'>USA</p>
                                         </div>
                                 </div>
                                 <div className='f27'>
                                         <Image className='' src={usa}  />
                                         <div>
-                                                <h3 className='text-light c1'>27</h3>
-                                                <p className='text-light c1'>this is paragraph</p>
+                                                <h3 className='text-light c1'></h3>
+                                                <p className='text-light c1'>USA</p>
                                         </div>
                                 </div>
                                 <div className=''>
@@ -211,6 +219,6 @@ export default function WorldMap() {
                         </div>
 
                 </React.Fragment>
-        )
+        ) 
 }
 

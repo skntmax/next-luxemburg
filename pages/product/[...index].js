@@ -146,25 +146,27 @@ const ProductPage = (props) => {
                 </div>
 
                 {/* ----------------part 2----- */}
-                <div className="color-cont">
-                  <div className="">
-                    <h3 className="fs-24 mt-4">Available Colors</h3>
-                  </div>
+                { (selected_prd.root_folder_name !== 'master_prd_icons/pens/metal_pens/products/')
+                    && <div className="color-cont">
+                      <div className="">
+                        <h3 className="fs-24 mt-4">Available Colors</h3>
+                      </div>
 
-                  <div className="color-section">
-                    <div className="color-shade">
-                      <div className="color-shade1"></div>
-                      <div className="color-shade2"></div>
-                      <div className="color-shade3"></div>
-                      <div className="color-shade4"></div>
-                      <div className="color-shade5"></div>
-                      <div className="color-shade6"></div>
+                      <div className="color-section">
+                        <div className="color-shade">
+                          <div className="color-shade1"></div>
+                          <div className="color-shade2"></div>
+                          <div className="color-shade3"></div>
+                          <div className="color-shade4"></div>
+                          <div className="color-shade5"></div>
+                          <div className="color-shade6"></div>
+                        </div>
+                        <div className="para-shade">
+                          <p>+5 Shades</p>
+                        </div>
+                      </div>
                     </div>
-                    <div className="para-shade">
-                      <p>+5 Shades</p>
-                    </div>
-                  </div>
-                </div>
+                }
               </div>
               {/* ----------------part 3----- */}
               <div className="row mt-4">
@@ -227,6 +229,7 @@ const ProductPage = (props) => {
                     alt="homepage"
                   />
                 </div>
+                 
                 <div className="mt-3">
                   <p className="fs-16 text_justify">
                    {selected_prd.icon}

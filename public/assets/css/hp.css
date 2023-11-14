@@ -352,6 +352,10 @@
   .fs-40{
     font-size: 30px;
   }
+  .reusesave-env {
+    grid-template-columns: repeat(auto-fit, minmax(130px, auto));
+   
+  }
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
