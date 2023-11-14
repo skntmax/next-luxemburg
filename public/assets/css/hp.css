@@ -208,6 +208,7 @@
 .text_black {
   color: black;
 }
+
 .text_lightgrey {
   color: #7d7d7d;
 }
@@ -219,14 +220,17 @@
 .text_width {
   width: 28%;
 }
+
 .bg_red {
   background-color: #ed1b24;
 }
+
 .popular_picks {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, auto));
   gap: 30px;
 }
+
 .popular_picks .card:hover {
   box-shadow: 4.6px 4.3px 7px -72px rgba(0, 0, 0, 0.153),
     12.8px 11.8px 19.3px -72px rgba(0, 0, 0, 0.22),
@@ -236,17 +240,25 @@
   cursor: pointer;
   animation: 3s linear 0.1s colorIt;
 }
+
 .border-2 {
   border: 2px solid grey;
 }
+
 .bg_black {
   background-color: black;
 }
+
 .text_green {
   color: green;
 }
+
 .text_lightred {
   color: #fe3134;
+}
+
+.w_40 {
+  width: 40% !important;
 }
 
 /* -----------------------------------media query--------------------------*/
@@ -323,38 +335,68 @@
           margin-bottom: 20%;
      } */
 }
+
 @media (min-width: 480px) and (max-width: 767px) {
   .color_red {
     background-color: #ed1b24;
   }
+
   .products_list {
     margin-top: -58%;
   }
+
   .Art_gallery_button {
     border-radius: 20px;
     padding: 9px 19px;
   }
-  .fs-40{
+
+  .fs-40 {
     font-size: 30px;
   }
+
+  .w_28 {
+    width: 28%;
+  }
 }
+
 @media (min-width: 320px) and (max-width: 479px) {
   .color_red {
     background-color: #ed1b24;
   }
+
   .products_list {
     margin-top: -70%;
   }
+
   .Art_gallery_button {
     border-radius: 20px;
     padding: 8px 15px;
   }
-  .fs-40{
+
+  .fs-40 {
     font-size: 30px;
   }
+
   .reusesave-env {
     grid-template-columns: repeat(auto-fit, minmax(130px, auto));
-   
+
+  }
+
+  .artGallery-img {
+    background-size: cover;
+
+  }
+
+  .side-curve-left {
+    width: 140px;
+  }
+
+  .w_40 {
+    width: 100% !important;
+  }
+
+  .w_28 {
+    width: 28%;
   }
 }
 
@@ -362,18 +404,25 @@
   .popular_picks {
     margin-top: -32%;
   }
+
   .Art_gallery_button {
     border-radius: 20px;
     padding: 13px 23px;
   }
+
   .products_list {
     margin-top: -28%;
   }
+  .w_28 {
+    width: 20%;
+  }
 }
+
 @media (min-width: 1024px) and (max-width: 1288px) {
-  .popular_picks{
+  .popular_picks {
     margin-top: -25%;
   }
+
   .products_list {
     margin-top: -22%;
   }
@@ -383,6 +432,7 @@
   .footer_bg {
     background-size: 100% 100%;
   }
+
   .popular_picks,
   .products_list {
     margin-top: -15%;
@@ -393,6 +443,7 @@
   .footer_bg {
     background-size: 100% 100%;
   }
+
   .popular_picks,
   .products_list {
     margin-top: -15%;

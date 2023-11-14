@@ -394,17 +394,11 @@ carousel .slider-wrapper.axis-horizontal .slider .slide {
     
   }
 
-  .side-gallery{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* position: absolute; */
+  .side-gallery{ 
     width: 0;
-    background: antiquewhite;
-    position: absolute;
+    /* background: antiquewhite; */
     /* right: 207px; */
-   
-    transition: all 0.4s ease-in-out;
+    transition: all 1.4s ease-in-out;
     z-index: 999;
   }
   
@@ -414,16 +408,15 @@ carousel .slider-wrapper.axis-horizontal .slider .slide {
     align-items: center;
     /* position: absolute; */
     width: 100vw;
-    background: antiquewhite;
-    position: absolute;
-    /* right: 207px; */
+    /* background: antiquewhite; */
+    
 
     
     z-index: 999;
   }
   .side-curve{
     width: 110px;
-    position: absolute;
+    /* position: absolute; */
     right: -150px;
   
     display: block;
@@ -432,12 +425,12 @@ carousel .slider-wrapper.axis-horizontal .slider .slide {
     transition: all 0.3s ease-in-out;
   }
   .side-curve-left{
-    width: 35px;
-    position: absolute;
+    width: 95px;
+    /* position: absolute; */
     left: 0px;
-    height: 140px;
+    height: 330px;
     display: block;
-    background: #ffc1c1;
+    /* background: #ffc1c1; */
     border-radius: 0 100% 100% 0 / 0 50% 50% 0;
     transition: all 0.3s ease-in-out;
     cursor: pointer;
@@ -871,8 +864,7 @@ carousel .slider-wrapper.axis-horizontal .slider .slide {
   /* margin-top: 50px; */
 }
 
-.client-img {
-}
+
 
 .luxor-review {
   width: 60vw;
@@ -914,8 +906,7 @@ carousel .slider-wrapper.axis-horizontal .slider .slide {
   height: 100%;
 }
 
-.dyk-banner2 {
-}
+
 
 .dyk-scroll {
   width: 55vw;
@@ -927,11 +918,7 @@ carousel .slider-wrapper.axis-horizontal .slider .slide {
   padding-right: 25%;
 }
 
-.arrow-btn-left {
-}
 
-.arrow-btn-left {
-}
 
 /* ------------------------------------------------foooter section------------------------------------------- */
 
@@ -1176,9 +1163,7 @@ carousel .slider-wrapper.axis-horizontal .slider .slide {
   margin-bottom: 4vw;
 }
 
-.broad-section h2 {
-  /* background-color: red; */
-}
+
 
 .broad-section p {
   font-size: 2vw;
@@ -1592,9 +1577,7 @@ carousel .slider-wrapper.axis-horizontal .slider .slide {
     height: 100%;
   }
 
-  .ImageContainer {
-    /* margin-left: 20%; */
-  }
+  
 }
 
 /* ------------------------------extra code------------------------ */
@@ -1861,13 +1844,15 @@ transition: all 1s ease; */
 
 
 
-/* 
-.parallax{
+
+.artGallery-img{
   background: url("http://103.25.130.33:8001/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FArt%20Gallery.1d13b636.jpg&w=3840&q=75");
-  background-size: cover;
- min-height: 600px;
+  /* background-size: cover; */
+background-repeat: no-repeat;
+background-size: contain;
  
-} */
+}
+
 
 .page-item .button_pagination.active{
   background-color: #da0428;
