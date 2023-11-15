@@ -2,18 +2,19 @@ import Head from "next/head";
 import Image from "next/image";
 // import styles from '../styles/Home.module.css'
 import React, { useEffect, useRef, useState } from "react";
-import nl_black from "public/assets/new_launches/black-m.jpg";
-import nl_green from "public/assets/new_launches/li_green.jpg";
-import marker_blue from "public/assets/new_launches/marker_blue.jpg";
-import pm_blue_last from "public/assets/new_launches/pm_blue_last.jpg";
+import nl_black from "public/assets/new_launches/black-m.png";
+import nl_green from "public/assets/new_launches/li_green.png";
+import marker_blue from "public/assets/new_launches/marker_blue.png";
+import pm_blue_last from "public/assets/new_launches/pm_blue_last.png";
+import metal_pens from "public/assets/new_launches/metal_pens.png";
 import ImageMap from "components/ImageMap";
 import marker_pen from "public/assets/marker.png";
 import { Tween } from "react-gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
-import JourneyMap from 'components/ImageJourney'
-import Ugcslider from 'components/Ugcslider'
+import JourneyMap from "components/ImageJourney";
+import Ugcslider from "components/Ugcslider";
 
 // import { TweenMax, Power3 } from 'gsap';
 import { gsap } from "gsap";
@@ -32,7 +33,7 @@ import ReuseImage3 from "public/assets/env_4.png";
 import ReuseImage4 from "public/assets/env_5.png";
 import ReuseImage5 from "public/assets/env_6.png";
 import ReuseImage6 from "public/assets/env_7.png";
-import style from './style.module.css'
+import style from "./style.module.css";
 import Carasol from "components/carasoul";
 // import ArtGallery from "public/assets/images/Art Gallery.jpg";
 import ImageContainer from "components/ImageContainer";
@@ -61,7 +62,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import Header from "@components/header";
 // import Slider from "@mui/material/Slider";
-import ImageMap2 from 'components/WorldMap'
+import ImageMap2 from "components/WorldMap";
 import WomanLed from "@components/WomanLed";
 gsap.registerPlugin(ScrollTrigger);
 
@@ -122,7 +123,6 @@ function App(props) {
 
     // productBackGround();
     newLaumch();
-
   }, []);
 
   function productBackGround() {
@@ -243,25 +243,33 @@ function App(props) {
     );
   }
 
-  function drawPen(pen_div, pen_image_div, pen_draw_div, pen_colour) {
+  function drawPen(pen_div, pen_image_div, pen_draw_div, pen_colour, card_div) {
     let penDiv = document.querySelectorAll(pen_div);
     let Image = document.querySelectorAll(pen_image_div);
     let marker_line = document.querySelectorAll(pen_draw_div);
+    let card = document.querySelectorAll(card_div);
 
     gsap.to(penDiv, {
       //  backgroundColor:"red",
-      width: 300,
-      scale: 1,
-      dirat1ion: 2,
+      // width: 300,
+      // scale: 1,
+      // dirat1ion: 2,
+      translateY: -40,
+      duration: 2,
+    });
+
+    gsap.to(card, {
+      backgroundColor: "#da3131",
     });
 
     gsap.to(Image, {
       //  backgroundColor:"red",
       x: 100,
-      width: 300,
-      height: "86%",
+      // width: 300,
+      // height: "86%",
       scale: 1,
-      dirat1ion: 2,
+      // dirat1ion: 2,
+      duration: 2,
     });
 
     gsap.to(marker_line, {
@@ -269,29 +277,42 @@ function App(props) {
       borderTop: `8px solid ${pen_colour}`,
       width: 100,
       scale: 1,
-      dirat1ion: 2,
+      // dirat1ion: 2,
+      duration: 2,
     });
   }
 
-  function removeDrawPen(pen_div, pen_image_div, pen_draw_div, pen_colour) {
+  function removeDrawPen(
+    pen_div,
+    pen_image_div,
+    pen_draw_div,
+    pen_colour,
+    card_div
+  ) {
     let penDiv = document.querySelectorAll(pen_div);
     let Image = document.querySelectorAll(pen_image_div);
     let marker_line = document.querySelectorAll(pen_draw_div);
+    let card = document.querySelectorAll(card_div);
 
     gsap.to(penDiv, {
-      backgroundColor: "white",
-      scale: 1,
-      diration: 0,
-      width: 245,
+      // backgroundColor: "white",
+      // scale: 1,
+      translateY: 0,
+      duration: 2,
+      // width: 245,
+    });
+
+    gsap.to(card, {
+      backgroundColor: "#ececec",
     });
 
     gsap.to(Image, {
       //  backgroundColor:"red",
       x: 0,
-      width: 245,
-      height: "86%",
+      // width: 245,
+      // height: "86%",
       scale: 1,
-      dirat1ion: 2,
+      duration: 2,
       yoyo: true,
     });
 
@@ -301,7 +322,7 @@ function App(props) {
       x: 0,
       width: 0,
       scale: 1,
-      dirat1ion: 2,
+      duration: 2,
     });
   }
 
@@ -312,7 +333,7 @@ function App(props) {
       zIndex: 20,
       opacity: 1,
       scale: 1,
-      diration: 2,
+      duration: 2,
       display: "flex",
       top: "100%",
     });
@@ -330,7 +351,7 @@ function App(props) {
 
     gsap.to(prd_image, {
       scale: 1,
-      diration: 2,
+      duration: 2,
       opacity: 0,
       top: "50%",
       display: "none",
@@ -339,7 +360,6 @@ function App(props) {
 
   return (
     <>
-
       <Carasol />
 
       <section className="py-5 overflow-hidden main_homepage">
@@ -396,12 +416,12 @@ function App(props) {
               <div className="pen_marker_line"></div>
             </span>
 
-            <h3 className="fs-40 fw-700 text_black  ">New Launches</h3>
+            <h3 className="fs-40 fw-700 text_black">New Launches</h3>
           </div>
         </div>
 
         <div className="carouselItem">
-          <div
+          {/* <div
             className="posterBlock1"
             onMouseEnter={(e) =>
               drawPen(
@@ -427,12 +447,12 @@ function App(props) {
               width={245}
               height={"80%"}
             />
-            {/* <Image height={1000} width={1000} src="https://luxorpen.com/images/bp/xonox-bp/black-m.jpg" /> */}
+            <Image height={1000} width={1000} src="https://luxorpen.com/images/bp/xonox-bp/black-m.jpg" />
             <div className="textBlock">
               <div className="marker_line1"> </div>
               <span className="title">Ball / Gell Pens</span>
             </div>
-          </div>
+          </div> */}
 
           <div
             className="posterBlock2"
@@ -441,7 +461,8 @@ function App(props) {
                 ".posterBlock2",
                 ".posterBlock2 img",
                 ".marker_line2",
-                "green"
+                "green",
+                ".posterBlock2-card"
               )
             }
             onMouseLeave={() =>
@@ -449,20 +470,33 @@ function App(props) {
                 ".posterBlock2",
                 ".posterBlock2 img",
                 ".marker_line2",
-                "white"
+                "white",
+                ".posterBlock2-card"
               )
             }
           >
-            <LazyLoadImage
-              width={245}
-              height={"80%"}
-              id="img2"
-              alt="Image Alt"
-              src={nl_green.src}
-            />
+            <div
+              className="posterBlock2-card"
+              style={{
+                borderRadius: 15,
+                backgroundColor: "#ececec",
+                padding: 15,
+              }}
+            >
+              <LazyLoadImage
+                width={245}
+                height={"80%"}
+                id="img2"
+                alt="Image Alt"
+                src={nl_green.src}
+              />
+
+              <div className="marker_line2" style={{ width: 0, border: "8px" }}>
+                {" "}
+              </div>
+            </div>
 
             <div className="textBlock">
-              <div className="marker_line2"> </div>
               <span className="title">Highliter</span>
             </div>
           </div>
@@ -473,7 +507,8 @@ function App(props) {
                 ".posterBlock3",
                 ".posterBlock3 img",
                 ".marker_line3",
-                "blue"
+                "blue",
+                ".posterBlock3-card"
               )
             }
             onMouseLeave={() =>
@@ -481,18 +516,30 @@ function App(props) {
                 ".posterBlock3",
                 ".posterBlock3 img",
                 ".marker_line3",
-                "white"
+                "white",
+                ".posterBlock3-card"
               )
             }
           >
-            <LazyLoadImage
-              width={245}
-              height={"80%"}
-              alt="homepage"
-              src={marker_blue.src}
-            />
+            <div
+              className="posterBlock3-card"
+              style={{
+                borderRadius: 15,
+                backgroundColor: "#ececec",
+                padding: 15,
+              }}
+            >
+              <LazyLoadImage
+                width={245}
+                height={"80%"}
+                alt="homepage"
+                src={marker_blue.src}
+              />
+              <div className="marker_line3" style={{ width: 0, border: "8px" }}>
+                {" "}
+              </div>
+            </div>
             <div className="textBlock">
-              <div className="marker_line3"> </div>
               <span className="title">White Board Markers</span>
             </div>
           </div>
@@ -503,7 +550,8 @@ function App(props) {
                 ".posterBlock4",
                 ".posterBlock4 img",
                 ".marker_line4",
-                "black"
+                "black",
+                ".posterBlock4-card"
               )
             }
             onMouseLeave={() =>
@@ -511,19 +559,74 @@ function App(props) {
                 ".posterBlock4",
                 ".posterBlock4 img",
                 ".marker_line4",
-                "white"
+                "white",
+                ".posterBlock4-card"
               )
             }
           >
-            <LazyLoadImage
-              width={245}
-              height={"80%"}
-              alt="homepage"
-              src={pm_blue_last.src}
-            />
+            <div
+              className="posterBlock4-card"
+              style={{
+                borderRadius: 15,
+                backgroundColor: "#ececec",
+                padding: 15,
+              }}
+            >
+              <LazyLoadImage
+                width={245}
+                height={"80%"}
+                alt="homepage"
+                src={pm_blue_last.src}
+              />
+              <div className="marker_line4" style={{ width: 0, border: "8px" }}>
+                {" "}
+              </div>
+            </div>
             <div className="textBlock">
-              <div className="marker_line4"> </div>
               <span className="title">Permanent Markers</span>
+            </div>
+          </div>
+          <div
+            className="posterBlock5"
+            onMouseEnter={(e) =>
+              drawPen(
+                ".posterBlock5",
+                ".posterBlock5 img",
+                ".marker_line5",
+                "black",
+                ".posterBlock5-card"
+              )
+            }
+            onMouseLeave={() =>
+              removeDrawPen(
+                ".posterBlock5",
+                ".posterBlock5 img",
+                ".marker_line5",
+                "white",
+                ".posterBlock5-card"
+              )
+            }
+          >
+            <div
+              className="posterBlock5-card"
+              style={{
+                borderRadius: 15,
+                backgroundColor: "#ececec",
+                padding: 15,
+              }}
+            >
+              <LazyLoadImage
+                width={245}
+                height={"80%"}
+                alt="homepage"
+                src={metal_pens.src}
+              />
+              <div className="marker_line5" style={{ width: 0, border: "8px" }}>
+                {" "}
+              </div>
+            </div>
+            <div className="textBlock">
+              <span className="title">Metal Pens</span>
             </div>
           </div>
         </div>
@@ -569,15 +672,15 @@ function App(props) {
                   all_prdcts.map((ele) => {
                     let image_file = ele._doc
                       ? process.env.NEXT_PUBLIC_BASE_URL +
-                      "/" +
-                      ele._doc.master_folder_name +
-                      "/" +
-                      ele._doc.file_name
+                        "/" +
+                        ele._doc.master_folder_name +
+                        "/" +
+                        ele._doc.file_name
                       : process.env.NEXT_PUBLIC_BASE_URL +
-                      "/" +
-                      ele.master_folder_name +
-                      "/" +
-                      ele.file_name;
+                        "/" +
+                        ele.master_folder_name +
+                        "/" +
+                        ele.file_name;
                     return (
                       <React.Fragment>
                         <div
@@ -642,11 +745,8 @@ function App(props) {
             alt="Luxor Journey"
             /> */}
 
-
-
             <JourneyMap />
             {/* <ImageMap /> */}
-
           </div>
         </div>
       </section>
@@ -684,30 +784,79 @@ function App(props) {
           </div> */}
           <div className="d-flex mt-4 justify-content-between">
             <div className="align-self-end w_28">
-              <span data-wow-delay="0.2s" className="wow  animate__fadeInLeft  animate__animated"><Image className=" img-fluid" src={ReuseImage1} alt="Re Use" /></span>
+              <span
+                data-wow-delay="0.2s"
+                className="wow  animate__fadeInLeft  animate__animated"
+              >
+                <Image className=" img-fluid" src={ReuseImage1} alt="Re Use" />
+              </span>
             </div>
-            <span className="w_40 wow animate__zoomIn animate__animated"><Image className=" img-fluid   reuse-image " src={ReuseImage} alt="Re Use" /></span>
+            <span className="w_40 wow animate__zoomIn animate__animated">
+              <Image
+                className=" img-fluid   reuse-image "
+                src={ReuseImage}
+                alt="Re Use"
+              />
+            </span>
             <div className="align-self-end w_28">
-
-              <span data-wow-delay="1.2s" className=" wow animate__fadeInRight animate__animated"><Image className=" img-fluid " src={ReuseImage6} alt="Re Use" /></span>
+              <span
+                data-wow-delay="1.2s"
+                className=" wow animate__fadeInRight animate__animated"
+              >
+                <Image className=" img-fluid " src={ReuseImage6} alt="Re Use" />
+              </span>
             </div>
           </div>
           <div className="d-flex mt-0 gap-5 justify-content-evenly">
             <div className="w_28">
-            <span data-wow-delay="0.5s" className=" wow animate__fadeInBottomLeft animate__animated"><Image className=" img-fluid reuse-image" src={ReuseImage2} alt="Re Use" /></span>
+              <span
+                data-wow-delay="0.5s"
+                className=" wow animate__fadeInBottomLeft animate__animated"
+              >
+                <Image
+                  className=" img-fluid reuse-image"
+                  src={ReuseImage2}
+                  alt="Re Use"
+                />
+              </span>
             </div>
             <div className="w_28">
-            <span data-wow-delay="1s" className=" wow animate__fadeInBottomRight animate__animated"><Image className="  img-fluid reuse-image" src={ReuseImage5} alt="Re Use" /></span>
+              <span
+                data-wow-delay="1s"
+                className=" wow animate__fadeInBottomRight animate__animated"
+              >
+                <Image
+                  className="  img-fluid reuse-image"
+                  src={ReuseImage5}
+                  alt="Re Use"
+                />
+              </span>
             </div>
           </div>
           <div className="d-flex mt-0 gap-5 justify-content-center">
             <div className="w_28">
-            <span data-wow-delay="0.7s" className=" wow animate__fadeInUp animate__animated"><Image className="  img-fluid reuse-image" src={ReuseImage3} alt="Re Use" /></span>
-            
+              <span
+                data-wow-delay="0.7s"
+                className=" wow animate__fadeInUp animate__animated"
+              >
+                <Image
+                  className="  img-fluid reuse-image"
+                  src={ReuseImage3}
+                  alt="Re Use"
+                />
+              </span>
             </div>
             <div className="w_28">
-            <span data-wow-delay="0.9s" className=" wow animate__fadeInUp animate__animated"><Image className=" img-fluid reuse-image" src={ReuseImage4} alt="Re Use" /></span>
-            
+              <span
+                data-wow-delay="0.9s"
+                className=" wow animate__fadeInUp animate__animated"
+              >
+                <Image
+                  className=" img-fluid reuse-image"
+                  src={ReuseImage4}
+                  alt="Re Use"
+                />
+              </span>
             </div>
           </div>
         </div>
@@ -724,17 +873,16 @@ function App(props) {
       {/* ======== */}
       <section className="py-5 position-relative">
         <div className="artGallery-img">
-          <div className={`side-gallery ${gallery ? 'full' : ''}`}>
-
-            <div onClick={() => {
-              setGallery(false)
-            }} className={`side-curve-left`}>
-
-            </div>
+          <div className={`side-gallery ${gallery ? "full" : ""}`}>
+            <div
+              onClick={() => {
+                setGallery(false);
+              }}
+              className={`side-curve-left`}
+            ></div>
             <div className="container-fluid p-0">
               {gallery && (
                 <div className="row flex-nowrap overflow-auto">
-
                   <div className="col-md-4  ">
                     <iframe
                       width="100%"
@@ -772,18 +920,16 @@ function App(props) {
               )}
             </div>
 
-
-
-            <div className={`side-curve ${gallery ? 'full' : ''}`}>
-
-            </div>
-
+            <div className={`side-curve ${gallery ? "full" : ""}`}></div>
           </div>
           <div className="parallax-inner">
             {!gallery && (
-              <button onClick={() => {
-                setGallery(true)
-              }} className="btn Art_gallery_button text-white fs-16">
+              <button
+                onClick={() => {
+                  setGallery(true);
+                }}
+                className="btn Art_gallery_button text-white fs-16"
+              >
                 Art Gallery
               </button>
             )}
@@ -831,12 +977,9 @@ function App(props) {
         </div>
       </section> */}
 
-
       <section className="py-5">
         <div className="container">
           <h2 className="fs-40 text_lightred fw-600 text-center">Look Book</h2>
-
-
 
           <div className="row mt-4">
             <div className="col-md-4 mb-3 col-lg-4 position-relative">
@@ -868,7 +1011,7 @@ function App(props) {
       </section>
 
       <section className="py-5 overflow-hidden">
-        <div className={`container-fluid`} >
+        <div className={`container-fluid`}>
           {/* <div className="container">
           <div className="row flex-nowrap overflow-auto my-4">
             <div className="col-sm-6 col-md-4 mb-3 effect">
@@ -895,14 +1038,8 @@ function App(props) {
           </div>
 
           </div>*/}
-
- 
-         </div>
+        </div>
         <Ugcslider />
-
-
-
-
       </section>
 
       {/* ---------------------------------------------organisation container---------------------------------------------- */}
@@ -978,9 +1115,9 @@ function App(props) {
       {/* ----------------------------------------footer section------------------------------------------- */}
 
       <section className="footer">
-
-        <h2 class="fs-40 text_lightred text-center mb-5 fw-600">Be Our Partner/Reseller</h2>
-
+        <h2 class="fs-40 text_lightred text-center mb-5 fw-600">
+          Be Our Partner/Reseller
+        </h2>
 
         <div className="partner-cont">
           <Image height={450} width={1000} src={Image18} alt="homepage" />
@@ -997,8 +1134,9 @@ function App(props) {
 
         {/* --------------------------------- */}
 
-
-        <h2 class="fs-40 text_lightred text-center my-5 fw-600">Certificates</h2>
+        <h2 class="fs-40 text_lightred text-center my-5 fw-600">
+          Certificates
+        </h2>
 
         <div className="background">
           <div className="back-img">
@@ -1024,8 +1162,9 @@ function App(props) {
 
           {/* ----------------------------------- */}
 
-
-          <h2 class="fs-40 text_lightred text-center my-5 fw-600">Awards & Recognitions</h2>
+          <h2 class="fs-40 text_lightred text-center my-5 fw-600">
+            Awards & Recognitions
+          </h2>
 
           <div className="award-img-cont">
             <div className="pen-pointer">

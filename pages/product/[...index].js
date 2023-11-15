@@ -23,43 +23,56 @@ import toxic from "public/assets/non-toxic.webp";
 import Marker7 from "public/assets/0.png";
 import Background from "public/assets/Lineart.png";
 import Didyouknow from "public/assets/did you know.webp";
-import { getCategoryWiseProducts, getProductByOnlyId } from "../../Actions/action";
+import {
+  getCategoryWiseProducts,
+  getProductByOnlyId,
+} from "../../Actions/action";
 import { useRouter } from "next/router";
 
 // import Products from './Products'
 
 const ProductPage = (props) => {
-  
-  let router = useRouter()
+  let router = useRouter();
 
   const [cat_prdcts, setPrd] = useState(props.cat_prd);
   const [selected_prd, set_selected_prd] = useState(props.selected_prd_data);
 
-  const getSelectedItems =async  (...args)=>{
+  const getSelectedItems = async (...args) => {
+    const [selected_prod_id, main_cat_id] = args;
 
-     const [selected_prod_id , main_cat_id] = args
+    let dataModel = {
+      selected_prd: {
+        _id: selected_prod_id,
+      },
+      prd_id: main_cat_id,
+    };
 
-      let dataModel = {selected_prd:{
-      "_id": selected_prod_id,
-  } , prd_id:main_cat_id   }  
+    getProductByOnlyId(dataModel)
+      .then((res) => {
+        if (res.status) {
+          set_selected_prd(res.result);
+        }
+      })
+      .catch((err) => {
+        console.log("some error occured ");
+      });
+  };
 
- 
-   getProductByOnlyId(dataModel).then(res=>{
-     if(res.status) {
-      set_selected_prd(res.result)
-     }
-   }).catch(err=>{
-     console.log("some error occured ")
-   })
-    
-   }
+  let product_image_files =
+    props.selected_prd_data.product_root_folder_name &&
+    Array.isArray(props.selected_prd_data.product_file_names)
+      ? props.selected_prd_data.product_file_names.map(
+          (i) =>
+            process.env.NEXT_PUBLIC_BASE_URL +
+            "/" +
+            props.selected_prd_data.product_root_folder_name +
+            "/" +
+            i
+        )
+      : "";
 
+  console.log("product-images-->", product_image_files);
 
-
-   
-   let product_image_files = (props.selected_prd_data.product_root_folder_name &&  Array.isArray(props.selected_prd_data.product_file_names)) ? props.selected_prd_data.product_file_names.map(i=>  process.env.NEXT_PUBLIC_BASE_URL+"/"+props.selected_prd_data.product_root_folder_name+"/"+i  ) :""
-           
-   
   return (
     <>
       <section className="">
@@ -87,7 +100,7 @@ const ProductPage = (props) => {
           })}
       </div> */}
 
-{/* 
+      {/* 
       <section className="py-5">
         <div className="row flex-nowrap overflow-auto px-4 ">
           {cat_prdcts.length > 0 &&
@@ -134,14 +147,17 @@ const ProductPage = (props) => {
         <div className="container-fluid">
           <div className="row">
             <div className="col-md-3 mb-3 text-center">
-              <Image className="img-fluid  position_static mt-lg-5 h-100"
-               width={300}
-              height={70}
-               src={  
-                 
-                Array.isArray(product_image_files)  ?   
-                product_image_files[0] : broadmarker   
-                 } alt="Marker" />
+              <Image
+                className="img-fluid  position_static mt-lg-5 h-100"
+                width={300}
+                height={70}
+                src={
+                  Array.isArray(product_image_files)
+                    ? product_image_files[0]
+                    : broadmarker
+                }
+                alt="Marker"
+              />
             </div>
 
             {/* -------------------------container 2nd------------------------ */}
@@ -149,33 +165,36 @@ const ProductPage = (props) => {
               {/* ----------------part 1----- */}
               <div className="border-2 rounded-0 p-4">
                 <div className="">
-                  <h2 className="fs-30">{ selected_prd.name }</h2>
+                  <h2 className="fs-30">{selected_prd.name}</h2>
 
-                  <p className="fs-18 text_justify">{selected_prd.description}</p>
+                  <p className="fs-18 text_justify">
+                    {selected_prd.description}
+                  </p>
                 </div>
 
                 {/* ----------------part 2----- */}
-                { (selected_prd.root_folder_name !== 'master_prd_icons/pens/metal_pens/products/')
-                    && <div className="color-cont">
-                      <div className="">
-                        <h3 className="fs-24 mt-4">Available Colors</h3>
-                      </div>
+                {selected_prd.root_folder_name !==
+                  "master_prd_icons/pens/metal_pens/products/" && (
+                  <div className="color-cont">
+                    <div className="">
+                      <h3 className="fs-24 mt-4">Available Colors</h3>
+                    </div>
 
-                      <div className="color-section">
-                        <div className="color-shade">
-                          <div className="color-shade1"></div>
-                          <div className="color-shade2"></div>
-                          <div className="color-shade3"></div>
-                          <div className="color-shade4"></div>
-                          <div className="color-shade5"></div>
-                          <div className="color-shade6"></div>
-                        </div>
-                        <div className="para-shade">
-                          <p>+5 Shades</p>
-                        </div>
+                    <div className="color-section">
+                      <div className="color-shade">
+                        <div className="color-shade1"></div>
+                        <div className="color-shade2"></div>
+                        <div className="color-shade3"></div>
+                        <div className="color-shade4"></div>
+                        <div className="color-shade5"></div>
+                        <div className="color-shade6"></div>
+                      </div>
+                      <div className="para-shade">
+                        <p>+5 Shades</p>
                       </div>
                     </div>
-                }
+                  </div>
+                )}
               </div>
               {/* ----------------part 3----- */}
               <div className="row mt-4">
@@ -193,8 +212,7 @@ const ProductPage = (props) => {
               </div>
               {/* ----------------part 4----- */}
               <div className="border-bottom-0 border-2 rounded-0  p-4">
-              <div className="row ">
-               
+                <div className="row ">
                   <div className="col-md-3 text-center mb-4 ">
                     <Image
                       src={jarcolour}
@@ -238,11 +256,9 @@ const ProductPage = (props) => {
                     alt="homepage"
                   />
                 </div>
-                 
+
                 <div className="mt-3">
-                  <p className="fs-16 text_justify">
-                   {selected_prd.icon}
-                  </p>
+                  <p className="fs-16 text_justify">{selected_prd.icon}</p>
                 </div>
               </div>
             </div>
@@ -336,30 +352,34 @@ const ProductPage = (props) => {
   );
 };
 
-
 export async function getServerSideProps(context) {
-
-   let {
+  let {
     query,
-    params: { index: [ selected_prod_id , main_cat_id ]  },
-  } = context ;
+    params: {
+      index: [selected_prod_id, main_cat_id],
+    },
+  } = context;
 
-
-      let dataModel = {selected_prd:{
-          "_id": selected_prod_id,
-      } , prd_id:main_cat_id   }  
+  let dataModel = {
+    selected_prd: {
+      _id: selected_prod_id,
+    },
+    prd_id: main_cat_id,
+  };
 
   // except pen , heighligher and  marker
 
-      let {status , result} = await getProductByOnlyId(dataModel)
-    // console.log(selected_prd_data)
+  let { status, result } = await getProductByOnlyId(dataModel);
+  // console.log(selected_prd_data)
 
-       let sub_cat_product= await getCategoryWiseProducts(main_cat_id);
-  if (status && Object.keys(result).length> 0) {
+  let sub_cat_product = await getCategoryWiseProducts(main_cat_id);
+  if (status && Object.keys(result).length > 0) {
     return {
       props: {
-        cat_prd:sub_cat_product.result? sub_cat_product.result.cat_wise_products: []  ,
-        selected_prd_data:result
+        cat_prd: sub_cat_product.result
+          ? sub_cat_product.result.cat_wise_products
+          : [],
+        selected_prd_data: result,
       },
     };
   } else {
