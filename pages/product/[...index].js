@@ -3,8 +3,10 @@ import React, { useState } from "react";
 // import './.assets./css./hp.css'
 import { AiOutlineSearch } from "react-icons/ai";
 import Image1 from "public/assets/Products School.png";
-
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from "react-responsive-carousel";
 import Image from "next/image";
+
 import productimg1 from "public/assets/product1.png";
 import broadmarker from "public/assets/broadline-marker.png";
 import popular1 from "public/assets/popular1.png";
@@ -12,7 +14,7 @@ import popular2 from "public/assets/popular2.png";
 // import Marker1 from 'public/assets/1'
 // import Marker2 from 'public/assets/10.png'
 import Mark from "public/assets/mark-wash.webp";
-import jarcolour from "public/assets/Jar Coloring.png";
+import jarcolour from "public/assets/proImg.png";
 import coloring6 from "public/assets/Coloring 6.png";
 import coloring24 from "public/assets/Coloring 24.png";
 
@@ -28,6 +30,7 @@ import {
   getProductByOnlyId,
 } from "../../Actions/action";
 import { useRouter } from "next/router";
+import styles from '../../styles/product.module.css';
 
 // import Products from './Products'
 
@@ -72,6 +75,11 @@ const ProductPage = (props) => {
       : "";
 
   console.log("product-images-->", product_image_files);
+
+  const carouselImgStyle = {
+    width: "100%",
+    
+  };
 
   return (
     <>
@@ -149,7 +157,7 @@ const ProductPage = (props) => {
             <div className="col-md-3 mb-3 text-center">
               <Image
                 className="img-fluid  position_static mt-lg-5 h-100"
-                width={300}
+                width={80}
                 height={70}
                 src={
                   Array.isArray(product_image_files)
@@ -163,9 +171,9 @@ const ProductPage = (props) => {
             {/* -------------------------container 2nd------------------------ */}
             <div className="col-md-9 mb-3">
               {/* ----------------part 1----- */}
-              <div className="border-2 rounded-0 p-4">
+              <div className=" rounded-0 p-4">
                 <div className="">
-                  <h2 className="fs-30">{selected_prd.name}</h2>
+                  <h2 className="fs-30 fw-700">{selected_prd.name}</h2>
 
                   <p className="fs-18 text_justify">
                     {selected_prd.description}
@@ -198,21 +206,127 @@ const ProductPage = (props) => {
               </div>
               {/* ----------------part 3----- */}
               <div className="row mt-4">
-                <div className="col-md-3 p-4 mb-3 text-center">
-                  <Image className="img-fluid" src={Mark} alt="images detail" />
-                </div>
-
-                <div className="col-md-3 p-4 mb-3 text-center">
+                <div className="col-md-2 p-4 mb-3 ">
                   <Image
                     className="img-fluid "
                     src={toxic}
                     alt="images detail"
                   />
                 </div>
+                <div className="col-md-2 p-4 mb-3">
+                  <Image className="img-fluid" src={Mark} alt="images detail" />
+                </div>
               </div>
               {/* ----------------part 4----- */}
-              <div className="border-bottom-0 border-2 rounded-0  p-4">
-                <div className="row ">
+              <div className="">
+                <Carousel
+                  autoPlay={true}
+                  showThumbs={false}
+                  infiniteLoop={true}
+                  interval={2000}
+                >
+                  <div className="carousel_banner" style={carouselImgStyle}>
+                    <div style={{justifyContent: 'center',marginBottom:10}} className="row container ">
+                      <div className={`col-md-3 text-center mb-4  ${styles.productImgSlider}` } >
+                        <img
+                          src={jarcolour.src}
+                          className="img-fluid"
+                          alt="homepage"
+                          style={{width:'100%',height:'222px'}}
+                        />
+                        <p className="fs-30 fw-600 mt-1">Color Jar</p>
+                      </div>
+                      <div className={`col-md-3 text-center mb-4 ${styles.productImgSlider}` } >
+                        <img
+                          src={jarcolour.src}
+                          className="img-fluid"
+                          alt="homepage"
+                          style={{width:'100%',height:'200px'}}
+                        />
+                        <p className="fs-30 fw-600 mt-1">Color Jar</p>
+                      </div>
+                      <div className={`col-md-3 text-center mb-4 ${styles.productImgSlider}` } >
+                        <img
+                          src={jarcolour.src}
+                          className="img-fluid"
+                          alt="homepage"
+                          style={{width:'100%',height:'200px'}}
+                        />
+                        <p className="fs-30 fw-600 mt-1">Color Jar</p>
+                      </div>
+
+                    </div>
+                    
+                  </div>
+                  <div className="carousel_banner" style={carouselImgStyle}>
+                    <div style={{justifyContent: 'center',marginBottom:10}} className="row container ">
+                      <div className={`col-md-3 text-center mb-4  ${styles.productImgSlider}` } >
+                        <img
+                          src={jarcolour.src}
+                          className="img-fluid"
+                          alt="homepage"
+                          style={{width:'100%',height:'222px'}}
+                        />
+                        <p className="fs-30 fw-600 mt-1">Color Jar</p>
+                      </div>
+                      <div className={`col-md-3 text-center mb-4 ${styles.productImgSlider}` } >
+                        <img
+                          src={jarcolour.src}
+                          className="img-fluid"
+                          alt="homepage"
+                          style={{width:'100%',height:'200px'}}
+                        />
+                        <p className="fs-30 fw-600 mt-1">Color Jar</p>
+                      </div>
+                      <div className={`col-md-3 text-center mb-4 ${styles.productImgSlider}` } >
+                        <img
+                          src={jarcolour.src}
+                          className="img-fluid"
+                          alt="homepage"
+                          style={{width:'100%',height:'200px'}}
+                        />
+                        <p className="fs-30 fw-600 mt-1">Color Jar</p>
+                      </div>
+
+                    </div>
+                    
+                  </div>
+                  <div className="carousel_banner" style={carouselImgStyle}>
+                    <div style={{justifyContent: 'center',marginBottom:10}} className="row container ">
+                      <div className={`col-md-3 text-center mb-4  ${styles.productImgSlider}` } >
+                        <img
+                          src={jarcolour.src}
+                          className="img-fluid"
+                          alt="homepage"
+                          style={{width:'100%',height:'222px'}}
+                        />
+                        <p className="fs-30 fw-600 mt-1">Color Jar</p>
+                      </div>
+                      <div className={`col-md-3 text-center mb-4 ${styles.productImgSlider}` } >
+                        <img
+                          src={jarcolour.src}
+                          className="img-fluid"
+                          alt="homepage"
+                          style={{width:'100%',height:'200px'}}
+                        />
+                        <p className="fs-30 fw-600 mt-1">Color Jar</p>
+                      </div>
+                      <div className={`col-md-3 text-center mb-4 ${styles.productImgSlider}` } >
+                        <img
+                          src={jarcolour.src}
+                          className="img-fluid"
+                          alt="homepage"
+                          style={{width:'100%',height:'200px'}}
+                        />
+                        <p className="fs-30 fw-600 mt-1">Color Jar</p>
+                      </div>
+
+                    </div>
+                    
+                  </div>
+                  
+                </Carousel>
+                {/*     <div className="row ">
                   <div className="col-md-3 text-center mb-4 ">
                     <Image
                       src={jarcolour}
@@ -245,15 +359,17 @@ const ProductPage = (props) => {
                     />
                     <p className="fs-12 mt-1">24 Colors</p>
                   </div>
-                </div>
+                </div> */}
               </div>
               {/* ----------------part 5-----  */}
-              <div className="dyn-cont  border_topgrey flex-column flex-sm-row gap-3">
+              <div className="dyn-cont  flex-column flex-sm-row gap-3">
                 <div className="mt-3">
                   <Image
-                    className="img-fluid"
+                    className="img-fluid w-30"
                     src={Didyouknow}
                     alt="homepage"
+                    width={240}
+                    height={200}
                   />
                 </div>
 
@@ -320,6 +436,7 @@ const ProductPage = (props) => {
                       />
                     </div>
                   </div>
+                  <p className={styles.popularFont}>Color by<br/>Number</p>
                 </div>
                 <div className="card p-2 border-0">
                   <div className="card-body">
@@ -331,17 +448,19 @@ const ProductPage = (props) => {
                       />
                     </div>
                   </div>
+                  <p className={styles.popularFont}>Color by<br/>Number</p>
                 </div>
                 <div className="card p-2 border-0">
                   <div className="card-body">
                     <div className="product-img">
                       <Image
                         className="img-fluid"
-                        src={popular2}
+                        src={popular1}
                         alt="homepage"
                       />
                     </div>
                   </div>
+                  <p className={styles.popularFont}>Color by<br/>Number</p>
                 </div>
               </div>
             </div>

@@ -1,0 +1,19 @@
+.productImgSlider {
+    border: 1px solid #c2c2c2;
+    background: #F4F4F4;
+    border-radius: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-inline: 10px;
+  }
+
+.popularFont{
+  font-size: 24px;
+  margin: 0;
+  text-align: center;
+  font-weight: 500;
+  margin-top: 0px;
+}
+  
