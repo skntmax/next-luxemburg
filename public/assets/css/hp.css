@@ -3,6 +3,7 @@
      position: fixed;
      background-color: #fff;
 } */
+@import url(https://db.onlinewebfonts.com/c/63a0b765df604c1def13ee0f2000ae44?family=Blackadder+ITC+Std);
 
 .navbar2 {
   width: 100%;
@@ -379,12 +380,10 @@
 
   .reusesave-env {
     grid-template-columns: repeat(auto-fit, minmax(130px, auto));
-
   }
 
   .artGallery-img {
     background-size: cover;
-
   }
 
   .side-curve-left {
@@ -435,7 +434,7 @@
 
   .popular_picks,
   .products_list {
-    margin-top: -15%;
+    margin-top: -20%;
   }
 }
 
@@ -446,6 +445,6 @@
 
   .popular_picks,
   .products_list {
-    margin-top: -15%;
+    margin-top: -20%;
   }
 }

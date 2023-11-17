@@ -12,40 +12,36 @@ import {
 } from "Actions/action";
 import styles from "styles/productbar.module.css";
 
-
 import { useRouter } from "next/router";
 
 const index = (props) => {
   let router = useRouter();
 
-  console.log( props )
+  console.log(props);
   const [data, setData] = useState({
-    page_no:props.page_no,
-    total_prd: props.total  ,  
+    page_no: props.page_no,
+    total_prd: props.total,
     cat_name: props.cat_name,
     list: props.all_prd,
   });
 
-  useEffect(() => {}, [  ] );
+  useEffect(() => {}, []);
 
-  const { cat_name: category_name } = data ;
+  const { cat_name: category_name } = data;
 
   const getSelectedItem = async (model) => {
     try {
-  
       let final_redirect_uri =
         "/product/" + model.cat_info._id + "/" + model.prd_id;
       console.log(final_redirect_uri);
       router.push(final_redirect_uri);
-
     } catch (err) {}
   };
 
-  const paginate = (p_n)=>{
-
-    const [cat_name, _id ] = router.query.index
-    let final_url = "/listing/" + data.cat_name + "/" + _id +"/"+p_n;
-    console.log(final_url)
+  const paginate = (p_n) => {
+    const [cat_name, _id] = router.query.index;
+    let final_url = "/listing/" + data.cat_name + "/" + _id + "/" + p_n;
+    console.log(final_url);
     if (final_url) router.push(final_url);
 
     // (async function(){
@@ -56,19 +52,17 @@ const index = (props) => {
     //        ...data , page_no:p_n , list:result.cat_wise_products
     //     })
     //   }catch(err){
-         
+
     //     alert("some erro occured")
     //   }
 
     // })()
+  };
 
-  }
-
-  const [cat_name, _id , p_n ] = router.query.index
+  const [cat_name, _id, p_n] = router.query.index;
 
   return (
-    <>      
-   
+    <>
       <section className="py-5">
         <div className="container">
           <h3 className="mt-2 pb-5 text_black text-center fs-30">
@@ -76,15 +70,8 @@ const index = (props) => {
           </h3>
 
           <div className="row mt-5">
-          
-            <div className="col-md-3 col-lg-2 mb-3">
+            <div className="col-md-3 col-lg-2 mb-3"></div>
 
-            
-            </div>
-
-
-
-            
             <div className="col-md-8 col-lg-9 mb-3 px-md-4 px-lg-5">
               <ul
                 className="nav nav-pills mb-3 border-bottom_black pb-1"
@@ -119,33 +106,55 @@ const index = (props) => {
                     <i className="fa-solid fa-list-ol text_lightgrey"></i>
                   </button>
                 </li>
-                   
+
                 {/* navigation  */}
 
-              {p_n && p_n>1 ?
-                <ul className="pagination justify-content-center mx-2">
-                  <li class="page-item disabled " style={{cursor:"pointer"}}>
-                  <a class="page-link " href="#" tabindex="-1">Previous</a>
-                  </li>
-              </ul> :""
-               }
-             
-
-                 {   props.total ?  new Array( Math.ceil(props.total/20) ).fill(undefined).map((item, i)=>{
-                       
-                       
-                    return <React.Fragment>
-                   <ul className="pagination justify-content-center mx-2 " style={{cursor:"pointer"}}>
-                    <li className="page-item" onClick={(e)=> paginate(i+1)  }>
-                     <a className={` page-link text-center fs-18 fw-600 rounded-0 button_pagination ${(p_n==(i+1) || (p_n==undefined&& i==0) )?"active":""} `}   >
-                    {i+1}</a>
-                    
-                    </li> 
+                {p_n && p_n > 1 ? (
+                  <ul className="pagination justify-content-center mx-2">
+                    <li
+                      class="page-item disabled "
+                      style={{ cursor: "pointer" }}
+                    >
+                      <a class="page-link " href="#" tabindex="-1">
+                        Previous
+                      </a>
+                    </li>
                   </ul>
-                   </React.Fragment>
-                 }) :"" }
+                ) : (
+                  ""
+                )}
 
-        {/* {
+                {props.total
+                  ? new Array(Math.ceil(props.total / 20))
+                      .fill(undefined)
+                      .map((item, i) => {
+                        return (
+                          <React.Fragment>
+                            <ul
+                              className="pagination justify-content-center mx-2 "
+                              style={{ cursor: "pointer" }}
+                            >
+                              <li
+                                className="page-item"
+                                onClick={(e) => paginate(i + 1)}
+                              >
+                                <a
+                                  className={` page-link text-center fs-18 fw-600 rounded-0 button_pagination ${
+                                    p_n == i + 1 || (p_n == undefined && i == 0)
+                                      ? "active"
+                                      : ""
+                                  } `}
+                                >
+                                  {i + 1}
+                                </a>
+                              </li>
+                            </ul>
+                          </React.Fragment>
+                        );
+                      })
+                  : ""}
+
+                {/* {
           p_n && p_n==Math.ceil(props.total/20) ?"": 
           <ul className="pagination justify-content-center mx-1">
           <li className="page-item" style={{cursor:"pointer"}}  > 
@@ -154,7 +163,7 @@ const index = (props) => {
     </ul>  
         }
                  */}
-                  
+
                 {/* <ul className="pagination justify-content-center">
                   <li className="page-item disabled">
                     <a className="page-link" href="#" tabindex="-1">Previous</a>
@@ -166,11 +175,6 @@ const index = (props) => {
                     <a className="page-link" href="#">Next</a>
                   </li>
                 </ul> */}
-
-
-
-
-
               </ul>
               <div className="tab-content" id="pills-tabContent">
                 <div
@@ -193,7 +197,7 @@ const index = (props) => {
                             return (
                               <>
                                 <div
-                                  className={`  col-lg-3 col-md-4  mb-3 ${styles["main_prd"]} ${styles['product-list']} `}
+                                  className={`  col-lg-3 col-md-4 mb-3 mx-2  ${styles["main_prd"]} ${styles["product-list"]} `}
                                   onClick={() => {
                                     // console.log(ele)
                                     getSelectedItem({
@@ -216,13 +220,12 @@ const index = (props) => {
                                 >
                                   <div className="card shadow border-0 h-100 bg-transparent">
                                     <div className=" card-header border-0 bg-transparent p-3">
-                                  <h3 className="fs-20 text_black fw-500">
+                                      <h3 className="fs-20 text_black fw-500">
                                         {" "}
                                         {ele.name}
                                       </h3>
-                                      </div>
+                                    </div>
                                     <div className="card-body  d-flex flex-column justify-content-evenly">
-                                      
                                       <div className="">
                                         <Image
                                           width={300}
@@ -241,7 +244,7 @@ const index = (props) => {
                                       <p className="fs-14 text_black text-center">
                                         {ele.description.slice(0, 50) + "..."}
                                       </p>
-                                
+
                                       <div className="d-flex my-4 justify-content-center gap-4">
                                         {/* <button className="btn border-0">
                                           <i className=" fa-regular fa-bookmark fs-16 text_lightgrey"></i>
@@ -303,34 +306,34 @@ const index = (props) => {
           </div>
         </div>
       </section>
-
     </>
   );
 };
 
 export async function getServerSideProps(context) {
- 
   let {
     query,
     params: {
-      index: [cat_name, _id , page_no ],
+      index: [cat_name, _id, page_no],
     },
   } = context;
-   
-  let { result, status } = await getCategoryWiseProducts(_id, cat_name,page_no?page_no:1 );
-   
+
+  let { result, status } = await getCategoryWiseProducts(
+    _id,
+    cat_name,
+    page_no ? page_no : 1
+  );
+
   if (status && result.cat_wise_products.length > 0) {
     return {
       props: {
-        total:result?.total,
+        total: result?.total,
         all_prd: result?.cat_wise_products,
-        page_no:page_no?page_no:1,
+        page_no: page_no ? page_no : 1,
         cat_name,
       },
     };
-
   }
-
 
   return {
     props: {

@@ -22,9 +22,8 @@ const Header = (props) => {
   }, [all_prd.length]);
 
   const goToProductPage = (item, current_id, sub_category) => {
-    
-    let closeButton = document.getElementById('close_button')
-    closeButton.addEventListener('click' , ()=> console.log(" clicked "))
+    let closeButton = document.getElementById("close_button");
+    closeButton.addEventListener("click", () => console.log(" clicked "));
 
     let final_url = "";
     if (item._doc) {
@@ -38,7 +37,6 @@ const Header = (props) => {
       const { _id, name: category_name } = item;
       final_url = "/listing/" + category_name + "/" + _id;
       router.push(final_url);
-      
     }
   };
 
@@ -116,17 +114,19 @@ const Header = (props) => {
                 </a>
               </li>
               <div className="dropdown">
-                <button
+                <Link
                   className="btn dropdown-toggle text_black fs-16 p-0 border-0 shadow-none"
                   type="button"
                   id="dropdownabout"
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
+                  role="button"
+                  href={"/about"}
                 >
-                  About Us
-                </button>
+                  <p style={{ cursor: "pointer" }}>About Us</p>
+                </Link>
 
-                <ul className="dropdown-menu" aria-labelledby="dropdownabout">
+                {/* <ul className="dropdown-menu" aria-labelledby="dropdownabout">
                   <li>
                     <a className="dropdown-item fs-16 text_black" href="/about">
                       About Us
@@ -150,7 +150,7 @@ const Header = (props) => {
                       Milestone
                     </a>
                   </li>
-                </ul>
+                </ul> */}
               </div>
               <div className="dropdown">
                 <button
@@ -163,7 +163,10 @@ const Header = (props) => {
                   Product
                 </button>
 
-                <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <ul
+                  className="dropdown-menu"
+                  aria-labelledby="dropdownMenuButton"
+                >
                   {all_prd.length > 0 &&
                     all_prd.map((item, ind) => {
                       if (item._doc) {
@@ -228,7 +231,10 @@ const Header = (props) => {
                 </ul>
               </div>
               <li className="nav-item">
-                <a className="fs-16 text_black" href="/assets/00 Luxor Catalogue 2022 LowRes.pdf">
+                <a
+                  className="fs-16 text_black"
+                  href="/assets/00 Luxor Catalogue 2022 LowRes.pdf"
+                >
                   E- Catalogue
                 </a>
               </li>
@@ -249,7 +255,14 @@ const Header = (props) => {
                 </a>
               </li>
               <li className="nav-item">
-                <a className="fs-16 text_black" onClick={(e)=>{ e.preventDefault();  router.push('/contact')} }  href="">
+                <a
+                  className="fs-16 text_black"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    router.push("/contact");
+                  }}
+                  href=""
+                >
                   Contact Us
                 </a>
               </li>
@@ -272,7 +285,7 @@ const Header = (props) => {
               </span>
             </a>
             <button
-               id="close_button"
+              id="close_button"
               className="btn border-0 bg_black  px-3 shadow-none"
               type="button"
               data-bs-toggle="offcanvas"
@@ -365,7 +378,7 @@ const Header = (props) => {
                 >
                   Product
                 </a>
-                 
+
                 <ul class="dropdown-menu" aria-labelledby="product-dropdown">
                   {all_prd.length > 0 &&
                     all_prd.map((item, ind) => {
@@ -418,22 +431,17 @@ const Header = (props) => {
                       } else {
                         return (
                           <li
-                            className= {` d-block ${styles["main_prd"]} `}
+                            className={` d-block ${styles["main_prd"]} `}
                             onClick={() => goToProductPage(item)}
                           >
                             <a className="text_black  fs-16 dropdown-item">
-                              {item.name} 
+                              {item.name}
                             </a>
                           </li>
                         );
                       }
                     })}
                 </ul>
-
-
-
-                
-
               </li>
               <li className="nav-item">
                 <a className="fs-16 text_black p-2" href="#">

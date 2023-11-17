@@ -30,7 +30,7 @@ import {
   getProductByOnlyId,
 } from "../../Actions/action";
 import { useRouter } from "next/router";
-import styles from '../../styles/product.module.css';
+import styles from "../../styles/product.module.css";
 
 // import Products from './Products'
 
@@ -78,7 +78,6 @@ const ProductPage = (props) => {
 
   const carouselImgStyle = {
     width: "100%",
-    
   };
 
   return (
@@ -150,7 +149,7 @@ const ProductPage = (props) => {
 
       {/* -----------------------------------broadline marker--------------------------------------- */}
 
-      <section className="main-broad-container py-5">
+      <section className="main-broad-container">
         {/* ---------------------------------------container 1st---------- */}
         <div className="container-fluid">
           <div className="row">
@@ -226,105 +225,125 @@ const ProductPage = (props) => {
                   interval={2000}
                 >
                   <div className="carousel_banner" style={carouselImgStyle}>
-                    <div style={{justifyContent: 'center',marginBottom:10}} className="row container ">
-                      <div className={`col-md-3 text-center mb-4  ${styles.productImgSlider}` } >
+                    <div
+                      style={{ marginBottom: 10 }}
+                      className="row container "
+                    >
+                      <div
+                        className={`col-md-3 text-center mb-4  ${styles.productImgSlider}`}
+                      >
                         <img
                           src={jarcolour.src}
                           className="img-fluid"
                           alt="homepage"
-                          style={{width:'100%',height:'222px'}}
+                          style={{ width: "100%", height: "222px" }}
                         />
                         <p className="fs-30 fw-600 mt-1">Color Jar</p>
                       </div>
-                      <div className={`col-md-3 text-center mb-4 ${styles.productImgSlider}` } >
+                      <div
+                        className={`col-md-3 text-center mb-4 ${styles.productImgSlider}`}
+                      >
                         <img
                           src={jarcolour.src}
                           className="img-fluid"
                           alt="homepage"
-                          style={{width:'100%',height:'200px'}}
+                          style={{ width: "100%", height: "200px" }}
                         />
                         <p className="fs-30 fw-600 mt-1">Color Jar</p>
                       </div>
-                      <div className={`col-md-3 text-center mb-4 ${styles.productImgSlider}` } >
+                      <div
+                        className={`col-md-3 text-center mb-4 ${styles.productImgSlider}`}
+                      >
                         <img
                           src={jarcolour.src}
                           className="img-fluid"
                           alt="homepage"
-                          style={{width:'100%',height:'200px'}}
+                          style={{ width: "100%", height: "200px" }}
                         />
                         <p className="fs-30 fw-600 mt-1">Color Jar</p>
                       </div>
-
                     </div>
-                    
                   </div>
                   <div className="carousel_banner" style={carouselImgStyle}>
-                    <div style={{justifyContent: 'center',marginBottom:10}} className="row container ">
-                      <div className={`col-md-3 text-center mb-4  ${styles.productImgSlider}` } >
+                    <div
+                      style={{ marginBottom: 10 }}
+                      className="row container "
+                    >
+                      <div
+                        className={`col-md-3 text-center mb-4  ${styles.productImgSlider}`}
+                      >
                         <img
                           src={jarcolour.src}
                           className="img-fluid"
                           alt="homepage"
-                          style={{width:'100%',height:'222px'}}
+                          style={{ width: "100%", height: "222px" }}
                         />
                         <p className="fs-30 fw-600 mt-1">Color Jar</p>
                       </div>
-                      <div className={`col-md-3 text-center mb-4 ${styles.productImgSlider}` } >
+                      <div
+                        className={`col-md-3 text-center mb-4 ${styles.productImgSlider}`}
+                      >
                         <img
                           src={jarcolour.src}
                           className="img-fluid"
                           alt="homepage"
-                          style={{width:'100%',height:'200px'}}
+                          style={{ width: "100%", height: "200px" }}
                         />
                         <p className="fs-30 fw-600 mt-1">Color Jar</p>
                       </div>
-                      <div className={`col-md-3 text-center mb-4 ${styles.productImgSlider}` } >
+                      <div
+                        className={`col-md-3 text-center mb-4 ${styles.productImgSlider}`}
+                      >
                         <img
                           src={jarcolour.src}
                           className="img-fluid"
                           alt="homepage"
-                          style={{width:'100%',height:'200px'}}
+                          style={{ width: "100%", height: "200px" }}
                         />
                         <p className="fs-30 fw-600 mt-1">Color Jar</p>
                       </div>
-
                     </div>
-                    
                   </div>
                   <div className="carousel_banner" style={carouselImgStyle}>
-                    <div style={{justifyContent: 'center',marginBottom:10}} className="row container ">
-                      <div className={`col-md-3 text-center mb-4  ${styles.productImgSlider}` } >
+                    <div
+                      style={{ marginBottom: 10 }}
+                      className="row container "
+                    >
+                      <div
+                        className={`col-md-3 text-center mb-4  ${styles.productImgSlider}`}
+                      >
                         <img
                           src={jarcolour.src}
                           className="img-fluid"
                           alt="homepage"
-                          style={{width:'100%',height:'222px'}}
+                          style={{ width: "100%", height: "222px" }}
                         />
                         <p className="fs-30 fw-600 mt-1">Color Jar</p>
                       </div>
-                      <div className={`col-md-3 text-center mb-4 ${styles.productImgSlider}` } >
+                      <div
+                        className={`col-md-3 text-center mb-4 ${styles.productImgSlider}`}
+                      >
                         <img
                           src={jarcolour.src}
                           className="img-fluid"
                           alt="homepage"
-                          style={{width:'100%',height:'200px'}}
+                          style={{ width: "100%", height: "200px" }}
                         />
                         <p className="fs-30 fw-600 mt-1">Color Jar</p>
                       </div>
-                      <div className={`col-md-3 text-center mb-4 ${styles.productImgSlider}` } >
+                      <div
+                        className={`col-md-3 text-center mb-4 ${styles.productImgSlider}`}
+                      >
                         <img
                           src={jarcolour.src}
                           className="img-fluid"
                           alt="homepage"
-                          style={{width:'100%',height:'200px'}}
+                          style={{ width: "100%", height: "200px" }}
                         />
                         <p className="fs-30 fw-600 mt-1">Color Jar</p>
                       </div>
-
                     </div>
-                    
                   </div>
-                  
                 </Carousel>
                 {/*     <div className="row ">
                   <div className="col-md-3 text-center mb-4 ">
@@ -416,12 +435,17 @@ const ProductPage = (props) => {
         <div className="">
           <div className="prodBackground d-none d-md-block mb-md-5">
             <div class=" mt-4">
-              <h2 className="text-white fs-40 text-center">Popular Picks</h2>
+              <h2
+                className="text-white fs-50 text-center"
+                style={{ fontFamily: "Blackadder ITC Std" }}
+              >
+                Popular Picks
+              </h2>
             </div>
           </div>
           <div className="color_red py-5 mb-5 mb-md-0 py-md-0">
             <div className="container">
-              <h2 className="text-white mb-5 text-center d-md-none">
+              <h2 className="text-white mb-5 text-center d-md-none ">
                 Popular Picks
               </h2>
 
@@ -436,7 +460,11 @@ const ProductPage = (props) => {
                       />
                     </div>
                   </div>
-                  <p className={styles.popularFont}>Color by<br/>Number</p>
+                  <p className={styles.popularFont}>
+                    Color by
+                    <br />
+                    Number
+                  </p>
                 </div>
                 <div className="card p-2 border-0">
                   <div className="card-body">
@@ -448,7 +476,11 @@ const ProductPage = (props) => {
                       />
                     </div>
                   </div>
-                  <p className={styles.popularFont}>Color by<br/>Number</p>
+                  <p className={styles.popularFont}>
+                    Color by
+                    <br />
+                    Number
+                  </p>
                 </div>
                 <div className="card p-2 border-0">
                   <div className="card-body">
@@ -460,7 +492,11 @@ const ProductPage = (props) => {
                       />
                     </div>
                   </div>
-                  <p className={styles.popularFont}>Color by<br/>Number</p>
+                  <p className={styles.popularFont}>
+                    Color by
+                    <br />
+                    Number
+                  </p>
                 </div>
               </div>
             </div>

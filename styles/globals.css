@@ -262,10 +262,14 @@ input {
 .carouselItem {
   display: flex;
   grid-template-columns: repeat(auto-fit, minmax(200px, auto));
-  justify-content: center;
-  gap: 6rem;
+  width: 100%;
+  /* justify-content: center; */
+
+  gap: 5rem;
+  padding-left: 8rem;
+  padding-right: 8rem;
   padding-top: 3rem;
-  overflow-x: auto;
+  overflow-x: scroll;
   /* margin-top: 600px;sd */
 }
 
@@ -1077,8 +1081,9 @@ carousel .slider-wrapper.axis-horizontal .slider .slide {
   position: absolute;
   background-color: red !important;
   border-radius: 45px;
-  padding: 24px 47px;
-  right: 20%;
+  /* padding: 24px 47px; */
+  padding: 17px 50px;
+  right: 15%;
   top: 30%;
   font-weight: bolder;
 }
@@ -1113,7 +1118,7 @@ carousel .slider-wrapper.axis-horizontal .slider .slide {
 /* -----------------------------------broadline marker--------------------------------------- */
 
 .main-broad-container {
-  padding-top: 20px;
+  /* padding-top: 20px; */
   height: 100%;
   width: 100%;
   /* display: flex; */
@@ -1169,7 +1174,6 @@ carousel .slider-wrapper.axis-horizontal .slider .slide {
 
 .para-shade {
   border: 1px solid black;
-  padding: 5px;
 }
 
 /* ----------------part 3----- */
@@ -1260,7 +1264,7 @@ carousel .slider-wrapper.axis-horizontal .slider .slide {
 /* ---------------------------------------container 1st---------- */
 
 .main-broad-container {
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
   display: flex;
 }
 
@@ -1369,7 +1373,7 @@ carousel .slider-wrapper.axis-horizontal .slider .slide {
 
 .para-shade p {
   border: 1px solid rgb(17, 6, 0);
-  padding: 5px;
+  padding: 7px;
   margin-bottom: 0;
 }
 
@@ -1873,15 +1877,15 @@ transition: all 1s ease; */
   }
 } */
 
- /* for desktop */
- .whatsapp_float {
+/* for desktop */
+.whatsapp_float {
   position: fixed;
   width: 60px;
   height: 60px;
   bottom: 40px;
   right: 40px;
   background-color: #25d366;
-  color: #FFF;
+  color: #fff;
   border-radius: 50px;
   text-align: center;
   font-size: 30px;
@@ -1896,16 +1900,14 @@ transition: all 1s ease; */
 /* for mobile */
 @media screen and (max-width: 767px) {
   .whatsapp-icon {
-      margin-top: 10px;
+    margin-top: 10px;
   }
 
   .whatsapp_float {
-      width: 40px;
-      height: 40px;
-      bottom: 20px;
-      right: 10px;
-      font-size: 22px;
+    width: 40px;
+    height: 40px;
+    bottom: 20px;
+    right: 10px;
+    font-size: 22px;
   }
 }
-
-

@@ -7,6 +7,8 @@ import nl_green from "public/assets/new_launches/li_green.png";
 import marker_blue from "public/assets/new_launches/marker_blue.png";
 import pm_blue_last from "public/assets/new_launches/pm_blue_last.png";
 import metal_pens from "public/assets/new_launches/metal_pens.png";
+import pcw from "public/assets/new_launches/PCW.jpg";
+import kids from "public/assets/new_launches/kids.png";
 import ImageMap from "components/ImageMap";
 import marker_pen from "public/assets/marker.png";
 import { Tween } from "react-gsap";
@@ -629,11 +631,97 @@ function App(props) {
               <span className="title">Metal Pens</span>
             </div>
           </div>
+          <div
+            className="posterBlock6"
+            onMouseEnter={(e) =>
+              drawPen(
+                ".posterBlock6",
+                ".posterBlock6 img",
+                ".marker_line6",
+                "black",
+                ".posterBlock6-card"
+              )
+            }
+            onMouseLeave={() =>
+              removeDrawPen(
+                ".posterBlock6",
+                ".posterBlock6 img",
+                ".marker_line6",
+                "white",
+                ".posterBlock6-card"
+              )
+            }
+          >
+            <div
+              className="posterBlock6-card"
+              style={{
+                borderRadius: 15,
+                backgroundColor: "#ececec",
+                padding: 15,
+              }}
+            >
+              <LazyLoadImage
+                width={245}
+                height={"80%"}
+                alt="homepage"
+                src={pcw.src}
+              />
+              <div className="marker_line6" style={{ width: 0, border: "8px" }}>
+                {" "}
+              </div>
+            </div>
+            <div className="textBlock">
+              <span className="title">PCW</span>
+            </div>
+          </div>
+          <div
+            className="posterBlock7"
+            onMouseEnter={(e) =>
+              drawPen(
+                ".posterBlock7",
+                ".posterBlock7 img",
+                ".marker_line7",
+                "black",
+                ".posterBlock7-card"
+              )
+            }
+            onMouseLeave={() =>
+              removeDrawPen(
+                ".posterBlock7",
+                ".posterBlock7 img",
+                ".marker_line7",
+                "white",
+                ".posterBlock7-card"
+              )
+            }
+          >
+            <div
+              className="posterBlock7-card"
+              style={{
+                borderRadius: 15,
+                backgroundColor: "#ececec",
+                padding: 15,
+              }}
+            >
+              <LazyLoadImage
+                width={245}
+                height={"80%"}
+                alt="homepage"
+                src={kids.src}
+              />
+              <div className="marker_line7" style={{ width: 0, border: "8px" }}>
+                {" "}
+              </div>
+            </div>
+            <div className="textBlock">
+              <span className="title">Kids Colouring</span>
+            </div>
+          </div>
         </div>
       </section>
 
       <section>
-        <div className="products">
+        <div className="products mt-5">
           <div className="prodBackground">
             <div className="">
               <h2 className="fs-40 fw-600 text-center mt-4 mt-md-5 text-white">
@@ -666,7 +754,7 @@ function App(props) {
           </div> */}
 
           <section className="py-5">
-            <div className="products_list">
+            <div className="products_list" style={{ marginTop: "-15%" }}>
               <div className="row flex-nowrap overflow-auto px-4 ">
                 {all_prdcts.length > 0 &&
                   all_prdcts.map((ele) => {
@@ -928,7 +1016,7 @@ function App(props) {
                 onClick={() => {
                   setGallery(true);
                 }}
-                className="btn Art_gallery_button text-white fs-16"
+                className="btn Art_gallery_button text-white"
               >
                 Art Gallery
               </button>
