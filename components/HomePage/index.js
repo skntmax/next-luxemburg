@@ -960,8 +960,9 @@ function App(props) {
       </section> */}
 
       {/* ======== */}
-      <section className="py-5 position-relative">
-        <div className="artGallery-img">
+      <section  className="py-5 position-relative">
+        <div style={{width: '100vw',
+    height: '600px'}} className="artGallery-img">
           <div className={`side-gallery ${gallery ? "full" : ""}`}>
             <div
               onClick={() => {
@@ -970,7 +971,7 @@ function App(props) {
               className={`side-curve-left`}
             ></div>
             <div className="container-fluid p-0">
-              {gallery && (
+             
                 <div className="row flex-nowrap overflow-auto">
                   <div className="col-md-4  ">
                     <iframe
@@ -1006,7 +1007,7 @@ function App(props) {
                     ></iframe>
                   </div>
                 </div>
-              )}
+             
             </div>
 
             <div className={`side-curve ${gallery ? "full" : ""}`}></div>
