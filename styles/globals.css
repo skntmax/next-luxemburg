@@ -394,7 +394,7 @@ carousel .slider-wrapper.axis-horizontal .slider .slide {
   justify-content: center;
   align-items: center;
   width: 0;
-  background: rgb(210, 210, 210); 
+  background: rgb(210, 210, 210);
   /* right: 207px; */
   transition: all 1.4s ease-in-out;
   z-index: 999;
@@ -405,7 +405,7 @@ carousel .slider-wrapper.axis-horizontal .slider .slide {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: absolute; 
+  position: absolute;
   height: 600px;
   width: 100vw;
   /* background: antiquewhite; */
@@ -421,9 +421,8 @@ carousel .slider-wrapper.axis-horizontal .slider .slide {
   background: #ff0000;
   border-radius: 0 100% 100% 0;
   transition: all 0.3s ease-in-out;
-
-
-}.p-10{
+}
+.p-10 {
   padding: 2rem 5rem 2rem 10rem !important;
 }
 .side-curve-left {
@@ -436,15 +435,14 @@ carousel .slider-wrapper.axis-horizontal .slider .slide {
   border-radius: 0 100% 100% 0 / 0 50% 50% 0;
   transition: all 0.3s ease-in-out;
   cursor: pointer;
-  
 }
- .side-curve.full{
-    right:  -135px;
-    top: 0px;
-    display: block;
-    background: #f80103;
-    border-radius: 0 100% 100% 0;
-  } 
+.side-curve.full {
+  right: -135px;
+  top: 0px;
+  display: block;
+  background: #f80103;
+  border-radius: 0 100% 100% 0;
+}
 .prodBackground::before {
   content: "";
   background-image: url(/public/assets/Lineart.png);
@@ -636,8 +634,9 @@ carousel .slider-wrapper.axis-horizontal .slider .slide {
   padding: 1vw 4vw 1vw 4vw;
   font-weight: 600;
   border-radius: 70px;
-  background-color: #ed1b24;
-  font-size: 3vw;
+  font-size: x-large;
+  background-color: #ff0000bd;
+  /* font-size: 3vw; */
   border: none;
   outline: none;
   cursor: pointer;
@@ -1090,18 +1089,17 @@ carousel .slider-wrapper.axis-horizontal .slider .slide {
   position: absolute;
   background-color: red !important;
   border-radius: 45px;
-  padding: 24px 47px;
-  right: 20%;
+  padding: 24px 80px;
+  right: 10%;
   top: 30%;
   font-weight: bolder;
+  font-size: x-large;
   z-index: 999;
 }
 
 .art-gallery {
   position: relative;
 }
-
-
 
 /* ---------------------------------------------------------end----------------------------------------------------------- */
 
@@ -1734,6 +1732,7 @@ carousel .slider-wrapper.axis-horizontal .slider .slide {
 }
 .border-bottom_black {
   border-bottom: 1px solid black;
+  width: 82%;
 }
 
 .banner_img:hover {
@@ -1773,6 +1772,34 @@ transition: all 1s ease; */
 .min_height {
   max-height: 240px !important;
 }
+
+.nav-item a {
+  position: relative;
+  padding: 3px 0px;
+}
+
+.nav-item a::before {
+  content: "";
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: #fff;
+  transition: 0.5s transform ease;
+  transform: scale3d(0, 1, 1);
+  transform-origin: 0 50%;
+}
+
+.nav-item a::before {
+  background: #e91e63;
+  transform-origin: 100% 50%;
+}
+
+.nav-item a:hover::before {
+  transform: scale3d(1, 1, 1);
+}
+
 /* .yt_video {
   animation-duration: 10s;
   animation-name: slidein;
@@ -1834,9 +1861,8 @@ transition: all 1s ease; */
 
 .artGallery-img {
   background: url("../public//assets/Art\ Gallery.webp");
-   background-size: cover;
+  background-size: cover;
   background-repeat: no-repeat;
-  
 }
 
 .page-item .button_pagination.active {

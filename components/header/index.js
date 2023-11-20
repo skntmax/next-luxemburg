@@ -113,8 +113,11 @@ const Header = (props) => {
                   Home
                 </a>
               </li>
-              <div className="dropdown">
-                <Link
+              <div className="dropdown nav-item">
+                <a className="fs-16 text_black" href="/about">
+                  About Us
+                </a>
+                {/* <Link
                   className="btn dropdown-toggle text_black fs-16 p-0 border-0 shadow-none"
                   type="button"
                   id="dropdownabout"
@@ -124,7 +127,7 @@ const Header = (props) => {
                   href={"/about"}
                 >
                   <p style={{ cursor: "pointer" }}>About Us</p>
-                </Link>
+                </Link> */}
 
                 {/* <ul className="dropdown-menu" aria-labelledby="dropdownabout">
                   <li>
@@ -153,15 +156,17 @@ const Header = (props) => {
                 </ul> */}
               </div>
               <div className="dropdown">
-                <button
-                  className="btn dropdown-toggle pt-0"
-                  type="button"
-                  id="dropdownProduct"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Product
-                </button>
+                <li className="dropdown nav-item">
+                  <a
+                    className="btn dropdown-toggle pt-0"
+                    type="button"
+                    id="dropdownProduct"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    Product
+                  </a>
+                </li>
 
                 <ul
                   className="dropdown-menu"
@@ -367,7 +372,7 @@ const Header = (props) => {
                   </li>
                 </ul>
               </div>
-              <li class="nav-item dropdown">
+              <li class="dropdown nav-item">
                 <a
                   class="nav-link text-start dropdown-toggle btn fs-16 text_black p-2"
                   href="#"

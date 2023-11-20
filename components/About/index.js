@@ -48,13 +48,13 @@ const index = () => {
                 className="img-fluid w-100"
               />
             </div>
-            <div className="col-md-4 mb-4 px-md-1">
+            <a className="col-md-4 mb-4 px-md-1" href="/start">
               <Image
                 src={fortyyearsImg}
                 alt="40 Years"
                 className="img-fluid mw-100"
               />
-            </div>
+            </a>
             <div className="col-md-4 mb-4 px-md-1">
               <Image
                 src={exportingImg}

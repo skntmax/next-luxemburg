@@ -61,6 +61,10 @@
   box-shadow: 0 0 0 0 #fff;
 }
 
+.nav-item {
+  color: red;
+}
+
 @keyframes pulsIn {
   0% {
     box-shadow: inset 0 0 0 1rem #fff;
