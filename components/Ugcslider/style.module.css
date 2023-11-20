@@ -54,14 +54,8 @@ background-image: url("../../public/assets/images//lookbook.png");
     padding: 1%;
 /* background-image: url("../../public/assets/images//lookbook.png");  */
 
-    /* z-index: 11; */
-    /* perspective: 100px; */
- }
-.img{
-    /* width: 100%; */
- /* position: relative; */
- /* z-index: 11; */
-    transition: transform 1s;
+  /* z-index: 11; */
+  /* perspective: 100px; */
 }
  
 .img:hover{

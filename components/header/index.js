@@ -113,11 +113,8 @@ const Header = (props) => {
                   Home
                 </a>
               </li>
-              <div className="dropdown nav-item">
-                <a className="fs-16 text_black" href="/about">
-                  About Us
-                </a>
-                {/* <Link
+              <div className="dropdown">
+                <Link
                   className="btn dropdown-toggle text_black fs-16 p-0 border-0 shadow-none"
                   type="button"
                   id="dropdownabout"
@@ -127,7 +124,7 @@ const Header = (props) => {
                   href={"/about"}
                 >
                   <p style={{ cursor: "pointer" }}>About Us</p>
-                </Link> */}
+                </Link>
 
                 {/* <ul className="dropdown-menu" aria-labelledby="dropdownabout">
                   <li>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 // import './../assets/'
 // import './.assets./css./hp.css'
 import { AiOutlineSearch } from "react-icons/ai";
@@ -32,6 +32,7 @@ import {
 import { useRouter } from "next/router";
 import styles from "../../styles/product.module.css";
 
+
 // import Products from './Products'
 
 const ProductPage = (props) => {
@@ -42,8 +43,14 @@ const ProductPage = (props) => {
 
   const [cat_prdcts, setPrd] = useState(props.cat_prd);
   const [selected_prd, set_selected_prd] = useState(props.selected_prd_data);
+  const [pop_picks_array,setPop_picks_array] = useState([]);
 
-  const pop_picks_array = JSON.parse(sessionStorage.getItem("pop_picks"));
+  useEffect(()=>{
+    if(typeof sessionStorage!=undefined){
+      setPop_picks_array(JSON.parse(sessionStorage?.getItem("pop_picks"))||[])
+    }
+
+  },[]);
 
   const getSelectedItems = async (...args) => {
     const [selected_prod_id, main_cat_id] = args;
@@ -474,9 +481,9 @@ const ProductPage = (props) => {
                     </div>
                   </div>
                   <p className={styles.popularFont}>
-                    {pop_picks_array[0].title}
+                    Color by
                     <br />
-                    {/* Number */}
+                    Number
                   </p>
                 </div>
                 <div className="card p-2 border-0">
@@ -498,9 +505,9 @@ const ProductPage = (props) => {
                     </div>
                   </div>
                   <p className={styles.popularFont}>
-                    {pop_picks_array[1].title}
+                    Color by
                     <br />
-                    {/* Number */}
+                    Number
                   </p>
                 </div>
                 <div className="card p-2 border-0">
@@ -522,9 +529,9 @@ const ProductPage = (props) => {
                     </div>
                   </div>
                   <p className={styles.popularFont}>
-                    {pop_picks_array[2].title}
+                    Color by
                     <br />
-                    {/* Number */}
+                    Number
                   </p>
                 </div>
               </div>

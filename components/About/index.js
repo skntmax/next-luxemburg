@@ -35,37 +35,24 @@ const index = () => {
                 nine years ago and
                 {`today it is India's leading Premium fine Writing Brand, since its inception it has
 
-                                added many laurels to its credit`}
-              </p>
-            </div>
-            <div className="col-md-2"></div>
-          </div>
-          <div className="row mt-5">
-            <div className="col-md-4 mb-4 px-md-1">
-              <Image
-                src={birthofluxor}
-                alt="birth of luxor"
-                className="img-fluid w-100"
-              />
-            </div>
-            <a className="col-md-4 mb-4 px-md-1" href="/start">
-              <Image
-                src={fortyyearsImg}
-                alt="40 Years"
-                className="img-fluid mw-100"
-              />
-            </a>
-            <div className="col-md-4 mb-4 px-md-1">
-              <Image
-                src={exportingImg}
-                alt="Exporting"
-                className="img-fluid w-100"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-      <h3 className="fs-40 my-5 fw-700 text-center">LEADERSHIP</h3>
+                                added many laurels to its credit`}</p>
+                        </div>
+                        <div className="col-md-2"></div>
+                    </div>
+                    <div className="row mt-5">
+                        <div className="col-md-4 mb-4 px-md-1">
+                            <Image src={birthofluxor} alt="birth of luxor" className='img-fluid w-100' />
+                        </div>
+                        <div className="col-md-4 mb-4 px-md-1">
+                            <Image src={fortyyearsImg} alt="40 Years"  className='img-fluid mw-100' />
+                        </div>
+                        <div className="col-md-4 mb-4 px-md-1">
+                            <Image src={exportingImg} alt="Exporting" className='img-fluid w-100' />
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <h3 className='fs-40 my-5 fw-700 text-center'>LEADERSHIP</h3>
 
       <section className="bg_grey">
         <div className="container">

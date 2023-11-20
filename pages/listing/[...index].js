@@ -25,28 +25,7 @@ const index = (props) => {
     list: props.all_prd,
   });
 
-  useEffect(() => {
-    if (props.all_prd && props.all_prd.length > 0) {
-      const popular_pics = props.all_prd.map((ele) => {
-        let image_file =
-          ele.root_folder_name && ele.file_name
-            ? process.env.NEXT_PUBLIC_BASE_URL +
-              "/" +
-              ele.root_folder_name +
-              ele.file_name
-            : "";
-        return {
-          title: ele.name,
-          image: image_file,
-        };
-      });
-      console.log("popular_pics-->", popular_pics);
-      sessionStorage.setItem(
-        "pop_picks",
-        JSON.stringify([popular_pics[0], popular_pics[2], popular_pics[6]])
-      );
-    }
-  }, []);
+  useEffect(() => {}, []);
 
   const { cat_name: category_name } = data;
 
