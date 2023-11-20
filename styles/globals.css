@@ -1081,16 +1081,18 @@ carousel .slider-wrapper.axis-horizontal .slider .slide {
   position: absolute;
   background-color: red !important;
   border-radius: 45px;
-  /* padding: 24px 47px; */
-  padding: 17px 50px;
-  right: 15%;
+  padding: 24px 47px;
+  right: 20%;
   top: 30%;
   font-weight: bolder;
+  z-index: 999;
 }
 
 .art-gallery {
   position: relative;
 }
+
+
 
 /* ---------------------------------------------------------end----------------------------------------------------------- */
 

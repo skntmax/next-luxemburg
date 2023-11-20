@@ -160,7 +160,7 @@ const ProductPage = (props) => {
                 height={70}
                 src={
                   Array.isArray(product_image_files)
-                    ? product_image_files[0]
+                    ? product_image_files[1]
                     : broadmarker
                 }
                 alt="Marker"

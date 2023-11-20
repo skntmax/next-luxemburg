@@ -895,9 +895,10 @@ function App(props) {
               </span>
             </div>
           </div>
-          <div className="d-flex mt-0 gap-5 justify-content-evenly">
-            <div className="w_28">
+          <div className="d-flex mt-0 gap-5 justify-content-between">
+            <div style={{marginLeft:'16%'}} className="w_28">
               <span
+
                 data-wow-delay="0.5s"
                 className=" wow animate__fadeInBottomLeft animate__animated"
               >
@@ -908,7 +909,7 @@ function App(props) {
                 />
               </span>
             </div>
-            <div className="w_28">
+            <div style={{marginRight:'16%'}} className="w_28">
               <span
                 data-wow-delay="1s"
                 className=" wow animate__fadeInBottomRight animate__animated"
