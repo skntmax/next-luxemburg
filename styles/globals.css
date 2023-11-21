@@ -1793,7 +1793,7 @@ transition: all 1s ease; */
 
 .nav-item a::before {
   background: #e91e63;
-  transform-origin: 100% 50%;
+  /* transform-origin: 100% 50%; */
 }
 
 .nav-item a:hover::before {

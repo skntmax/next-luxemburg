@@ -37,8 +37,13 @@ import styles from "../../styles/product.module.css";
 const ProductPage = (props) => {
   let router = useRouter();
 
+  const data = router.query;
+  console.log("prod data-->", data);
+
   const [cat_prdcts, setPrd] = useState(props.cat_prd);
   const [selected_prd, set_selected_prd] = useState(props.selected_prd_data);
+
+  const pop_picks_array = JSON.parse(sessionStorage.getItem("pop_picks"));
 
   const getSelectedItems = async (...args) => {
     const [selected_prod_id, main_cat_id] = args;
@@ -455,15 +460,23 @@ const ProductPage = (props) => {
                     <div className="product-img">
                       <Image
                         className="img-fluid"
-                        src={popular1}
+                        src={
+                          pop_picks_array[0]?.image
+                            ? pop_picks_array[0].image
+                            : popular1
+                        }
                         alt="homepage"
+                        width={300}
+                        height={300}
+                        objectFit="contain"
+                        loading="lazy"
                       />
                     </div>
                   </div>
                   <p className={styles.popularFont}>
-                    Color by
+                    {pop_picks_array[0].title}
                     <br />
-                    Number
+                    {/* Number */}
                   </p>
                 </div>
                 <div className="card p-2 border-0">
@@ -471,15 +484,23 @@ const ProductPage = (props) => {
                     <div className="product-img">
                       <Image
                         className="img-fluid"
-                        src={popular1}
+                        src={
+                          pop_picks_array[1]?.image
+                            ? pop_picks_array[1].image
+                            : popular2
+                        }
                         alt="homepage"
+                        width={300}
+                        height={300}
+                        objectFit="contain"
+                        loading="lazy"
                       />
                     </div>
                   </div>
                   <p className={styles.popularFont}>
-                    Color by
+                    {pop_picks_array[1].title}
                     <br />
-                    Number
+                    {/* Number */}
                   </p>
                 </div>
                 <div className="card p-2 border-0">
@@ -487,15 +508,23 @@ const ProductPage = (props) => {
                     <div className="product-img">
                       <Image
                         className="img-fluid"
-                        src={popular1}
+                        src={
+                          pop_picks_array[2]?.image
+                            ? pop_picks_array[2].image
+                            : popular1
+                        }
                         alt="homepage"
+                        width={300}
+                        height={300}
+                        objectFit="contain"
+                        loading="lazy"
                       />
                     </div>
                   </div>
                   <p className={styles.popularFont}>
-                    Color by
+                    {pop_picks_array[2].title}
                     <br />
-                    Number
+                    {/* Number */}
                   </p>
                 </div>
               </div>
