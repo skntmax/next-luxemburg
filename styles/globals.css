@@ -1754,7 +1754,7 @@ carousel .slider-wrapper.axis-horizontal .slider .slide {
   width: 87%;
   left: 8%;
   text-align: center;
-  background: #f80103c7;
+  /* background: #f80103c7; */
 }
 .btn_secondary {
   background-color: #da0428 !important;

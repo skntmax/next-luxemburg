@@ -17,7 +17,6 @@ import { useRouter } from "next/router";
 const index = (props) => {
   let router = useRouter();
 
-  console.log(props);
   const [data, setData] = useState({
     page_no: props.page_no,
     total_prd: props.total,
@@ -25,7 +24,22 @@ const index = (props) => {
     list: props.all_prd,
   });
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    const pop_picks_data = props.all_prd.map((item) => {
+      return {
+        title: item.name,
+        imageURL:
+          process.env.NEXT_PUBLIC_BASE_URL +
+          "/" +
+          item.root_folder_name +
+          item.file_name,
+      };
+    });
+
+    if (typeof sessionStorage != undefined) {
+      sessionStorage.setItem("pop_picks", JSON.stringify(pop_picks_data));
+    }
+  }, []);
 
   const { cat_name: category_name } = data;
 

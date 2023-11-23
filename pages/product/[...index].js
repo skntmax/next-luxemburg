@@ -32,7 +32,6 @@ import {
 import { useRouter } from "next/router";
 import styles from "../../styles/product.module.css";
 
-
 // import Products from './Products'
 
 const ProductPage = (props) => {
@@ -43,14 +42,15 @@ const ProductPage = (props) => {
 
   const [cat_prdcts, setPrd] = useState(props.cat_prd);
   const [selected_prd, set_selected_prd] = useState(props.selected_prd_data);
-  const [pop_picks_array,setPop_picks_array] = useState([]);
+  const [pop_picks_array, setPop_picks_array] = useState([]);
 
-  useEffect(()=>{
-    if(typeof sessionStorage!=undefined){
-      setPop_picks_array(JSON.parse(sessionStorage?.getItem("pop_picks"))||[])
+  useEffect(() => {
+    if (typeof sessionStorage != undefined) {
+      setPop_picks_array(
+        JSON.parse(sessionStorage?.getItem("pop_picks")) || []
+      );
     }
-
-  },[]);
+  }, []);
 
   const getSelectedItems = async (...args) => {
     const [selected_prod_id, main_cat_id] = args;
@@ -184,7 +184,12 @@ const ProductPage = (props) => {
               {/* ----------------part 1----- */}
               <div className=" rounded-0 p-4">
                 <div className="">
-                  <h2 className="fs-30 fw-700">{selected_prd.name}</h2>
+                  <h2
+                    className="fs-30 fw-700"
+                    style={{ textTransform: "uppercase" }}
+                  >
+                    {selected_prd.name}
+                  </h2>
 
                   <p className="fs-18 text_justify">
                     {selected_prd.description}
@@ -462,38 +467,37 @@ const ProductPage = (props) => {
               </h2>
 
               <div className="popular_picks mb-5">
-                <div className="card p-2 border-0">
-                  <div className="card-body">
-                    <div className="product-img">
-                      <Image
-                        className="img-fluid"
-                        src={
-                          pop_picks_array[0]?.image
-                            ? pop_picks_array[0].image
-                            : popular1
-                        }
-                        alt="homepage"
-                        width={300}
-                        height={300}
-                        objectFit="contain"
-                        loading="lazy"
-                      />
+                {pop_picks_array.slice(0, 3).map((item) => (
+                  <div className="card p-2 border-0">
+                    <div className="card-body">
+                      <div className="product-img">
+                        <Image
+                          className="img-fluid"
+                          src={item?.imageURL ? item.imageURL : popular1}
+                          alt="homepage"
+                          width={300}
+                          height={300}
+                          objectFit="contain"
+                          loading="lazy"
+                        />
+                      </div>
                     </div>
+                    <p
+                      className={styles.popularFont}
+                      style={{ textTransform: "uppercase" }}
+                    >
+                      {item.title}
+                    </p>
                   </div>
-                  <p className={styles.popularFont}>
-                    Color by
-                    <br />
-                    Number
-                  </p>
-                </div>
-                <div className="card p-2 border-0">
+                ))}
+                {/* <div className="card p-2 border-0">
                   <div className="card-body">
                     <div className="product-img">
                       <Image
                         className="img-fluid"
                         src={
-                          pop_picks_array[1]?.image
-                            ? pop_picks_array[1].image
+                          pop_picks_array[1]?.imageURL
+                            ? pop_picks_array[1].imageURL
                             : popular2
                         }
                         alt="homepage"
@@ -509,15 +513,15 @@ const ProductPage = (props) => {
                     <br />
                     Number
                   </p>
-                </div>
-                <div className="card p-2 border-0">
+                </div> */}
+                {/* <div className="card p-2 border-0">
                   <div className="card-body">
                     <div className="product-img">
                       <Image
                         className="img-fluid"
                         src={
-                          pop_picks_array[2]?.image
-                            ? pop_picks_array[2].image
+                          pop_picks_array[2]?.imageURL
+                            ? pop_picks_array[2].imageURL
                             : popular1
                         }
                         alt="homepage"
@@ -533,7 +537,7 @@ const ProductPage = (props) => {
                     <br />
                     Number
                   </p>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>

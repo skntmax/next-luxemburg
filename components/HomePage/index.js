@@ -825,7 +825,9 @@ function App(props) {
 
       <section className="py-5">
         <div className="container-fluid p-0">
-          <h2 className="mt-4 text-center fs-40 fw-700">Luxor’s Journey</h2>
+          <h2 className="mt-4 text-center fs-40 fw-700">
+            Exported to Over 100+ Countries
+          </h2>
           <div className="mt-5">
             {/*          <Image
             className="img-fluid w-100"
@@ -896,9 +898,8 @@ function App(props) {
             </div>
           </div>
           <div className="d-flex mt-0 gap-5 justify-content-between">
-            <div style={{marginLeft:'16%'}} className="w_28">
+            <div style={{ marginLeft: "16%" }} className="w_28">
               <span
-
                 data-wow-delay="0.5s"
                 className=" wow animate__fadeInBottomLeft animate__animated"
               >
@@ -909,7 +910,7 @@ function App(props) {
                 />
               </span>
             </div>
-            <div style={{marginRight:'16%'}} className="w_28">
+            <div style={{ marginRight: "16%" }} className="w_28">
               <span
                 data-wow-delay="1s"
                 className=" wow animate__fadeInBottomRight animate__animated"
@@ -960,9 +961,11 @@ function App(props) {
       </section> */}
 
       {/* ======== */}
-      <section  className="py-5 position-relative">
-        <div style={{width: '100vw',
-    height: '600px'}} className="artGallery-img">
+      <section className="py-5 position-relative">
+        <div
+          style={{ width: "100vw", height: "600px" }}
+          className="artGallery-img"
+        >
           <div className={`side-gallery ${gallery ? "full" : ""}`}>
             <div
               onClick={() => {
@@ -971,43 +974,41 @@ function App(props) {
               className={`side-curve-left`}
             ></div>
             <div className="container-fluid p-0">
-             
-                <div className="row flex-nowrap overflow-auto">
-                  <div className="col-md-4  ">
-                    <iframe
-                      width="100%"
-                      className="rounded"
-                      height="300px"
-                      src="https://www.youtube.com/embed/P2PmCXQGKxU?si=uGDWl30nggey6v9M"
-                      title="YouTube video player"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      allowFullScreen
-                    ></iframe>
-                  </div>
-                  <div className="col-md-4  ">
-                    <iframe
-                      width="100%"
-                      className="rounded"
-                      height="300px"
-                      src="https://www.youtube.com/embed/P2PmCXQGKxU?si=uGDWl30nggey6v9M"
-                      title="YouTube video player"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      allowFullScreen
-                    ></iframe>
-                  </div>
-                  <div className="col-md-4  ">
-                    <iframe
-                      width="100%"
-                      className="rounded"
-                      height="300px"
-                      src="https://www.youtube.com/embed/P2PmCXQGKxU?si=uGDWl30nggey6v9M"
-                      title="YouTube video player"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      allowFullScreen
-                    ></iframe>
-                  </div>
+              <div className="row flex-nowrap overflow-auto">
+                <div className="col-md-4  ">
+                  <iframe
+                    width="100%"
+                    className="rounded"
+                    height="300px"
+                    src="https://www.youtube.com/embed/P2PmCXQGKxU?si=uGDWl30nggey6v9M"
+                    title="YouTube video player"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                  ></iframe>
                 </div>
-             
+                <div className="col-md-4  ">
+                  <iframe
+                    width="100%"
+                    className="rounded"
+                    height="300px"
+                    src="https://www.youtube.com/embed/P2PmCXQGKxU?si=uGDWl30nggey6v9M"
+                    title="YouTube video player"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                  ></iframe>
+                </div>
+                <div className="col-md-4  ">
+                  <iframe
+                    width="100%"
+                    className="rounded"
+                    height="300px"
+                    src="https://www.youtube.com/embed/P2PmCXQGKxU?si=uGDWl30nggey6v9M"
+                    title="YouTube video player"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                  ></iframe>
+                </div>
+              </div>
             </div>
 
             <div className={`side-curve ${gallery ? "full" : ""}`}></div>
@@ -1072,26 +1073,32 @@ function App(props) {
           <h2 className="fs-40 text_lightred fw-600 text-center">Look Book</h2>
 
           <div className="row mt-4">
-            <div className="col-md-4 mb-3 col-lg-4 position-relative">
+            <div
+              className={`col-md-4 mb-3 col-lg-4 position-relative ${style.lookBook1}`}
+            >
               <Image className="img-fluid rounded" src={I1} alt="look Book" />
               <div className="text_lookbook">
-                <p className="fs-20 text-white fw-600 blog-text">
+                <p className={`fs-20 text-white fw-600 ${style.blogText1}`}>
                   Up Your Presentation Game
                 </p>
               </div>
             </div>
-            <div className="col-md-4 mb-3 col-lg-4 position-relative">
+            <div
+              className={`col-md-4 mb-3 col-lg-4 position-relative ${style.lookBook2}`}
+            >
               <Image src={I2} className="img-fluid rounded" alt="look Book" />
               <div className="text_lookbook">
-                <p className="fs-20 text-white fw-600 blog-text">
+                <p className={`fs-20 text-white fw-600 ${style.blogText2}`}>
                   Spark your creativity with Luxor pens
                 </p>
               </div>
             </div>
-            <div className="col-md-4 mb-3 col-lg-4 position-relative">
+            <div
+              className={`col-md-4 mb-3 col-lg-4 position-relative ${style.lookBook3}`}
+            >
               <Image className="img-fluid rounded" alt="look Book" src={I3} />
               <div className="text_lookbook">
-                <p className="fs-20 text-white fw-600 blog-text">
+                <p className={`fs-20 text-white fw-600 ${style.blogText3}`}>
                   How to choose the best highlighter pen
                 </p>
               </div>

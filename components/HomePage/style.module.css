@@ -1,3 +1,31 @@
-.ugcb{
-background-image: url("../../public/assets/images//lookbook.png");
+.ugcb {
+  background-image: url("../../public/assets/images//lookbook.png");
+}
+
+.blogText1 {
+  opacity: 0;
+  transition: opacity 0s ease-in 700ms, opacity 600ms;
+}
+
+.lookBook1:hover .blogText1 {
+  opacity: 1;
+  transition: opacity 0s ease-in 700ms, opacity 600ms;
+}
+.blogText2 {
+  opacity: 0;
+  transition: opacity 0s ease-in 700ms, opacity 600ms;
+}
+
+.lookBook2:hover .blogText2 {
+  opacity: 1;
+  transition: opacity 0s ease-in 700ms, opacity 600ms;
+}
+.blogText3 {
+  opacity: 0;
+  transition: opacity 0s ease-in 700ms, opacity 600ms;
+}
+
+.lookBook3:hover .blogText3 {
+  opacity: 1;
+  transition: opacity 0s ease-in 700ms, opacity 600ms;
 }

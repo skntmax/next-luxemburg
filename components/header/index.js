@@ -113,7 +113,12 @@ const Header = (props) => {
                   Home
                 </a>
               </li>
-              <div className="dropdown">
+              <li className="nav-item ">
+                <a className="fs-16 text_black" href="/about">
+                  About Us
+                </a>
+              </li>
+              {/* <div className="dropdown">
                 <Link
                   className="btn dropdown-toggle text_black fs-16 p-0 border-0 shadow-none"
                   type="button"
@@ -126,7 +131,7 @@ const Header = (props) => {
                   <p style={{ cursor: "pointer" }}>About Us</p>
                 </Link>
 
-                {/* <ul className="dropdown-menu" aria-labelledby="dropdownabout">
+                <ul className="dropdown-menu" aria-labelledby="dropdownabout">
                   <li>
                     <a className="dropdown-item fs-16 text_black" href="/about">
                       About Us
@@ -150,8 +155,8 @@ const Header = (props) => {
                       Milestone
                     </a>
                   </li>
-                </ul> */}
-              </div>
+                </ul>
+              </div> */}
               <div className="dropdown">
                 <li className="dropdown nav-item">
                   <a
