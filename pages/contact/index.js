@@ -4,6 +4,7 @@ import { AiOutlineSearch } from "react-icons/ai";
 import mail_us from "public/assets/images/aboutpage/mail_us.jpg";
 import Image from "next/image";
 import ContactUsBanner from "public/assets/images/contact-us-banner.jpg";
+import axios from "axios";
 
 const index = () => {
   const nameRef = useRef();
@@ -69,11 +70,21 @@ const index = () => {
       setMobileNoError("Mobile number should be 10 digits!");
     }
 
-    nameRef.current.value = "";
-    emailRef.current.value = "";
-    mobileNoRef.current.value = "";
-    companyNameRef.current.value = "";
-    yourRequirementsRef.current.value = "";
+    try {
+      const submittedData = await axios.post(
+        "http://10.5.50.127:8000/v1/submit-contact",
+        formData
+      );
+      nameRef.current.value = "";
+      emailRef.current.value = "";
+      mobileNoRef.current.value = "";
+      companyNameRef.current.value = "";
+      yourRequirementsRef.current.value = "";
+      alert("Sent Successfully!");
+    } catch (err) {
+      alert("Failed!");
+    }
+
     // alert("Form Submitted Successfully");
   };
 
