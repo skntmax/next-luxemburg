@@ -252,6 +252,7 @@
 
 .text_green {
   color: green;
+  text-transform: capitalize;
 }
 
 .text_lightred {

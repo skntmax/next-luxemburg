@@ -808,7 +808,7 @@ function App(props) {
       </section>
 
       <section className="py-5">
-        <h2 className="mt-4 text-center fs-40 fw-700">
+        <h2 className="mt-4 text-center fs-40 fw-700 mb-4">
           Exported To Over 106+ Countries
         </h2>
         <div className="">
@@ -834,8 +834,14 @@ function App(props) {
             src={Image5}
             alt="Luxor Journey"
             /> */}
-
-            <JourneyMap />
+            <video
+              autoPlay={true}
+              muted
+              style={{ objectFit: "contain", width: "100%", height: "100%" }}
+              loop
+              src={"http://103.25.130.33:8000/v1/2.mp4"}
+            />
+            {/* <JourneyMap /> */}
             {/* <ImageMap /> */}
           </div>
         </div>
@@ -1136,7 +1142,9 @@ function App(props) {
 
           </div>*/}
         </div>
-        <Ugcslider />
+        <div>
+          <Ugcslider />
+        </div>
       </section>
 
       {/* ---------------------------------------------organisation container---------------------------------------------- */}

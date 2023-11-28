@@ -31,9 +31,9 @@ const index = () => {
     const formData = {
       name,
       email,
-      mobileNo,
+      contactNumber: mobileNo,
       companyName,
-      yourRequirement,
+      requirements: yourRequirement,
     };
 
     console.log("formData-->", formData);
@@ -72,7 +72,7 @@ const index = () => {
 
     try {
       const submittedData = await axios.post(
-        "http://10.5.50.127:8000/v1/submit-contact",
+        "http://192.168.0.108:8000/v1/submit-contact",
         formData
       );
       nameRef.current.value = "";

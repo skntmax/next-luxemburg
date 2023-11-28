@@ -1718,6 +1718,10 @@ carousel .slider-wrapper.axis-horizontal .slider .slide {
   top: -10px;
 }
 
+.dropdown-submenu {
+  text-transform: capitalize;
+}
+
 .prd_container {
   display: flex;
   gap: 2;

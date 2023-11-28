@@ -13,6 +13,7 @@ const Header = (props) => {
   // let all_prd =props.all_prdcts
   let router = useRouter();
   const [all_prd, set_all_prd] = useState([]);
+  const [language, setLanguage] = useState("");
 
   useEffect(() => {
     (async function () {
@@ -20,6 +21,8 @@ const Header = (props) => {
       if (status) set_all_prd(result);
     })();
   }, [all_prd.length]);
+
+  console.log("language-->", language);
 
   const goToProductPage = (item, current_id, sub_category) => {
     let closeButton = document.getElementById("close_button");
@@ -87,7 +90,7 @@ const Header = (props) => {
               <div>
                 <select
                   className="form-select selectData shadow-none input_field"
-                  onChange={(e) => {}}
+                  onChange={(e) => setLanguage(e.target.value)}
                 >
                   <option selected>Select Language</option>
                   <option value="1">English</option>
