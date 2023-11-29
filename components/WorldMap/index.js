@@ -9,6 +9,7 @@ import uae from "public/assets/uae.png";
 
 import Worldmap from "public/assets/World_Map.png";
 import Image from "next/image";
+import styles from "./worldMap.module.css";
 
 export default function WorldMap() {
   const imageStyle = {
@@ -22,7 +23,7 @@ export default function WorldMap() {
     <React.Fragment>
       <div className="position-relative">
         <div className="f1">
-          <Image className="" src={usa} style={imageStyle} />
+          <Image src={usa} className={styles.imageStyle} />
           <div>
             <h3 className="text-light c1"></h3>
             <p className="text-light c1">USA</p>
@@ -236,7 +237,7 @@ export default function WorldMap() {
           </div>
         </div>
         <div className="">
-          <img src={Worldmap.src} style={imageStyle} />
+          <img src={Worldmap.src} className={styles.imageStyle} />
         </div>
       </div>
     </React.Fragment>

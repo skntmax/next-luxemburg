@@ -14,6 +14,13 @@ const Header = (props) => {
   let router = useRouter();
   const [all_prd, set_all_prd] = useState([]);
   const [language, setLanguage] = useState("");
+  const [searchedString, setSearchedString] = useState("");
+  const [all_main_cat_wise_prods, set_all_main_cat_wise_prods] = useState(
+    props.all_main_cat_wise_prods
+  );
+
+  const [filtered_main_cat_wise_prods, set_filtered_main_cat_wise_prods] =
+    useState([]);
 
   useEffect(() => {
     (async function () {
@@ -22,7 +29,21 @@ const Header = (props) => {
     })();
   }, [all_prd.length]);
 
-  console.log("language-->", language);
+  const searchHanlder = () => {
+    console.log("SearchString-->", searchedString);
+    const filtered_cat_wise_prods = all_main_cat_wise_prods.filter((item) =>
+      item.name.toLowerCase().includes(searchedString.toLowerCase())
+    );
+    set_filtered_main_cat_wise_prods(filtered_cat_wise_prods.slice(0, 5));
+  };
+
+  useEffect(() => {
+    searchHanlder();
+  }, [searchedString]);
+
+  console.log("filtered_Data-->", filtered_main_cat_wise_prods);
+
+  // console.log("language-->", language);
 
   const goToProductPage = (item, current_id, sub_category) => {
     let closeButton = document.getElementById("close_button");
@@ -74,11 +95,20 @@ const Header = (props) => {
               <div className="">
                 <form className="d-flex">
                   <input
+                    list="filtered_main_cat_wise_prods"
                     className="form-control me-2 input_field"
                     type="search"
                     placeholder="Search"
                     aria-label="Search"
+                    onChange={(e) => setSearchedString(e.target.value)}
                   />
+                  {searchedString !== "" && (
+                    <datalist id="filtered_main_cat_wise_prods">
+                      {filtered_main_cat_wise_prods.map((item) => (
+                        <option>{item.name}</option>
+                      ))}
+                    </datalist>
+                  )}
                   <button
                     className="btn me-2 shadow-none border bg-white"
                     type="submit"
@@ -213,8 +243,8 @@ const Header = (props) => {
                                         <a className="dropdown-item">
                                           {ele.category
                                             ? ele.category
-                                            : ele.marker_category
-                                            ? ele.marker_category
+                                            : ele.marker_category.toLowerCase()
+                                            ? ele.marker_category.toLowerCase()
                                             : ""}
                                         </a>
                                       </li>

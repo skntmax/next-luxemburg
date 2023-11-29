@@ -70,6 +70,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 function App(props) {
   const [all_prdcts, set_all_prdcts] = useState(props.all_prdcts);
+
   let router = useRouter();
   let prd_pen = useRef();
 
@@ -808,7 +809,10 @@ function App(props) {
       </section>
 
       <section className="py-5">
-        <h2 className="mt-4 text-center fs-40 fw-700 mb-4">
+        <h2
+          className="mt-4 text-center fs-40 fw-700"
+          // style={{ marginBottom: "7rem" }}
+        >
           Exported To Over 106+ Countries
         </h2>
         <div className="">
