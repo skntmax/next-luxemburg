@@ -262,14 +262,16 @@ input {
 .carouselItem {
   display: flex;
   grid-template-columns: repeat(auto-fit, minmax(200px, auto));
-  width: 100%;
+
   /* justify-content: center; */
 
   gap: 5rem;
   padding-left: 8rem;
   padding-right: 8rem;
-  width: 100%;
-  /* justify-content: center; */
+  width: 95%;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
 
   gap: 5rem;
   padding-left: 8rem;
@@ -1490,6 +1492,30 @@ carousel .slider-wrapper.axis-horizontal .slider .slide {
     flex-direction: row-reverse;
   }
 } */
+
+@media screen and (max-width: 560px) {
+  .carouselItem {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(100%, 1fr));
+    /* justify-content: center; */
+    gap: 5rem;
+    /* padding-left: 8rem; */
+    /* padding-right: 8rem; */
+    width: 83%;
+    justify-content: start;
+    margin-left: auto;
+    margin-right: auto;
+    /* gap: 5rem; */
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 3rem;
+    overflow-x: scroll;
+  }
+
+  .carouselItem img {
+    margin-left: 2rem;
+  }
+}
 
 @media (max-width: 768px) {
   .header {

@@ -373,6 +373,7 @@
   .Art_gallery_button {
     border-radius: 20px;
     padding: 8px 15px;
+    top: 23rem;
   }
 
   .fs-40 {
@@ -446,6 +447,6 @@
 
   .popular_picks,
   .products_list {
-    margin-top: -20%;
+    margin-top: -15%;
   }
 }

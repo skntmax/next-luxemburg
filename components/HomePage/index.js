@@ -408,7 +408,7 @@ function App(props) {
               justifyContent: "center",
             }}
           >
-            <span
+            {/* <span
               className="new_launch_marker"
               style={{
                 position: "relative",
@@ -417,7 +417,7 @@ function App(props) {
               }}
             >
               <div className="pen_marker_line"></div>
-            </span>
+            </span> */}
 
             <h3 className="fs-40 fw-700 text_black">New Launches</h3>
           </div>
@@ -755,8 +755,11 @@ function App(props) {
           </div> */}
 
           <section className="py-5">
-            <div className="products_list" style={{ marginTop: "-15%" }}>
-              <div className="row flex-nowrap overflow-auto px-4 ">
+            <div className="products_list">
+              <div
+                className="row flex-nowrap overflow-auto px-4"
+                style={{ gap: "1rem" }}
+              >
                 {all_prdcts.length > 0 &&
                   all_prdcts.map((ele) => {
                     let image_file = ele._doc
@@ -1117,7 +1120,10 @@ function App(props) {
         </div>
       </section>
 
-      <section className="py-5 overflow-hidden">
+      <section
+        className="py-5 overflow-hidden"
+        style={{ backgroundColor: "#f4f4f4f4" }}
+      >
         <div className={`container-fluid`}>
           {/* <div className="container">
           <div className="row flex-nowrap overflow-auto my-4">

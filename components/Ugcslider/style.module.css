@@ -77,3 +77,9 @@
 
 @keyframes fade {
 }
+
+@media screen and (max-width: 479px) {
+  .body {
+    min-height: 70vh;
+  }
+}

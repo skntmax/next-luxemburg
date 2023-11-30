@@ -11,21 +11,40 @@ function index() {
               <ul className="text-white">
                 <div className="d-flex justify-content-lg-between">
                   <div>
-                    <li className="mb-2  d-block fs-14 ">
-                      <i class="fa-solid fa-play me-2 fs-10"></i>PCW
+                    <li className="mb-2 d-block fs-14 ">
+                      <a
+                        href={"/listing/PCW/653917908eef3ad8ecb0d295"}
+                        style={{ color: "white" }}
+                      >
+                        <i class="fa-solid fa-play me-2 fs-10"></i>PCW
+                      </a>
                     </li>
                     <li className="mb-2  d-block fs-14">
                       <i class="fa-solid fa-play me-2 fs-10"></i>Pens
                     </li>
-                    <li className="mb-2  d-block fs-14">
-                      <i class="fa-solid fa-play me-2 fs-10"></i>Highlighters
+                    <li className="mb-2 d-block fs-14">
+                      <a
+                        href="/listing/Highlighters/653911ba8e6902ca42c1d6e9"
+                        style={{
+                          color: "white",
+                        }}
+                      >
+                        <i class="fa-solid fa-play me-2 fs-10"></i>Highlighters
+                      </a>
                     </li>
                     <li className="mb-2  d-block fs-14">
                       <i class="fa-solid fa-play me-2 fs-10"></i>Display Pack
                     </li>
                     <li className="mb-2  d-block fs-14">
-                      <i class="fa-solid fa-play me-2 fs-10"></i>Notebooks &
-                      Stationery
+                      <a
+                        href="/listing/Notebook%20and%20Stationery/653911fdeb3253e94826bcac"
+                        style={{
+                          color: "white",
+                        }}
+                      >
+                        <i class="fa-solid fa-play me-2 fs-10"></i>Notebooks &
+                        Stationery
+                      </a>
                     </li>
                   </div>
                   <div>
@@ -33,10 +52,24 @@ function index() {
                       <i class="fa-solid fa-play me-2 fs-10"></i>Markers
                     </li>
                     <li className="mb-2  d-block fs-14">
-                      <i class="fa-solid fa-play me-2 fs-10"></i>Art & Hobby
+                      <a
+                        href="/listing/Art%20&%20Hobby/653911ce6d8ae7473f9325a7"
+                        style={{
+                          color: "white",
+                        }}
+                      >
+                        <i class="fa-solid fa-play me-2 fs-10"></i>Art & Hobby
+                      </a>
                     </li>
                     <li className="mb-2  d-block fs-14">
-                      <i class="fa-solid fa-play me-2 fs-10"></i>Value Packs
+                      <a
+                        href="/listing/Value%20Packs/6539120edb6bdba29040cb2c"
+                        style={{
+                          color: "white",
+                        }}
+                      >
+                        <i class="fa-solid fa-play me-2 fs-10"></i>Value Packs
+                      </a>
                     </li>
                   </div>
                 </div>
@@ -48,8 +81,8 @@ function index() {
               <ul className="text-white ">
                 <li className="mb-2 d-block fs-14">
                   {" "}
-                  <a href="/aboutus" className="text-white">
-                    Aboutus
+                  <a href="/about" className="text-white">
+                    About Us
                   </a>
                 </li>
                 <li className="mb-2 d-block fs-14">Career</li>

@@ -9,6 +9,9 @@ import Logo from "public/assets/luxorlogo.png";
 import { useRouter } from "next/router";
 import styles from "styles/productbar.module.css";
 
+import { SelectPicker } from "rsuite";
+import { getCookie, hasCookie, setCookie } from "cookies-next";
+
 const Header = (props) => {
   // let all_prd =props.all_prdcts
   let router = useRouter();
@@ -21,6 +24,48 @@ const Header = (props) => {
 
   const [filtered_main_cat_wise_prods, set_filtered_main_cat_wise_prods] =
     useState([]);
+
+  const [selected, setSelected] = useState(null);
+
+  useEffect(() => {
+    var addScript = document.createElement("script");
+    addScript.setAttribute(
+      "src",
+      "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+    );
+    document.body.appendChild(addScript);
+    window.googleTranslateElementInit = googleTranslateElementInit;
+
+    if (hasCookie("googtrans")) {
+      setSelected(getCookie("googtrans"));
+    } else {
+      setSelected("/auto/en");
+    }
+  }, []);
+
+  const googleTranslateElementInit = () => {
+    new window.google.translate.TranslateElement(
+      {
+        pageLanguage: "auto",
+        autoDisplay: false,
+        includedLanguages: "ru,en,pl", // If you remove it, by default all google supported language will be included
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+      },
+      "google_translate_element"
+    );
+  };
+
+  const langChange = (e, m, evt) => {
+    evt.preventDefault();
+    if (hasCookie("googtrans")) {
+      setCookie("googtrans", decodeURI(e));
+      setSelected(e);
+    } else {
+      setCookie("googtrans", e);
+      setSelected(e);
+    }
+    window.location.reload();
+  };
 
   useEffect(() => {
     (async function () {
@@ -63,6 +108,22 @@ const Header = (props) => {
       router.push(final_url);
     }
   };
+
+  const handleSearchButton = () => {
+    if (filtered_main_cat_wise_prods.length === 1) {
+      router.push(
+        `/product/${filtered_main_cat_wise_prods[0]._id}/${filtered_main_cat_wise_prods[0].product_cat_type}`
+      );
+    }
+  };
+
+  const languages = [
+    { label: "English", value: "/auto/en" },
+    { label: `Russian`, value: "/auto/ru" },
+    { label: "Spanish", value: "/auto/es" },
+    { label: "French", value: "/auto/fr" },
+    { label: "Japanese", value: "/auto/ja" },
+  ];
 
   return (
     <React.Fragment>
@@ -111,14 +172,15 @@ const Header = (props) => {
                   )}
                   <button
                     className="btn me-2 shadow-none border bg-white"
-                    type="submit"
+                    type="button"
+                    onClick={handleSearchButton}
                   >
                     <i className="fa-solid  fa-magnifying-glass"></i>
                   </button>
                 </form>
               </div>
               <div>
-                <select
+                {/* <select
                   className="form-select selectData shadow-none input_field"
                   onChange={(e) => setLanguage(e.target.value)}
                 >
@@ -130,7 +192,31 @@ const Header = (props) => {
                   <option value="5">Russian</option>
                   <option value="6">Japanese</option>
                   <option value="7">& more</option>
-                </select>
+                </select> */}
+                <>
+                  <div
+                    id="google_translate_element"
+                    style={{
+                      width: "0px",
+                      height: "0px",
+                      position: "absolute",
+                      left: "50%",
+                      zIndex: -99999,
+                    }}
+                  ></div>
+                  <SelectPicker
+                    data={languages}
+                    style={{ width: 100 }}
+                    placement="bottomEnd"
+                    cleanable={false}
+                    value={selected}
+                    searchable={false}
+                    className={"notranslate"}
+                    menuClassName={"notranslate"}
+                    onSelect={(e, m, evt) => langChange(e, m, evt)}
+                    placeholder="Lang"
+                  />
+                </>
               </div>
             </div>
           </div>
