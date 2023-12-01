@@ -15,7 +15,6 @@ import { Tween } from "react-gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
-import JourneyMap from "components/ImageJourney";
 import Ugcslider from "components/Ugcslider";
 
 // import { TweenMax, Power3 } from 'gsap';

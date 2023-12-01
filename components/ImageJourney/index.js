@@ -1,4 +1,4 @@
-import B1 from 'public/assets/journey_imgs/B1.jpg'
+/* import B1 from 'public/assets/journey_imgs/B1.jpg'
 import B2 from 'public/assets/journey_imgs/B2.jpg'
 import B3 from 'public/assets/journey_imgs/B3.jpg'
 import B4 from 'public/assets/journey_imgs/B4.jpg'
@@ -135,3 +135,4 @@ export default class Carasol extends Component {
     );
   }
 }
+ */
